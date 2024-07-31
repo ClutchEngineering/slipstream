@@ -7,5 +7,8 @@ let package = Package(
   name: "slipstream",
   targets: [
     .executableTarget(name: "slipstream"),
+    .testTarget(name: "slipstreamTests", dependencies: [
+      "slipstream",
+    ])
   ]
 )
