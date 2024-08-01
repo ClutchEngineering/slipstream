@@ -52,9 +52,14 @@ print(try renderHTML(HelloWorld()))
 
 ### Views
 
+- <doc:Catalog>
 - <doc:Fundamentals>
 - <doc:TextInputAndOutput>
 
 ### Rendering Views
 
 - ``renderHTML(_:)``
+
+### Architecture
+
+- <doc:HowSlipstreamWorks>
