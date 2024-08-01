@@ -45,8 +45,8 @@ need to generate new types of HTML.
 ### W3C HTML Views
 
 Slipstream provides a catalog of standard [W3C HTML](https://html.spec.whatwg.org/multipage/)
-View implementations that can be used to build your website. Visit the <doc:Catalog> to
-see the set of Views available in Slipstream.
+View implementations that can be used to build your website. Read <doc:Fundamentals> to
+learn more about the different Views available in Slipstream.
 
 ### Rendering a View as HTML
 
