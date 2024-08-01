@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir docs
 swift package \
   --allow-writing-to-directory docs \
   generate-documentation \
