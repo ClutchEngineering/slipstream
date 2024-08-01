@@ -6,5 +6,5 @@ swift package \
   --target Slipstream \
   --disable-indexing \
   --transform-for-static-hosting \
-  --hosting-base-path Slipstream \
+  --hosting-base-path slipstream \
   --output-path docs
