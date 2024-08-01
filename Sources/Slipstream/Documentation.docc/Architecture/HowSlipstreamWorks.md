@@ -65,6 +65,15 @@ print(try renderHTML(HelloWorld()))
 
 In this example, the Text view is treated as a single "block" in HelloWorld's body.
 
-The ``renderHTML(_:)`` method creates a SwiftSoup Document object and then passes this
-document to the HelloWorld's ``View/render(_:environment:)`` method, which in turn calls Text's
-`render(_:environment:)` method, which appends the string to the Document object.
+Slipstream depends on [SwiftSoup](https://scinfu.github.io/SwiftSoup/) for rendering valid
+HTML. Each call to ``renderHTML(_:)`` follows the same rough flow:
+
+1. The ``renderHTML(_:)`` method creates a SwiftSoup `Document` object.
+2. This object is then passed to HelloWorld's ``View/render(_:environment:)`` method,
+   which in turn calls Text's `render(_:environment:)` method, which appends the string
+   to the document. This step happens recursively until the entire view
+   hierarchy has had a chance to render its contents into the document.
+3. The Document, at this point an in-memory Document Object Model (DOM) representation,
+   is then rendered as HTML using SwiftSoup and returned. 
+
+You can then save the resulting html string to the appropriate file.

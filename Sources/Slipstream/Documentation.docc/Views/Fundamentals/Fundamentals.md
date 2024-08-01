@@ -9,7 +9,11 @@ conforms to the ``View`` protocol can act as a view in your website.
 
 ## Topics
 
-### Creating a View
+### Creating a view
 
 - ``View``
 - ``ViewBuilder``
+
+### Modifying a view
+
+- ``ViewModifier``

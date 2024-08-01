@@ -3,6 +3,7 @@
 /// You typically use ``ViewBuilder`` as a parameter attribute for child
 /// view-producing closure parameters, allowing those closures to provide
 /// multiple child views.
+@available(iOS 17.0, macOS 14.0, *)
 @resultBuilder
 public struct ViewBuilder {
   /// Passes a single view written as a child view through unmodified.

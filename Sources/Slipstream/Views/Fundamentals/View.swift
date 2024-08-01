@@ -1,4 +1,5 @@
 import SwiftSoup
+import TypeIntrospection
 
 /// A type that represents part of your HTML document.
 ///
@@ -17,6 +18,7 @@ import SwiftSoup
 /// Assemble the view's body by combining one or more of the built-in views
 /// provided by Slipstream, like the ``Text`` instance in the example above, plus
 /// other custom views that you define, into a hierarchy of views.
+@available(iOS 17.0, macOS 14.0, *)
 public protocol View {
   /// The type of view representing the content of this view.
   ///
@@ -49,14 +51,59 @@ public protocol View {
   ///
   /// If this method is not implemented, a default implementation will be
   /// provided that recurses the render calls on `body`.
-  func render(_ container: Element) throws
+  func render(_ container: Element, environment: EnvironmentValues) throws
 }
 
 extension View {
+  /// Returns a copy of self with the given environment values injected into any @Environment properties defined by the receiver.
+  private func injectEnvironment(environment: EnvironmentValues) throws -> Self {
+    /// By default, `@Environment` properties have "empty" storage.
+    /// Our goal is to return a copy of this view with the environment properties' storage filled
+    /// with the current environment values.
+    var copy = self
+
+    /// To enumerate all of the `@Environment` properties on this view, we rely on introspection of this view's type.
+    let introspectionOfSelf = TypeIntrospection(type: type(of: self).self)
+    for viewProperty in introspectionOfSelf.properties {
+      /// `@Environment` properties are mutable and have internal `EnvironmentValues` storage.
+      guard viewProperty.isVar,
+            let environmentValuesProperty = viewProperty.introspection.properties.first(where: { $0.introspection.type is EnvironmentValues.Type }) else {
+        continue
+      }
+      /// To modify the property, we first get the `@Environment` property as an opaque value type.
+      var value = try viewProperty.getValue(in: self)
+      /// We then use the property abstraction to store our contextual environment on the value (some `@Environment` type).
+      try environmentValuesProperty.setValue(to: environment, in: &value)
+      /// And lastly, we replace our view's `@Environment` property with the mutated instance.
+      try viewProperty.setValue(to: value, in: &copy)
+
+      /// Assume we have a View defined like this:
+      ///
+      /// ```
+      /// struct HeaderLink: View {
+      ///   @Environment(\.path) var path
+      ///   @Environment(\.weight) var weight
+      /// }
+      ///
+      /// let link = HeaderLink()
+      /// ```
+      ///
+      /// Then in effect, the code above accomplishes the following:
+      ///
+      /// ```
+      /// var copy = link
+      /// copy.path.environmentValues = environment
+      /// copy.weight.environmentValues = environment
+      /// return copy
+      /// ```
+    }
+    return copy
+  }
+
   /// This default implementation recurses the render call on `body`'s contents
   /// and is sufficient for most custom `View`-conforming types.
-  public func render(_ container: Element) throws {
-    try body.render(container)
+  public func render(_ container: Element, environment: EnvironmentValues) throws {
+    try injectEnvironment(environment: environment).body.render(container, environment: environment)
   }
 }
 

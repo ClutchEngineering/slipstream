@@ -50,16 +50,19 @@ print(try renderHTML(HelloWorld()))
 
 ## Topics
 
-### Views
-
-- <doc:Catalog>
-- <doc:Fundamentals>
-- <doc:TextInputAndOutput>
-
-### Rendering Views
-
-- ``renderHTML(_:)``
-
 ### Architecture
 
 - <doc:HowSlipstreamWorks>
+
+### Data and storage
+
+- <doc:EnvironmentValuesSection>
+
+### Views
+
+- <doc:Fundamentals>
+- <doc:TextInputAndOutput>
+
+### Rendering views
+
+- ``renderHTML(_:)``
