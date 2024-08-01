@@ -6,5 +6,5 @@ swift package \
   --target Slipstream \
   --disable-indexing \
   --transform-for-static-hosting \
-  --hosting-base-path StringScannerKit \
+  --hosting-base-path Slipstream \
   --output-path docs
