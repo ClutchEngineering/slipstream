@@ -1,6 +1,6 @@
 # Text input and output
 
-Display text.
+Add text to your document.
 
 To display read-only text, use the built-in ``Text`` view.
 
