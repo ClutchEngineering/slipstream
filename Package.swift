@@ -5,10 +5,31 @@ import PackageDescription
 
 let package = Package(
   name: "slipstream",
+  platforms: [
+    .macOS("14"),
+    .iOS("17"),
+    .tvOS(.v16),
+    .watchOS("10")
+  ],
+  products: [
+    // Executable can't share the same name as the library, or we get compiler errors due to conflicts of the two products.
+    .executable(name: "slipstreamcli", targets: ["SlipstreamCLI"]),
+    .library(name: "Slipstream", targets: ["Slipstream"])
+  ],
+  dependencies: [
+    .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.7.3"),
+    .package(url: "https://github.com/swiftlang/swift-docc-plugin", from: "1.1.0"),
+  ],
   targets: [
-    .executableTarget(name: "slipstream"),
-    .testTarget(name: "slipstreamTests", dependencies: [
-      "slipstream",
+    .executableTarget(name: "SlipstreamCLI", dependencies: [
+      "Slipstream",
+    ]),
+
+    .target(name: "Slipstream", dependencies: [
+      "SwiftSoup",
+    ]),
+    .testTarget(name: "SlipstreamTests", dependencies: [
+      "Slipstream",
     ])
   ]
 )
