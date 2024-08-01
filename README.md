@@ -5,3 +5,18 @@
 <p align="center">
   Build static web pages with Swift and Tailwind CSS.
 </p>
+
+<p align="center">
+    <a href="https://github.com/jverkoey/slipstream/actions"><img src="https://img.shields.io/github/actions/workflow/status/jverkoey/slipstream/package-test.yml?branch=main" alt="Build Status"></a>
+    <a href="https://github.com/jverkoey/slipstream/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jverkoey/slipstream.svg" alt="License"></a>
+</p>
+
+---
+
+## Documentation
+
+View Slipstream's [complete documentation](https://jverkoey.github.io/slipstream/documentation/slipstream/).
+
+## Community
+
+To discuss Slipstream-related topics with other Slipstreamers, ask questions, or explore ideas, please [use GitHub discussions](https://github.com/jverkoey/slipstream/discussions).
