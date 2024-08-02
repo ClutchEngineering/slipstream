@@ -1,8 +1,5 @@
 {
   "theme": {
-    "icons": {
-      
-    },
     "color": {
       "documentation-intro-fill": {
         "dark": "linear-gradient(180deg, rgba(50,4,32,1) 25%, rgba(229,77,123,0.8) 100%)",
