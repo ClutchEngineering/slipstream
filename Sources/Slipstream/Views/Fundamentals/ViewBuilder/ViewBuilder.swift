@@ -52,7 +52,6 @@ public struct ViewBuilder {
     return .init(condition: .isTrue(first))
   }
 
-
   /// An if/else statement, when the condition returns false.
   ///
   /// An example:
@@ -69,5 +68,21 @@ public struct ViewBuilder {
   public static func buildEither<TrueContent, FalseContent>(second: FalseContent) -> ConditionalView<TrueContent, FalseContent>
   where TrueContent: View, FalseContent: View {
     return .init(condition: .isFalse(second))
+  }
+
+  /// Gathers the results of a loop into a single view.
+  ///
+  /// An example:
+  ///
+  /// ```swift
+  /// var body: some View {
+  ///    for i in 1...3 {
+  ///      Text("\(i)")
+  ///    }
+  /// }
+  /// ```
+  public static func buildArray<Content>(_ components: [Content]) -> ArrayView
+  where Content: View {
+    ArrayView(array: components)
   }
 }
