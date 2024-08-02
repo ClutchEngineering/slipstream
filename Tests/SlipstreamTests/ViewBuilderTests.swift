@@ -15,9 +15,28 @@ private struct TupleBlockView: View {
   }
 }
 
+private struct ConditionalBlockView: View {
+  let bool: Bool
+  var body: some View {
+    if bool {
+      Text("true")
+    } else {
+      Text("false")
+    }
+  }
+}
+
 struct ViewBuilderTests {
-  @Test func rendersExpectedResult() throws {
+  @Test func singleBlock() throws {
     try #expect(renderHTML(SingleBlockView()) == "Hello, world!")
+  }
+
+  @Test func tupleBlock() throws {
     try #expect(renderHTML(TupleBlockView()) == "Hello, world!")
+  }
+
+  @Test func conditionalBlock() throws {
+    try #expect(renderHTML(ConditionalBlockView(bool: true)) == "true")
+    try #expect(renderHTML(ConditionalBlockView(bool: false)) == "false")
   }
 }
