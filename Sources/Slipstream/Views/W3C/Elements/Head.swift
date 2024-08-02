@@ -1,5 +1,3 @@
-import SwiftSoup
-
 /// A view that defines the document's metadata container.
 ///
 /// Every web page starts with an HTML view.

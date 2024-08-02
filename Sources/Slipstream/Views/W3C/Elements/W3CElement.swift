@@ -18,6 +18,8 @@ public protocol W3CElement: View {
 }
 
 extension W3CElement {
+  /// A default implementation for W3C element views that renders the view as
+  /// an HTML tag using ``tagName``.
   @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     let element = try container.appendElement(tagName)

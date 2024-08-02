@@ -1,5 +1,3 @@
-import SwiftSoup
-
 /// A view that represents the root of an HTML document.
 ///
 /// Every web page starts with an HTML view.
