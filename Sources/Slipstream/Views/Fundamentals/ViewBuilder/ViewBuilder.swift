@@ -42,8 +42,6 @@ public struct ViewBuilder {
   /// var body: some View {
   ///   if true {
   ///     Text("true")
-  ///   } else {
-  ///     Text("false")
   ///   }
   /// }
   /// ```
