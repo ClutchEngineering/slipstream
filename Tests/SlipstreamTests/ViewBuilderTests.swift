@@ -26,6 +26,14 @@ private struct ConditionalBlockView: View {
   }
 }
 
+private struct ArrayBlockView: View {
+  var body: some View {
+    for i in 1...3 {
+      Text("\(i)")
+    }
+  }
+}
+
 struct ViewBuilderTests {
   @Test func singleBlock() throws {
     try #expect(renderHTML(SingleBlockView()) == "Hello, world!")
@@ -38,5 +46,9 @@ struct ViewBuilderTests {
   @Test func conditionalBlock() throws {
     try #expect(renderHTML(ConditionalBlockView(bool: true)) == "true")
     try #expect(renderHTML(ConditionalBlockView(bool: false)) == "false")
+  }
+
+  @Test func arrayBlock() throws {
+    try #expect(renderHTML(ArrayBlockView()) == "123")
   }
 }
