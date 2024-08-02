@@ -25,6 +25,6 @@ import SwiftSoup
 /// - Returns: The generated and formatted HTML string.
 public func renderHTML(_ view: any View) throws -> String {
   let document = Document("/")
-  try view.render(document)
+  try view.render(document, environment: EnvironmentValues())
   return try document.html()
 }

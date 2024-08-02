@@ -8,8 +8,6 @@ let package = Package(
   platforms: [
     .macOS("14"),
     .iOS("17"),
-    .tvOS(.v16),
-    .watchOS("10")
   ],
   products: [
     // Executable can't share the same name as the library, or we get compiler errors due to conflicts of the two products.
@@ -27,9 +25,15 @@ let package = Package(
 
     .target(name: "Slipstream", dependencies: [
       "SwiftSoup",
+      "TypeIntrospection",
     ]),
     .testTarget(name: "SlipstreamTests", dependencies: [
       "Slipstream",
-    ])
+    ]),
+
+    .target(name: "TypeIntrospection"),
+    .testTarget(name: "TypeIntrospectionTests", dependencies: [
+      "TypeIntrospection",
+    ]),
   ]
 )

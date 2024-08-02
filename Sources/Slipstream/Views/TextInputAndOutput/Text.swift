@@ -3,6 +3,7 @@ import SwiftSoup
 /// A view that displays one or more lines of read-only text.
 ///
 /// A text view adds a string to your HTML document.
+@available(iOS 17.0, macOS 14.0, *)
 public struct Text: View {
   private let content: any StringProtocol
 
@@ -26,7 +27,7 @@ public struct Text: View {
   }
 
   @_documentation(visibility: private)
-  public func render(_ container: Element) throws {
+  public func render(_ container: Element, environment: EnvironmentValues) throws {
     try container.appendText(String(content))
   }
 }
