@@ -2,6 +2,7 @@ import SwiftSoup
 
 /// A View created from an if/else conditional of View values.
 @_documentation(visibility: private)
+@available(iOS 17.0, macOS 14.0, *)
 public struct ConditionalView<T: View, F: View>: View {
   enum Condition {
     case isTrue(T)

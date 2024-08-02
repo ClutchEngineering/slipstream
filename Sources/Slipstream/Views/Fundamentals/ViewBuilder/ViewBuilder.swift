@@ -34,6 +34,26 @@ public struct ViewBuilder {
     return TupleView(value: (repeat each content))
   }
 
+  /// An if statement.
+  ///
+  /// An example:
+  ///
+  /// ```swift
+  /// var body: some View {
+  ///   if true {
+  ///     Text("true")
+  ///   }
+  /// }
+  /// ```
+  public static func buildOptional<Content>(_ component: Content?) -> ConditionalView<Content, EmptyView>
+  where Content: View {
+    if let component {
+      return ConditionalView(condition: .isTrue(component))
+    } else {
+      return ConditionalView(condition: .isFalse(EmptyView()))
+    }
+  }
+
   /// An if/else statement, when the condition returns true.
   ///
   /// An example:

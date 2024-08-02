@@ -2,6 +2,7 @@ import SwiftSoup
 
 /// A View created from a for loop of View values.
 @_documentation(visibility: private)
+@available(iOS 17.0, macOS 14.0, *)
 public struct ArrayView: View {
   public typealias Content = Never
 
