@@ -4,7 +4,10 @@
       
     },
     "color": {
-      "documentation-intro-fill": "#320420"
+      "documentation-intro-fill": {
+        "dark": "#320420",
+        "light": "#FCE9EE"
+      }
     }
   }
 }
