@@ -23,19 +23,17 @@ import SwiftSoup
 ///
 /// - ``View/language(_:)``
 @available(iOS 17.0, macOS 14.0, *)
-public struct HTML<Content>: View where Content: View {
+public struct HTML<Content>: W3CElement where Content: View {
+  @_documentation(visibility: private)
+  public let tagName: String = "html"
+
+  @_documentation(visibility: private)
+  @ViewBuilder public let content: () -> Content
+
   /// Creates an HTML view.
   ///
   /// - Parameter content: Should include a single ``Head`` view followed by a single ``Body`` view.
   public init(@ViewBuilder content: @escaping () -> Content) {
     self.content = content
   }
-
-  @_documentation(visibility: private)
-  public func render(_ container: Element, environment: EnvironmentValues) throws {
-    let element = try container.appendElement("html")
-    try self.content().render(element, environment: environment)
-  }
-
-  private let content: () -> Content
 }

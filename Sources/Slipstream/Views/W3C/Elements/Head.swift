@@ -16,17 +16,15 @@ import SwiftSoup
 ///
 /// - SeeAlso: W3C [`head`](https://www.w3.org/TR/2012/WD-html-markup-20121025/head.html#head) specification.
 @available(iOS 17.0, macOS 14.0, *)
-public struct Head<Content>: View where Content: View {
+public struct Head<Content>: W3CElement where Content: View {
+  @_documentation(visibility: private)
+  public let tagName: String = "head"
+
+  @_documentation(visibility: private)
+  @ViewBuilder public let content: () -> Content
+
+  /// Creates a Head view.
   public init(@ViewBuilder content: @escaping () -> Content) {
     self.content = content
   }
-
-  @_documentation(visibility: private)
-  public func render(_ container: Element, environment: EnvironmentValues) throws {
-    let head = Element(.init("head"), "")
-    try self.content().render(head, environment: environment)
-    try container.addChildren(head)
-  }
-
-  private let content: () -> Content
 }
