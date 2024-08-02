@@ -10,5 +10,6 @@
 
 ### Conditionally building content
 
+- ``ViewBuilder/buildOptional(_:)``
 - ``ViewBuilder/buildEither(first:)``
 - ``ViewBuilder/buildEither(second:)``
