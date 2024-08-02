@@ -63,6 +63,7 @@ print(try renderHTML(HelloWorld()))
 
 - <doc:Fundamentals>
 - <doc:TextInputAndOutput>
+- <doc:W3C>
 
 ### Rendering views
 
