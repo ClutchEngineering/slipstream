@@ -9,3 +9,7 @@ The complete W3C HTML elements standard can be found [here](https://www.w3.org/T
 ### Root element
 
 - <doc:HTML>
+
+### Document metadata
+
+- <doc:Head>

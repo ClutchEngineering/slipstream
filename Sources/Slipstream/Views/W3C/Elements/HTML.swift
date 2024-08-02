@@ -1,6 +1,6 @@
 import SwiftSoup
 
-/// The html element represents the root of a document.
+/// A view that represents the root of an HTML document.
 ///
 /// Every web page starts with an HTML view.
 ///
@@ -8,19 +8,25 @@ import SwiftSoup
 /// struct MySite: View {
 ///   var body: some View {
 ///     HTML {
-///       // Your site's content.
+///       Head {
+///       }
+///       Body {
+///       }
 ///     }
 ///   }
 /// }
 /// ```
 ///
-/// View the full [W3C specification](https://www.w3.org/TR/2012/WD-html-markup-20121025/html.html#html).
+/// - SeeAlso: W3C [`html`](https://www.w3.org/TR/2012/WD-html-markup-20121025/html.html#html) specification.
 ///
 /// ## See Also
 ///
 /// - ``View/language(_:)``
 @available(iOS 17.0, macOS 14.0, *)
 public struct HTML<Content>: View where Content: View {
+  /// Creates an HTML view.
+  ///
+  /// - Parameter content: Should include a single ``Head`` view followed by a single ``Body`` view.
   public init(@ViewBuilder content: @escaping () -> Content) {
     self.content = content
   }
