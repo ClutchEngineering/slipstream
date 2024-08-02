@@ -6,7 +6,11 @@ import Slipstream
 private struct CatalogSite: View {
   var body: some View {
     HTML {
-      Text("Hello, world!")
+      Head {
+      }
+      Body {
+        Text("Hello, world!")
+      }
     }
   }
 }
@@ -15,7 +19,10 @@ struct CatalogSiteTests {
   @Test func rendered() throws {
     try #expect(renderHTML(CatalogSite()) == """
 <html>
- Hello, world!
+ <head></head>
+ <body>
+  Hello, world!
+ </body>
 </html>
 """)
   }
