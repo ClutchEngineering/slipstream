@@ -2,26 +2,29 @@ import Testing
 
 import Slipstream
 
-struct HeadTests {
+struct BodyTests {
   @Test func emptyBlock() throws {
-    try #expect(renderHTML(Head {}) == "<head></head>")
+    try #expect(renderHTML(Body {}) == "<body></body>")
   }
 
   @Test func withText() throws {
     try #expect(renderHTML(HTML {
       Head {
+      }
+      Body {
         Text("Hello, world!")
       }
     }) == """
 <html>
- <head>
+ <head></head>
+ <body>
   Hello, world!
- </head>
+ </body>
 </html>
 """)
   }
 
   @Test func attribute() throws {
-    try #expect(renderHTML(Head {}.language("en")) == #"<head lang="en"></head>"#)
+    try #expect(renderHTML(Body {}.language("en")) == #"<body lang="en"></body>"#)
   }
 }
