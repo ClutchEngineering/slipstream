@@ -115,6 +115,10 @@ extension View where Content == Never {
   public var body: Never {
     fatalError("body should never be executed when a view has declared its Content as Never")
   }
+
+  public func render(_ container: Element, environment: EnvironmentValues) throws {
+    // Do nothing.
+  }
 }
 
 @_documentation(visibility: private)
