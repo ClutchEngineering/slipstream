@@ -7,6 +7,7 @@ private struct CatalogSite: View {
   var body: some View {
     HTML {
       Head {
+        Charset(.utf8)
       }
       Body {
         Text("Hello, world!")
@@ -19,7 +20,9 @@ struct CatalogSiteTests {
   @Test func rendered() throws {
     try #expect(renderHTML(CatalogSite()) == """
 <html>
- <head></head>
+ <head>
+  <meta charset="UTF-8" />
+ </head>
  <body>
   Hello, world!
  </body>
