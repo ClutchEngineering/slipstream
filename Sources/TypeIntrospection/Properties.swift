@@ -34,6 +34,7 @@ extension TypeIntrospection.Properties: Collection {
 }
 
 extension TypeIntrospection.Properties {
+  /// Source: https://github.com/swiftlang/swift/blob/9906199d8ef5408ab63663bf6f6fb1f2511edf4f/stdlib/public/core/ReflectionMirror.swift#L32-L33
   @_silgen_name("swift_reflectionMirror_recursiveCount")
   private static func _getRecursiveChildCount(_in type: Any.Type) -> Int
 }

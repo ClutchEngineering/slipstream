@@ -53,6 +53,7 @@ print(try renderHTML(HelloWorld()))
 ### Architecture
 
 - <doc:HowSlipstreamWorks>
+- <doc:HowEnvironmentWorks>
 
 ### Data and storage
 
