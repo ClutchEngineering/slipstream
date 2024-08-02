@@ -33,4 +33,41 @@ public struct ViewBuilder {
   where repeat each Content: View {
     return TupleView(value: (repeat each content))
   }
+
+  /// An if/else statement, when the condition returns true.
+  ///
+  /// An example:
+  ///
+  /// ```swift
+  /// var body: some View {
+  ///   if true {
+  ///     Text("true")
+  ///   } else {
+  ///     Text("false")
+  ///   }
+  /// }
+  /// ```
+  public static func buildEither<TrueContent, FalseContent>(first: TrueContent) -> ConditionalView<TrueContent, FalseContent>
+  where TrueContent: View, FalseContent: View {
+    return .init(condition: .isTrue(first))
+  }
+
+
+  /// An if/else statement, when the condition returns false.
+  ///
+  /// An example:
+  ///
+  /// ```swift
+  /// var body: some View {
+  ///   if false {
+  ///     Text("true")
+  ///   } else {
+  ///     Text("false")
+  ///   }
+  /// }
+  /// ```
+  public static func buildEither<TrueContent, FalseContent>(second: FalseContent) -> ConditionalView<TrueContent, FalseContent>
+  where TrueContent: View, FalseContent: View {
+    return .init(condition: .isFalse(second))
+  }
 }
