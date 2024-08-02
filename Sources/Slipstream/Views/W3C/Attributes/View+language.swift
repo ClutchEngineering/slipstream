@@ -13,6 +13,7 @@ extension View {
   /// - Parameter language: Must be a valid [BCP 47 language tag](https://en.wikipedia.org/wiki/IETF_language_tag),
   ///   or the empty string. Setting the attribute to the empty string indicates that the primary
   ///   language is unknown.
+  @available(iOS 17.0, macOS 14.0, *)
   public func language(_ language: String) -> some View {
     return modifier(AttributeModifier(.lang, value: language))
   }
