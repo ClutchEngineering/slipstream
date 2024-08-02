@@ -15,7 +15,7 @@ private struct TupleBlockView: View {
   }
 }
 
-private struct ConditionalBlockView: View {
+private struct IfElseBlockView: View {
   let bool: Bool
   var body: some View {
     if bool {
@@ -26,7 +26,7 @@ private struct ConditionalBlockView: View {
   }
 }
 
-private struct SingleConditionBlockView: View {
+private struct IfBlockView: View {
   let bool: Bool
   var body: some View {
     if bool {
@@ -52,14 +52,14 @@ struct ViewBuilderTests {
     try #expect(renderHTML(TupleBlockView()) == "Hello, world!")
   }
 
-  @Test func conditionalBlock() throws {
-    try #expect(renderHTML(ConditionalBlockView(bool: true)) == "true")
-    try #expect(renderHTML(ConditionalBlockView(bool: false)) == "false")
+  @Test func ifElseBlock() throws {
+    try #expect(renderHTML(IfElseBlockView(bool: true)) == "true")
+    try #expect(renderHTML(IfElseBlockView(bool: false)) == "false")
   }
 
-  @Test func singleConditionBlock() throws {
-    try #expect(renderHTML(SingleConditionBlockView(bool: true)) == "true")
-    try #expect(renderHTML(SingleConditionBlockView(bool: false)) == "")
+  @Test func ifBlock() throws {
+    try #expect(renderHTML(IfBlockView(bool: true)) == "true")
+    try #expect(renderHTML(IfBlockView(bool: false)) == "")
   }
 
   @Test func arrayBlock() throws {
