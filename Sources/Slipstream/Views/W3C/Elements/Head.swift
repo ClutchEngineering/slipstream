@@ -1,6 +1,7 @@
 /// A view that defines the document's metadata container.
 ///
-/// Every web page starts with an HTML view.
+/// Web pages use ``Head`` to define important metadata, such
+/// as the web page's title, search engine metadata, and scripts/stylesheets.
 ///
 /// ```swift
 /// struct MySiteMetadata: View {
