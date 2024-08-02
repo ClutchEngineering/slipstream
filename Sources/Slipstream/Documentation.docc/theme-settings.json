@@ -5,8 +5,8 @@
     },
     "color": {
       "documentation-intro-fill": {
-        "dark": "#320420",
-        "light": "#FCE9EE"
+        "dark": "linear-gradient(180deg, rgba(50,4,32,1) 25%, rgba(229,77,123,0.8) 100%)",
+        "light": "linear-gradient(180deg, rgba(229,77,123,0.1) 0%, rgba(229,77,123,0.3) 100%)"
       }
     }
   }
