@@ -1,4 +1,5 @@
 /// Constants that specify the visual alignment of the text.
+@available(iOS 17.0, macOS 14.0, *)
 public enum TextAlignment: String {
   /// Aligns text to the left edge of the text container in
   /// left-to-right (LTR) languages, and to the right edge
@@ -21,6 +22,9 @@ extension View {
   /// Control the alignment of text.
   ///
   /// - Parameter alignment: Text alignment to be applied to text within the modified view.
+  ///
+  /// - SeeAlso: Tailwind CSS' [`text-align`](https://tailwindcss.com/docs/text-align) documentation.
+  @available(iOS 17.0, macOS 14.0, *)
   public func textAlignment(_ alignment: TextAlignment) -> some View {
     return self.modifier(ClassModifier(add: "text-" + alignment.rawValue))
   }
