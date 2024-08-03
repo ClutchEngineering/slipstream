@@ -35,6 +35,7 @@ private struct CatalogSite: View {
           H5("Heading 5")
           H6("Heading 6")
         }
+        .padding(.horizontal, 48)
       }
       .id("root")
     }
@@ -53,7 +54,7 @@ struct CatalogSiteTests {
   <link rel="stylesheet" href="/css/bootstrap.css" />
  </head>
  <body id="root">
-  <div class="container">
+  <div class="container px-12">
    Hello
    <br />world!
    <h1 class="text-xl font-bold text-start">Heading 1</h1>

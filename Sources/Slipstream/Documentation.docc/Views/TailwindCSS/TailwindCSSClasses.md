@@ -8,6 +8,10 @@ Slipstream implementations of Tailwind CSS's classes.
 
 - ``Container``
 
+### Spacing
+
+- <doc:Padding>
+
 ### Typography
 
 - <doc:FontSize>
