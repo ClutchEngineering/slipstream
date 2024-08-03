@@ -1,14 +1,7 @@
 /// A structure that represents the edges of a rectangle, used for specifying
 /// which sides to apply modifications to, such as padding or margin.
 ///
-/// This struct conforms to the `OptionSet` protocol, allowing for the combination
-/// of multiple edges using set operations.
-///
-/// Usage:
-///
-/// ```swift
-/// let edges: Edge = [.top, .left]
-/// ```
+/// You'll typically work with a set of edges using the ``Edge.Set`` type.
 public enum Edge: Int8, CaseIterable {
   /// The top edge of a rectangle.
   case top = 0b0000_0001
@@ -23,6 +16,12 @@ public enum Edge: Int8, CaseIterable {
   case right = 0b0000_1000
 
   /// A set of edges.
+  ///
+  /// Usage:
+  ///
+  /// ```swift
+  /// let edges: Edge.Set = [.top, .left]
+  /// ``` 
   public struct Set: OptionSet {
     /// The element type of the option set.
     ///
