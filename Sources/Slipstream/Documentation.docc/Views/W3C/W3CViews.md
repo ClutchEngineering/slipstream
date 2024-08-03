@@ -22,6 +22,12 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 ### Sections
 
 - ``Body``
+- ``H1``
+- ``H2``
+- ``H3``
+- ``H4``
+- ``H5``
+- ``H6``
 
 ### Grouping content
 
