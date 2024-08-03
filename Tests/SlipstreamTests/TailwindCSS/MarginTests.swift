@@ -5,7 +5,6 @@ private struct MarginView: View {
   let margins: Int = 32
   var body: some View {
     Div {
-
     }
     .margin(.horizontal, margins)
   }

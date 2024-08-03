@@ -20,7 +20,7 @@ public enum FontSize: String {
 }
 
 extension View {
-  /// Set the font size.
+  /// Sets the font size.
   ///
   /// - Parameter fontSize: The font size to apply to the modified view.
   ///

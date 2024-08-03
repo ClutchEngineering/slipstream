@@ -36,7 +36,9 @@ private struct CatalogSite: View {
             .margin(.horizontal, .auto)
           H6("Heading 6")
             .margin(.vertical, 32)
+            .textColor(.white)
         }
+        .textColor(.red, darkness: 800)
         .padding(.horizontal, 48)
       }
       .id("root")
@@ -56,7 +58,7 @@ struct CatalogSiteTests {
   <link rel="stylesheet" href="/css/bootstrap.css" />
  </head>
  <body id="root">
-  <div class="container px-12">
+  <div class="container text-red-800 px-12">
    Hello
    <br />world!
    <h1 class="text-xl font-bold text-start">Heading 1</h1>
@@ -64,7 +66,7 @@ struct CatalogSiteTests {
    <h3 class="text-end">Heading 3</h3>
    <h4 class="antialiased">Heading 4</h4>
    <h5 class="mx-auto">Heading 5</h5>
-   <h6 class="my-8">Heading 6</h6>
+   <h6 class="my-8 text-white">Heading 6</h6>
   </div>
  </body>
 </html>
