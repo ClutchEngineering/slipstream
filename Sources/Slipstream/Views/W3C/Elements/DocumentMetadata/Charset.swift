@@ -21,7 +21,7 @@ import SwiftSoup
 /// }
 /// ```
 ///
-/// - SeeAlso: W3C [`meta charset`](https://www.w3.org/TR/2012/WD-html-markup-20121025/meta.charset.html#meta.charset) specification.
+/// - SeeAlso: W3C [`meta charset`](https://html.spec.whatwg.org/multipage/semantics.html#charset) specification.
 /// - SeeAlso: IANA [character sets](https://www.iana.org/assignments/character-sets/character-sets.xhtml).
 @available(iOS 17.0, macOS 14.0, *)
 public struct Charset: View {

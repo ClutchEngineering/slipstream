@@ -12,7 +12,7 @@
 /// }
 /// ```
 ///
-/// - SeeAlso: W3C [`body`](https://www.w3.org/TR/2012/WD-html-markup-20121025/body.html#body) specification.
+/// - SeeAlso: W3C [`body`](https://html.spec.whatwg.org/multipage/sections.html#the-body-element) specification.
 @available(iOS 17.0, macOS 14.0, *)
 public struct Body<Content>: W3CElement where Content: View {
   @_documentation(visibility: private)

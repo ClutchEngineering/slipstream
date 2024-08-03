@@ -15,7 +15,7 @@
 /// }
 /// ```
 ///
-/// - SeeAlso: W3C [`html`](https://www.w3.org/TR/2012/WD-html-markup-20121025/html.html#html) specification.
+/// - SeeAlso: W3C [`html`](https://html.spec.whatwg.org/multipage/semantics.html#the-html-element) specification.
 ///
 /// ## See Also
 ///

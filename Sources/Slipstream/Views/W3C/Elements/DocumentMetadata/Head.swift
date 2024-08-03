@@ -13,7 +13,7 @@
 /// }
 /// ```
 ///
-/// - SeeAlso: W3C [`head`](https://www.w3.org/TR/2012/WD-html-markup-20121025/head.html#head) specification.
+/// - SeeAlso: W3C [`head`](https://html.spec.whatwg.org/multipage/semantics.html#the-head-element) specification.
 @available(iOS 17.0, macOS 14.0, *)
 public struct Head<Content>: W3CElement where Content: View {
   @_documentation(visibility: private)
