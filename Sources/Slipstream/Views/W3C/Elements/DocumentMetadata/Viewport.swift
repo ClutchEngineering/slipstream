@@ -69,7 +69,13 @@ public struct Viewport: View {
   }
 
   @_documentation(visibility: private)
-  public func render(_ container: Element, environment: EnvironmentValues) throws {
+  public var body: some View {
+    if let content {
+      Meta("viewport", content: content)
+    }
+  }
+
+  private var content: String? {
     let content = [
       ("width", width?.asString),
       ("height", height?.asString),
@@ -85,12 +91,9 @@ public struct Viewport: View {
     }.map { "\($0.0)=\($0.1)"}.joined(separator: ", ")
 
     guard !content.isEmpty else {
-      return
+      return nil
     }
-
-    let element = try container.appendElement("meta")
-    try element.attr("name", "viewport")
-    try element.attr("content", content)
+    return content
   }
 
   private let width: Dimension?
