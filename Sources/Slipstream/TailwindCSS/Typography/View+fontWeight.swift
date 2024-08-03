@@ -27,7 +27,8 @@ extension View {
 
   /// Set the font weight to the closest equivalent Tailwind CSS font weight.
   ///
-  /// - Parameter weight: A font weight value. If the weight is exactly between
+  /// - Parameter weight: A font weight value. The closest Tailwind font
+  /// weight class that matches this weight will be used. If the weight is exactly between
   /// two weight classes, then the lighter weight will be used.
   ///
   /// - SeeAlso: Tailwind CSS' [`font-weight`](https://tailwindcss.com/docs/font-weight) documentation.

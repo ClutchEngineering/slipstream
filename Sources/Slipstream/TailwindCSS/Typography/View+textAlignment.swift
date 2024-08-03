@@ -1,6 +1,9 @@
 /// Constants that specify the visual alignment of the text.
 @available(iOS 17.0, macOS 14.0, *)
 public enum TextAlignment: String {
+  /// Aligns text to the left edge of the text container.
+  case left = "left"
+
   /// Aligns text to the left edge of the text container in
   /// left-to-right (LTR) languages, and to the right edge
   /// in right-to-left (RTL) languages..
@@ -8,6 +11,9 @@ public enum TextAlignment: String {
 
   /// Aligns text to the center of the text container.
   case center
+
+  /// Aligns text to the right edge of the text container.
+  case right = "right"
 
   /// Aligns text to the right edge of the text container in
   /// left-to-right (LTR) languages, and to the left edge
