@@ -12,7 +12,7 @@ extension View {
     let paddingClass = closestTailwindPadding(ptLength: length)
     var classes = [String]()
 
-    if edges == .all {
+    if Edge.Set.all.isSubset(of: edges) {
       classes = ["p-" + paddingClass]
     } else {
       if Edge.Set.horizontal.isSubset(of: edges) {
