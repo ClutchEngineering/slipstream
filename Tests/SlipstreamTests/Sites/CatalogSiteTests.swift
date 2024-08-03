@@ -19,6 +19,7 @@ private struct CatalogSite: View {
           Text("Hello, world!")
         }
       }
+      .id("root")
     }
   }
 }
@@ -34,7 +35,7 @@ struct CatalogSiteTests {
   <meta name="description" content="Slipstream is a static website generator built in the Swift programming language and compatible with Tailwind CSS." />
   <link rel="stylesheet" href="/css/bootstrap.css" />
  </head>
- <body>
+ <body id="root">
   <div>
    Hello, world!
   </div>

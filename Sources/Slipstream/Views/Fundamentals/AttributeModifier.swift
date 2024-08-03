@@ -26,6 +26,13 @@ public struct AttributeModifier<T: View>: ViewModifier {
 
   /// A W3C global attribute, as defined in [3.2.3 Global attributes](https://html.spec.whatwg.org/multipage/dom.html#global-attributes).
   public enum GlobalAttribute: String {
+    /// The id attribute specifies its element's unique identifier (ID).
+    ///
+    /// There are no other restrictions on what form an ID can take; in particular,
+    /// IDs can consist of just digits, start with a digit, start with an
+    /// underscore, consist of just punctuation, etc.
+    case id
+
     /// The lang attribute specifies the primary language for the view's contents
     /// and for any of the view's attributes that contain text. Its value must be a
     /// valid [BCP 47 language tag](https://en.wikipedia.org/wiki/IETF_language_tag),
