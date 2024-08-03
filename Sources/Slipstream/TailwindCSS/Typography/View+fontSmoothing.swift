@@ -15,7 +15,7 @@ extension View {
   /// - SeeAlso: Tailwind CSS' [`font-smoothing`](https://tailwindcss.com/docs/font-smoothing) documentation.
   @available(iOS 17.0, macOS 14.0, *)
   public func fontSmoothing(_ fontSmoothing: FontSmoothing) -> some View {
-    return self.modifier(ClassModifier(add: fontSmoothing.rawValue))
+    return modifier(ClassModifier(add: fontSmoothing.rawValue))
   }
 
   /// Set the font smoothing for a view to antialiased.

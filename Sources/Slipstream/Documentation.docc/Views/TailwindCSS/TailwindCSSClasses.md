@@ -10,6 +10,7 @@ Slipstream implementations of Tailwind CSS's classes.
 
 ### Spacing
 
+- <doc:Margin>
 - <doc:Padding>
 
 ### Typography

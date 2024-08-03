@@ -32,6 +32,6 @@ extension View {
   /// - SeeAlso: Tailwind CSS' [`text-align`](https://tailwindcss.com/docs/text-align) documentation.
   @available(iOS 17.0, macOS 14.0, *)
   public func textAlignment(_ alignment: TextAlignment) -> some View {
-    return self.modifier(ClassModifier(add: "text-" + alignment.rawValue))
+    return modifier(ClassModifier(add: "text-" + alignment.rawValue))
   }
 }
