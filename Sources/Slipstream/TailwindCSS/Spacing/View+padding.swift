@@ -41,7 +41,7 @@ extension View {
 
   /// Map a point size to the closest Tailwind CSS padding class.
   ///
-  /// - Parameter size: The size in points to be mapped.
+  /// - Parameter ptLength: The size, in points, to be mapped.
   /// - Returns: The Tailwind CSS padding class string.
   @available(iOS 17.0, macOS 14.0, *)
   private func closestTailwindPadding(ptLength: Double) -> String {
