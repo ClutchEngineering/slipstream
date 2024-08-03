@@ -1,6 +1,6 @@
-# Views
+# Classes
 
-Slipstream implementations of Tailwind CSS views.
+Slipstream implementations of Tailwind CSS's classes.
 
 ## Topics
 
@@ -10,5 +10,4 @@ Slipstream implementations of Tailwind CSS views.
 
 ### Typography
 
-- ``TextAlignment``
 - ``View/textAlignment(_:)``
