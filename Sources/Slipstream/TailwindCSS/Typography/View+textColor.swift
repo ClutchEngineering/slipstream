@@ -1,4 +1,13 @@
 extension View {
+  /// Sets the text color.
+  ///
+  /// - SeeAlso: Tailwind CSS' [`text-color`](https://tailwindcss.com/docs/text-color) documentation.
+  /// - SeeAlso: Tailwind CSS' [customizing colors](https://tailwindcss.com/docs/customizing-colors) article.
+  @available(iOS 17.0, macOS 14.0, *)
+  public func textColor(_ color: Color) -> some View {
+    return modifier(ClassModifier(add: "text-" + color.toTailwindColorClass()))
+  }
+
   /// Sets the text color to a specific Tailwind CSS palette.
   ///
   /// - Parameters:
@@ -10,15 +19,6 @@ extension View {
   /// - SeeAlso: Tailwind CSS' [customizing colors](https://tailwindcss.com/docs/customizing-colors) article.
   @available(iOS 17.0, macOS 14.0, *)
   public func textColor(_ colorPalette: ColorPalette, darkness: Int) -> some View {
-    return modifier(ClassModifier(add: "text-" + colorPalette.closestTailwindColorStop(for: darkness)))
-  }
-
-  /// Sets the text color.
-  ///
-  /// - SeeAlso: Tailwind CSS' [`text-color`](https://tailwindcss.com/docs/text-color) documentation.
-  /// - SeeAlso: Tailwind CSS' [customizing colors](https://tailwindcss.com/docs/customizing-colors) article.
-  @available(iOS 17.0, macOS 14.0, *)
-  public func textColor(_ color: Color) -> some View {
-    return modifier(ClassModifier(add: "text-" + color.toTailwindColorClass()))
+    textColor(Color(colorPalette, darkness: darkness))
   }
 }
