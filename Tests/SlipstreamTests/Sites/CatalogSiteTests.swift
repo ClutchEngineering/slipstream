@@ -20,10 +20,13 @@ private struct CatalogSite: View {
           Linebreak()
           Text("world!")
           H1("Heading 1")
+            .textAlignment(.leading)
           H2 {
             Text("Heading 2")
           }
+          .textAlignment(.center)
           H3("Heading 3")
+            .textAlignment(.trailing)
           H4("Heading 4")
           H5("Heading 5")
           H6("Heading 6")
@@ -49,9 +52,9 @@ struct CatalogSiteTests {
   <div class="container">
    Hello
    <br />world!
-   <h1>Heading 1</h1>
-   <h2>Heading 2</h2>
-   <h3>Heading 3</h3>
+   <h1 class="text-start">Heading 1</h1>
+   <h2 class="text-center">Heading 2</h2>
+   <h3 class="text-end">Heading 3</h3>
    <h4>Heading 4</h4>
    <h5>Heading 5</h5>
    <h6>Heading 6</h6>
