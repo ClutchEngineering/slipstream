@@ -1,7 +1,7 @@
 /// A view that has no special meaning at all.
 ///
 /// A Div represents its children. Modifiers applied to a Div will
-/// propgate to its children.
+/// propagate to its children.
 ///
 /// ```swift
 /// struct MySiteContent: View {
