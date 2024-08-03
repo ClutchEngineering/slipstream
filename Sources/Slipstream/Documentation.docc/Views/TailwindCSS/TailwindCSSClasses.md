@@ -19,3 +19,4 @@ Slipstream implementations of Tailwind CSS's classes.
 - <doc:FontSmoothing>
 - <doc:FontWeight>
 - <doc:TextAlignment>
+- <doc:TextColor>
