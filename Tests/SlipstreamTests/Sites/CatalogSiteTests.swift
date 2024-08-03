@@ -15,7 +15,9 @@ private struct CatalogSite: View {
         Stylesheet(URL(string: "/css/bootstrap.css"))
       }
       Body {
-        Text("Hello, world!")
+        Div {
+          Text("Hello, world!")
+        }
       }
     }
   }
@@ -33,7 +35,9 @@ struct CatalogSiteTests {
   <link rel="stylesheet" href="/css/bootstrap.css" />
  </head>
  <body>
-  Hello, world!
+  <div>
+   Hello, world!
+  </div>
  </body>
 </html>
 """)

@@ -8,17 +8,21 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 
 ### Root element
 
-- <doc:HTML>
+- ``HTML``
 
 ### Document metadata
 
-- <doc:Head>
-- <doc:Title>
-- <doc:Stylesheet>
-- <doc:Meta>
-- <doc:Charset>
-- <doc:Viewport>
+- ``Head``
+- ``Title``
+- ``Stylesheet``
+- ``Meta``
+- ``Charset``
+- ``Viewport``
 
 ### Sections
 
-- <doc:Body>
+- ``Body``
+
+### Grouping content
+
+- ``Div``
