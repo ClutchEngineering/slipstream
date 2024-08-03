@@ -25,6 +25,7 @@ private struct CatalogSite: View {
           H2 {
             Text("Heading 2")
           }
+          .fontSize(32)
           .textAlignment(.center)
           H3("Heading 3")
             .textAlignment(.trailing)
@@ -54,7 +55,7 @@ struct CatalogSiteTests {
    Hello
    <br />world!
    <h1 class="text-xl text-start">Heading 1</h1>
-   <h2 class="text-center">Heading 2</h2>
+   <h2 class="text-3xl text-center">Heading 2</h2>
    <h3 class="text-end">Heading 3</h3>
    <h4>Heading 4</h4>
    <h5>Heading 5</h5>
