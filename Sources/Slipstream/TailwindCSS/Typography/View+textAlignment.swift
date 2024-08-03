@@ -25,7 +25,7 @@ public enum TextAlignment: String {
 }
 
 extension View {
-  /// Control the alignment of text.
+  /// Controls the alignment of text.
   ///
   /// - Parameter alignment: Text alignment to be applied to text within the modified view.
   ///

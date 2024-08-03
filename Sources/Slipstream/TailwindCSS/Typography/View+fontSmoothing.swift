@@ -8,7 +8,7 @@ public enum FontSmoothing: String {
 }
 
 extension View {
-  /// Set the font smoothing for a view.
+  /// Sets the font smoothing for a view.
   ///
   /// - Parameter fontSmoothing: The font smoothing to apply to the modified view.
   ///
@@ -18,7 +18,7 @@ extension View {
     return modifier(ClassModifier(add: fontSmoothing.rawValue))
   }
 
-  /// Set the font smoothing for a view to antialiased.
+  /// Sets the font smoothing for a view to antialiased.
   ///
   /// - SeeAlso: Tailwind CSS' [`font-smoothing`](https://tailwindcss.com/docs/font-smoothing) documentation.
   @available(iOS 17.0, macOS 14.0, *)

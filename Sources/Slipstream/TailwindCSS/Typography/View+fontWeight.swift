@@ -15,7 +15,7 @@ public enum FontWeight: String {
 }
 
 extension View {
-  /// Set the font weight.
+  /// Sets the font weight.
   ///
   /// - Parameter fontWeight: The font weight to apply to the modified view.
   ///
@@ -25,7 +25,7 @@ extension View {
     return modifier(ClassModifier(add: "font-" + fontWeight.rawValue))
   }
 
-  /// Set the font weight to the closest equivalent Tailwind CSS font weight.
+  /// Sets the font weight to the closest equivalent Tailwind CSS font weight.
   ///
   /// - Parameter weight: A font weight value. The closest Tailwind font
   /// weight class that matches this weight will be used. If the weight is exactly between
@@ -37,7 +37,7 @@ extension View {
     return fontWeight(closestTailwindFontWeight(weight: weight))
   }
 
-  /// Set the font weight to bold.
+  /// Sets the font weight to bold.
   ///
   /// - SeeAlso: Tailwind CSS' [`font-weight`](https://tailwindcss.com/docs/font-weight) documentation.
   @available(iOS 17.0, macOS 14.0, *)

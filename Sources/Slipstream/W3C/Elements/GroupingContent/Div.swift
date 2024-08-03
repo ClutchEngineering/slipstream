@@ -1,8 +1,7 @@
 /// A view that has no special meaning at all.
 ///
-/// A Div represents its children. It can be used with the ``View/class(_:)``,
-/// ``View/language(_:)``, and ``View/title(_:)`` attributes to
-/// mark up semantics common to a group of consecutive elements.
+/// A Div represents its children. Modifiers applied to a Div will
+/// propgate to its children.
 ///
 /// ```swift
 /// struct MySiteContent: View {
