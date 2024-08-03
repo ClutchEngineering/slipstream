@@ -3,7 +3,17 @@ import Foundation
 import SwiftSoup
 
 /// A view that represents various kinds of metadata that cannot be expressed
-/// using the ``Title``, ``Base``, ``Link``, ``Style``, and ``Script`` views.
+/// using the ``Title``, ``Base``, ``Stylesheet``, ``Style``, and ``Script`` views.
+///
+/// ```swift
+/// struct MySiteMetadata: View {
+///   var body: some View {
+///     Head {
+///       Meta(.description, content: "My cool site")
+///     }
+///   }
+/// }
+/// ```
 ///
 /// - SeeAlso: W3C [`meta charset`](https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element) specification.
 /// - SeeAlso: WHATWG [meta extensions](https://wiki.whatwg.org/wiki/MetaExtensions).
