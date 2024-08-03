@@ -16,7 +16,9 @@ private struct CatalogSite: View {
       }
       Body {
         Container {
-          Text("Hello, world!")
+          Text("Hello")
+          Linebreak()
+          Text("world!")
           H1("Heading 1")
           H2 {
             Text("Heading 2")
@@ -45,7 +47,8 @@ struct CatalogSiteTests {
  </head>
  <body id="root">
   <div class="container">
-   Hello, world!
+   Hello
+   <br />world!
    <h1>Heading 1</h1>
    <h2>Heading 2</h2>
    <h3>Heading 3</h3>
