@@ -24,7 +24,7 @@ public struct AttributeModifier<T: View>: ViewModifier {
   private let attribute: String
   private let value: String
 
-  /// A W3C global attribute, as defined in [3.2.3 Global attributes](https://www.w3.org/TR/2011/WD-html5-author-20110809/global-attributes.html).
+  /// A W3C global attribute, as defined in [3.2.3 Global attributes](https://html.spec.whatwg.org/multipage/dom.html#global-attributes).
   public enum GlobalAttribute: String {
     /// The lang attribute specifies the primary language for the view's contents
     /// and for any of the view's attributes that contain text. Its value must be a

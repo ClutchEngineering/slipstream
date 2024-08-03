@@ -16,7 +16,7 @@ import SwiftSoup
 /// }
 /// ```
 ///
-/// - SeeAlso: W3C [`title`](https://www.w3.org/TR/2012/WD-html-markup-20121025/title.html#title) specification.
+/// - SeeAlso: W3C [`title`](https://html.spec.whatwg.org/multipage/semantics.html#the-title-element) specification.
 @available(iOS 17.0, macOS 14.0, *)
 public struct Title: View {
   /// Creates a Title view.
