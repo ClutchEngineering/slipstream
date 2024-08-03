@@ -12,7 +12,7 @@ private struct IDView: View {
 }
 
 struct IDTests {
-  @Test func french() throws {
+  @Test func attributeIsModified() throws {
     try #expect(renderHTML(IDView()) == """
 <html id="root">
  Bonjour!

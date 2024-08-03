@@ -26,6 +26,10 @@ public struct AttributeModifier<T: View>: ViewModifier {
 
   /// A W3C global attribute, as defined in [3.2.3 Global attributes](https://html.spec.whatwg.org/multipage/dom.html#global-attributes).
   public enum GlobalAttribute: String {
+    /// The class attribute is most commonly used by stylesheets to apply styles
+    /// to a view.
+    case `class`
+
     /// The id attribute specifies its element's unique identifier (ID).
     ///
     /// There are no other restrictions on what form an ID can take; in particular,
@@ -50,6 +54,7 @@ public struct AttributeModifier<T: View>: ViewModifier {
   }
 
   /// Creates an attribute modifier that will set `attribute` to `value` on any modified views.
+  ///
   /// - Parameters:
   ///   - attribute: The global HTML attribute to be modified.
   ///   - value: The value to set on the attrribute.
@@ -58,6 +63,7 @@ public struct AttributeModifier<T: View>: ViewModifier {
   }
 
   /// Creates an attribute modifier that will set `attribute` to `value` on any modified views.
+  /// 
   /// - Parameters:
   ///   - attribute: The HTML attribute to be modified.
   ///   - value: The value to set on the attrribute.
