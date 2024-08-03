@@ -4,6 +4,8 @@ import SwiftSoup
 
 /// A view that defines the document's character-encoding.
 ///
+/// There must not be more than one ``Charset`` view per document.
+///
 /// Character encoding is a critical aspect of web development because it defines
 /// how text data is represented in the document. Setting the right charset
 /// ensures that characters are correctly displayed in the browser, regardless of
