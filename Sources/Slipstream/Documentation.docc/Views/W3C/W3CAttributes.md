@@ -4,5 +4,5 @@
 
 ### Global
 
+- ``View/id(_:)``
 - ``View/language(_:)``
-
