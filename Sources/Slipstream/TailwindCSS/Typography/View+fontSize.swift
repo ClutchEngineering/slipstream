@@ -27,7 +27,7 @@ extension View {
   /// - SeeAlso: Tailwind CSS' [`font-size`](https://tailwindcss.com/docs/font-size) documentation.
   @available(iOS 17.0, macOS 14.0, *)
   public func fontSize(_ fontSize: FontSize) -> some View {
-    return self.modifier(ClassModifier(add: "text-" + fontSize.rawValue))
+    return modifier(ClassModifier(add: "text-" + fontSize.rawValue))
   }
 
   /// Set the font size to the closest equivalent Tailwind CSS font size.

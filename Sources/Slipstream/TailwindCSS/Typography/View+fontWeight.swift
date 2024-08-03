@@ -22,7 +22,7 @@ extension View {
   /// - SeeAlso: Tailwind CSS' [`font-weight`](https://tailwindcss.com/docs/font-weight) documentation.
   @available(iOS 17.0, macOS 14.0, *)
   public func fontWeight(_ fontWeight: FontWeight) -> some View {
-    return self.modifier(ClassModifier(add: "font-" + fontWeight.rawValue))
+    return modifier(ClassModifier(add: "font-" + fontWeight.rawValue))
   }
 
   /// Set the font weight to the closest equivalent Tailwind CSS font weight.

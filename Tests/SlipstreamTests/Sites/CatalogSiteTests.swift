@@ -33,7 +33,9 @@ private struct CatalogSite: View {
           H4("Heading 4")
             .antialiased()
           H5("Heading 5")
+            .margin(.horizontal, .auto)
           H6("Heading 6")
+            .margin(.vertical, 32)
         }
         .padding(.horizontal, 48)
       }
@@ -61,8 +63,8 @@ struct CatalogSiteTests {
    <h2 class="text-3xl text-center">Heading 2</h2>
    <h3 class="text-end">Heading 3</h3>
    <h4 class="antialiased">Heading 4</h4>
-   <h5>Heading 5</h5>
-   <h6>Heading 6</h6>
+   <h5 class="mx-auto">Heading 5</h5>
+   <h6 class="my-8">Heading 6</h6>
   </div>
  </body>
 </html>
