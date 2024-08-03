@@ -14,6 +14,7 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 
 - <doc:Head>
 - <doc:Title>
+- <doc:Stylesheet>
 - <doc:Meta>
 - <doc:Charset>
 - <doc:Viewport>
