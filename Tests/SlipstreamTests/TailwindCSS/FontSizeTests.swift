@@ -1,44 +1,38 @@
 import Testing
-
 import Slipstream
 
-struct FontSizeTests {
-  @Test func enumFontSizes() throws {
-    try #expect(renderHTML(Div {}.fontSize(.extraSmall)) == #"<div class="text-xs"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(.small)) == #"<div class="text-sm"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(.base)) == #"<div class="text-base"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(.large)) == #"<div class="text-lg"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(.extraLarge)) == #"<div class="text-xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(.extraExtraLarge)) == #"<div class="text-2xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(.extraExtraExtraLarge)) == #"<div class="text-3xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(.fourXLarge)) == #"<div class="text-4xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(.fiveXLarge)) == #"<div class="text-5xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(.sixXLarge)) == #"<div class="text-6xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(.sevenXLarge)) == #"<div class="text-7xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(.eightXLarge)) == #"<div class="text-8xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(.nineXLarge)) == #"<div class="text-9xl"></div>"#)
+struct FontWeightTests {
+  @Test func enumFontWeights() throws {
+    try #expect(renderHTML(Div {}.fontWeight(.thin)) == #"<div class="font-thin"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.extraLight)) == #"<div class="font-extralight"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.light)) == #"<div class="font-light"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.normal)) == #"<div class="font-normal"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.medium)) == #"<div class="font-medium"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.semiBold)) == #"<div class="font-semibold"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.bold)) == #"<div class="font-bold"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.extraBold)) == #"<div class="font-extrabold"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.black)) == #"<div class="font-black"></div>"#)
   }
 
-  @Test func numericalFontSizes() throws {
-    try #expect(renderHTML(Div {}.fontSize(6)) == #"<div class="text-xs"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(12)) == #"<div class="text-xs"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(13)) == #"<div class="text-xs"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(14)) == #"<div class="text-sm"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(15)) == #"<div class="text-sm"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(16)) == #"<div class="text-base"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(17)) == #"<div class="text-base"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(18)) == #"<div class="text-lg"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(19)) == #"<div class="text-lg"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(20)) == #"<div class="text-xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(22)) == #"<div class="text-xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(24)) == #"<div class="text-2xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(30)) == #"<div class="text-3xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(36)) == #"<div class="text-4xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(48)) == #"<div class="text-5xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(60)) == #"<div class="text-6xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(72)) == #"<div class="text-7xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(96)) == #"<div class="text-8xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(128)) == #"<div class="text-9xl"></div>"#)
-    try #expect(renderHTML(Div {}.fontSize(200)) == #"<div class="text-9xl"></div>"#)
+  @Test func numericalFontWeights() throws {
+    try #expect(renderHTML(Div {}.fontWeight(50)) == #"<div class="font-thin"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(100)) == #"<div class="font-thin"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(150)) == #"<div class="font-thin"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(200)) == #"<div class="font-extralight"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(250)) == #"<div class="font-extralight"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(300)) == #"<div class="font-light"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(350)) == #"<div class="font-light"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(400)) == #"<div class="font-normal"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(450)) == #"<div class="font-normal"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(500)) == #"<div class="font-medium"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(550)) == #"<div class="font-medium"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(600)) == #"<div class="font-semibold"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(650)) == #"<div class="font-semibold"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(700)) == #"<div class="font-bold"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(750)) == #"<div class="font-bold"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(800)) == #"<div class="font-extrabold"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(850)) == #"<div class="font-extrabold"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(900)) == #"<div class="font-black"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(950)) == #"<div class="font-black"></div>"#)
   }
 }
