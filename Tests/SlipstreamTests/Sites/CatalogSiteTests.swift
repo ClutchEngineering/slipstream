@@ -15,12 +15,9 @@ private struct CatalogSite: View {
         Stylesheet(URL(string: "/css/bootstrap.css"))
       }
       Body {
-        Div {
+        Container {
           Text("Hello, world!")
         }
-        .className("content")
-        .className("more content")
-        .classNames(["and more content", "foobar"])
       }
       .id("root")
     }
@@ -39,7 +36,7 @@ struct CatalogSiteTests {
   <link rel="stylesheet" href="/css/bootstrap.css" />
  </head>
  <body id="root">
-  <div class="content more and foobar">
+  <div class="container">
    Hello, world!
   </div>
  </body>
