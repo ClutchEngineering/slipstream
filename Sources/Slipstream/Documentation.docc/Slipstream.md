@@ -66,7 +66,7 @@ print(try renderHTML(HelloWorld()))
 
 ### Tailwind CSS
 
-- <doc:TailwindCSSViews>
+- <doc:TailwindCSSClasses>
 
 ### W3C
 
