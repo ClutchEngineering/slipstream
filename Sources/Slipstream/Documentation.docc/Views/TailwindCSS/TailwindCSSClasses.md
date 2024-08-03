@@ -10,5 +10,6 @@ Slipstream implementations of Tailwind CSS's classes.
 
 ### Typography
 
-- ``View/fontSize(_:)``
-- ``View/textAlignment(_:)``
+- <doc:FontSize>
+- <doc:FontWeight>
+- <doc:TextAlignment>
