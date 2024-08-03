@@ -8,6 +8,7 @@ private struct CatalogSite: View {
     HTML {
       Head {
         Charset(.utf8)
+        Title("Build websites with Swift and Tailwind CSS — Slipstream")
       }
       Body {
         Text("Hello, world!")
@@ -22,6 +23,7 @@ struct CatalogSiteTests {
 <html>
  <head>
   <meta charset="UTF-8" />
+  <title>Build websites with Swift and Tailwind CSS — Slipstream</title>
  </head>
  <body>
   Hello, world!
