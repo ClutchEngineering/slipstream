@@ -64,6 +64,10 @@ print(try renderHTML(HelloWorld()))
 - <doc:Fundamentals>
 - <doc:TextInputAndOutput>
 
+### Tailwind CSS
+
+- <doc:TailwindCSSViews>
+
 ### W3C
 
 - <doc:W3CViews>
