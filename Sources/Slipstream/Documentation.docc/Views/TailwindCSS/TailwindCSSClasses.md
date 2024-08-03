@@ -11,5 +11,6 @@ Slipstream implementations of Tailwind CSS's classes.
 ### Typography
 
 - <doc:FontSize>
+- <doc:FontSmoothing>
 - <doc:FontWeight>
 - <doc:TextAlignment>
