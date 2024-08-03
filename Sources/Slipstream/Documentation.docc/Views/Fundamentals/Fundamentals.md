@@ -18,6 +18,7 @@ conforms to the ``View`` protocol can act as a view in your website.
 
 - ``ViewModifier``
 - ``AttributeModifier``
+- ``ClassModifier``
 
 ### Supporting view types
 

@@ -7,3 +7,8 @@ Slipstream implementations of Tailwind CSS views.
 ### Layout
 
 - ``Container``
+
+### Typography
+
+- ``TextAlignment``
+- ``View/textAlignment(_:)``
