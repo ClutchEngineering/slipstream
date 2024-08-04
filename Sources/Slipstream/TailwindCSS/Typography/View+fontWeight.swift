@@ -17,32 +17,39 @@ public enum FontWeight: String {
 extension View {
   /// Sets the font weight.
   ///
-  /// - Parameter fontWeight: The font weight to apply to the modified view.
+  /// - Parameters:
+  ///   - fontWeight: The font weight to apply to the modified view.
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
   ///
   /// - SeeAlso: Tailwind CSS' [`font-weight`](https://tailwindcss.com/docs/font-weight) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func fontWeight(_ fontWeight: FontWeight) -> some View {
-    return modifier(ClassModifier(add: "font-" + fontWeight.rawValue))
+  public func fontWeight(_ fontWeight: FontWeight, condition: Condition? = nil) -> some View {
+    return modifier(TailwindClassModifier(add: "font-" + fontWeight.rawValue, condition: condition))
   }
 
   /// Sets the font weight to the closest equivalent Tailwind CSS font weight.
   ///
-  /// - Parameter weight: A font weight value. The closest Tailwind font
-  /// weight class that matches this weight will be used. If the weight is exactly between
-  /// two weight classes, then the lighter weight will be used.
+  /// - Parameters:
+  ///   - weight: A font weight value. The closest Tailwind font
+  ///   weight class that matches this weight will be used. If the weight is exactly between
+  ///   two weight classes, then the lighter weight will be used.
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
   ///
   /// - SeeAlso: Tailwind CSS' [`font-weight`](https://tailwindcss.com/docs/font-weight) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func fontWeight(_ weight: Int) -> some View {
-    return fontWeight(closestTailwindFontWeight(weight: weight))
+  public func fontWeight(_ weight: Int, condition: Condition? = nil) -> some View {
+    return fontWeight(closestTailwindFontWeight(weight: weight), condition: condition)
   }
 
   /// Sets the font weight to bold.
   ///
+  /// - Parameters:
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
+  ///
   /// - SeeAlso: Tailwind CSS' [`font-weight`](https://tailwindcss.com/docs/font-weight) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func bold() -> some View {
-    return fontWeight(.bold)
+  public func bold(condition: Condition? = nil) -> some View {
+    return fontWeight(.bold, condition: condition)
   }
 
   private func closestTailwindFontWeight(weight: Int) -> FontWeight {

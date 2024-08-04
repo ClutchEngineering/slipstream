@@ -62,11 +62,11 @@ print(try renderHTML(HelloWorld()))
 ### Views
 
 - <doc:Fundamentals>
-- <doc:TextInputAndOutput>
 
 ### Tailwind CSS
 
-- <doc:TailwindCSSClasses>
+- <doc:TailwindCSS-Conditions>
+- <doc:TailwindCSS-Classes>
 
 ### W3C
 

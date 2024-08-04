@@ -6,7 +6,7 @@ Utilities for controlling the direction of flex views.
 
 ### Modifiers
 
-- ``View/flexDirection(_:reversed:)``
+- ``View/flexDirection(_:reversed:condition:)``
 
 ### Enumerations
 

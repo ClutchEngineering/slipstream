@@ -17,4 +17,17 @@ struct TextColorTests {
     try #expect(renderHTML(Div {}.textColor(.red, darkness: 950)) == #"<div class="text-red-950"></div>"#)
     try #expect(renderHTML(Div {}.textColor(.red, darkness: 1000)) == #"<div class="text-black"></div>"#)
   }
+
+  @Test func condition() throws {
+    try #expect(
+      renderHTML(
+        Div {
+        }.textColor(
+          .red,
+          darkness: 0,
+          condition: .init(state: [.empty, .active])
+        )) == #"<div class="active:empty:text-white"></div>"#
+    )
+  }
 }
+

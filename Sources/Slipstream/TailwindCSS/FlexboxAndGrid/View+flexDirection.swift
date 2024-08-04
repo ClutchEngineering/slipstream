@@ -12,7 +12,12 @@ extension View {
   ///
   /// - SeeAlso: Tailwind CSS' [`flex direction`](https://tailwindcss.com/docs/flex-direction) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func flexDirection(_ direction: FlexDirection, reversed: Bool = false) -> some View {
-    return modifier(ClassModifier(add: "flex-" + direction.rawValue + (reversed ? "-reverse" : "")))
+  public func flexDirection(_ direction: FlexDirection, reversed: Bool = false, condition: Condition? = nil) -> some View {
+    return modifier(
+      TailwindClassModifier(
+        add: "flex-" + direction.rawValue + (reversed ? "-reverse" : ""),
+        condition: condition
+      )
+    )
   }
 }

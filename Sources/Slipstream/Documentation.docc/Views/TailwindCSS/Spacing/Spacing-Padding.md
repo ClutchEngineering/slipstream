@@ -6,7 +6,8 @@ Utilities for controlling a view's padding.
 
 ### Modifiers
 
-- ``View/padding(_:_:)``
+- ``View/padding(_:condition:)``
+- ``View/padding(_:_:condition:)``
 
 ### Enumerations
 
