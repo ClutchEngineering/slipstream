@@ -1,6 +1,6 @@
 # Font size
 
-Utilities for controlling the font size of an view.
+Utilities for controlling the font size of a view.
 
 ## Topics
 

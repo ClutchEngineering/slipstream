@@ -27,3 +27,7 @@ Slipstream implementations of Tailwind CSS's classes.
 - <doc:Typography-FontWeight>
 - <doc:Typography-TextAlignment>
 - <doc:Typography-TextColor>
+
+### Borders
+
+- <doc:Borders-Border>
