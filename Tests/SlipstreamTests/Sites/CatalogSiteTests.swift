@@ -50,6 +50,7 @@ private struct CatalogSite: View {
               .display(.hidden)
           }
         }
+        .border(.black, width: 4, edges: .bottom)
         .textColor(.red, darkness: 800, condition: .dark)
         .padding(.horizontal, 48, condition: .minBreakpoint(.large))
       }
@@ -70,7 +71,7 @@ struct CatalogSiteTests {
   <link rel="stylesheet" href="/css/bootstrap.css" />
  </head>
  <body id="root">
-  <div class="container dark:text-red-800 lg:px-12">
+  <div class="container border-b-4 border-black dark:text-red-800 lg:px-12">
    Hello
    <br />world!
    <a href="/about">About</a>
