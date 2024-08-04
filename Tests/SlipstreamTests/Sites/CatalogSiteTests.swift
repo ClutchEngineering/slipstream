@@ -20,6 +20,12 @@ private struct CatalogSite: View {
           Linebreak()
           Text("world!")
 
+          Link("About", destination: URL(string: "/about"))
+
+          Link(URL(string: "/home")) {
+            Text("Home")
+          }
+
           VStack {
             HStack {
               H1("Heading 1")
@@ -67,6 +73,8 @@ struct CatalogSiteTests {
   <div class="container text-red-800 px-12">
    Hello
    <br />world!
+   <a href="/about">About</a>
+   <a href="/home">Home</a>
    <div class="flex flex-col">
     <div class="flex flex-row">
      <h1 class="text-xl font-bold text-start">Heading 1</h1>
