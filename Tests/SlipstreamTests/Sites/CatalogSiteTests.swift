@@ -27,7 +27,7 @@ private struct CatalogSite: View {
           }
 
           VStack {
-            HStack {
+            HStack(spacing: 10) {
               H1("Heading 1")
                 .fontSize(.extraLarge)
                 .bold()
@@ -49,6 +49,7 @@ private struct CatalogSite: View {
               .textColor(.white)
               .display(.hidden)
           }
+          .flexGap(.x, width: 2)
         }
         .border(.black, width: 4, edges: .bottom)
         .textColor(.red, darkness: 800, condition: .dark)
@@ -76,8 +77,8 @@ struct CatalogSiteTests {
    <br />world!
    <a href="/about">About</a>
    <a href="/home">Home</a>
-   <div class="flex flex-col">
-    <div class="flex flex-row">
+   <div class="flex flex-col gap-x-0.5">
+    <div class="flex flex-row gap-x-2.5">
      <h1 class="text-xl font-bold text-start">Heading 1</h1>
      <h2 class="text-3xl text-center">Heading 2</h2>
     </div>

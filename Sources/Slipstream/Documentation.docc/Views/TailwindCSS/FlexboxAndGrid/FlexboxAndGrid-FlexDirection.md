@@ -10,4 +10,4 @@ Utilities for controlling the direction of flex views.
 
 ### Enumerations
 
-- ``FlexDirection``
+- ``Axis``

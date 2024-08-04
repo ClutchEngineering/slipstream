@@ -1,21 +1,17 @@
-/// Constants that control the direction of flex views.
-///
-/// - SeeAlso: Tailwind CSS' [`flex direction`](https://tailwindcss.com/docs/flex-direction) documentation.
-@available(iOS 17.0, macOS 14.0, *)
-public enum FlexDirection: String {
-  case row
-  case column = "col"
-}
-
 extension View {
-  /// Changes the direction of flex items for this view.
+  /// Changes the layout direction of flexbox children in this view.
   ///
   /// - SeeAlso: Tailwind CSS' [`flex direction`](https://tailwindcss.com/docs/flex-direction) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func flexDirection(_ direction: FlexDirection, reversed: Bool = false, condition: Condition? = nil) -> some View {
+  public func flexDirection(_ axis: Axis, reversed: Bool = false, condition: Condition? = nil) -> some View {
+    let flexDirectionSuffix: String
+    switch axis {
+    case .x: flexDirectionSuffix = "row"
+    case .y: flexDirectionSuffix = "col"
+    }
     return modifier(
       TailwindClassModifier(
-        add: "flex-" + direction.rawValue + (reversed ? "-reverse" : ""),
+        add: "flex-" + flexDirectionSuffix + (reversed ? "-reverse" : ""),
         condition: condition
       )
     )
