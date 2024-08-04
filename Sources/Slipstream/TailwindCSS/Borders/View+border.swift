@@ -28,7 +28,7 @@ extension View {
       }
     }
     classNames.append("border-" + color.toTailwindColorClass())
-    return self.modifier(TailwindClassModifier(add: Set(classNames), condition: condition))
+    return modifier(TailwindClassModifier(add: Set(classNames), condition: condition))
   }
 
   private func closestTailwindBorderWidth(width: Int) -> String {

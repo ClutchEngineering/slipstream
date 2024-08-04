@@ -29,6 +29,10 @@ Slipstream implementations of Tailwind CSS's classes.
 - <doc:Typography-TextAlignment>
 - <doc:Typography-TextColor>
 
+### Backgrounds
+
+- <doc:Backgrounds-BackgroundImage>
+
 ### Borders
 
 - <doc:Borders-Border>
