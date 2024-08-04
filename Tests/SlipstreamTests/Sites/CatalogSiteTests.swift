@@ -20,16 +20,18 @@ private struct CatalogSite: View {
           Linebreak()
           Text("world!")
 
-          Div {
-            H1("Heading 1")
-              .fontSize(.extraLarge)
-              .bold()
-              .textAlignment(.leading)
-            H2 {
-              Text("Heading 2")
+          VStack {
+            HStack {
+              H1("Heading 1")
+                .fontSize(.extraLarge)
+                .bold()
+                .textAlignment(.leading)
+              H2 {
+                Text("Heading 2")
+              }
+              .fontSize(32)
+              .textAlignment(.center)
             }
-            .fontSize(32)
-            .textAlignment(.center)
             H3("Heading 3")
               .textAlignment(.trailing)
             H4("Heading 4")
@@ -41,8 +43,6 @@ private struct CatalogSite: View {
               .textColor(.white)
               .display(.hidden)
           }
-          .display(.flex)
-          .flexDirection(.column)
         }
         .textColor(.red, darkness: 800)
         .padding(.horizontal, 48)
@@ -68,8 +68,10 @@ struct CatalogSiteTests {
    Hello
    <br />world!
    <div class="flex flex-col">
-    <h1 class="text-xl font-bold text-start">Heading 1</h1>
-    <h2 class="text-3xl text-center">Heading 2</h2>
+    <div class="flex flex-row">
+     <h1 class="text-xl font-bold text-start">Heading 1</h1>
+     <h2 class="text-3xl text-center">Heading 2</h2>
+    </div>
     <h3 class="text-end">Heading 3</h3>
     <h4 class="antialiased">Heading 4</h4>
     <h5 class="mx-auto">Heading 5</h5>
