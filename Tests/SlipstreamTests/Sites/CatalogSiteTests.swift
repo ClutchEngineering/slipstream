@@ -42,6 +42,7 @@ private struct CatalogSite: View {
               .display(.hidden)
           }
           .display(.flex)
+          .flexDirection(.column)
         }
         .textColor(.red, darkness: 800)
         .padding(.horizontal, 48)
@@ -66,7 +67,7 @@ struct CatalogSiteTests {
   <div class="container text-red-800 px-12">
    Hello
    <br />world!
-   <div class="flex">
+   <div class="flex flex-col">
     <h1 class="text-xl font-bold text-start">Heading 1</h1>
     <h2 class="text-3xl text-center">Heading 2</h2>
     <h3 class="text-end">Heading 3</h3>
