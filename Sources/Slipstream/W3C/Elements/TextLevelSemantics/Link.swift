@@ -14,7 +14,7 @@ import SwiftSoup
 /// }
 /// ```
 ///
-/// - SeeAlso: W3C [`link`](https://html.spec.whatwg.org/multipage/semantics.html#the-link-element) specification.
+/// - SeeAlso: W3C [`a`](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element) specification.
 @available(iOS 17.0, macOS 14.0, *)
 public struct Link<Content>: View where Content: View {
   /// Creates a hyperlink view with content.
