@@ -3,6 +3,7 @@ import Slipstream
 
 struct PaddingTests {
   @Test func paddingEdges() throws {
+    try #expect(renderHTML(Div {}.padding(8)) == #"<div class="p-2"></div>"#)
     try #expect(renderHTML(Div {}.padding(.all, 16)) == #"<div class="p-4"></div>"#)
     try #expect(renderHTML(Div {}.padding(.horizontal, 8)) == #"<div class="px-2"></div>"#)
     try #expect(renderHTML(Div {}.padding(.vertical, 12)) == #"<div class="py-3"></div>"#)

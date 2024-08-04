@@ -20,7 +20,9 @@ public struct Link<Content>: View where Content: View {
   /// Creates a hyperlink view with content.
   ///
   /// - Parameters:
+  ///   - destination: The URL to open when this link is activated.
   ///   - openInNewTab: If true, clicking the link will cause a new tab to be opened.
+  ///   - content: The content to display within the link.
   public init(_ destination: URL?, openInNewTab: Bool = false, @ViewBuilder content: @escaping () -> Content) {
     self.destination = destination
     self.openInNewTab = openInNewTab
@@ -30,6 +32,8 @@ public struct Link<Content>: View where Content: View {
   /// Creates a hyperlink view with ``Text`` content.
   ///
   /// - Parameters:
+  ///   - string: The text to display in this hyperlink.
+  ///   - destination: The URL to open when this link is activated.
   ///   - openInNewTab: If true, clicking the link will cause a new tab to be opened.
   public init(_ string: String, destination: URL?, openInNewTab: Bool = false) where Content == Text {
     self.destination = destination

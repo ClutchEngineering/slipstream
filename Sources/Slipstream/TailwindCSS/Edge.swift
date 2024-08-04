@@ -1,7 +1,7 @@
 /// A structure that represents the edges of a rectangle, used for specifying
 /// which sides to apply modifications to, such as padding or margin.
 ///
-/// You'll typically work with a set of edges using the ``Edge.Set`` type.
+/// You'll typically work with a set of edges using the ``Edge/Set`` type.
 public enum Edge: Int8, CaseIterable {
   /// The top edge of a rectangle.
   case top = 0b0000_0001
