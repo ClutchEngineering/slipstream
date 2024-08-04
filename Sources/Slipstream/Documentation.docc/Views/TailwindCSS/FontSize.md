@@ -1,5 +1,7 @@
 # Font size
 
+Utilities for controlling the font size of an view.
+
 ## Topics
 
 ### Modifiers

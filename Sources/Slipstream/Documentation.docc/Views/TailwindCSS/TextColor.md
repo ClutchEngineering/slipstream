@@ -1,5 +1,7 @@
 # Text color
 
+Utilities for controlling the text color of a view.
+
 ## Topics
 
 ### Modifiers
