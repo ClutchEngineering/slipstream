@@ -30,4 +30,16 @@ struct PaddingTests {
     try #expect(renderHTML(Div {}.padding(.top, 0).padding(.right, 4)) == #"<div class="pt-0 pr-1"></div>"#)
     try #expect(renderHTML(Div {}.padding(.top, 0).padding(.top, 4)) == #"<div class="pt-0 pt-1"></div>"#)
   }
+
+  @Test func condition() throws {
+    try #expect(
+      renderHTML(
+        Div {
+        }.padding(.top, 0).padding(
+          .right,
+          4,
+          condition: .init(minBreakpoint: .medium)
+        )) == #"<div class="pt-0 md:pr-1"></div>"#
+    )
+  }
 }

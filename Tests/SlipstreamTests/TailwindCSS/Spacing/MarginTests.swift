@@ -51,4 +51,12 @@ struct MarginTests {
     try #expect(renderHTML(Div {}.margin(.top, 0).margin(.right, 4)) == #"<div class="mt-0 mr-1"></div>"#)
     try #expect(renderHTML(Div {}.margin(.top, 0).margin(.top, 4)) == #"<div class="mt-0 mt-1"></div>"#)
   }
+
+  @Test func condition() throws {
+    try #expect(
+      renderHTML(
+        Div {
+        }.margin(8, condition: .init(minBreakpoint: .large))) == #"<div class="lg:m-2"></div>"#
+    )
+  }
 }

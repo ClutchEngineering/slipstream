@@ -6,9 +6,9 @@ Utilities for controlling the font weight of a view.
 
 ### Modifiers
 
-- ``View/fontWeight(_:)-9ehtx``
-- ``View/fontWeight(_:)-2g9rx``
-- ``View/bold()``
+- ``View/fontWeight(_:condition:)-100c5``
+- ``View/fontWeight(_:condition:)-5zmpr``
+- ``View/bold(condition:)``
 
 ### Enumerations
 

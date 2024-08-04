@@ -6,8 +6,8 @@ Utilities for controlling the text color of a view.
 
 ### Modifiers
 
-- ``View/textColor(_:)``
-- ``View/textColor(_:darkness:)``
+- ``View/textColor(_:condition:)``
+- ``View/textColor(_:darkness:condition:)``
 
 ### Enumerations
 

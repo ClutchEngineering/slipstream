@@ -31,13 +31,13 @@ extension View {
   ///
   /// - SeeAlso: Tailwind CSS' [`display`](https://tailwindcss.com/docs/display) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func display(_ display: Display) -> some View {
-    return modifier(ClassModifier(add: display.rawValue))
+  public func display(_ display: Display, condition: Condition? = nil) -> some View {
+    return modifier(TailwindClassModifier(add: display.rawValue, condition: condition))
   }
 
   /// Hides the view.
   @available(iOS 17.0, macOS 14.0, *)
-  public func hidden() -> some View {
-    return display(.hidden)
+  public func hidden(condition: Condition? = nil) -> some View {
+    return display(.hidden, condition: condition)
   }
 }

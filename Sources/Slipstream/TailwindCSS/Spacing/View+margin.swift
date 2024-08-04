@@ -42,11 +42,12 @@ extension View {
   /// - Parameters:
   ///   - edges: The edges to which margin should be applied.
   ///   - length: The size of the margin to apply, in points. If the margin is exactly between
-  /// two margin classes, then the smaller margin class will be used.
+  ///   two margin classes, then the smaller margin class will be used.
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
   ///
   /// - SeeAlso: Tailwind CSS' [`margin`](https://tailwindcss.com/docs/margin) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func margin(_ edges: Edge.Set = .all, _ length: MarginValue) -> some View {
+  public func margin(_ edges: Edge.Set = .all, _ length: MarginValue, condition: Condition? = nil) -> some View {
     let spacingClass = length.toTailwindSpacingClass()
     var classes = [String]()
 
@@ -74,7 +75,7 @@ extension View {
         }
       }
     }
-    return modifier(ClassModifier(add: classes.joined(separator: " ")))
+    return modifier(TailwindClassModifier(add: classes.joined(separator: " "), condition: condition))
   }
 
   /// Set the margin for specific edges.
@@ -82,12 +83,13 @@ extension View {
   /// - Parameters:
   ///   - edges: The edges to which margin should be applied.
   ///   - length: The size of the margin to apply, in points. If the margin is exactly between
-  /// two margin classes, then the smaller margin class will be used.
+  ///   two margin classes, then the smaller margin class will be used.
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
   ///
   /// - SeeAlso: Tailwind CSS' [`margin`](https://tailwindcss.com/docs/margin) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func margin(_ edges: Edge.Set, _ length: Double) -> some View {
-    margin(edges, MarginValue(floatLiteral: length))
+  public func margin(_ edges: Edge.Set, _ length: Double, condition: Condition? = nil) -> some View {
+    margin(edges, MarginValue(floatLiteral: length), condition: condition)
   }
 
   /// Set the margin for specific edges.
@@ -95,35 +97,38 @@ extension View {
   /// - Parameters:
   ///   - edges: The edges to which margin should be applied.
   ///   - length: The size of the margin to apply, in points. If the margin is exactly between
-  /// two margin classes, then the smaller margin class will be used.
+  ///   two margin classes, then the smaller margin class will be used.
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
   ///
   /// - SeeAlso: Tailwind CSS' [`margin`](https://tailwindcss.com/docs/margin) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func margin(_ edges: Edge.Set, _ length: Int) -> some View {
-    margin(edges, MarginValue(integerLiteral: length))
+  public func margin(_ edges: Edge.Set, _ length: Int, condition: Condition? = nil) -> some View {
+    margin(edges, MarginValue(integerLiteral: length), condition: condition)
   }
 
   /// Set the margin for all edges.
   ///
   /// - Parameters:
   ///   - length: The size of the margin to apply, in points. If the margin is exactly between
-  /// two margin classes, then the smaller margin class will be used.
+  ///   two margin classes, then the smaller margin class will be used.
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
   ///
   /// - SeeAlso: Tailwind CSS' [`margin`](https://tailwindcss.com/docs/margin) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func margin(_ length: Double) -> some View {
-    margin(.all, MarginValue(floatLiteral: length))
+  public func margin(_ length: Double, condition: Condition? = nil) -> some View {
+    margin(.all, MarginValue(floatLiteral: length), condition: condition)
   }
 
   /// Set the margin for all edges.
   ///
   /// - Parameters:
   ///   - length: The size of the margin to apply, in points. If the margin is exactly between
-  /// two margin classes, then the smaller margin class will be used.
+  ///   two margin classes, then the smaller margin class will be used.
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
   ///
   /// - SeeAlso: Tailwind CSS' [`margin`](https://tailwindcss.com/docs/margin) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func margin(_ length: Int) -> some View {
-    margin(.all, MarginValue(integerLiteral: length))
+  public func margin(_ length: Int, condition: Condition? = nil) -> some View {
+    margin(.all, MarginValue(integerLiteral: length), condition: condition)
   }
 }

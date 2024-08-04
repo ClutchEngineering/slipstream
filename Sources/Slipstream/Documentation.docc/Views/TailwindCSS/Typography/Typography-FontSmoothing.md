@@ -6,8 +6,8 @@ Utilities for controlling the font smoothing of a view.
 
 ### Modifiers
 
-- ``View/fontSmoothing(_:)``
-- ``View/antialiased()``
+- ``View/fontSmoothing(_:condition:)``
+- ``View/antialiased(condition:)``
 
 ### Enumerations
 

@@ -6,7 +6,7 @@ Utilities for controlling the alignment of text.
 
 ### Modifiers
 
-- ``View/textAlignment(_:)``
+- ``View/textAlignment(_:condition:)``
 
 ### Enumerations
 

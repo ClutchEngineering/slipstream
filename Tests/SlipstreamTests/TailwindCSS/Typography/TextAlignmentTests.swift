@@ -11,4 +11,15 @@ struct TextAlignmentTests {
     try #expect(renderHTML(Div {}.textAlignment(.trailing)) == #"<div class="text-end"></div>"#)
     try #expect(renderHTML(Div {}.textAlignment(.justify)) == #"<div class="text-justify"></div>"#)
   }
+
+  @Test func condition() throws {
+    try #expect(
+      renderHTML(
+        Div {
+        }.textAlignment(
+          .left,
+          condition: .init(minBreakpoint: .extraExtraLarge)
+        )) == #"<div class="2xl:text-left"></div>"#
+    )
+  }
 }

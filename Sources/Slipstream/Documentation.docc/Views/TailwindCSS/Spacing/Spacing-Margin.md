@@ -6,11 +6,11 @@ Utilities for controlling a view's margin.
 
 ### Modifiers
 
-- ``View/margin(_:)-8sgm0``
-- ``View/margin(_:)-8shne``
-- ``View/margin(_:_:)-z3sm``
-- ``View/margin(_:_:)-225mh``
-- ``View/margin(_:_:)-ervj``
+- ``View/margin(_:condition:)-7p7l1``
+- ``View/margin(_:condition:)-6bjcp``
+- ``View/margin(_:_:condition:)-3yers``
+- ``View/margin(_:_:condition:)-13cc5``
+- ``View/margin(_:_:condition:)-4cyt1``
 
 ### Enumerations
 

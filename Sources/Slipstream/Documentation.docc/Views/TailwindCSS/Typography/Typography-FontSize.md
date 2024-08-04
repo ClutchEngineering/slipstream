@@ -6,8 +6,8 @@ Utilities for controlling the font size of an view.
 
 ### Modifiers
 
-- ``View/fontSize(_:)-6cmd6``
-- ``View/fontSize(_:)-6mwyi``
+- ``View/fontSize(_:condition:)-8uo73``
+- ``View/fontSize(_:condition:)-8lb7v``
 
 ### Enumerations
 

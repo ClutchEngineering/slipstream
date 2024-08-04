@@ -2,18 +2,19 @@
 /// which sides to apply modifications to, such as padding or margin.
 ///
 /// You'll typically work with a set of edges using the ``Edge/Set`` type.
+@available(iOS 17.0, macOS 14.0, *)
 public enum Edge: Int8, CaseIterable {
   /// The top edge of a rectangle.
-  case top = 0b0000_0001
+  case top    = 0b0000_0001
 
   /// The left edge of a rectangle.
-  case left = 0b0000_0010
+  case left   = 0b0000_0010
 
   /// The bottom edge of a rectangle.
   case bottom = 0b0000_0100
 
   /// The right edge of a rectangle.
-  case right = 0b0000_1000
+  case right  = 0b0000_1000
 
   /// A set of edges.
   ///
@@ -22,6 +23,7 @@ public enum Edge: Int8, CaseIterable {
   /// ```swift
   /// let edges: Edge.Set = [.top, .left]
   /// ```
+  @available(iOS 17.0, macOS 14.0, *)
   public struct Set: OptionSet {
     /// The element type of the option set.
     ///

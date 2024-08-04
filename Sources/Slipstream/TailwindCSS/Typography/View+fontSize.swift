@@ -22,24 +22,30 @@ public enum FontSize: String {
 extension View {
   /// Sets the font size.
   ///
-  /// - Parameter fontSize: The font size to apply to the modified view.
+  /// - Parameters:
+  ///   - fontSize: The font size to apply to the modified view.
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
   ///
   /// - SeeAlso: Tailwind CSS' [`font-size`](https://tailwindcss.com/docs/font-size) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func fontSize(_ fontSize: FontSize) -> some View {
-    return modifier(ClassModifier(add: "text-" + fontSize.rawValue))
+  public func fontSize(_ fontSize: FontSize, condition: Condition? = nil) -> some View {
+    return modifier(
+      TailwindClassModifier(add: "text-" + fontSize.rawValue, condition: condition)
+    )
   }
 
   /// Set the font size to the closest equivalent Tailwind CSS font size.
   ///
-  /// - Parameter ptSize: A font size in `pt` units. The closest Tailwind font
-  /// size class that matches this point size will be used. If the size is exactly between
-  /// two font classes, then the smaler font will be used.
+  /// - Parameters:
+  ///   - ptSize: A font size in `pt` units. The closest Tailwind font
+  ///   size class that matches this point size will be used. If the size is exactly between
+  ///   two font classes, then the smaler font will be used.
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
   ///
   /// - SeeAlso: Tailwind CSS' [`font-size`](https://tailwindcss.com/docs/font-size) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func fontSize(_ ptSize: Int) -> some View {
-    return fontSize(closestTailwindFontSize(ptSize: ptSize))
+  public func fontSize(_ ptSize: Int, condition: Condition? = nil) -> some View {
+    return fontSize(closestTailwindFontSize(ptSize: ptSize), condition: condition)
   }
 
   private func closestTailwindFontSize(ptSize: Int) -> FontSize {

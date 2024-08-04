@@ -25,4 +25,15 @@ struct DisplayTests {
     try #expect(renderHTML(Div {}.display(.listItem)) == #"<div class="list-item"></div>"#)
     try #expect(renderHTML(Div {}.display(.hidden)) == #"<div class="hidden"></div>"#)
   }
+
+  @Test func condition() throws {
+    try #expect(
+      renderHTML(
+        Div {
+        }.display(
+          .block,
+          condition: .init(minBreakpoint: .medium)
+        )) == #"<div class="md:block"></div>"#
+    )
+  }
 }

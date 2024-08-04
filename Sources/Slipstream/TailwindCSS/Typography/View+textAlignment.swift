@@ -27,11 +27,13 @@ public enum TextAlignment: String {
 extension View {
   /// Controls the alignment of text.
   ///
-  /// - Parameter alignment: Text alignment to be applied to text within the modified view.
+  /// - Parameters:
+  ///   - alignment: Text alignment to be applied to text within the modified view.
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
   ///
   /// - SeeAlso: Tailwind CSS' [`text-align`](https://tailwindcss.com/docs/text-align) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func textAlignment(_ alignment: TextAlignment) -> some View {
-    return modifier(ClassModifier(add: "text-" + alignment.rawValue))
+  public func textAlignment(_ alignment: TextAlignment, condition: Condition? = nil) -> some View {
+    return modifier(TailwindClassModifier(add: "text-" + alignment.rawValue, condition: condition))
   }
 }
