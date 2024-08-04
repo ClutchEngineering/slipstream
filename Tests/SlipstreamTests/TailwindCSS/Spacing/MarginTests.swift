@@ -24,6 +24,7 @@ struct MarginTests {
   }
 
   @Test func marginEdges() throws {
+    try #expect(renderHTML(Div {}.margin(8)) == #"<div class="m-2"></div>"#)
     try #expect(renderHTML(Div {}.margin(.all, 16)) == #"<div class="m-4"></div>"#)
     try #expect(renderHTML(Div {}.margin(.horizontal, 8)) == #"<div class="mx-2"></div>"#)
     try #expect(renderHTML(Div {}.margin(.vertical, 12)) == #"<div class="my-3"></div>"#)

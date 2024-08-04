@@ -32,7 +32,7 @@ extension View {
 
   /// Set the font size to the closest equivalent Tailwind CSS font size.
   ///
-  /// - Parameter fontSize: A font size in `pt` units. The closest Tailwind font
+  /// - Parameter ptSize: A font size in `pt` units. The closest Tailwind font
   /// size class that matches this point size will be used. If the size is exactly between
   /// two font classes, then the smaler font will be used.
   ///

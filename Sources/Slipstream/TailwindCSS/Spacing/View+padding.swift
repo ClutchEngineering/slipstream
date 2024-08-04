@@ -8,7 +8,7 @@ extension View {
   ///
   /// - SeeAlso: Tailwind CSS' [`padding`](https://tailwindcss.com/docs/padding) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func padding(_ edges: Edge.Set, _ length: Double) -> some View {
+  public func padding(_ edges: Edge.Set = .all, _ length: Double) -> some View {
     let spacingClass = Edge.pointToTailwindSpacingClass(ptLength: length)
     var classes = [String]()
 
@@ -37,5 +37,17 @@ extension View {
       }
     }
     return modifier(ClassModifier(add: classes.joined(separator: " ")))
+  }
+
+  /// Set the padding for all edges.
+  ///
+  /// - Parameters:
+  ///   - length: The size of the padding to apply, in points. If the padding is exactly between
+  /// two padding classes, then the smaller padding class will be used.
+  ///
+  /// - SeeAlso: Tailwind CSS' [`margin`](https://tailwindcss.com/docs/margin) documentation.
+  @available(iOS 17.0, macOS 14.0, *)
+  public func padding(_ length: Double) -> some View {
+    padding(.all, length)
   }
 }

@@ -22,6 +22,7 @@ public struct HStack<Content: View>: View {
   /// 
   /// - Parameters:
   ///   - reversed: If true, the contents will be arranged in the reverse direction of text.
+  ///   - content: The content to display with this view.
   public init(reversed: Bool = false, @ViewBuilder content: @escaping () -> Content) {
     self.reversed = reversed
     self.content = content
