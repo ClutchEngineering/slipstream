@@ -7,17 +7,21 @@ Slipstream implementations of Tailwind CSS's classes.
 ### Layout
 
 - ``Container``
-- <doc:Display>
+- <doc:Layout-Display>
+
+### Flexbox & Grid
+
+- <doc:FlexboxAndGrid-FlexDirection>
 
 ### Spacing
 
-- <doc:Margin>
-- <doc:Padding>
+- <doc:Spacing-Margin>
+- <doc:Spacing-Padding>
 
 ### Typography
 
-- <doc:FontSize>
-- <doc:FontSmoothing>
-- <doc:FontWeight>
-- <doc:TextAlignment>
-- <doc:TextColor>
+- <doc:Typography-FontSize>
+- <doc:Typography-FontSmoothing>
+- <doc:Typography-FontWeight>
+- <doc:Typography-TextAlignment>
+- <doc:Typography-TextColor>
