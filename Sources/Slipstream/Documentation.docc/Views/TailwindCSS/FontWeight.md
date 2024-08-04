@@ -1,5 +1,7 @@
 # Font weight
 
+Utilities for controlling the font weight of a view.
+
 ## Topics
 
 ### Modifiers

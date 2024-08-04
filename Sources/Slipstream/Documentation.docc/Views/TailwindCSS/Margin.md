@@ -1,5 +1,7 @@
 # Margin
 
+Utilities for controlling a view's margin.
+
 ## Topics
 
 ### Modifiers

@@ -7,6 +7,7 @@ Slipstream implementations of Tailwind CSS's classes.
 ### Layout
 
 - ``Container``
+- <doc:Display>
 
 ### Spacing
 
