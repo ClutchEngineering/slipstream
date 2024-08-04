@@ -8,6 +8,6 @@ Utilities for controlling gutters between grid and flexbox views.
 
 - ``View/flexGap(_:width:condition:)``
 
-### Enumerations
+### Supporting types
 
 - ``Axis``

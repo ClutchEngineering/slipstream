@@ -10,6 +10,6 @@ Utilities for controlling the font weight of a view.
 - ``View/fontWeight(_:condition:)-5zmpr``
 - ``View/bold(condition:)``
 
-### Enumerations
+### Supporting types
 
 - ``FontWeight``

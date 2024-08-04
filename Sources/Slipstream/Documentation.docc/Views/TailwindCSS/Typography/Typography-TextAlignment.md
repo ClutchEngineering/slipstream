@@ -8,6 +8,6 @@ Utilities for controlling the alignment of text.
 
 - ``View/textAlignment(_:condition:)``
 
-### Enumerations
+### Supporting types
 
 - ``TextAlignment``

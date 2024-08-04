@@ -9,6 +9,6 @@ Utilities for controlling the font size of a view.
 - ``View/fontSize(_:condition:)-8uo73``
 - ``View/fontSize(_:condition:)-8lb7v``
 
-### Enumerations
+### Supporting types
 
 - ``FontSize``
