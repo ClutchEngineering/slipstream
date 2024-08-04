@@ -7,6 +7,8 @@ Slipstream implementations of Tailwind CSS's classes.
 ### Layout
 
 - ``Container``
+- ``HStack``
+- ``VStack``
 - <doc:Layout-Display>
 
 ### Flexbox & Grid
