@@ -12,7 +12,7 @@ Utilities for controlling a view's margin.
 - ``View/margin(_:_:condition:)-13cc5``
 - ``View/margin(_:_:condition:)-4cyt1``
 
-### Enumerations
+### Supporting types
 
 - ``Edge``
 - ``MarginValue``

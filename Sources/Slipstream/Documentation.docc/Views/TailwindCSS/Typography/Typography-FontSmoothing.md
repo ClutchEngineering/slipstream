@@ -9,6 +9,6 @@ Utilities for controlling the font smoothing of a view.
 - ``View/fontSmoothing(_:condition:)``
 - ``View/antialiased(condition:)``
 
-### Enumerations
+### Supporting types
 
 - ``FontSmoothing``

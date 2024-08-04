@@ -8,6 +8,6 @@ Utilities for controlling the direction of flex views.
 
 - ``View/flexDirection(_:reversed:condition:)``
 
-### Enumerations
+### Supporting types
 
 - ``Axis``

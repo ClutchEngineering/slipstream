@@ -9,6 +9,6 @@ Utilities for controlling the display box type of a view.
 - ``View/display(_:condition:)``
 - ``View/hidden(condition:)``
 
-### Enumerations
+### Supporting types
 
 - ``Display``

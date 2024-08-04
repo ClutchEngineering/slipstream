@@ -54,6 +54,7 @@ private struct CatalogSite: View {
         .border(.black, width: 4, edges: .bottom)
         .textColor(.red, darkness: 800, condition: .dark)
         .padding(.horizontal, 48, condition: .minBreakpoint(.large))
+        .animation(.easeInOut(duration: 0.3))
       }
       .id("root")
     }
@@ -72,7 +73,7 @@ struct CatalogSiteTests {
   <link rel="stylesheet" href="/css/bootstrap.css" />
  </head>
  <body id="root">
-  <div class="container border-b-4 border-black dark:text-red-800 lg:px-12">
+  <div class="container border-b-4 border-black dark:text-red-800 lg:px-12 duration-300 ease-in-out">
    Hello
    <br />world!
    <a href="/about">About</a>

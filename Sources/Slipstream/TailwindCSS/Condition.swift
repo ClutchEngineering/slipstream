@@ -28,6 +28,9 @@ public struct Condition {
   /// A convenience condition representing the hover state.
   public static let hover = Condition(state: .hover)
 
+  /// A convenience condition representing the active state.
+  public static let active = Condition(state: .active)
+
   /// A convenience condition representing a minimum breakpoint.
   public static func minBreakpoint(_ minBreakpoint: Breakpoint) -> Self {
     return Condition(minBreakpoint: minBreakpoint)

@@ -32,3 +32,7 @@ Slipstream implementations of Tailwind CSS's classes.
 ### Borders
 
 - <doc:Borders-Border>
+
+### Transitions and animations
+
+- <doc:TransitionsAndAnimations-Animation>

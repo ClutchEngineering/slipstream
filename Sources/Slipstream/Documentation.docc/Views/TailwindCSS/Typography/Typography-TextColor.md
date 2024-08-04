@@ -9,7 +9,7 @@ Utilities for controlling the text color of a view.
 - ``View/textColor(_:condition:)``
 - ``View/textColor(_:darkness:condition:)``
 
-### Enumerations
+### Supporting types
 
 - ``Color``
 - ``ColorPalette``

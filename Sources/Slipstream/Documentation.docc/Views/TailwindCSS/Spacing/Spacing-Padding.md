@@ -9,6 +9,6 @@ Utilities for controlling a view's padding.
 - ``View/padding(_:condition:)``
 - ``View/padding(_:_:condition:)``
 
-### Enumerations
+### Supporting types
 
 - ``Edge``
