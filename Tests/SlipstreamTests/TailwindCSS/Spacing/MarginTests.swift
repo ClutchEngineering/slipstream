@@ -53,10 +53,7 @@ struct MarginTests {
   }
 
   @Test func condition() throws {
-    try #expect(
-      renderHTML(
-        Div {
-        }.margin(8, condition: .init(minBreakpoint: .large))) == #"<div class="lg:m-2"></div>"#
-    )
+    try #expect(renderHTML(Div {}.margin(8, condition: .init(startingAt: .large))) == #"<div class="lg:m-2"></div>"#)
+    try #expect(renderHTML(Div {}.margin(8, condition: .within(Breakpoint.small..<Breakpoint.large))) == #"<div class="sm:max-lg:m-2"></div>"#)
   }
 }

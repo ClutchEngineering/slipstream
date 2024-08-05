@@ -10,6 +10,6 @@ struct FlexDirectionTests {
   }
 
   @Test func conditions() throws {
-    try #expect(renderHTML(Div {}.flexDirection(.y, condition: .init(minBreakpoint: .medium))) == #"<div class="md:flex-col"></div>"#)
+    try #expect(renderHTML(Div {}.flexDirection(.y, condition: .init(startingAt: .medium))) == #"<div class="md:flex-col"></div>"#)
   }
 }
