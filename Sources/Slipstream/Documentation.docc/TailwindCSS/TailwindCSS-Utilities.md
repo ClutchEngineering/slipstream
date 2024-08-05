@@ -1,6 +1,6 @@
-# Classes
+# Utilities
 
-Slipstream implementations of Tailwind CSS's classes.
+Slipstream implementations of Tailwind CSS's utility classes.
 
 ## Topics
 
@@ -45,6 +45,7 @@ Slipstream implementations of Tailwind CSS's classes.
 ### Borders
 
 - <doc:Borders-Border>
+- <doc:Borders-CornerRadius>
 
 ### Transitions and animations
 

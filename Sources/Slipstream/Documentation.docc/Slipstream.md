@@ -66,7 +66,7 @@ print(try renderHTML(HelloWorld()))
 ### Tailwind CSS
 
 - <doc:TailwindCSS-Conditions>
-- <doc:TailwindCSS-Classes>
+- <doc:TailwindCSS-Utilities>
 
 ### Markdown
 
