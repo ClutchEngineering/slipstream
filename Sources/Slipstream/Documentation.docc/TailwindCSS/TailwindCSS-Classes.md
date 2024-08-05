@@ -24,6 +24,10 @@ Slipstream implementations of Tailwind CSS's classes.
 - <doc:Spacing-Margin>
 - <doc:Spacing-Padding>
 
+### Sizing
+
+- <doc:Sizing-Frame>
+
 ### Typography
 
 - <doc:Typography-FontDesign>

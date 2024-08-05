@@ -39,7 +39,7 @@ struct MarginTests {
   @Test func specificMarginSizes() throws {
     try #expect(renderHTML(Div {}.margin(.top, 0)) == #"<div class="mt-0"></div>"#)
     try #expect(renderHTML(Div {}.margin(.top, 0.5)) == #"<div class="mt-0"></div>"#)
-    try #expect(renderHTML(Div {}.margin(.top, 1)) == #"<div class="mt-0"></div>"#)
+    try #expect(renderHTML(Div {}.margin(.top, 1)) == #"<div class="mt-px"></div>"#)
     try #expect(renderHTML(Div {}.margin(.top, 2)) == #"<div class="mt-0.5"></div>"#)
     try #expect(renderHTML(Div {}.margin(.top, 3)) == #"<div class="mt-0.5"></div>"#)
     try #expect(renderHTML(Div {}.margin(.top, 4)) == #"<div class="mt-1"></div>"#)
