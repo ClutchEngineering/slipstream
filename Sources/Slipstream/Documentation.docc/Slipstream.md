@@ -68,6 +68,10 @@ print(try renderHTML(HelloWorld()))
 - <doc:TailwindCSS-Conditions>
 - <doc:TailwindCSS-Classes>
 
+### Markdown
+
+- ``MarkdownText``
+
 ### W3C
 
 - <doc:W3CViews>

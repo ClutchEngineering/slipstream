@@ -56,7 +56,7 @@ public protocol View {
 
 extension View {
   /// Returns a copy of self with the given environment values injected into any @Environment properties defined by the receiver.
-  private func injectEnvironment(environment: EnvironmentValues) throws -> Self {
+  func injectEnvironment(environment: EnvironmentValues) throws -> Self {
     /// By default, `@Environment` properties have "empty" storage.
     /// Our goal is to return a copy of this view with the environment properties' storage filled
     /// with the current environment values.

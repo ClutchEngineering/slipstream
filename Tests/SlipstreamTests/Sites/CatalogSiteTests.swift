@@ -51,6 +51,8 @@ private struct CatalogSite: View {
               .margin(.vertical, 32)
               .textColor(.white)
               .display(.hidden)
+
+            Heading(level: 2, "Generic heading 2")
           }
           .flexGap(.x, width: 2)
           .alignItems(.baseline)
@@ -99,6 +101,7 @@ struct CatalogSiteTests {
     <h4 class="antialiased">Heading 4</h4>
     <h5 class="mx-auto">Heading 5</h5>
     <h6 class="my-8 text-white hidden">Heading 6</h6>
+    <h2>Generic heading 2</h2>
    </div>
   </div>
   <script src="/main.js" async></script>

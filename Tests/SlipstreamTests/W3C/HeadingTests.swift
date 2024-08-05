@@ -10,6 +10,13 @@ struct HeadingTests {
     try #expect(renderHTML(H4 {}) == "<h4></h4>")
     try #expect(renderHTML(H5 {}) == "<h5></h5>")
     try #expect(renderHTML(H6 {}) == "<h6></h6>")
+
+    try #expect(renderHTML(Heading(level: 1) {}) == "<h1></h1>")
+    try #expect(renderHTML(Heading(level: 2) {}) == "<h2></h2>")
+    try #expect(renderHTML(Heading(level: 3) {}) == "<h3></h3>")
+    try #expect(renderHTML(Heading(level: 4) {}) == "<h4></h4>")
+    try #expect(renderHTML(Heading(level: 5) {}) == "<h5></h5>")
+    try #expect(renderHTML(Heading(level: 6) {}) == "<h6></h6>")
   }
 
   @Test func withText() throws {
@@ -19,6 +26,13 @@ struct HeadingTests {
     try #expect(renderHTML(H4 { Text("Hello, world!") }) == "<h4>Hello, world!</h4>")
     try #expect(renderHTML(H5 { Text("Hello, world!") }) == "<h5>Hello, world!</h5>")
     try #expect(renderHTML(H6 { Text("Hello, world!") }) == "<h6>Hello, world!</h6>")
+
+    try #expect(renderHTML(Heading(level: 1) { Text("Hello, world!") }) == "<h1>Hello, world!</h1>")
+    try #expect(renderHTML(Heading(level: 2) { Text("Hello, world!") }) == "<h2>Hello, world!</h2>")
+    try #expect(renderHTML(Heading(level: 3) { Text("Hello, world!") }) == "<h3>Hello, world!</h3>")
+    try #expect(renderHTML(Heading(level: 4) { Text("Hello, world!") }) == "<h4>Hello, world!</h4>")
+    try #expect(renderHTML(Heading(level: 5) { Text("Hello, world!") }) == "<h5>Hello, world!</h5>")
+    try #expect(renderHTML(Heading(level: 6) { Text("Hello, world!") }) == "<h6>Hello, world!</h6>")
   }
 
   @Test func attribute() throws {
