@@ -45,6 +45,7 @@ private struct CatalogSite: View {
               .textAlignment(.trailing)
             H4("Heading 4")
               .antialiased()
+              .frame(minWidth: 4, width: 8, maxWidth: 16, minHeight: 24, height: 48, maxHeight: 96)
             H5("Heading 5")
               .margin(.horizontal, .auto)
             H6("Heading 6")
@@ -102,7 +103,7 @@ struct CatalogSiteTests {
      <h2 class="text-3xl text-center leading-snug">Heading 2</h2>
     </div>
     <h3 class="text-end">Heading 3</h3>
-    <h4 class="antialiased">Heading 4</h4>
+    <h4 class="antialiased h-12 max-h-24 max-w-4 min-h-6 min-w-1 w-2">Heading 4</h4>
     <h5 class="mx-auto">Heading 5</h5>
     <h6 class="my-8 text-white hidden">Heading 6</h6>
     <h2>Generic heading 2</h2>

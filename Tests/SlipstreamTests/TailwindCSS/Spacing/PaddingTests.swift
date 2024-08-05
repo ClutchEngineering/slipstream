@@ -18,7 +18,7 @@ struct PaddingTests {
   @Test func specificPaddingSizes() throws {
     try #expect(renderHTML(Div {}.padding(.top, 0)) == #"<div class="pt-0"></div>"#)
     try #expect(renderHTML(Div {}.padding(.top, 0.5)) == #"<div class="pt-0"></div>"#)
-    try #expect(renderHTML(Div {}.padding(.top, 1)) == #"<div class="pt-0"></div>"#)
+    try #expect(renderHTML(Div {}.padding(.top, 1)) == #"<div class="pt-px"></div>"#)
     try #expect(renderHTML(Div {}.padding(.top, 2)) == #"<div class="pt-0.5"></div>"#)
     try #expect(renderHTML(Div {}.padding(.top, 3)) == #"<div class="pt-0.5"></div>"#)
     try #expect(renderHTML(Div {}.padding(.top, 4)) == #"<div class="pt-1"></div>"#)

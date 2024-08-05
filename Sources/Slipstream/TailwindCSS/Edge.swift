@@ -77,6 +77,7 @@ public enum Edge: Int8, CaseIterable {
     // Tailwind spacing classes and their corresponding sizes in points.
     let mapping: [(name: String, ptLength: Double)] = [
       ("0", 0),    // 0pt
+      ("px", 1),
       ("0.5", 2),  // 0.125rem
       ("1", 4),    // 0.25rem
       ("1.5", 6),  // 0.375rem
