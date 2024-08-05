@@ -51,6 +51,7 @@ private struct CatalogSite: View {
               .display(.hidden)
           }
           .flexGap(.x, width: 2)
+          .alignItems(.baseline)
           .justifyContent(.center)
         }
         .border(.black, width: 4, edges: .bottom)
@@ -81,7 +82,7 @@ struct CatalogSiteTests {
    <br />world!
    <a href="/about">About</a>
    <a href="/home">Home</a>
-   <div class="flex flex-col gap-x-0.5 justify-center">
+   <div class="flex flex-col gap-x-0.5 items-baseline justify-center">
     <div class="flex flex-row gap-x-2.5">
      <h1 class="text-xl font-mono font-bold text-start">Heading 1</h1>
      <h2 class="text-3xl text-center">Heading 2</h2>

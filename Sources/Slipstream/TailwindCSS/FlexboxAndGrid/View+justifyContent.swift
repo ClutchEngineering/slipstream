@@ -1,6 +1,6 @@
 /// Constants that specify how flex and grid views are positioned along a container's main axis.
 ///
-/// - SeeAlso: Tailwind CSS' [`font-size`](https://tailwindcss.com/docs/font-size) documentation.
+/// - SeeAlso: Tailwind CSS' [`justify content`](https://tailwindcss.com/docs/justify-content) documentation.
 @available(iOS 17.0, macOS 14.0, *)
 public enum JustifyContent: String {
   /// Packs content items in their default position as if no

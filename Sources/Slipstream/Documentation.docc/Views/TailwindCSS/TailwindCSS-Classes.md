@@ -16,6 +16,7 @@ Slipstream implementations of Tailwind CSS's classes.
 - <doc:FlexboxAndGrid-FlexDirection>
 - <doc:FlexboxAndGrid-FlexGap>
 - <doc:FlexboxAndGrid-JustifyContent>
+- <doc:FlexboxAndGrid-AlignItems>
 
 ### Spacing
 
