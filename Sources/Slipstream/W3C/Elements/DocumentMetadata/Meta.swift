@@ -3,7 +3,7 @@ import Foundation
 import SwiftSoup
 
 /// A view that represents various kinds of metadata that cannot be expressed
-/// using the ``Title``, ``Base``, ``Stylesheet``, ``Style``, and ``Script`` views.
+/// using the ``Title``, ``Base``, ``Stylesheet``, and ``Script`` views.
 ///
 /// ```swift
 /// struct MySiteMetadata: View {
