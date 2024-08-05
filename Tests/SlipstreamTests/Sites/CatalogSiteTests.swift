@@ -30,6 +30,7 @@ private struct CatalogSite: View {
             HStack(spacing: 10) {
               H1("Heading 1")
                 .fontSize(.extraLarge)
+                .fontDesign(.mono)
                 .bold()
                 .textAlignment(.leading)
               H2 {
@@ -81,7 +82,7 @@ struct CatalogSiteTests {
    <a href="/home">Home</a>
    <div class="flex flex-col gap-x-0.5">
     <div class="flex flex-row gap-x-2.5">
-     <h1 class="text-xl font-bold text-start">Heading 1</h1>
+     <h1 class="text-xl font-mono font-bold text-start">Heading 1</h1>
      <h2 class="text-3xl text-center">Heading 2</h2>
     </div>
     <h3 class="text-end">Heading 3</h3>
