@@ -23,6 +23,7 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 ### Sections
 
 - ``Body``
+- ``Heading``
 - ``H1``
 - ``H2``
 - ``H3``
@@ -33,6 +34,7 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 ### Grouping content
 
 - ``Div``
+- ``Paragraph``
 
 ### Text-level semantics
 

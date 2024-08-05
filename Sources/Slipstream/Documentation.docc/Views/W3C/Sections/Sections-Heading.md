@@ -1,0 +1,7 @@
+# ``Heading``
+
+## Topics
+
+### Errors
+
+- ``HeadingError``
