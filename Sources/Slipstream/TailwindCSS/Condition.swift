@@ -25,6 +25,13 @@ public struct Condition {
     self.state = state
   }
 
+  /// Creates a Condition that applies within the range of breakpoints and set of states.
+  public init(within range: Range<Breakpoint>, state: State.Set) {
+    self.startingAtBreakpoint = range.lowerBound
+    self.endingBeforeBreakpoint = range.upperBound
+    self.state = state
+  }
+
   /// Creates a Condition that applies within the range of breakpoints.
   public init(within range: Range<Breakpoint>) {
     self.startingAtBreakpoint = range.lowerBound
@@ -51,6 +58,23 @@ public struct Condition {
     return Condition(within: range)
   }
 
+  /// Combines to Conditions as a union of both conditions' possible states.
+  public static func +(lhs: Self, rhs: Self) -> Self {
+    var union = lhs
+    if let lhsStarting = lhs.startingAtBreakpoint ?? rhs.startingAtBreakpoint,
+       let rhsStarting = rhs.startingAtBreakpoint ?? lhs.startingAtBreakpoint {
+      union.startingAtBreakpoint = min(lhsStarting, rhsStarting)
+    }
+    if let lhsEnding = lhs.endingBeforeBreakpoint ?? rhs.endingBeforeBreakpoint,
+       let rhsEnding = rhs.endingBeforeBreakpoint ?? lhs.endingBeforeBreakpoint {
+      union.endingBeforeBreakpoint = max(lhsEnding, rhsEnding)
+    }
+    if lhs.state != nil || rhs.state != nil {
+      union.state = (lhs.state ?? .init()).union((rhs.state ?? .init()))
+    }
+    return union
+  }
+
   var tailwindClassModifiers: String {
     var modifiers: [String] = []
     if let startingAtBreakpoint {
@@ -69,7 +93,7 @@ public struct Condition {
     return modifiers.joined(separator: ":")
   }
 
-  private let startingAtBreakpoint: Breakpoint?
-  private let endingBeforeBreakpoint: Breakpoint?
-  private let state: State.Set?
+  private var startingAtBreakpoint: Breakpoint?
+  private var endingBeforeBreakpoint: Breakpoint?
+  private var state: State.Set?
 }

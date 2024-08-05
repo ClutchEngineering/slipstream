@@ -55,7 +55,7 @@ private struct CatalogSite: View {
         .border(.black, width: 4, edges: .bottom)
         .backgroundImage(URL(string: "/logo.svg"), size: .size(width: 50, height: 100), repeat: .no)
         .textColor(.red, darkness: 800, condition: .dark)
-        .padding(.horizontal, 48, condition: .startingAt(.large))
+        .padding(.horizontal, 48, condition: .startingAt(.large) + .hover)
         .animation(.easeInOut(duration: 0.3))
       }
       .id("root")
@@ -75,7 +75,7 @@ struct CatalogSiteTests {
   <link rel="stylesheet" href="/css/bootstrap.css" />
  </head>
  <body id="root">
-  <div class="container border-b-4 border-black bg-[length:50px_100px] bg-[url('/logo.svg')] bg-no-repeat dark:text-red-800 lg:px-12 duration-300 ease-in-out">
+  <div class="container border-b-4 border-black bg-[length:50px_100px] bg-[url('/logo.svg')] bg-no-repeat dark:text-red-800 lg:hover:px-12 duration-300 ease-in-out">
    Hello
    <br />world!
    <a href="/about">About</a>
