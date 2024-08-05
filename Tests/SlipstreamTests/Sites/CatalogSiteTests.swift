@@ -39,6 +39,7 @@ private struct CatalogSite: View {
               }
               .fontSize(32)
               .textAlignment(.center)
+              .fontLeading(.snug)
             }
             H3("Heading 3")
               .textAlignment(.trailing)
@@ -92,7 +93,7 @@ struct CatalogSiteTests {
    <div class="flex flex-col gap-x-0.5 items-baseline justify-center">
     <div class="flex flex-row gap-x-2.5">
      <h1 class="text-xl font-mono font-bold text-start">Heading 1</h1>
-     <h2 class="text-3xl text-center">Heading 2</h2>
+     <h2 class="text-3xl text-center leading-snug">Heading 2</h2>
     </div>
     <h3 class="text-end">Heading 3</h3>
     <h4 class="antialiased">Heading 4</h4>
