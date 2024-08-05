@@ -13,26 +13,31 @@ import SwiftSoup
 /// ```swift
 /// import Markdown
 /// import Slipstream
-/// 
-/// MarkdownText("""
-/// ## Hello world
 ///
-/// This is some markdown content.
-/// """
-/// ) { node, context in
-///   switch node {
-///   case let text as Markdown.Text:
-///     Slipstream.Text(text.string)
-///   case let heading as Markdown.Heading:
-///     Slipstream.Heading(level: heading.level) {
-///       context.recurse()
+/// struct Article: View {
+///   private let text: String
+///
+///   init(_ text: String) {
+///     self.text = text
+///   }
+///
+///   var body: some View {
+///     MarkdownText(text) { node, context in
+///       switch node {
+///       case let text as Markdown.Text:
+///         Slipstream.Text(text.string)
+///       case let heading as Markdown.Heading:
+///         Slipstream.Heading(level: heading.level) {
+///           context.recurse()
+///         }
+///       case is Markdown.Paragraph:
+///         Slipstream.Paragraph {
+///           context.recurse()
+///         }
+///       default:
+///         context.recurse()
+///       }
 ///     }
-///   case is Markdown.Paragraph:
-///     Slipstream.Paragraph {
-///       context.recurse()
-///     }
-///   default:
-///     context.recurse()
 ///   }
 /// }
 /// ```

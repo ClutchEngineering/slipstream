@@ -64,6 +64,9 @@ private struct CatalogSite: View {
         .padding(.horizontal, 48, condition: .startingAt(.large) + .hover)
         .animation(.easeInOut(duration: 0.3))
 
+        Image(URL(string: "/logo.png"))
+          .accessibilityLabel("Site logo")
+
         Script(URL(string: "/main.js"), executionMode: .async)
         Script("""
 alert("Hello, world!");
@@ -104,6 +107,7 @@ struct CatalogSiteTests {
     <h2>Generic heading 2</h2>
    </div>
   </div>
+  <img src="/logo.png" alt="Site logo" />
   <script src="/main.js" async></script>
   <script>alert("Hello, world!");</script>
  </body>
