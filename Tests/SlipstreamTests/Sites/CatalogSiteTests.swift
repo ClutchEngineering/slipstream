@@ -13,6 +13,7 @@ private struct CatalogSite: View {
         Viewport.mobileFriendly
         Meta(.description, content: "Slipstream is a static website generator built in the Swift programming language and compatible with Tailwind CSS.")
         Stylesheet(URL(string: "/css/bootstrap.css"))
+        Preload(URL(string: "/logo.svg"), as: .image)
       }
       Body {
         Container {
@@ -80,6 +81,7 @@ struct CatalogSiteTests {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Slipstream is a static website generator built in the Swift programming language and compatible with Tailwind CSS." />
   <link rel="stylesheet" href="/css/bootstrap.css" />
+  <link rel="preload" as="image" href="/logo.svg" />
  </head>
  <body id="root">
   <div class="container border-b-4 border-black bg-[length:50px_100px] bg-[url('/logo.svg')] bg-no-repeat dark:text-red-800 lg:hover:px-12 duration-300 ease-in-out">
