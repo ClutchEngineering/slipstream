@@ -10,6 +10,7 @@ Slipstream implementations of Tailwind CSS's classes.
 - ``HStack``
 - ``VStack``
 - <doc:Layout-Display>
+- <doc:Layout-Float>
 
 ### Flexbox & Grid
 
