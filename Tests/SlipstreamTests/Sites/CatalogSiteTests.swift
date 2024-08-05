@@ -59,6 +59,11 @@ private struct CatalogSite: View {
         .textColor(.red, darkness: 800, condition: .dark)
         .padding(.horizontal, 48, condition: .startingAt(.large) + .hover)
         .animation(.easeInOut(duration: 0.3))
+
+        Script(URL(string: "/main.js"), executionMode: .async)
+        Script("""
+alert("Hello, world!");
+""")
       }
       .id("root")
     }
@@ -93,6 +98,8 @@ struct CatalogSiteTests {
     <h6 class="my-8 text-white hidden">Heading 6</h6>
    </div>
   </div>
+  <script src="/main.js" async></script>
+  <script>alert("Hello, world!");</script>
  </body>
 </html>
 """)

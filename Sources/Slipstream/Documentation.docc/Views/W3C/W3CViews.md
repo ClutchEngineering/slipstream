@@ -37,3 +37,7 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 
 - ``Linebreak``
 - ``Link``
+
+### Scripting
+
+- <doc:Script>
