@@ -8,3 +8,7 @@
 - ``View/classNames(_:)``
 - ``View/id(_:)``
 - ``View/language(_:)``
+
+### Images
+
+- ``View/accessibilityLabel(_:)``
