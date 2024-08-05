@@ -55,7 +55,7 @@ private struct CatalogSite: View {
         .border(.black, width: 4, edges: .bottom)
         .backgroundImage(URL(string: "/logo.svg"), size: .size(width: 50, height: 100), repeat: .no)
         .textColor(.red, darkness: 800, condition: .dark)
-        .padding(.horizontal, 48, condition: .minBreakpoint(.large))
+        .padding(.horizontal, 48, condition: .startingAt(.large))
         .animation(.easeInOut(duration: 0.3))
       }
       .id("root")

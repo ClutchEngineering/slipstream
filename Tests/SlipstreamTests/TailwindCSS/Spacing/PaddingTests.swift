@@ -38,7 +38,7 @@ struct PaddingTests {
         }.padding(.top, 0).padding(
           .right,
           4,
-          condition: .init(minBreakpoint: .medium)
+          condition: .init(startingAt: .medium)
         )) == #"<div class="pt-0 md:pr-1"></div>"#
     )
   }

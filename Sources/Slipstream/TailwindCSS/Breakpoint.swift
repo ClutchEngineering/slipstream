@@ -2,10 +2,24 @@
 ///
 /// - SeeAlso: Tailwind CSS' [`responsive design`](https://tailwindcss.com/docs/responsive-design) documentation.
 @available(iOS 17.0, macOS 14.0, *)
-public enum Breakpoint: String {
-  case small = "sm"
-  case medium = "md"
-  case large = "lg"
-  case extraLarge = "xl"
-  case extraExtraLarge = "2xl"
+public enum Breakpoint: Int, Comparable {
+  case small
+  case medium
+  case large
+  case extraLarge
+  case extraExtraLarge
+
+  var asTailwindClass: String {
+    switch self {
+    case .small: return "sm"
+    case .medium: return "md"
+    case .large: return "lg"
+    case .extraLarge: return "xl"
+    case .extraExtraLarge: return "2xl"
+    }
+  }
+
+  public static func < (lhs: Breakpoint, rhs: Breakpoint) -> Bool {
+    lhs.rawValue < rhs.rawValue
+  }
 }

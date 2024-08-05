@@ -18,7 +18,7 @@ struct TextAlignmentTests {
         Div {
         }.textAlignment(
           .left,
-          condition: .init(minBreakpoint: .extraExtraLarge)
+          condition: .init(startingAt: .extraExtraLarge)
         )) == #"<div class="2xl:text-left"></div>"#
     )
   }

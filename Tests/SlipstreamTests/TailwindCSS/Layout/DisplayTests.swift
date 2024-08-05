@@ -32,7 +32,7 @@ struct DisplayTests {
         Div {
         }.display(
           .block,
-          condition: .init(minBreakpoint: .medium)
+          condition: .init(startingAt: .medium)
         )) == #"<div class="md:block"></div>"#
     )
   }

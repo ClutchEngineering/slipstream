@@ -6,20 +6,30 @@
 public struct Condition {
   /// Creates a Condition with a set of states.
   public init(state: State.Set) {
-    self.minBreakpoint = nil
+    self.startingAtBreakpoint = nil
+    self.endingBeforeBreakpoint = nil
     self.state = state
   }
 
-  /// Creates a Condition with a minimum breakpoint.
-  public init(minBreakpoint: Breakpoint) {
-    self.minBreakpoint = minBreakpoint
+  /// Creates a Condition that starts at a given breakpoint.
+  public init(startingAt breakpoint: Breakpoint) {
+    self.startingAtBreakpoint = breakpoint
+    self.endingBeforeBreakpoint = nil
     self.state = nil
   }
 
-  /// Creates a Condition with a minimum breakpoint and set of states.
-  public init(minBreakpoint: Breakpoint, state: State.Set) {
-    self.minBreakpoint = minBreakpoint
+  /// Creates a Condition that starts at a given breakpoint and set of states.
+  public init(startingAt breakpoint: Breakpoint, state: State.Set) {
+    self.startingAtBreakpoint = breakpoint
+    self.endingBeforeBreakpoint = nil
     self.state = state
+  }
+
+  /// Creates a Condition that applies within the range of breakpoints.
+  public init(within range: Range<Breakpoint>) {
+    self.startingAtBreakpoint = range.lowerBound
+    self.endingBeforeBreakpoint = range.upperBound
+    self.state = nil
   }
 
   /// A convenience condition representing dark mode.
@@ -32,14 +42,22 @@ public struct Condition {
   public static let active = Condition(state: .active)
 
   /// A convenience condition representing a minimum breakpoint.
-  public static func minBreakpoint(_ minBreakpoint: Breakpoint) -> Self {
-    return Condition(minBreakpoint: minBreakpoint)
+  public static func startingAt(_ breakpoint: Breakpoint) -> Self {
+    return Condition(startingAt: breakpoint)
+  }
+
+  /// A convenience condition representing a minimum breakpoint.
+  public static func within(_ range: Range<Breakpoint>) -> Self {
+    return Condition(within: range)
   }
 
   var tailwindClassModifiers: String {
     var modifiers: [String] = []
-    if let minBreakpoint {
-      modifiers.append(minBreakpoint.rawValue)
+    if let startingAtBreakpoint {
+      modifiers.append(startingAtBreakpoint.asTailwindClass)
+    }
+    if let endingBeforeBreakpoint {
+      modifiers.append("max-" + endingBeforeBreakpoint.asTailwindClass)
     }
     if let set = state, set.rawValue != 0 {
       modifiers.append(contentsOf: State.allCases
@@ -51,6 +69,7 @@ public struct Condition {
     return modifiers.joined(separator: ":")
   }
 
-  private let minBreakpoint: Breakpoint?
+  private let startingAtBreakpoint: Breakpoint?
+  private let endingBeforeBreakpoint: Breakpoint?
   private let state: State.Set?
 }
