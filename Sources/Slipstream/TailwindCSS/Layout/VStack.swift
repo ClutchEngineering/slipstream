@@ -31,7 +31,7 @@ public struct VStack<Content: View>: View {
   ///   - reversed: If true, the contents will be arranged vertically from bottom to top.
   ///   - content: The content to display with this view.
   public init(
-    alignment: AlignItems = .center,
+    alignment: AlignItems = .start,
     spacing: Double? = nil,
     reversed: Bool = false,
     @ViewBuilder content: @escaping () -> Content
