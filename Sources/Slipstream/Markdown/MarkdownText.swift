@@ -71,6 +71,3 @@ public struct MarkdownText: View {
     MarkdownText(node, builder: builder)
   }
 }
-
-
-
