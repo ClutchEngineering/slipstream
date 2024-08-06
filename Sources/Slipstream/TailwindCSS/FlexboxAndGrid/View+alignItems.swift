@@ -1,4 +1,4 @@
-/// Constants that specify how flex and grid views are positioned along a container's cross axis
+/// Constants that specify how flex and grid views are positioned along a container's cross axis.
 ///
 /// - SeeAlso: Tailwind CSS' [`align items`](https://tailwindcss.com/docs/align-items) documentation.
 @available(iOS 17.0, macOS 14.0, *)
