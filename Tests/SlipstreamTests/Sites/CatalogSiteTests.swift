@@ -53,6 +53,8 @@ private struct CatalogSite: View {
               .textColor(.white)
               .display(.hidden)
 
+            Divider()
+
             Heading(level: 2, "Generic heading 2")
           }
           .background(.black)
@@ -107,6 +109,7 @@ struct CatalogSiteTests {
     <h4 class="antialiased h-12 max-h-24 max-w-4 min-h-6 min-w-1 w-2">Heading 4</h4>
     <h5 class="mx-auto">Heading 5</h5>
     <h6 class="my-8 text-white hidden">Heading 6</h6>
+    <hr />
     <h2>Generic heading 2</h2>
    </div>
   </div>
