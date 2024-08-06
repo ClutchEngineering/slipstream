@@ -35,6 +35,7 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 
 - ``Paragraph``
 - ``Divider``
+- ``Blockquote``
 - ``Div``
 
 ### Text-level semantics
