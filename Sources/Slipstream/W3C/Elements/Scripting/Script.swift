@@ -45,7 +45,6 @@ public struct Script: View {
 
   @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
-
     switch storage {
     case .url(let url, let executionMode):
       guard let url else {

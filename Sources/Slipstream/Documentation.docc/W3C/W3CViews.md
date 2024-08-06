@@ -33,8 +33,9 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 
 ### Grouping content
 
-- ``Div``
 - ``Paragraph``
+- ``Divider``
+- ``Div``
 
 ### Text-level semantics
 
