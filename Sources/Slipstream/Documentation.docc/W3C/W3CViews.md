@@ -30,6 +30,7 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 - ``H4``
 - ``H5``
 - ``H6``
+- ``Footer``
 
 ### Grouping content
 

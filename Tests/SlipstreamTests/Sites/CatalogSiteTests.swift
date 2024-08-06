@@ -72,6 +72,9 @@ private struct CatalogSite: View {
         Image(URL(string: "/logo.png"))
           .accessibilityLabel("Site logo")
 
+        Footer {
+          Paragraph("Copyright 2024")
+        }
         Script(URL(string: "/main.js"), executionMode: .async)
         Script("""
 alert("Hello, world!");
@@ -114,6 +117,9 @@ struct CatalogSiteTests {
    </div>
   </div>
   <img src="/logo.png" alt="Site logo" />
+  <footer>
+   <p>Copyright 2024</p>
+  </footer>
   <script src="/main.js" async></script>
   <script>alert("Hello, world!");</script>
  </body>
