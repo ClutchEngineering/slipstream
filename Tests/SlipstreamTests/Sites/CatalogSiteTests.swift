@@ -55,13 +55,14 @@ private struct CatalogSite: View {
 
             Heading(level: 2, "Generic heading 2")
           }
+          .background(.black)
           .float(.right)
           .flexGap(.x, width: 2)
           .alignItems(.baseline)
           .justifyContent(.center)
         }
         .border(.black, width: 4, edges: .bottom)
-        .backgroundImage(URL(string: "/logo.svg"), size: .size(width: 50, height: 100), repeat: .no)
+        .background(URL(string: "/logo.svg"), size: .size(width: 50, height: 100), repeat: .no)
         .textColor(.red, darkness: 800, condition: .dark)
         .padding(.horizontal, 48, condition: .startingAt(.large) + .hover)
         .animation(.easeInOut(duration: 0.3))
@@ -97,7 +98,7 @@ struct CatalogSiteTests {
    <br />world!
    <a href="/about">About</a>
    <a href="/home">Home</a>
-   <div class="flex flex-col float-right gap-x-0.5 items-baseline justify-center">
+   <div class="flex flex-col bg-black float-right gap-x-0.5 items-baseline justify-center">
     <div class="flex flex-row gap-x-2.5">
      <h1 class="text-xl font-mono font-bold text-start">Heading 1</h1>
      <h2 class="text-3xl text-center leading-snug">Heading 2</h2>
