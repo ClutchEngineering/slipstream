@@ -19,8 +19,15 @@ public struct Paragraph<Content>: W3CElement where Content: View {
   @_documentation(visibility: private)
   @ViewBuilder public let content: () -> Content
 
-  /// Creates a paragraph view.
+  /// Creates a paragraph.
   public init(@ViewBuilder content: @escaping () -> Content) {
     self.content = content
+  }
+
+  /// Creates an paragraph with some static text.
+  public init(_ text: String) where Content == Text {
+    self.content = {
+      Text(text)
+    }
   }
 }
