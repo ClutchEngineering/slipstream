@@ -18,7 +18,7 @@
 /// ```
 @available(iOS 17.0, macOS 14.0, *)
 public struct ResponsiveStack<Content: View>: View {
-  /// Creates an responsive stack view.
+  /// Creates a responsive stack view.
   ///
   /// - Parameters:
   ///   - defaultAxis: The default layout axis for this stack.
