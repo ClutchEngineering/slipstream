@@ -9,6 +9,7 @@ Slipstream implementations of Tailwind CSS's utility classes.
 - ``Container``
 - ``HStack``
 - ``VStack``
+- ``ResponsiveStack``
 - <doc:Layout-Display>
 - <doc:Layout-Float>
 

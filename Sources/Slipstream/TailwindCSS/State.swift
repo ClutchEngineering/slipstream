@@ -78,7 +78,7 @@ public enum State: Int32, CaseIterable {
   /// let states: State.Set = [.active, .focus]
   /// ```
   @available(iOS 17.0, macOS 14.0, *)
-  public struct Set: OptionSet {
+  public struct Set: OptionSet, Hashable {
     /// The element type of the option set.
     ///
     /// To inherit all the default implementations from the `OptionSet` protocol,
