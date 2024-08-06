@@ -77,7 +77,8 @@ public struct Condition {
 
   var tailwindClassModifiers: String {
     var modifiers: [String] = []
-    if let startingAtBreakpoint {
+    if let startingAtBreakpoint,
+       startingAtBreakpoint != .small {
       modifiers.append(startingAtBreakpoint.asTailwindClass)
     }
     if let endingBeforeBreakpoint {
