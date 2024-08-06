@@ -1,6 +1,6 @@
 /// Constants that specify the weight of the text.
 ///
-/// - SeeAlso: Tailwind CSS' [`font-weight`](https://tailwindcss.com/docs/font-weight) documentation.
+/// - SeeAlso: Tailwind CSS' [font weight](https://tailwindcss.com/docs/font-weight) documentation.
 @available(iOS 17.0, macOS 14.0, *)
 public enum FontWeight: String {
   case thin

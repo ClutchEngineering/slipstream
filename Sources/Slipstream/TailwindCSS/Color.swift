@@ -4,6 +4,10 @@ public struct Color {
   public static let black = Color(.black)
   public static let white = Color(.white)
 
+  public static func palette(_ colorPalette: ColorPalette, darkness: Int) -> Self {
+    return self.init(colorPalette, darkness: darkness)
+  }
+
   /// Creates a Color instance using a Tailwind CSS palette instance.
   public init(_ colorPalette: ColorPalette, darkness: Int) {
     self.storage = .palette(colorPalette, darkness: darkness)

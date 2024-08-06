@@ -37,6 +37,7 @@ Slipstream implementations of Tailwind CSS's utility classes.
 - <doc:Typography-LineHeight>
 - <doc:Typography-TextAlignment>
 - <doc:Typography-TextColor>
+- <doc:Typography-TextDecoration>
 
 ### Backgrounds
 
