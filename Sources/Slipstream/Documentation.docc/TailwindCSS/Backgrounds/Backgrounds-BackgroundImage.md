@@ -6,7 +6,7 @@ Utilities for controlling the background image of a view.
 
 ### Modifiers
 
-- ``View/backgroundImage(_:size:repeat:condition:)``
+- ``View/background(_:size:repeat:condition:)``
 
 ### Supporting types
 

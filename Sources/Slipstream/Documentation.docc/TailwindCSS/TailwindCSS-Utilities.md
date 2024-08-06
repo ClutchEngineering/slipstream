@@ -40,6 +40,7 @@ Slipstream implementations of Tailwind CSS's utility classes.
 
 ### Backgrounds
 
+- <doc:Backgrounds-BackgroundColor>
 - <doc:Backgrounds-BackgroundImage>
 
 ### Borders

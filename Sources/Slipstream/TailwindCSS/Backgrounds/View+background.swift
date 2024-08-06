@@ -63,13 +63,13 @@ public struct BackgroundSize {
 }
 
 extension View {
-  /// Changes the background image of the view.
+  /// Sets the background image of the view.
   ///
-  /// - SeeAlso: Tailwind CSS' [`background image`](https://tailwindcss.com/docs/background-image) documentation.
-  /// - SeeAlso: Tailwind CSS' [`background repeat`](https://tailwindcss.com/docs/background-repeat) documentation.
-  /// - SeeAlso: Tailwind CSS' [`background size`](https://tailwindcss.com/docs/background-size) documentation.
+  /// - SeeAlso: Tailwind CSS' [background image](https://tailwindcss.com/docs/background-image) documentation.
+  /// - SeeAlso: Tailwind CSS' [background repeat](https://tailwindcss.com/docs/background-repeat) documentation.
+  /// - SeeAlso: Tailwind CSS' [background size](https://tailwindcss.com/docs/background-size) documentation.
   @available(iOS 17.0, macOS 14.0, *)
-  public func backgroundImage(_ url: URL?, size: BackgroundSize? = nil, repeat: BackgroundRepeat? = nil, condition: Condition? = nil) -> some View {
+  public func background(_ url: URL?, size: BackgroundSize? = nil, repeat: BackgroundRepeat? = nil, condition: Condition? = nil) -> some View {
     var classNames: [String] = []
     if let url {
       classNames.append("bg-[url('\(url.path())')]")
@@ -81,5 +81,29 @@ extension View {
       classNames.append("bg-\(`repeat`.rawValue)")
     }
     return modifier(TailwindClassModifier(add: Set(classNames), condition: condition))
+  }
+
+  /// Sets the background color of the view.
+  ///
+  /// - SeeAlso: Tailwind CSS' [background color](https://tailwindcss.com/docs/background-color) documentation.
+  /// - SeeAlso: Tailwind CSS' [customizing colors](https://tailwindcss.com/docs/customizing-colors) documentation.
+  @available(iOS 17.0, macOS 14.0, *)
+  public func background(_ color: Color, condition: Condition? = nil) -> some View {
+    modifier(TailwindClassModifier(add: "bg-\(color.toTailwindColorClass())", condition: condition))
+  }
+
+  /// Sets the background color to a specific Tailwind CSS palette.
+  ///
+  /// - Parameters:
+  ///   - colorPalette: The Tailwind CSS color palette to use.
+  ///   - darkness: The darkness bracket within the color palette to use.
+  ///   Higher values are darker. 0 corresponds to white, 1000 to black.
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
+  ///
+  /// - SeeAlso: Tailwind CSS' [background color](https://tailwindcss.com/docs/background-color) documentation.
+  /// - SeeAlso: Tailwind CSS' [customizing colors](https://tailwindcss.com/docs/customizing-colors) documentation.
+  @available(iOS 17.0, macOS 14.0, *)
+  public func background(_ colorPalette: ColorPalette, darkness: Int, condition: Condition? = nil) -> some View {
+    background(Color(colorPalette, darkness: darkness), condition: condition)
   }
 }
