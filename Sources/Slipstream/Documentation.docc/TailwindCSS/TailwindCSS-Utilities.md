@@ -33,6 +33,7 @@ Slipstream implementations of Tailwind CSS's utility classes.
 - <doc:Typography-FontDesign>
 - <doc:Typography-FontSize>
 - <doc:Typography-FontSmoothing>
+- <doc:Typography-FontStyle>
 - <doc:Typography-FontWeight>
 - <doc:Typography-LineHeight>
 - <doc:Typography-TextAlignment>
