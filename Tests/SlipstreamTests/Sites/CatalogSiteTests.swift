@@ -98,7 +98,7 @@ struct CatalogSiteTests {
   <link rel="preload" as="image" href="/logo.svg" />
  </head>
  <body id="root">
-  <div class="container border-b-4 border-black bg-[length:50px_100px] bg-[url('/logo.svg')] bg-no-repeat dark:text-red-800 lg:hover:px-12 duration-300 ease-in-out">
+  <div class="container border-b-4 border-b-black bg-[length:50px_100px] bg-[url('/logo.svg')] bg-no-repeat dark:text-red-800 lg:hover:px-12 duration-300 ease-in-out">
    Hello
    <br />world!
    <a href="/about">About</a>

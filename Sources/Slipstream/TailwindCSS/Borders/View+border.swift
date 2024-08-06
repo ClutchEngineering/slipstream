@@ -8,26 +8,46 @@ extension View {
     let classSuffix = closestTailwindBorderWidth(width: width)
     var classNames: [String] = []
     if edges == .all {
-      classNames.append("border" + classSuffix)
+      classNames.append(contentsOf: [
+        "border" + classSuffix,
+        "border-" + color.toTailwindColorClass()
+      ])
     } else if edges == [.horizontal] {
-      classNames.append("border-x" + classSuffix)
+      classNames.append(contentsOf: [
+        "border-x" + classSuffix,
+        "border-x-" + color.toTailwindColorClass()
+      ])
     } else if edges == [.vertical] {
-      classNames.append("border-y" + classSuffix)
+      classNames.append(contentsOf: [
+        "border-y" + classSuffix,
+        "border-y-" + color.toTailwindColorClass()
+      ])
     } else {
       if edges.contains(.top) {
-        classNames.append("border-t" + classSuffix)
+        classNames.append(contentsOf: [
+          "border-t" + classSuffix,
+          "border-t-" + color.toTailwindColorClass()
+        ])
       }
       if edges.contains(.bottom) {
-        classNames.append("border-b" + classSuffix)
+        classNames.append(contentsOf: [
+          "border-b" + classSuffix,
+          "border-b-" + color.toTailwindColorClass()
+        ])
       }
       if edges.contains(.left) {
-        classNames.append("border-l" + classSuffix)
+        classNames.append(contentsOf: [
+          "border-l" + classSuffix,
+          "border-l-" + color.toTailwindColorClass()
+        ])
       }
       if edges.contains(.right) {
-        classNames.append("border-r" + classSuffix)
+        classNames.append(contentsOf: [
+          "border-r" + classSuffix,
+          "border-r-" + color.toTailwindColorClass()
+        ])
       }
     }
-    classNames.append("border-" + color.toTailwindColorClass())
     return modifier(TailwindClassModifier(add: Set(classNames), condition: condition))
   }
 

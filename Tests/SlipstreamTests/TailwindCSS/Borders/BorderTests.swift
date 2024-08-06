@@ -17,11 +17,11 @@ struct BorderTests {
   }
 
   @Test func edges() throws {
-    try #expect(renderHTML(Div {}.border(.black, edges: .top)) == #"<div class="border-black border-t"></div>"#)
-    try #expect(renderHTML(Div {}.border(.white, edges: .right)) == #"<div class="border-r border-white"></div>"#)
-    try #expect(renderHTML(Div {}.border(.black, edges: .bottom)) == #"<div class="border-b border-black"></div>"#)
-    try #expect(renderHTML(Div {}.border(.black, edges: .left)) == #"<div class="border-black border-l"></div>"#)
-    try #expect(renderHTML(Div {}.border(.black, edges: .horizontal)) == #"<div class="border-black border-x"></div>"#)
-    try #expect(renderHTML(Div {}.border(.black, edges: .vertical)) == #"<div class="border-black border-y"></div>"#)
+    try #expect(renderHTML(Div {}.border(.black, edges: .top)) == #"<div class="border-t border-t-black"></div>"#)
+    try #expect(renderHTML(Div {}.border(.white, edges: .right)) == #"<div class="border-r border-r-white"></div>"#)
+    try #expect(renderHTML(Div {}.border(.black, edges: .bottom)) == #"<div class="border-b border-b-black"></div>"#)
+    try #expect(renderHTML(Div {}.border(.black, edges: .left)) == #"<div class="border-l border-l-black"></div>"#)
+    try #expect(renderHTML(Div {}.border(.black, edges: .horizontal)) == #"<div class="border-x border-x-black"></div>"#)
+    try #expect(renderHTML(Div {}.border(.black, edges: .vertical)) == #"<div class="border-y border-y-black"></div>"#)
   }
 }
