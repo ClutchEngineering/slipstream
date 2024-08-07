@@ -13,6 +13,37 @@
 
 ---
 
+**Slipstream** is a static site generator built for Swift developers.
+
+## Usage
+
+First add Slipstream to your package dependencies:
+
+```swift
+dependencies: [
+  .package(url: "https://github.com/jverkoey/slipstream.git", branch: "main"),
+],
+targets: [
+  .executableTarget(name: "MySite", dependencies: [
+    .product(name: "Slipstream", package: "slipstream"),
+  ]
+],
+```
+
+And off you go:
+
+```swift
+import Slipstream
+
+struct HelloWorld: View {
+  var body: some View {
+    Text("Hello, world!")
+  }
+}
+
+print(try renderHTML(HelloWorld()))
+```
+
 ## Documentation
 
 View Slipstream's [complete documentation](https://jverkoey.github.io/slipstream/documentation/slipstream/).
