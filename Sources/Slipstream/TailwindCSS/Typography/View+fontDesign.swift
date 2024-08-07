@@ -5,7 +5,7 @@
 public enum FontDesign: String {
   case sans
   case serif
-  case mono
+  case monospaced = "mono"
 }
 
 extension View {

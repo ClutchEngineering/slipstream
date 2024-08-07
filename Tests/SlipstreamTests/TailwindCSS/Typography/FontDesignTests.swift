@@ -5,7 +5,7 @@ struct FontDesignTests {
   @Test func enumerations() throws {
     try #expect(renderHTML(Div {}.fontDesign(.sans)) == #"<div class="font-sans"></div>"#)
     try #expect(renderHTML(Div {}.fontDesign(.serif)) == #"<div class="font-serif"></div>"#)
-    try #expect(renderHTML(Div {}.fontDesign(.mono)) == #"<div class="font-mono"></div>"#)
+    try #expect(renderHTML(Div {}.fontDesign(.monospaced)) == #"<div class="font-mono"></div>"#)
   }
 
   @Test func custom() throws {

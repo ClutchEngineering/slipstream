@@ -31,7 +31,7 @@ private struct CatalogSite: View {
             HStack(spacing: 10) {
               H1("Heading 1")
                 .fontSize(.extraLarge)
-                .fontDesign(.mono)
+                .fontDesign(.monospaced)
                 .bold()
                 .textAlignment(.leading)
               H2 {
