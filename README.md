@@ -13,6 +13,20 @@
 
 ---
 
+**Slipstream** is a static site generator built for Swift developers.
+
+```
+import Slipstream
+
+struct HelloWorld: View {
+  var body: some View {
+    Text("Hello, world!")
+  }
+}
+
+print(try renderHTML(HelloWorld()))
+```
+
 ## Documentation
 
 View Slipstream's [complete documentation](https://jverkoey.github.io/slipstream/documentation/slipstream/).
