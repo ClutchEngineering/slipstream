@@ -41,6 +41,110 @@ Code snippets with an `import SwiftUI` statement are SwiftUI examples, and snipp
 `import Slipstream` statement are Slipstream examples. If no import is provided, then the snippet
 works identically across both SwiftUI and Slipstream.
 
+## Animations
+
+SwiftUI and Slipstream both support implicit animations using the ``View/animation(_:condition:)``
+modifier.
+
+### Timing functions
+
+```swift
+var body: some View {
+  Text("Linear")
+    .animation(.linear)
+  Text("Ease in")
+    .animation(.easeIn)
+  Text("Ease out")
+    .animation(.easeOut)
+  Text("Ease in/out")
+    .animation(.easeInOut)
+}
+```
+
+### Timing functions with durations
+
+```swift
+var body: some View {
+  Text("Linear")
+    .animation(.linear(duration: 0.25))
+  Text("Ease in")
+    .animation(.easeIn(duration: 0.25))
+  Text("Ease out")
+    .animation(.easeOut(duration: 0.25))
+  Text("Ease in/out")
+    .animation(.easeInOut(duration: 0.25))
+}
+```
+
+## Sizing
+
+SwiftUI and Slipstream both provide a
+``View/frame(minWidth:width:maxWidth:minHeight:height:maxHeight:condition:)``
+modifier to adjust the width and height of a view.
+
+Note that Slipstream will find the next closest Tailwind CSS sizing class for the given point size
+rather than using the exact units. This is an intentional deviation from SwiftUI's behavior in order
+to align with Tailwind CSS' use of pre-defined sizes.
+
+### Width and height
+
+```swift
+var body: some View {
+  Text("Line")
+    .frame(width: 48, height: 48)
+}
+```
+
+### Min/max width and height
+
+```swift
+var body: some View {
+  Text("Min width")
+    .frame(minWidth: 48)
+  Text("Min height")
+    .frame(minHeight: 48)
+  Text("Bounded dimensions")
+    .frame(minWidth: 48, maxWidth: 96)
+}
+```
+
+## Stacks
+
+SwiftUI's [HStack](https://developer.apple.com/documentation/swiftui/hstack) and
+[VStack](https://developer.apple.com/documentation/swiftui/vstack) define essential primitives for
+creating structured layouts, and equivalent types are provided in Slipstream.
+
+### HStack
+
+```swift
+var body: some View {
+  HStack(
+    alignment: .top,
+    spacing: 10
+  ) {
+    Text("Column 1")
+    Text("Column 2")
+  }
+}
+```
+
+### VStack
+
+Note: Slipstream's default alignment for VStack is ``VStackAlignment/leading`` instead of
+``AlignItems/center``, which is SwiftUI's VStack alignment default.
+
+```swift
+var body: some View {
+  VStack(
+    alignment: .leading,
+    spacing: 10
+  ) {
+    Text("Line 1")
+    Text("Line 2")
+  }
+}
+```
+
 ## Typography
 
 SwiftUI's [Text](https://developer.apple.com/documentation/swiftui/text) is the building block for
@@ -94,43 +198,6 @@ struct ContentView: View {
   var body: some View {
     Text("Bold")
       .bold()
-  }
-}
-```
-
-## Stacks
-
-SwiftUI's [HStack](https://developer.apple.com/documentation/swiftui/hstack) and
-[VStack](https://developer.apple.com/documentation/swiftui/vstack) define essential primitives for
-creating structured layouts, and equivalent types are provided in Slipstream.
-
-### HStack
-
-```swift
-var body: some View {
-  HStack(
-    alignment: .top,
-    spacing: 10
-  ) {
-    Text("Column 1")
-    Text("Column 2")
-  }
-}
-```
-
-### VStack
-
-Note: Slipstream's default alignment for VStack is ``VStackAlignment/leading`` instead of
-``AlignItems/center``, which is SwiftUI's VStack alignment default.
-
-```swift
-var body: some View {
-  VStack(
-    alignment: .leading,
-    spacing: 10
-  ) {
-    Text("Line 1")
-    Text("Line 2")
   }
 }
 ```
