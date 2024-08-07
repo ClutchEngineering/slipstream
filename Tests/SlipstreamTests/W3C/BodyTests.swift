@@ -12,7 +12,7 @@ struct BodyTests {
       Head {
       }
       Body {
-        Text("Hello, world!")
+        DOMString("Hello, world!")
       }
     }) == """
 <html>

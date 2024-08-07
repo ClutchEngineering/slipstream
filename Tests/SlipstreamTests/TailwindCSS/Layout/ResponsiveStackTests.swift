@@ -10,7 +10,7 @@ struct ResponsiveStackTests {
 
   @Test func withText() throws {
     try #expect(renderHTML(ResponsiveStack {
-      Text("Hello, world!")
+      DOMString("Hello, world!")
     }) == """
 <div class="flex flex-col md:flex-row">
  Hello, world!

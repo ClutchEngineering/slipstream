@@ -20,7 +20,7 @@ struct VStackTests {
 
   @Test func withText() throws {
     try #expect(renderHTML(VStack {
-      Text("Hello, world!")
+      DOMString("Hello, world!")
     }) == """
 <div class="flex flex-col items-start">
  Hello, world!

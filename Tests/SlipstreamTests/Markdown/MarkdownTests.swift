@@ -13,7 +13,7 @@ This is some markdown content.
     ) { node, context in
       switch node {
       case let text as Markdown.Text:
-        Slipstream.Text(text.string)
+        Slipstream.DOMString(text.string)
       case let heading as Markdown.Heading:
         Slipstream.Heading(level: heading.level) {
           context.recurse()

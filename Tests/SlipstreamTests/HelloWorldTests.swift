@@ -10,6 +10,6 @@ private struct HelloWorld: View {
 
 struct HelloWorldTests {
   @Test func rendersExpectedResult() throws {
-    try #expect(renderHTML(HelloWorld()) == "Hello, world!")
+    try #expect(renderHTML(HelloWorld()) == "<p>Hello, world!</p>")
   }
 }

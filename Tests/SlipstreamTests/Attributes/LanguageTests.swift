@@ -5,7 +5,7 @@ import Slipstream
 private struct LanguageView: View {
   var body: some View {
     HTML {
-      Text("Bonjour!")
+      DOMString("Bonjour!")
     }
     .language("fr")
   }

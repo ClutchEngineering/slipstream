@@ -9,7 +9,7 @@ struct NavigationTests {
 
   @Test func withText() throws {
     try #expect(renderHTML(Navigation {
-      Text("Hello, world!")
+      DOMString("Hello, world!")
     }) == """
 <nav>
  Hello, world!

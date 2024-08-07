@@ -10,7 +10,7 @@ struct HStackTests {
 
   @Test func withText() throws {
     try #expect(renderHTML(HStack {
-      Text("Hello, world!")
+      DOMString("Hello, world!")
     }) == """
 <div class="flex flex-row items-center">
  Hello, world!

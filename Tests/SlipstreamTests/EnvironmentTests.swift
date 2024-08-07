@@ -31,7 +31,7 @@ private struct ConsumerView: View {
   @Environment(\.path) var path
 
   var body: some View {
-    Text(path)
+    DOMString(path)
   }
 }
 

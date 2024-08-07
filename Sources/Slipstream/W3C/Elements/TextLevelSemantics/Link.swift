@@ -35,11 +35,11 @@ public struct Link<Content>: View where Content: View {
   ///   - string: The text to display in this hyperlink.
   ///   - destination: The URL to open when this link is activated.
   ///   - openInNewTab: If true, clicking the link will cause a new tab to be opened.
-  public init(_ string: String, destination: URL?, openInNewTab: Bool = false) where Content == Text {
+  public init(_ string: String, destination: URL?, openInNewTab: Bool = false) where Content == DOMString {
     self.destination = destination
     self.openInNewTab = openInNewTab
     self.content = {
-      Text(string)
+      DOMString(string)
     }
   }
 

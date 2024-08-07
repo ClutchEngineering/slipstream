@@ -51,10 +51,10 @@ public struct Heading<Content>: View where Content: View {
   /// - Parameters:
   ///   - level: Must be a value between 1 and 6, inclusive.
   ///   - text: The string to render within this header.
-  public init(level: Int, _ text: String) where Content == Text {
+  public init(level: Int, _ text: String) where Content == DOMString {
     self.level = level
     self.content = {
-      Text(text)
+      DOMString(text)
     }
   }
 

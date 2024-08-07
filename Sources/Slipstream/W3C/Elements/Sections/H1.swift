@@ -25,9 +25,9 @@ public struct H1<Content>: W3CElement where Content: View {
   }
 
   /// Creates an H1 view with some static text.
-  public init(_ text: String) where Content == Text {
+  public init(_ text: String) where Content == DOMString {
     self.content = {
-      Text(text)
+      DOMString(text)
     }
   }
 }

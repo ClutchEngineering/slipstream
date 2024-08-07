@@ -24,7 +24,7 @@ private struct CatalogSite: View {
           Link("About", destination: URL(string: "/about"))
 
           Link(URL(string: "/home")) {
-            Text("Home")
+            DOMString("Home")
           }
 
           VStack {
@@ -35,7 +35,7 @@ private struct CatalogSite: View {
                 .bold()
                 .textAlignment(.leading)
               H2 {
-                Text("Heading 2")
+                DOMString("Heading 2")
               }
               .fontSize(32)
               .textAlignment(.center)
@@ -98,8 +98,9 @@ struct CatalogSiteTests {
  </head>
  <body id="root">
   <div class="container border-b-4 border-b-black bg-[length:50px_100px] bg-[url('/logo.svg')] bg-no-repeat dark:text-red-800 lg:hover:px-12 duration-300 ease-in-out">
-   Hello
-   <br />world!
+   <p>Hello</p>
+   <br />
+   <p>world!</p>
    <a href="/about">About</a>
    <a href="/home">Home</a>
    <div class="flex flex-col items-start bg-black float-right gap-x-0.5 justify-center">

@@ -27,9 +27,9 @@ public struct Span<Content>: W3CElement where Content: View {
   }
 
   /// Creates a span with static text.
-  public init(_ text: String) where Content == Text {
+  public init(_ text: String) where Content == DOMString {
     self.content = {
-      Text(text)
+      DOMString(text)
     }
   }
 }

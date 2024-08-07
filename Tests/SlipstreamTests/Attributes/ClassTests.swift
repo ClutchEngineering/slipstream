@@ -5,7 +5,7 @@ import Slipstream
 private struct ClassView: View {
   var body: some View {
     HTML {
-      Text("Bonjour!")
+      DOMString("Bonjour!")
         .classNames(["many", "classes"])
     }
     .className("root")

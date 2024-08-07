@@ -4,14 +4,14 @@ import Slipstream
 
 private struct SingleBlockView: View {
   var body: some View {
-    Text("Hello, world!")
+    DOMString("Hello, world!")
   }
 }
 
 private struct TupleBlockView: View {
   var body: some View {
-    Text("Hello, ")
-    Text("world!")
+    DOMString("Hello, ")
+    DOMString("world!")
   }
 }
 
@@ -19,9 +19,9 @@ private struct IfElseBlockView: View {
   let bool: Bool
   var body: some View {
     if bool {
-      Text("true")
+      DOMString("true")
     } else {
-      Text("false")
+      DOMString("false")
     }
   }
 }
@@ -30,7 +30,7 @@ private struct IfBlockView: View {
   let bool: Bool
   var body: some View {
     if bool {
-      Text("true")
+      DOMString("true")
     }
   }
 }
@@ -38,7 +38,7 @@ private struct IfBlockView: View {
 private struct ArrayBlockView: View {
   var body: some View {
     for i in 1...3 {
-      Text("\(i)")
+      DOMString("\(i)")
     }
   }
 }

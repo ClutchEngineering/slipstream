@@ -9,7 +9,7 @@ struct SpanTests {
 
   @Test func withText() throws {
     try #expect(renderHTML(Span {
-      Text("Hello, world!")
+      DOMString("Hello, world!")
     }) == """
 <span>Hello, world!</span>
 """)

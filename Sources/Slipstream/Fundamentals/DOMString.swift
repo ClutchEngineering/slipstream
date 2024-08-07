@@ -4,7 +4,7 @@ import SwiftSoup
 ///
 /// A text view adds a string to your HTML document.
 @available(iOS 17.0, macOS 14.0, *)
-public struct Text: View {
+public struct DOMString: View {
   private let content: any StringProtocol
 
   /// Creates a text view that displays a stored string without localization.
@@ -14,7 +14,7 @@ public struct Text: View {
   ///
   /// ```swift
   /// // Display the contents of `someString` without localization.
-  /// Text(someString)
+  /// DOMString(someString)
   /// ```
   ///
   /// The provided string will be rendered as-is in your HTML document, meaning

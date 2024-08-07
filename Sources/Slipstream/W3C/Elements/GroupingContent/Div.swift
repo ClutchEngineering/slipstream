@@ -8,7 +8,7 @@
 ///   var body: some View {
 ///     Body {
 ///       Div {
-///         Text("Hello, world!")
+///         DOMString("Hello, world!")
 ///       }
 ///     }
 ///   }
