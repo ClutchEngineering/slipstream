@@ -10,8 +10,6 @@ let package = Package(
     .iOS("17"),
   ],
   products: [
-    // Executable can't share the same name as the library, or we get compiler errors due to conflicts of the two products.
-    .executable(name: "slipstreamcli", targets: ["SlipstreamCLI"]),
     .library(name: "Slipstream", targets: ["Slipstream"])
   ],
   dependencies: [
@@ -20,10 +18,6 @@ let package = Package(
     .package(url: "https://github.com/swiftlang/swift-docc-plugin", from: "1.1.0"),
   ],
   targets: [
-    .executableTarget(name: "SlipstreamCLI", dependencies: [
-      "Slipstream",
-    ]),
-
     .target(name: "Slipstream", dependencies: [
       .product(name: "Markdown", package: "swift-markdown"),
       "SwiftSoup",
