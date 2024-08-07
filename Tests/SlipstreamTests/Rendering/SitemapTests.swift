@@ -1,7 +1,6 @@
 import Testing
 
 import Slipstream
-import Sitemap
 
 struct SitemapTests {
 

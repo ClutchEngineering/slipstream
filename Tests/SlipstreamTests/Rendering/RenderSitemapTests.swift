@@ -2,7 +2,6 @@ import Foundation
 import Testing
 
 import Slipstream
-import Sitemap
 
 final class RenderSitemapTests {
 
