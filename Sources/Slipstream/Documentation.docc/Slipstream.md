@@ -50,11 +50,14 @@ print(try renderHTML(HelloWorld()))
 
 ## Topics
 
+### Guides
+
+- <doc:SlipstreamforSwiftUIDevelopers>
+
 ### Architecture
 
 - <doc:HowSlipstreamWorks>
 - <doc:HowEnvironmentWorks>
-- <doc:SlipstreamforSwiftUIDevelopers>
 
 ### Data and storage
 
