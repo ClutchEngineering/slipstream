@@ -12,7 +12,7 @@ private struct ModifiedView: View {
 
 private struct ModifiedText: View {
   var body: some View {
-    Text("Hello, world!")
+    DOMString("Hello, world!")
       .modifier(AttributeModifier(.lang, value: "en"))
   }
 }

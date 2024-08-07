@@ -9,7 +9,7 @@ struct ParagraphTests {
 
   @Test func withText() throws {
     try #expect(renderHTML(Paragraph {
-      Text("Hello, world!")
+      DOMString("Hello, world!")
     }) == """
 <p>Hello, world!</p>
 """)

@@ -5,7 +5,7 @@ import Slipstream
 private struct IDView: View {
   var body: some View {
     HTML {
-      Text("Bonjour!")
+      DOMString("Bonjour!")
     }
     .id("root")
   }

@@ -12,7 +12,7 @@ public struct ViewBuilder {
   ///
   /// ```swift
   /// var body: some View {
-  ///   Text("Hello")
+  ///   DOMString("Hello")
   /// }
   /// ```
   public static func buildBlock<Content>(_ content: Content) -> Content where Content: View {
@@ -25,8 +25,8 @@ public struct ViewBuilder {
   ///
   /// ```swift
   /// var body: some View {
-  ///   Text("Hello, ")
-  ///   Text("world!")
+  ///   DOMString("Hello, ")
+  ///   DOMString("world!")
   /// }
   /// ```
   public static func buildBlock<each Content>(_ content: repeat each Content) -> TupleView<(repeat each Content)>
@@ -41,7 +41,7 @@ public struct ViewBuilder {
   /// ```swift
   /// var body: some View {
   ///   if true {
-  ///     Text("true")
+  ///     DOMString("true")
   ///   }
   /// }
   /// ```
@@ -61,9 +61,9 @@ public struct ViewBuilder {
   /// ```swift
   /// var body: some View {
   ///   if true {
-  ///     Text("true")
+  ///     DOMString("true")
   ///   } else {
-  ///     Text("false")
+  ///     DOMString("false")
   ///   }
   /// }
   /// ```
@@ -79,9 +79,9 @@ public struct ViewBuilder {
   /// ```swift
   /// var body: some View {
   ///   if false {
-  ///     Text("true")
+  ///     DOMString("true")
   ///   } else {
-  ///     Text("false")
+  ///     DOMString("false")
   ///   }
   /// }
   /// ```
@@ -97,7 +97,7 @@ public struct ViewBuilder {
   /// ```swift
   /// var body: some View {
   ///    for i in 1...3 {
-  ///      Text("\(i)")
+  ///      DOMString("\(i)")
   ///    }
   /// }
   /// ```

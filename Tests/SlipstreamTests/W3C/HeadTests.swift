@@ -10,7 +10,7 @@ struct HeadTests {
   @Test func withText() throws {
     try #expect(renderHTML(HTML {
       Head {
-        Text("Hello, world!")
+        DOMString("Hello, world!")
       }
     }) == """
 <html>

@@ -17,7 +17,7 @@
 
 ## Usage
 
-First add Slipstream to your package dependencies:
+Add Slipstream to your package dependencies:
 
 ```swift
 dependencies: [

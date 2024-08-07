@@ -9,7 +9,7 @@ struct FooterTests {
 
   @Test func withText() throws {
     try #expect(renderHTML(Footer {
-      Text("Hello, world!")
+      DOMString("Hello, world!")
     }) == """
 <footer>
  Hello, world!

@@ -30,9 +30,9 @@ public struct Small<Content>: W3CElement where Content: View {
   }
 
   /// Creates a view with static text that will be treated as small print.
-  public init(_ text: String) where Content == Text {
+  public init(_ text: String) where Content == DOMString {
     self.content = {
-      Text(text)
+      DOMString(text)
     }
   }
 }

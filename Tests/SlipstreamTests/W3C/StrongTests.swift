@@ -9,7 +9,7 @@ struct StrongTests {
 
   @Test func withText() throws {
     try #expect(renderHTML(Strong {
-      Text("Hello, world!")
+      DOMString("Hello, world!")
     }) == """
 <strong>Hello, world!</strong>
 """)

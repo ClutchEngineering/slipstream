@@ -9,7 +9,7 @@ struct PreformattedTests {
 
   @Test func withText() throws {
     try #expect(renderHTML(Preformatted {
-      Text("Hello, world!")
+      DOMString("Hello, world!")
     }) == """
 <pre>Hello, world!</pre>
 """)

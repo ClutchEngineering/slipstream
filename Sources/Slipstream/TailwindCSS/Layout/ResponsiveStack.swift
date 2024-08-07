@@ -6,10 +6,10 @@
 ///     Body {
 ///       ResponsiveStack {
 ///         Div {
-///           Text("Hello,")
+///           DOMString("Hello,")
 ///         }
 ///         Div {
-///           Text("world!")
+///           DOMString("world!")
 ///         }
 ///       }
 ///     }

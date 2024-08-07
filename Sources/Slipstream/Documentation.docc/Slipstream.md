@@ -54,6 +54,7 @@ print(try renderHTML(HelloWorld()))
 
 - <doc:HowSlipstreamWorks>
 - <doc:HowEnvironmentWorks>
+- <doc:SlipstreamforSwiftUIDevelopers>
 
 ### Data and storage
 

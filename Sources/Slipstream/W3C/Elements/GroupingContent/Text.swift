@@ -1,33 +1,39 @@
-/// A view that represents a heading for a section.
+/// A view that is equivalent to a ``Paragraph`` and roughly mimics
+/// the behavior of SwiftUI's equivalent type.
 ///
 /// ```swift
 /// struct MySiteContent: View {
 ///   var body: some View {
 ///     Body {
-///       H3("Hello, world!")
+///       Text("Hello, world!")
 ///     }
 ///   }
 /// }
 /// ```
 ///
-/// - SeeAlso: W3C [`h1-h6`](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) specification.
+/// ## See Also
+///
+/// - ``Paragraph``
 @available(iOS 17.0, macOS 14.0, *)
-public struct H3<Content>: W3CElement where Content: View {
-  @_documentation(visibility: private)
-  public let tagName: String = "h3"
+public struct Text<Content>: View where Content: View {
 
   @_documentation(visibility: private)
   @ViewBuilder public let content: () -> Content
 
-  /// Creates an H3 view.
+  /// Creates a text view.
   public init(@ViewBuilder content: @escaping () -> Content) {
     self.content = content
   }
 
-  /// Creates an H3 view with some static text.
+  /// Creates a text view with static text.
   public init(_ text: String) where Content == DOMString {
     self.content = {
       DOMString(text)
     }
+  }
+
+  @_documentation(visibility: private)
+  public var body: some View {
+    Paragraph(content: content)
   }
 }

@@ -2,7 +2,7 @@ import Slipstream
 
 struct HelloWorld: View {
   var body: some View {
-    Text("Hello, world!")
+    DOMString("Hello, world!")
   }
 }
 

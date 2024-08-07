@@ -5,7 +5,7 @@ import Slipstream
 private struct StateView: View {
   let string: String
   var body: some View {
-    Text(string)
+    DOMString(string)
   }
 }
 

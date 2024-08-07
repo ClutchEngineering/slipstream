@@ -9,7 +9,7 @@ struct BlockquoteTests {
 
   @Test func withText() throws {
     try #expect(renderHTML(Blockquote {
-      Text("Hello, world!")
+      DOMString("Hello, world!")
     }) == """
 <blockquote>
  Hello, world!

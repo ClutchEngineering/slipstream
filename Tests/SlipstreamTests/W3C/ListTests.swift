@@ -11,10 +11,10 @@ struct ListTests {
   @Test func withItems() throws {
     try #expect(renderHTML(List {
       ListItem {
-        Text("Item 1")
+        DOMString("Item 1")
       }
       ListItem {
-        Text("Item 2")
+        DOMString("Item 2")
       }
     }) == """
 <ul>
@@ -24,10 +24,10 @@ struct ListTests {
 """)
     try #expect(renderHTML(List(ordered: true) {
       ListItem {
-        Text("Item 1")
+        DOMString("Item 1")
       }
       ListItem {
-        Text("Item 2")
+        DOMString("Item 2")
       }
     }) == """
 <ol>

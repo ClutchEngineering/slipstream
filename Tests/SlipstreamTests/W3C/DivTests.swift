@@ -9,7 +9,7 @@ struct DivTests {
 
   @Test func withText() throws {
     try #expect(renderHTML(Div {
-      Text("Hello, world!")
+      DOMString("Hello, world!")
     }) == """
 <div>
  Hello, world!
