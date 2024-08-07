@@ -58,6 +58,7 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 ### Embedded content
 
 - ``Image``
+- ``RawHTML``
 
 ### Scripting
 
