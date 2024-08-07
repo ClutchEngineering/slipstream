@@ -1,4 +1,10 @@
-/// A flex view that swaps its layout direction based on a condition.
+/// A responsive view that changes its layout direction based on a condition.
+///
+/// A `ResponsiveStack` positions its content either like an HStack or a
+/// VStack, depending on the condition associated with it.
+///
+/// By default, `ResponsiveStack` will position its content along the y axis
+/// on phones and switch to positioning along the x axis on larger screens.
 ///
 /// ```swift
 /// struct MySiteContent: View {

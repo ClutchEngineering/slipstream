@@ -10,7 +10,7 @@ let package = Package(
     .iOS("17"),
   ],
   products: [
-    .library(name: "Slipstream", targets: ["Slipstream"])
+    .library(name: "Slipstream", targets: ["Slipstream"]),
   ],
   dependencies: [
     .package(url: "https://github.com/apple/swift-markdown.git", branch: "main"),

@@ -66,6 +66,8 @@ print(try renderHTML(HelloWorld()))
 ### Views
 
 - <doc:Fundamentals>
+- <doc:Stacks>
+- ``Text``
 
 ### Tailwind CSS
 
@@ -83,4 +85,5 @@ print(try renderHTML(HelloWorld()))
 
 ### Rendering views
 
-- ``renderHTML(_:)``
+- <doc:RenderView>
+- <doc:RenderSitemap>

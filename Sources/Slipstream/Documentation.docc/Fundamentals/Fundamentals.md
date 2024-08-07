@@ -24,4 +24,4 @@ conforms to the ``View`` protocol can act as a view in your website.
 
 - ``AnyView``
 - ``EmptyView``
-- ``Text``
+- ``DOMString``
