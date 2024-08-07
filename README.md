@@ -15,7 +15,7 @@
 
 **Slipstream** is a static site generator built for Swift developers.
 
-```
+```swift
 import Slipstream
 
 struct HelloWorld: View {
