@@ -44,6 +44,7 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 
 ### Text-level semantics
 
+- ``Strong``
 - ``Small``
 - ``Linebreak``
 
