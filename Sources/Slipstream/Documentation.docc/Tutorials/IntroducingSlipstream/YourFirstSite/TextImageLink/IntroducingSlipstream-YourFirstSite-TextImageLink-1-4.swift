@@ -11,7 +11,7 @@ struct Home: View {
       Body {
         Container {
           Text("Meet Coco the pig. Coco is a swimming pig from the Bahamas!")
-          Image(URL(string: "coco.jpeg"))
+          Image(URL(string: "coco.jpg"))
         }
       }
     }

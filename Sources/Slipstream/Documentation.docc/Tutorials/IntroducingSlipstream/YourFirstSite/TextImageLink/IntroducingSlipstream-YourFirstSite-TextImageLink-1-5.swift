@@ -15,7 +15,7 @@ struct Home: View {
             "Learn more",
             destination: URL(string: "https://www.bahamas.com/experiences/official-home-swimming-pigs")
           )
-          Image(URL(string: "coco.jpeg"))
+          Image(URL(string: "coco.jpg"))
         }
       }
     }

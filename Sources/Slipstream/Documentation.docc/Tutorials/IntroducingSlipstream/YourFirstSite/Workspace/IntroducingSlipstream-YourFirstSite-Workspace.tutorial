@@ -2,7 +2,7 @@
   @XcodeRequirement(title: "Xcode 15 or later", destination: "https://itunes.apple.com/us/app/xcode/id497799835?mt=12")
 
   @Intro(title: "Setting up your workspace") {
-    This tutorial guides you through building a website for coco the pig. You’ll start by
+    This tutorial guides you through building a website for Coco the pig. You’ll start by
     setting up your workspace by installing Tailwind CSS and creating the Swift package you'll
     use to generate your website. By the end of this tutorial you will have deployed your first
     static Slipstream site to the internet for free using GitHub Pages.

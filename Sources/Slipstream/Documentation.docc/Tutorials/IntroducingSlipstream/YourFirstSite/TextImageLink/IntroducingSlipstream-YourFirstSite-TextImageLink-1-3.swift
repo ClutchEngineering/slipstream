@@ -10,7 +10,7 @@ struct Home: View {
       }
       Body {
         Container {
-          Image(URL(string: "coco.jpeg"))
+          Image(URL(string: "coco.jpg"))
         }
       }
     }
