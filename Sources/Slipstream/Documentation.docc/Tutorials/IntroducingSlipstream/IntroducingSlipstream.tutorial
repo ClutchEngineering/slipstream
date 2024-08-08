@@ -1,0 +1,15 @@
+@Tutorials(name: "Slipstream") {
+  @Intro(title: "Introducing Slipstream") {
+    Build static web pages with Swift and Tailwind CSS.
+
+    @Image(source: "logo", alt: "The Slipstream logo. The Swift bird logo is flying off the edge of the Tailwind CSS wind logo")
+  }
+
+  @Chapter(name: "Your first site") {
+    Learn all the basics of building your first static website with Slipstream.
+
+    @Image(source: "logo-square", alt: "The Slipstream logo. The Swift bird logo is flying off the edge of the Tailwind CSS wind logo")
+
+    @TutorialReference(tutorial: "doc:IntroducingSlipstream-YourFirstSite")
+  }
+}
