@@ -1,8 +1,8 @@
-@Tutorial(time: 10) {
+@Tutorial(time: 15) {
   @XcodeRequirement(title: "Xcode 15 or later", destination: "https://itunes.apple.com/us/app/xcode/id497799835?mt=12")
   
   @Intro(title: "Hello, world!") {
-    Learn the essential Slipstream concepts and workflow to build your first site.
+    Learn the essential Slipstream concepts.
 
     This tutorial assumes you already have Xcode and Tailwind CSS installed and that you have a
     Swift package with Slipstream added as a dependency.
@@ -30,15 +30,16 @@
       @Step {
         Remove the boilerplate and add a new ``View`` type called `Home`.
         
-        This view will be the root definition for our home page.
+        This view will be the root view for our home page.
         
         @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-1-2.swift")
       }
 
       @Step {
-        Now let's try rendering the view to see what the output looks like. We'll use
-        ``renderHTML(_:)`` to render our view to a string that we can print to the console.
-        
+        Now let's render the view to see what the output looks like. We'll use
+        ``renderHTML(_:)`` to render our view to a string that we can print to the console. Run your
+        executable to see the output.
+
         Notice that the output includes our text wrapped inside of a `<p>` element. Every View type
         in Slipstream will produce some kind of an HTML element. When possible, Slipstream tries to
         match the generated code to similar behavior for the view's SwiftUI equivalent.
@@ -95,6 +96,122 @@
         with External Editor".
 
         @Image(source: "IntroducingSlipstream-YourFirstSite-HelloWorld-2-4", alt: "The output from rendering our sitemap")
+      }
+    }
+  }
+
+  @Section(title: "Adding some style") {
+    @ContentAndMedia {
+      With the basic rendering workflow under control we can now apply some style to our site using
+      Tailwind CSS concepts.
+
+      If you're not familiar with Tailwind CSS, their article on Tailwind's
+      [Utility-First Fundamentals](https://tailwindcss.com/docs/utility-first) is a great intro to
+      the motivations behind Tailwind CSS.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo. The Swift bird logo is flying off the edge of the Tailwind CSS wind logo")
+    }
+
+    @Steps {
+      @Step {
+        In order to load the CSS necessary for styling our site, we'll first need to create a
+        properly structured HTML page.
+
+        There's [*tons* to learn](https://www.w3schools.com/html/html_intro.asp) about building web pages so
+        we'll start simple with just essentials: ``HTML``, ``Head``, and ``Body``.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-1.swift", previousFile: "IntroducingSlipstream-YourFirstSite-HelloWorld-2-3.swift")
+      }
+
+      @Step {
+        Within ``Head`` we can now load the stylesheet that Tailwind CSS will generate for us.  
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-2.swift")
+      }
+
+      @Step {
+        Let's also add a Tailwind ``Container`` to our page so that Tailwind has something to do.
+
+        Tailwind [containers](https://tailwindcss.com/docs/container) provide us with a reasonable
+        breakpoint scaffolding to use so that our site will scale appropriately across different
+        device form factors (think mobile vs desktop).
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-3.swift")
+      }
+
+      @Step {
+        Try rendering our site again by running your executable. Once finished, refresh the
+        generated index.html file in your browser.
+
+        Even though we added a container, nothing changed! This is in part because we haven't
+        generated our main.css file yet. Let's do that.
+
+        @Image(source: "IntroducingSlipstream-YourFirstSite-HelloWorld-2-4", alt: "The output from rendering our sitemap")
+      }
+
+      @Step {
+        Tailwind CSS has a command line tool that is able to generate exactly the CSS required to
+        style our site, but we need to tell Tailwind which files to observe first.
+        
+        Open `tailwind.config.js` in the root of your project and add the output path for our site's
+        generated html files to the `content` field.
+        
+        @Code(name: "tailwind.config.js", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-5.js", previousFile: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-5-prior.js")
+      }
+
+      @Step {
+        Open Terminal again and navigate to your project's root directory (where your
+        `tailwind.config.js` and `Package.swift` files are). Start the `tailwindcss` daemon.
+        
+        The `--watch` argument tells Tailwind to continuously watch for any changes to our html
+        files. When it detects changes, it will automatically regenerate the main.css file again.
+        
+        @Code(name: "Terminal", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-6.sh")
+      }
+
+      @Step {
+        Open your browser again and refresh your page. It should look a bit different now!
+
+        If we open up our developer console (Cmd+Option+I) we can see that our `container` class
+        is now being styled with a max-width appropriate for the browser's current width. If you're
+        not able to open the developer console you may need to enable it in your browser's settings
+        (Safari: Cmd+comma, click Advanced, and enable "Show features for web developers").
+
+        @Image(source: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-7", alt: "The output from rendering our sitemap")
+      }
+
+      @Step {
+        Let's practice this workflow by playing with some styles on the page. Open `main.swift`
+        again and change the font size of our text using the ``View/fontSize(_:condition:)-8lb7v``
+        modifier. Run your executable and refresh your browser to see the changes.
+        
+        If everything succeeded you should see your text in a larger font now. If it doesn't change
+        right away, check that tailwindcss is still running and that it detected the change to your
+        html files.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-8.swift", previousFile: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-3.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-8-preview", alt: "The output from rendering our styled text")
+        }
+      }
+
+      @Step {
+        You've now implemented the core Slipstream iteration workflow, congrats!
+        
+        As a recap, you've created a Swift executable package that, when ran, renders html to
+        disk based on the ``View`` definitions you created. `tailwindcss` then observes changes
+        to those html files and regenerates the `main.css` file. When you load the resulting html
+        file you then see the result of both Slipstream and Tailwind working together to build
+        your website.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-8.swift")
+      }
+      
+      @Step {
+        For further learning consider reading Slipstream's <doc:W3CViews> documentation for a list
+        of all supported HTML views, and Slipstream's <doc:TailwindCSS-Utilities> documentation
+        for the full set of supported Tailwind utility modifiers.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-8.swift")
       }
     }
   }

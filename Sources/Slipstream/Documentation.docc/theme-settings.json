@@ -1,10 +1,21 @@
 {
   "theme": {
+    "button": {
+      "border-radius": "999px"
+    },
+    "code": {
+      "border-radius": "4px",
+      "indentationWidth": 2
+    },
     "color": {
       "documentation-intro-fill": {
         "dark": "linear-gradient(180deg, rgba(50,4,32,1) 25%, rgba(229,77,123,0.8) 100%)",
         "light": "linear-gradient(180deg, rgba(229,77,123,0.1) 0%, rgba(229,77,123,0.0) 100%)"
       }
+    },
+    "typography": {
+      "html-font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+      "html-font-mono": "ui-monospace, SFMono-Regular, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace"
     }
   }
 }
