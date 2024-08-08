@@ -1,20 +1,24 @@
-@Tutorial(time: 20) {
+@Tutorial(time: 5) {
+  @XcodeRequirement(title: "Xcode 15 or later", destination: "https://itunes.apple.com/us/app/xcode/id497799835?mt=12")
+
   @Intro(title: "Setting up your workspace") {
     This tutorial guides you through building a website for coco the pig. You’ll start by
     setting up your workspace by installing Tailwind CSS and creating the Swift package you'll
     use to generate your website. By the end of this tutorial you will have deployed your first
     static Slipstream site to the internet for free using GitHub Pages.
-    
-    @Image(source: "tutorial-banner", alt: "The Slipstream logo. The Swift bird logo is flying off the edge of the Tailwind CSS wind logo")
+
+    If you already have Xcode installed then you'll have your workspace set up in no time.
+
+    @Image(source: "tutorial-banner", alt: "Coco the pig")
   }
-  
+
   @Section(title: "Prerequisites") {
     @ContentAndMedia {
       Slipstream requires a Mac with Xcode and Tailwind CSS installed. In this section we'll also
       create a new Swift Package for our website and configure it to work with Slipstream and
       Tailwind CSS.
 
-      @Image(source: "YourFirstSite-section1", alt: "Xcode installed on a MacBook Pro")    
+      @Image(source: "IntroducingSlipstream-YourFirstSite-Workspace-1", alt: "Xcode installed on a MacBook Pro")    
     }
     
     @Steps {
@@ -22,7 +26,7 @@
         Install Xcode from the [App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12) or
         from [developer.apple.com](https://developer.apple.com/xcode/). Xcode 15 or higher is required.
         
-        @Image(source: "IntroducingSlipstream-YourFirstSite-1-1", alt: "Xcode in the App Store")   
+        @Image(source: "IntroducingSlipstream-YourFirstSite-Workspace-1-1", alt: "Xcode in the App Store")   
       }
 
       @Step {
@@ -30,43 +34,42 @@
         your site and enable the "Create git repository" option so that we can push the site to
         GitHub later on. 
         
-        @Image(source: "IntroducingSlipstream-YourFirstSite-1-2", alt: "The new Package menu in Xcode")   
+        @Image(source: "IntroducingSlipstream-YourFirstSite-Workspace-1-2", alt: "The new Package menu in Xcode")   
       }
 
       @Step {
         Open Terminal and install Tailwind CSS. Alternatively, follow the installation instructions
         at [tailwindcss.com/docs/installation](https://tailwindcss.com/docs/installation).
 
-        @Code(name: "Terminal", file: "IntroducingSlipstream-YourFirstSite-1-3.sh")
+        @Code(name: "Terminal", file: "IntroducingSlipstream-YourFirstSite-Workspace-1-3.sh")
       }
 
       @Step {
         In the same terminal, change your working directory to your newly created site and
         initialize Tailwind CSS. This will create a generic tailwind.config.js file for your site.
 
-        @Code(name: "Terminal", file: "IntroducingSlipstream-YourFirstSite-1-4.sh", reset: true)
+        @Code(name: "Terminal", file: "IntroducingSlipstream-YourFirstSite-Workspace-1-4.sh", reset: true)
       }
 
       @Step {
-        Back in Xcode, verify that your tailwind.config has now appeared.
+        Now let's add Slipstream as a dependency to our package.
         
-        You now have all the prerequisites to make your first Slipstream site!
-        
-        @Image(source: "IntroducingSlipstream-YourFirstSite-1-5", alt: "The fully configured package in Xcode")   
+        Open `Package.swift` from the Xcode project you just created.
+
+        @Code(name: "Package.swift", file: "IntroducingSlipstream-YourFirstSite-Workspace-1-5.swift")
       }
 
-<!---->
-<!--      @Step {-->
-<!--        Open Package.swift.-->
-<!--        -->
-<!--        @Code(name: "Package.swift", file: "IntroducingSlipstream-YourFirstSite-step-3.swift")-->
-<!--      }-->
-<!---->
-<!--      @Step {-->
-<!--        Add Slipstream as a dependency.-->
-<!---->
-<!--        @Code(name: "Package.swift", file: "IntroducingSlipstream-YourFirstSite-step-4.swift")-->
-<!--      }-->
+      @Step {
+        Add Slipstream as a dependency.
+        
+        Slipstream only supports iOS 17+ and macOS 14+, so we also need to define a minimum OS for our package.
+        
+        @Code(name: "Package.swift", file: "IntroducingSlipstream-YourFirstSite-Workspace-1-6.swift")   
+      }
+
+      @Step {
+        We now have all of the prerequisites set up to make a Slipstream website!
+      }
     }
   }
 }

@@ -1,0 +1,101 @@
+@Tutorial(time: 10) {
+  @XcodeRequirement(title: "Xcode 15 or later", destination: "https://itunes.apple.com/us/app/xcode/id497799835?mt=12")
+  
+  @Intro(title: "Hello, world!") {
+    Learn the essential Slipstream concepts and workflow to build your first site.
+
+    This tutorial assumes you already have Xcode and Tailwind CSS installed and that you have a
+    Swift package with Slipstream added as a dependency.
+
+    @Image(source: "tutorial-banner", alt: "Coco the pig")
+  }
+
+  @Section(title: "Your first view") {
+    @ContentAndMedia {
+      Let's learn the basics of Slipstream. If you're familiar with SwiftUI then this section will
+      also feel familiar.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo. The Swift bird logo is flying off the edge of the Tailwind CSS wind logo")    
+    }
+    
+    @Steps {
+      @Step {
+        Like SwiftUI, every project in Slipstream starts with a ``View``.
+        
+        Open up main.swift.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-1-1.swift")
+      }
+
+      @Step {
+        Remove the boilerplate and add a new ``View`` type called `Home`.
+        
+        This view will be the root definition for our home page.
+        
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-1-2.swift")
+      }
+
+      @Step {
+        Now let's try rendering the view to see what the output looks like. We'll use
+        ``renderHTML(_:)`` to render our view to a string that we can print to the console.
+        
+        Notice that the output includes our text wrapped inside of a `<p>` element. Every View type
+        in Slipstream will produce some kind of an HTML element. When possible, Slipstream tries to
+        match the generated code to similar behavior for the view's SwiftUI equivalent.
+        <doc:SlipstreamforSwiftUIDevelopers> provides a complete outline of the overlap between
+        SwiftUI and Slipstream.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-1-3.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-HelloWorld-1-3-preview", alt: "The output from rendering our view: <p>Hello, world!</p>")
+        }
+      }
+    }
+  }
+  
+  @Section(title: "Rendering to disk") {
+    @ContentAndMedia {
+      Now that we've made our first Slipstream view, let's get it saved to disk so that we can
+      preview the output to a browser.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo. The Swift bird logo is flying off the edge of the Tailwind CSS wind logo")
+    }
+
+    @Steps {
+      @Step {
+        Slipstream provides a barebones site renderer that requires we define a ``Sitemap``, essentially
+        a map of filepaths to ``View`` instances.
+
+        To use it we first define our sitemap.
+        
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-2-1.swift", previousFile: "IntroducingSlipstream-YourFirstSite-HelloWorld-1-3.swift")
+      }
+
+      @Step {
+        Next we need to define where we want to output our site to. In most cases just writing to
+        your project directory is going to be sufficient, but you could extend functionality with
+        more options if needed.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-2-2.swift")
+      }
+
+      @Step {
+        We can now use ``renderSitemap(_:to:encoding:)`` to output our generated site to our project
+        folder.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-2-3.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-HelloWorld-2-3-preview", alt: "The output from rendering our sitemap")
+        }
+      }
+
+      @Step {
+        Congratulations! You've just generated your first Slipstream html page! 🎉 It ain't pretty
+        (yet!), but it's yours 😉
+
+        You can try previewing `index.html` by right clicking it in Xcode and clicking "Open
+        with External Editor".
+
+        @Image(source: "IntroducingSlipstream-YourFirstSite-HelloWorld-2-4", alt: "The output from rendering our sitemap")
+      }
+    }
+  }
+}
