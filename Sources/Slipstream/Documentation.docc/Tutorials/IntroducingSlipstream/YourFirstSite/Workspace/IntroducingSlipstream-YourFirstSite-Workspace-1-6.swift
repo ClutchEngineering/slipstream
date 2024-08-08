@@ -5,6 +5,10 @@ import PackageDescription
 
 let package = Package(
   name: "MySite",
+  platforms: [
+    .macOS("14"),
+    .iOS("17"),
+  ],
   dependencies: [
     .package(url: "https://github.com/jverkoey/slipstream.git", branch: "main"),
   ],
