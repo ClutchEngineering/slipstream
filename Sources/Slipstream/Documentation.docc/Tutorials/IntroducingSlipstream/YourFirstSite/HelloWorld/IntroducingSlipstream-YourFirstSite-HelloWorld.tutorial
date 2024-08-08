@@ -100,10 +100,10 @@
     }
   }
 
-  @Section(title: "Adding some style") {
+  @Section(title: "Adding structure and style") {
     @ContentAndMedia {
-      With the basic rendering workflow under control we can now apply some style to our site using
-      Tailwind CSS concepts.
+      With the basic rendering workflow under control we can now add some structure and style to
+      our site using Tailwind CSS concepts.
 
       If you're not familiar with Tailwind CSS, their article on Tailwind's
       [Utility-First Fundamentals](https://tailwindcss.com/docs/utility-first) is a great intro to
@@ -130,11 +130,10 @@
       }
 
       @Step {
-        Let's also add a Tailwind ``Container`` to our page so that Tailwind has something to do.
+        Many web pages start with a ``Container``.
 
-        Tailwind [containers](https://tailwindcss.com/docs/container) provide us with a reasonable
-        breakpoint scaffolding to use so that our site will scale appropriately across different
-        device form factors (think mobile vs desktop).
+        Tailwind [containers](https://tailwindcss.com/docs/container) apply constraints to our
+        site's width, making it easier to design for mobile & desktop form factors.
 
         @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-HelloWorld-3-3.swift")
       }
