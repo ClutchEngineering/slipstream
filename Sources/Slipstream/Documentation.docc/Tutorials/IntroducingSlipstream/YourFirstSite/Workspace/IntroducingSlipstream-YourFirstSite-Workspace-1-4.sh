@@ -1,2 +1,2 @@
-cd ~/path/to/your/site
+cd ~/path/to/MySite
 npx tailwindcss init
