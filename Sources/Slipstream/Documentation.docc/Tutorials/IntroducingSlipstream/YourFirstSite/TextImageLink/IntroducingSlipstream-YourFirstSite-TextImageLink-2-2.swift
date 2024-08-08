@@ -17,7 +17,7 @@ struct Home: View {
           )
           .textColor(Color(.blue, darkness: 500))
           .underline(condition: .hover)
-          Image(URL(string: "coco.jpeg"))
+          Image(URL(string: "coco.jpg"))
         }
       }
     }

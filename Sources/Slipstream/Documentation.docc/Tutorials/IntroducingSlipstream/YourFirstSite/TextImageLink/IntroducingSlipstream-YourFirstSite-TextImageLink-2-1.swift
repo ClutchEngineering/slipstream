@@ -16,7 +16,7 @@ struct Home: View {
             destination: URL(string: "https://www.bahamas.com/experiences/official-home-swimming-pigs")
           )
           .textColor(Color(.blue, darkness: 500))
-          Image(URL(string: "coco.jpeg"))
+          Image(URL(string: "coco.jpg"))
         }
       }
     }
