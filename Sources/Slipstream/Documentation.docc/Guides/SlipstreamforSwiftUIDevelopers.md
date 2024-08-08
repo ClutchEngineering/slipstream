@@ -76,6 +76,35 @@ var body: some View {
 }
 ```
 
+## @Environment
+
+Slipstream's ``Environment`` APIs are a near 1-1 match with SwiftUI's equivalent APIs. Slipstream
+does not provide any environment keys out of the box, but the ability to read and write environment
+state enables entire categories of functionality to be built on top of Slipstream including:
+
+- Views that are recursively configurable via "stylesheet" objects injected into the environment.
+- Awareness of the current page URL, e.g. marking a navigation link as "active" based on the current
+  page being rendered.
+
+### Injecting environment state
+
+```swift
+MyView()
+  .environment(\.path, "/home")
+```
+
+### Reading environment state
+
+```swift
+struct MyView: View {
+  @Environment(\.path) var path
+
+  var body: some View {
+    Text(path)
+  }
+}
+```
+
 ## Sizing
 
 SwiftUI and Slipstream both provide a
