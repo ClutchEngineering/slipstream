@@ -14,5 +14,6 @@
 
     @TutorialReference(tutorial: "doc:IntroducingSlipstream-YourFirstSite-Workspace")
     @TutorialReference(tutorial: "doc:IntroducingSlipstream-YourFirstSite-HelloWorld")
+    @TutorialReference(tutorial: "doc:IntroducingSlipstream-YourFirstSite-TextImageLink")
   }
 }

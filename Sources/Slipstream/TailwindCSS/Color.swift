@@ -1,4 +1,6 @@
 /// A representation of a color.
+///
+/// - SeeAlso: Tailwind CSS' [`color palettes`](https://tailwindcss.com/docs/customizing-colors) documentation.
 @available(iOS 17.0, macOS 14.0, *)
 public struct Color {
   public static let black = Color(.black)

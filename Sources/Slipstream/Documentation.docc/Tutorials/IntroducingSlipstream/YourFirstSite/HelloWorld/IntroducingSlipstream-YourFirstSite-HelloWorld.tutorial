@@ -2,7 +2,7 @@
   @XcodeRequirement(title: "Xcode 15 or later", destination: "https://itunes.apple.com/us/app/xcode/id497799835?mt=12")
   
   @Intro(title: "Hello, world!") {
-    Learn the essential Slipstream concepts.
+    Learn the essential Slipstream concepts and workflow.
 
     This tutorial assumes you already have Xcode and Tailwind CSS installed and that you have a
     Swift package with Slipstream added as a dependency.
@@ -12,12 +12,12 @@
 
   @Section(title: "Your first view") {
     @ContentAndMedia {
-      Let's learn the basics of Slipstream. If you're familiar with SwiftUI then this section will
-      also feel familiar.
+      Let's make our first ``View``. If you're familiar with SwiftUI then you'll breeze through
+      this section.
 
       @Image(source: "logo-square", alt: "The Slipstream logo. The Swift bird logo is flying off the edge of the Tailwind CSS wind logo")    
     }
-    
+
     @Steps {
       @Step {
         Like SwiftUI, every project in Slipstream starts with a ``View``.
@@ -36,7 +36,7 @@
       }
 
       @Step {
-        Now let's render the view to see what the output looks like. We'll use
+        Let's render the view to see what the output looks like. We'll use
         ``renderHTML(_:)`` to render our view to a string that we can print to the console. Run your
         executable to see the output.
 
