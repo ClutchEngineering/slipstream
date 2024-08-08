@@ -3,7 +3,7 @@ import SwiftSoup
 /// A view that represents a string literal in an HTML document.
 ///
 /// DOMString is a string literal, meaning the contents of the string will be rendered
-/// as-is in the HTML document. Any HTML markup include in the string will be
+/// as-is in the HTML document. Any HTML markup included in the string will be
 /// escaped and represented as-is.
 @available(iOS 17.0, macOS 14.0, *)
 public struct DOMString: View {
