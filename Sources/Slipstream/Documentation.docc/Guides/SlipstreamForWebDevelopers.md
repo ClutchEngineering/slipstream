@@ -12,7 +12,7 @@ by the following issues on GitHub:
 ## The elements of Slipstream
 
 Modeling after [the W3C specification](https://html.spec.whatwg.org/multipage/semantics.html#semantics),
-provided below is an organized table of W3C HTML tags and their equivalent Slipstream tags.
+provided below is an organized table of W3C HTML tags and their equivalent Slipstream views.
 
 ### The document element
 
