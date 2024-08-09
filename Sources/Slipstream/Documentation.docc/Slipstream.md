@@ -53,6 +53,7 @@ print(try renderHTML(HelloWorld()))
 ### Guides
 
 - <doc:SlipstreamforSwiftUIDevelopers>
+- <doc:SlipstreamForWebDevelopers>
 
 ### Architecture
 
