@@ -29,9 +29,10 @@ extension View {
   /// - SeeAlso: Tailwind CSS' [outline style](https://tailwindcss.com/docs/outline-style) documentation.
   @available(iOS 17.0, macOS 14.0, *)
   public func outline(_ color: Color? = nil, width: Int = 1, style: OutlineStyle, condition: Condition? = nil) -> some View {
-    var classNames: [String] = [
-      "outline" + closestTailwindOutlineWidth(width: width)
-    ]
+    var classNames: [String] = []
+    if style != .none {
+      classNames.append("outline" + closestTailwindOutlineWidth(width: width))
+    }
     if let color {
       classNames.append("outline-" + color.toTailwindColorClass())
     }

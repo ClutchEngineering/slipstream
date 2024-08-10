@@ -22,7 +22,7 @@ struct OutlineTests {
   }
 
   @Test func styles() throws {
-    try #expect(renderHTML(Div {}.outline(style: .none)) == #"<div class="outline-1 outline-none"></div>"#)
+    try #expect(renderHTML(Div {}.outline(style: .none)) == #"<div class="outline-none"></div>"#)
     try #expect(renderHTML(Div {}.outline(style: .solid)) == #"<div class="outline outline-1"></div>"#)
     try #expect(renderHTML(Div {}.outline(style: .dashed)) == #"<div class="outline-1 outline-dashed"></div>"#)
     try #expect(renderHTML(Div {}.outline(style: .dotted)) == #"<div class="outline-1 outline-dotted"></div>"#)
