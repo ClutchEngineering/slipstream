@@ -15,6 +15,11 @@ struct ScriptTests {
     try #expect(renderHTML(Script(URL(string: "/main.js"), executionMode: .defer)) == #"<script src="/main.js" defer></script>"#)
   }
 
+  @Test func crossOrigin() throws {
+    try #expect(renderHTML(Script(URL(string: "/main.js"), crossOrigin: .anonymous)) == #"<script src="/main.js" crossorigin=""></script>"#)
+    try #expect(renderHTML(Script(URL(string: "/main.js"), crossOrigin: .useCredentials)) == #"<script src="/main.js" crossorigin="use-credentials"></script>"#)
+  }
+
   @Test func source() throws {
     try #expect(renderHTML(Script("""
 alert("Hello, world!");

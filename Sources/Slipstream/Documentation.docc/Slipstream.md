@@ -82,8 +82,8 @@ print(try renderHTML(HelloWorld()))
 
 ### W3C
 
-- <doc:W3CViews>
 - <doc:W3CAttributes>
+- <doc:W3CViews>
 
 ### Rendering views
 

@@ -34,8 +34,16 @@ public enum ScriptExecutionMode: String {
 @available(iOS 17.0, macOS 14.0, *)
 public struct Script: View {
   /// Creates a script view pointing to a URL.
-  public init(_ url: URL?, executionMode: ScriptExecutionMode? = nil) {
-    self.storage = .url(url, executionMode: executionMode)
+  ///
+  /// - Parameters:
+  ///   - url: The script will be loaded from this URL.
+  ///   - crossOrigin: If provided, configures the Cross-Origin Resource Sharing (CORS)
+  ///   behavior for the request of this resource. If not provided, then the No CORS state is
+  ///   implied.
+  ///   - executionMode: The execution mode for this script defines how and when the
+  ///   script should be loaded in relation to the rest of the document.
+  public init(_ url: URL?, crossOrigin: CrossOrigin? = nil, executionMode: ScriptExecutionMode? = nil) {
+    self.storage = .url(url, crossOrigin: crossOrigin, executionMode: executionMode)
   }
 
   /// Creates a script view with inline source.
@@ -46,12 +54,15 @@ public struct Script: View {
   @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     switch storage {
-    case .url(let url, let executionMode):
+    case .url(let url, let crossOrigin, let executionMode):
       guard let url else {
         return
       }
       let element = try container.appendElement("script")
       try element.attr("src", url.absoluteString)
+      if let crossOrigin {
+        try element.attr("crossorigin", crossOrigin.rawValue)
+      }
       if let executionMode {
         try element.attr(executionMode.rawValue, "")
       }
@@ -63,7 +74,7 @@ public struct Script: View {
   }
 
   private enum Storage {
-    case url(URL?, executionMode: ScriptExecutionMode?)
+    case url(URL?, crossOrigin: CrossOrigin?, executionMode: ScriptExecutionMode?)
     case inline(String)
   }
 

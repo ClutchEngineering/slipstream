@@ -7,6 +7,7 @@ extension View {
   /// ## See Also
   ///
   /// - ``Image``
+  @available(iOS 17.0, macOS 14.0, *)
   public func accessibilityLabel(_ string: String) -> some View {
     modifier(AttributeModifier("alt", value: string))
   }

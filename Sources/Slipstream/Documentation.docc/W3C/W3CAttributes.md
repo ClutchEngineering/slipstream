@@ -13,3 +13,7 @@
 ### Images
 
 - ``View/accessibilityLabel(_:)``
+
+### Attribute types
+
+- ``CrossOrigin``
