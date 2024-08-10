@@ -28,6 +28,6 @@ extension View {
     if let tailwindSizingClass = maxHeight?.tailwindSizingClass {
       classNames.append("max-h-\(tailwindSizingClass)")
     }
-    return self.modifier(TailwindClassModifier(add: Set(classNames), condition: condition))
+    return modifier(TailwindClassModifier(add: Set(classNames), condition: condition))
   }
 }
