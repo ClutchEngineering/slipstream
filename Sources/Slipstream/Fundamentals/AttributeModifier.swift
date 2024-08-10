@@ -99,7 +99,7 @@ private struct AttributeModifierView<Content: View>: View {
     let shadowDOM = Document("")
     try self.content().render(shadowDOM, environment: environment)
     for child in shadowDOM.getChildNodes() {
-      for (key, value) in attributes {
+      for (key, value) in attributes.sorted(by: { $0.key < $1.key }) {
         try child.attr(key, value)
       }
       try container.appendChild(child)
