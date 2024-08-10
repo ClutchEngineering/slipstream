@@ -54,7 +54,7 @@ print(try renderHTML(HelloWorld()))
 
 - <doc:SlipstreamforSwiftUIDevelopers>
 - <doc:SlipstreamForTailwindCSSDevelopers>
-- <doc:SlipstreamForWebDevelopers>>
+- <doc:SlipstreamForWebDevelopers>
 
 ### Architecture
 

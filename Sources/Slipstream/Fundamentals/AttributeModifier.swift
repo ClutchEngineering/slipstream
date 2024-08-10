@@ -21,8 +21,7 @@ import SwiftSoup
 /// ```
 @available(iOS 17.0, macOS 14.0, *)
 public struct AttributeModifier<T: View>: ViewModifier {
-  private let attribute: String
-  private let value: String
+  private let attributes: [String: String]
 
   /// A W3C global attribute, as defined in [3.2.3 Global attributes](https://html.spec.whatwg.org/multipage/dom.html#global-attributes).
   public enum GlobalAttribute: String {
@@ -68,26 +67,31 @@ public struct AttributeModifier<T: View>: ViewModifier {
   ///   - attribute: The HTML attribute to be modified.
   ///   - value: The value to set on the attrribute.
   public init(_ attribute: String, value: String) {
-    self.attribute = attribute
-    self.value = value
+    self.attributes = [attribute: value]
+  }
+
+  /// Creates an attribute modifier that will set multiple attribute values on any modified views.
+  ///
+  /// - Parameters:
+  ///   - attributes: A map of global HTML attributes to the values that should be set for them.
+  public init(_ attributes: [String: String]) {
+    self.attributes = attributes
   }
 
   @ViewBuilder
   public func body(content: T) -> some View {
-    AttributeModifierView(attribute, value: value) {
+    AttributeModifierView(attributes) {
       content
     }
   }
 }
 
 private struct AttributeModifierView<Content: View>: View {
-  private let attribute: String
-  private let value: String
+  private let attributes: [String: String]
   private let content: () -> Content
 
-  init(_ attribute: String, value: String, @ViewBuilder content: @escaping () -> Content) {
-    self.attribute = attribute
-    self.value = value
+  init(_ attributes: [String: String], @ViewBuilder content: @escaping () -> Content) {
+    self.attributes = attributes
     self.content = content
   }
 
@@ -95,7 +99,9 @@ private struct AttributeModifierView<Content: View>: View {
     let shadowDOM = Document("")
     try self.content().render(shadowDOM, environment: environment)
     for child in shadowDOM.getChildNodes() {
-      try child.attr(attribute, value)
+      for (key, value) in attributes {
+        try child.attr(key, value)
+      }
       try container.appendChild(child)
     }
   }

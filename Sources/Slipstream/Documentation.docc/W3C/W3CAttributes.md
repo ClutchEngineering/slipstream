@@ -8,6 +8,7 @@
 - ``View/classNames(_:)``
 - ``View/id(_:)``
 - ``View/language(_:)``
+- ``View/data(_:)``
 
 ### Images
 
