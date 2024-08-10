@@ -44,6 +44,30 @@ struct HelloWorld: View {
 print(try renderHTML(HelloWorld()))
 ```
 
+### Render a sitemap
+
+Slipstream intentionally avoids making strong opinions about how your documents should be structured
+and written to disk. To help get you started though you can use Slipstream's lightweight sitemap
+renderer to write a dictionary of Slipstream views to disk:
+
+```swift
+let sitemap: Sitemap = [
+  "index.html": HelloWorld()
+]
+
+// Assumes this file is located in a Sources/ sub-directory of a Swift package.
+guard let projectURL = URL(filePath: #filePath)?
+  .deletingLastPathComponent()
+  .deletingLastPathComponent() else {
+  print("Unable to create URL for \(#filePath)")
+  exit(1)
+}
+
+let outputURL = projectURL.appending(path: "site")
+
+try renderSitemap(sitemap, to: outputURL)
+```
+
 ## Documentation
 
 View Slipstream's [complete documentation](https://jverkoey.github.io/slipstream/documentation/slipstream/).
