@@ -51,6 +51,10 @@ Slipstream implementations of Tailwind CSS's utility classes.
 - <doc:Borders-Border>
 - <doc:Borders-CornerRadius>
 
+### Effects
+
+- <doc:Effects-Shadow>
+
 ### Filters
 
 - <doc:Filters-BackdropBlur>

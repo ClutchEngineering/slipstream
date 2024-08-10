@@ -152,8 +152,8 @@ Tailwind utility | Slipstream modifier
 
 Tailwind utility | Slipstream modifier
 :----------------|:-------------------
-[Box Shadow](https://tailwindcss.com/docs/box-shadow) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Box Shadow Color](https://tailwindcss.com/docs/box-shadow-color) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Box Shadow](https://tailwindcss.com/docs/box-shadow) | ``View/shadow(color:radius:condition:)``
+[Box Shadow Color](https://tailwindcss.com/docs/box-shadow-color) | ``View/shadow(color:radius:condition:)
 [Opacity](https://tailwindcss.com/docs/opacity) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Mix Blend Mode](https://tailwindcss.com/docs/mix-blend-mode) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Background Blend Mode](https://tailwindcss.com/docs/background-blend-mode) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
