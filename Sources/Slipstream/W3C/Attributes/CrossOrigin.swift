@@ -1,10 +1,12 @@
 /// Constants defining how a view handles cross-origin requests.
 ///
-/// - SeeAlso: W3C [alt](https://html.spec.whatwg.org/#cors-settings-attributes) guidance.
+/// - SeeAlso: W3C [crossorigin](https://html.spec.whatwg.org/#cors-settings-attributes) guidance.
 ///
 /// ## See Also
 ///
+/// - ``Image``
 /// - ``Script``
+/// - ``Stylesheet``
 @available(iOS 17.0, macOS 14.0, *)
 public enum CrossOrigin: String {
   /// Request uses CORS headers and credentials flag is set to 'same-origin'.
