@@ -92,6 +92,14 @@ extension View {
     modifier(TailwindClassModifier(add: "bg-\(color.toTailwindColorClass())", condition: condition))
   }
 
+  /// Sets the background material of the view.
+  ///
+  /// - SeeAlso: Tailwind CSS' [backdrop blur](https://tailwindcss.com/docs/backdrop-blur) documentation.
+  @available(iOS 17.0, macOS 14.0, *)
+  public func background(_ material: Material, condition: Condition? = nil) -> some View {
+    modifier(TailwindClassModifier(add: "backdrop-blur\(material.rawValue)", condition: condition))
+  }
+
   /// Sets the background color to a specific Tailwind CSS palette.
   ///
   /// - Parameters:

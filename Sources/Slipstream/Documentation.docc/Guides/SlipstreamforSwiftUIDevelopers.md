@@ -126,6 +126,19 @@ var body: some View {
 }
 ```
 
+## Materials
+
+SwiftUI and Slipstream both provide the ability to apply material backgrounds to views.
+
+### Offset
+
+```swift
+var body: some View {
+  Text("Blurred background")
+    .background(.ultraThin)
+}
+```
+
 ## Sizing
 
 SwiftUI and Slipstream both provide a
