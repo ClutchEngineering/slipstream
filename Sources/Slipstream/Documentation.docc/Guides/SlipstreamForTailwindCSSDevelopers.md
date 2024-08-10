@@ -160,8 +160,8 @@ Tailwind utility | Slipstream modifier
 [Outline Color](https://tailwindcss.com/docs/outline-color) | ``View/outline(_:width:condition:)``, ``View/outline(_:width:style:condition:)``
 [Outline Style](https://tailwindcss.com/docs/outline-style) | ``View/outline(_:width:style:condition:)``
 [Outline Offset](https://tailwindcss.com/docs/outline-offset) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Ring Width](https://tailwindcss.com/docs/ring-width) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Ring Color](https://tailwindcss.com/docs/ring-color) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Ring Width](https://tailwindcss.com/docs/ring-width) | ``View/ring(_:width:condition:)``
+[Ring Color](https://tailwindcss.com/docs/ring-color) | ``View/ring(_:width:condition:)``
 [Ring Offset Width](https://tailwindcss.com/docs/ring-offset-width) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Ring Offset Color](https://tailwindcss.com/docs/ring-offset-color) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 
