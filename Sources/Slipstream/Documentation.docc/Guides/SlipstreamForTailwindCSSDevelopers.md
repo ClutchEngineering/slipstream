@@ -171,7 +171,7 @@ Tailwind utility | Slipstream modifier
 [Invert](https://tailwindcss.com/docs/invert) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Saturate](https://tailwindcss.com/docs/saturate) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Sepia](https://tailwindcss.com/docs/sepia) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Backdrop Blur](https://tailwindcss.com/docs/backdrop-blur) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Backdrop Blur](https://tailwindcss.com/docs/backdrop-blur) | ``View/background(_:condition:)-89gyc``
 [Backdrop Brightness](https://tailwindcss.com/docs/backdrop-brightness) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Backdrop Contrast](https://tailwindcss.com/docs/backdrop-contrast) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Backdrop Grayscale](https://tailwindcss.com/docs/backdrop-grayscale) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
