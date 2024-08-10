@@ -156,9 +156,9 @@ Tailwind utility | Slipstream modifier
 [Divide Width](https://tailwindcss.com/docs/divide-width) | ``View/border(_:width:edges:condition:)``
 [Divide Color](https://tailwindcss.com/docs/divide-color) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Divide Style](https://tailwindcss.com/docs/divide-style) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Outline Width](https://tailwindcss.com/docs/outline-width) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Outline Color](https://tailwindcss.com/docs/outline-color) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Outline Style](https://tailwindcss.com/docs/outline-style) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Outline Width](https://tailwindcss.com/docs/outline-width) | ``View/outline(_:width:condition:)``, ``View/outline(_:width:style:condition:)``
+[Outline Color](https://tailwindcss.com/docs/outline-color) | ``View/outline(_:width:condition:)``, ``View/outline(_:width:style:condition:)``
+[Outline Style](https://tailwindcss.com/docs/outline-style) | ``View/outline(_:width:style:condition:)``
 [Outline Offset](https://tailwindcss.com/docs/outline-offset) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Ring Width](https://tailwindcss.com/docs/ring-width) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Ring Color](https://tailwindcss.com/docs/ring-color) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)

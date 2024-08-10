@@ -52,16 +52,14 @@ extension View {
   }
 
   private func closestTailwindBorderWidth(width: Int) -> String {
-    // Mapping of Tailwind CSS font size classes to their point sizes.
-    let borderMapping: [(classSuffix: String, width: Int)] = [
+    let mapping: [(classSuffix: String, width: Int)] = [
       ("-0", 0),
       ("", 1),
       ("-2", 2),
       ("-4", 4),
       ("-8", 8),
     ]
-    // Find the closest matching font size
-    let closest = borderMapping.min { abs($0.width - width) < abs($1.width - width) }
+    let closest = mapping.min { abs($0.width - width) < abs($1.width - width) }
     return closest?.classSuffix ?? ""
   }
 }
