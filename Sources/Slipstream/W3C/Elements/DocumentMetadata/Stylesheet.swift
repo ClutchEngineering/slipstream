@@ -18,8 +18,15 @@ import SwiftSoup
 @available(iOS 17.0, macOS 14.0, *)
 public struct Stylesheet: View {
   /// Creates a Stylesheet view.
-  public init(_ url: URL?) {
+  ///
+  /// - Parameters:
+  ///   - url: The stylesheet will be loaded from this URL.
+  ///   - crossOrigin: If provided, configures the Cross-Origin Resource Sharing (CORS)
+  ///   behavior for the request of this resource. If not provided, then the No CORS state is
+  ///   implied.
+  public init(_ url: URL?, crossOrigin: CrossOrigin? = nil) {
     self.url = url
+    self.crossOrigin = crossOrigin
   }
 
   @_documentation(visibility: private)
@@ -30,7 +37,11 @@ public struct Stylesheet: View {
     let element = try container.appendElement("link")
     try element.attr("rel", "stylesheet")
     try element.attr("href", url.absoluteString)
+    if let crossOrigin {
+      try element.attr("crossorigin", crossOrigin.rawValue)
+    }
   }
 
   private let url: URL?
+  private let crossOrigin: CrossOrigin?
 }
