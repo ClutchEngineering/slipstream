@@ -114,6 +114,23 @@ Tailwind utility | Slipstream modifier
 [Hyphens](https://tailwindcss.com/docs/hyphens) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Content](https://tailwindcss.com/docs/content) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 
+### Font weights
+
+SwiftUI and Tailwind CSS' font weight names are not aligned. Slipstream has opted to use SwiftUI's
+font weight names. The mapping of values is provided below:
+
+SwiftUI font weight | Tailwind CSS font weight
+:-------------------|:------------------------
+``FontWeight/ultralight`` | thin
+``FontWeight/thin`` | extralight
+``FontWeight/light`` | light
+``FontWeight/regular`` | normal
+``FontWeight/medium`` | medium
+``FontWeight/semibold`` | semibold
+``FontWeight/bold`` | bold
+``FontWeight/heavy`` | extrabold
+``FontWeight/black`` | black
+
 ## Backgrounds
 
 Tailwind utility | Slipstream modifier
