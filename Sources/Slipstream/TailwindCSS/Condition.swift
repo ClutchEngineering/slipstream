@@ -48,6 +48,9 @@ public struct Condition {
   /// A convenience condition representing the active state.
   public static let active = Condition(state: .active)
 
+  /// A convenience condition representing the focus state.
+  public static let focus = Condition(state: .focus)
+
   /// A convenience condition representing a minimum breakpoint.
   public static func startingAt(_ breakpoint: Breakpoint) -> Self {
     return Condition(startingAt: breakpoint)
