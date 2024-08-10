@@ -6,8 +6,17 @@ struct ButtonTests {
   @Test func emptyBlock() throws {
     try #expect(renderHTML(Button {}) == "<button></button>")
   }
+
   @Test func withText() throws {
     try #expect(renderHTML(Button("Tap me")) == #"<button>Tap me</button>"#)
+  }
+
+  @Test func withAction() throws {
+    try #expect(renderHTML(Button(action: "alert('hello world')") {
+      DOMString("Tap me")
+    }) == #"<button onclick="alert('hello world')">Tap me</button>"#)
+
+    try #expect(renderHTML(Button("Tap me", action: "alert('hello world')")) == #"<button onclick="alert('hello world')">Tap me</button>"#)
   }
 
   @Test func withCustomContent() throws {
