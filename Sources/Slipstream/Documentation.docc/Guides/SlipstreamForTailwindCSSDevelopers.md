@@ -28,7 +28,7 @@ Tailwind utility | Slipstream modifier
 [Overflow](https://tailwindcss.com/docs/overflow) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Overscroll Behavior](https://tailwindcss.com/docs/overscroll-behavior) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Position](https://tailwindcss.com/docs/position) | ``View/position(_:condition:)``
-[Top / Right / Bottom / Left](https://tailwindcss.com/docs/top-right-bottom-left) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Top / Right / Bottom / Left](https://tailwindcss.com/docs/top-right-bottom-left) | ``View/placement(inset:condition:)``, ``View/placement(x:y:condition:)``, ``View/placement(left:right:top:bottom:condition:)``
 [Visibility](https://tailwindcss.com/docs/visibility) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Z-Index](https://tailwindcss.com/docs/z-index) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 
@@ -206,7 +206,7 @@ Tailwind utility | Slipstream modifier
 :----------------|:-------------------
 [Scale](https://tailwindcss.com/docs/scale) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Rotate](https://tailwindcss.com/docs/rotate) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Translate](https://tailwindcss.com/docs/translate) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Translate](https://tailwindcss.com/docs/translate) | ``View/offset(x:y:condition:)``
 [Skew](https://tailwindcss.com/docs/skew) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Transform Origin](https://tailwindcss.com/docs/transform-origin) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 

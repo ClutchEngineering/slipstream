@@ -54,3 +54,7 @@ Slipstream implementations of Tailwind CSS's utility classes.
 ### Transitions and animations
 
 - <doc:TransitionsAndAnimations-Animation>
+
+### Transforms
+
+- <doc:Transforms-Offset>
