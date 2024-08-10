@@ -3,14 +3,14 @@ import Slipstream
 
 struct FontWeightTests {
   @Test func enumFontWeights() throws {
-    try #expect(renderHTML(Div {}.fontWeight(.thin)) == #"<div class="font-thin"></div>"#)
-    try #expect(renderHTML(Div {}.fontWeight(.extraLight)) == #"<div class="font-extralight"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.ultralight)) == #"<div class="font-thin"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.thin)) == #"<div class="font-extralight"></div>"#)
     try #expect(renderHTML(Div {}.fontWeight(.light)) == #"<div class="font-light"></div>"#)
-    try #expect(renderHTML(Div {}.fontWeight(.normal)) == #"<div class="font-normal"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.regular)) == #"<div class="font-normal"></div>"#)
     try #expect(renderHTML(Div {}.fontWeight(.medium)) == #"<div class="font-medium"></div>"#)
-    try #expect(renderHTML(Div {}.fontWeight(.semiBold)) == #"<div class="font-semibold"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.semibold)) == #"<div class="font-semibold"></div>"#)
     try #expect(renderHTML(Div {}.fontWeight(.bold)) == #"<div class="font-bold"></div>"#)
-    try #expect(renderHTML(Div {}.fontWeight(.extraBold)) == #"<div class="font-extrabold"></div>"#)
+    try #expect(renderHTML(Div {}.fontWeight(.heavy)) == #"<div class="font-extrabold"></div>"#)
     try #expect(renderHTML(Div {}.fontWeight(.black)) == #"<div class="font-black"></div>"#)
   }
 
