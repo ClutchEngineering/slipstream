@@ -105,6 +105,27 @@ struct MyView: View {
 }
 ```
 
+## Layout
+
+SwiftUI and Slipstream both provide the ability to affect the layout of views.
+
+Note that Slipstream will find the next closest Tailwind CSS layout class for the given point size
+rather than using the exact units. This is an intentional deviation from SwiftUI's behavior in order
+to align with Tailwind CSS' use of pre-defined sizes.
+
+### Offset
+
+```swift
+var body: some View {
+  Text("Offset x")
+    .offset(x: 16)
+  Text("Offset y")
+    .offset(y: 32)
+  Text("Offset both")
+    .offset(x, 4, y: 8)
+}
+```
+
 ## Sizing
 
 SwiftUI and Slipstream both provide a
