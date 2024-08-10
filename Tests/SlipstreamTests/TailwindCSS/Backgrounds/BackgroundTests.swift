@@ -6,10 +6,12 @@ import Slipstream
 struct BackgroundImageTests {
   // MARK: - Color backgrounds
 
-  @Test func color() throws {
+  @Test func enumerations() throws {
     try #expect(renderHTML(Div {}.background(.black)) == #"<div class="bg-black"></div>"#)
     try #expect(renderHTML(Div {}.background(.white)) == #"<div class="bg-white"></div>"#)
-    try #expect(renderHTML(Div {}.background(.white)) == #"<div class="bg-white"></div>"#)
+    try #expect(renderHTML(Div {}.background(.inherit)) == #"<div class="bg-inherit"></div>"#)
+    try #expect(renderHTML(Div {}.background(.current)) == #"<div class="bg-current"></div>"#)
+    try #expect(renderHTML(Div {}.background(.transparent)) == #"<div class="bg-transparent"></div>"#)
   }
 
   @Test func colorWithDarkness() throws {

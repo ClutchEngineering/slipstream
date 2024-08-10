@@ -5,6 +5,9 @@
 public struct Color {
   public static let black = Color(.black)
   public static let white = Color(.white)
+  public static let inherit = Color(.inherit)
+  public static let current = Color(.current)
+  public static let transparent = Color(.transparent)
 
   public static func palette(_ colorPalette: ColorPalette, darkness: Int) -> Self {
     return self.init(colorPalette, darkness: darkness)
@@ -31,6 +34,9 @@ public struct Color {
   enum Storage {
     case black
     case white
+    case inherit
+    case current
+    case transparent
     case palette(ColorPalette, darkness: Int)
   }
   private let storage: Storage
@@ -47,10 +53,11 @@ public struct Color {
   /// Returns the Tailwind CSS color class for this color.
   private var colorClass: String {
     switch storage {
-    case .black:
-      return "black"
-    case .white:
-      return "white"
+    case .black: return "black"
+    case .white: return "white"
+    case .inherit: return "inherit"
+    case .current: return "current"
+    case .transparent: return "transparent"
     case .palette(let colorPalette, let darkness):
       return colorPalette.closestTailwindColorStop(for: darkness)
     }
