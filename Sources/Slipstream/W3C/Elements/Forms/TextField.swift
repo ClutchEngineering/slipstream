@@ -2,7 +2,7 @@ import SwiftSoup
 
 /// A control that displays an editable text interface.
 ///
-/// - SeeAlso: W3C [`title`](https://html.spec.whatwg.org/multipage/input.html#the-input-element) specification.
+/// - SeeAlso: W3C [input](https://html.spec.whatwg.org/multipage/input.html#the-input-element) specification.
 @available(iOS 17.0, macOS 14.0, *)
 public struct TextField: View {
   /// Creates a text field with a text label.
