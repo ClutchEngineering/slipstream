@@ -6,9 +6,17 @@ public struct FrameHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFloatL
   public static let auto = Self(.auto)
   public static let full = Self(.full)
   public static let screen = Self(.screen)
-  public static let svw = Self(.svw)
-  public static let lvw = Self(.lvw)
-  public static let dvw = Self(.dvw)
+
+  /// Sets a view's height to the smallest possible height of the viewport.
+  public static let svh = Self(.svh)
+
+  /// Sets a view's height to the largest possible height of the viewport.
+  public static let lvh = Self(.lvh)
+
+  /// Sets a view's height to span the entire height of the viewport and
+  /// changes as the browser UI expands or contracts.
+  public static let dvh = Self(.dvh)
+
   public static let min = Self(.min)
   public static let max = Self(.max)
   public static let fit = Self(.fit)
@@ -30,9 +38,9 @@ public struct FrameHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFloatL
     case auto
     case full
     case screen
-    case svw
-    case lvw
-    case dvw
+    case svh
+    case lvh
+    case dvh
     case min
     case max
     case fit
@@ -47,9 +55,9 @@ public struct FrameHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFloatL
     case .auto: return "auto"
     case .full: return "full"
     case .screen: return "screen"
-    case .svw: return "svw"
-    case .lvw: return "lvw"
-    case .dvw: return "dvw"
+    case .svh: return "svh"
+    case .lvh: return "lvh"
+    case .dvh: return "dvh"
     case .min: return "min"
     case .max: return "max"
     case .fit: return "fit"
