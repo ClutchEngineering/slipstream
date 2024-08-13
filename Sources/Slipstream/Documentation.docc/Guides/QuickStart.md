@@ -4,6 +4,9 @@ A guide to creating your first Slipstream website, quick-like.
 
 In this guide we'll make a website called hogmobile.com.
 
+For an even faster quick-start, you can clone the template
+repo at https://github.com/jverkoey/slipstream-site-template/.
+
 ## Prerequisites
 
 - Install Xcode
