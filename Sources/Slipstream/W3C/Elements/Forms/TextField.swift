@@ -94,12 +94,14 @@ public struct TextField: View {
   /// - Parameters:
   ///   - text: The placeholder text to display in the text field when it is empty.
   ///   - type: The text field's content type.
+  ///   - name: The name of the form control, as used in form submission.
   ///   - autoFocus: If true, indicates that the view should be focused as soon as
   ///   the page is loaded, allowing the user to start typing without having to
   ///   manually focus the main view.
-  public init(_ text: String, type: TextFieldInputType = .text, autoFocus: Bool = false) {
+  public init(_ text: String, type: TextFieldInputType = .text, name: String? = nil, autoFocus: Bool = false) {
     self.text = text
     self.type = type
+    self.name = name
     self.autoFocus = autoFocus
   }
 
@@ -108,6 +110,9 @@ public struct TextField: View {
     let element = try container.appendElement("input")
     try element.attr("type", type.rawValue)
     try element.attr("placeholder", text)
+    if let name {
+      try element.attr("name", name)
+    }
     if autoFocus {
       try element.attr("autofocus", "")
     }
@@ -116,4 +121,5 @@ public struct TextField: View {
   private let text: String
   private let autoFocus: Bool
   private let type: TextFieldInputType
+  private let name: String?
 }

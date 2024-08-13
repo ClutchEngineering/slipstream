@@ -11,6 +11,10 @@ struct TextFieldTests {
     try #expect(renderHTML(TextField("Placeholder", autoFocus: true)) == #"<input type="text" placeholder="Placeholder" autofocus />"#)
   }
 
+  @Test func withName() throws {
+    try #expect(renderHTML(TextField("Placeholder", name: "email")) == #"<input type="text" placeholder="Placeholder" name="email" />"#)
+  }
+
   @Test func withType() throws {
     try #expect(renderHTML(TextField("Placeholder", type: .text)) == #"<input type="text" placeholder="Placeholder" />"#)
     try #expect(renderHTML(TextField("Placeholder", type: .search)) == #"<input type="search" placeholder="Placeholder" />"#)
