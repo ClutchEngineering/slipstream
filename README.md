@@ -17,8 +17,8 @@
 
 ## Usage
 
-If you just want to rapidly start a new Slipstream-powered GitHub Pages-hosted static site, clone
-the [Slipstream Site Template](https://github.com/jverkoey/slipstream-site-template/) repository.
+[Clone the Slipstream Site Template](https://github.com/jverkoey/slipstream-site-template/) for a
+quick-start to deploying a Slipstream site to GitHub Pages.
 
 Add Slipstream to your package dependencies:
 
