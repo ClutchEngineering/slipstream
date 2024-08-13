@@ -13,7 +13,9 @@ In this guide we'll make a website called hogmobile.com.
 npm install -D tailwindcss
 ```
 
-## Create your site package
+## Workspace setup
+
+### Create your site package
 
 ```bash
 mkdir hogmobile.com
@@ -29,13 +31,13 @@ Also initialize Tailwind CSS:
 npx tailwindcss init
 ```
 
-## Open your package in Xcode
+### Open your package in Xcode
 
 ```bash
 open Package.swift
 ```
 
-## Add Slipstream as a dependency
+### Add Slipstream as a dependency
 
 Check the following:
 
@@ -97,7 +99,7 @@ let outputURL = projectURL.appending(path: "site")
 try renderSitemap(sitemap, to: outputURL)
 ```
 
-## Configure Tailwind CSS
+### Configure Tailwind CSS
 
 Define where your site content will be rendered. In our case, we'll be writing it to the `site/`
 folder.
@@ -123,13 +125,15 @@ Create a `tailwind.css` in the root of your package:
 @tailwind utilities;
 ```
 
-## Generate your site
+### Generate your site
 
 ```bash
 swift run && npx tailwindcss -i tailwind.css -o ./site/output.css --minify
 ```
 
-## Set your site's CNAME
+## Prepare for deployment to the web
+
+### Set your site's CNAME
 
 If you plan on hosting your site using a custom domain name on GitHub pages,
 create a `CNAME` file in the root of your package and add the domain name to
@@ -139,7 +143,7 @@ it:
 hogmobile.com
 ```
 
-## Set up a GitHub action
+### Set up a GitHub action
 
 Create a file named `.github/workflows/deploy.yml` and add the following:
 
@@ -192,7 +196,7 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-## Deploying to GitHub
+## Deploy to GitHub
 
 In this section we'll deploy our website to GitHub and publish it to the internet
 using GitHub Pages.
