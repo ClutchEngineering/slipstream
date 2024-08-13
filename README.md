@@ -17,6 +17,9 @@
 
 ## Usage
 
+If you just want to rapidly start a new Slipstream-powered GitHub Pages-hosted static site, clone
+the [Slipstream Site Template](https://github.com/jverkoey/slipstream-site-template/) repository.
+
 Add Slipstream to your package dependencies:
 
 ```swift
