@@ -149,7 +149,7 @@ Tailwind utility | Slipstream modifier
 
 Tailwind utility | Slipstream modifier
 :----------------|:-------------------
-[Border Radius](https://tailwindcss.com/docs/border-radius) | ``View/cornerRadius(_:condition:)-n56e``, ``View/cornerRadius(_:condition:)-6tvub
+[Border Radius](https://tailwindcss.com/docs/border-radius) | ``View/cornerRadius(_:condition:)-n56e``, ``View/cornerRadius(_:condition:)-6tvub``
 [Border Width](https://tailwindcss.com/docs/border-width) | ``View/border(_:width:edges:condition:)``
 [Border Color](https://tailwindcss.com/docs/border-color) | ``View/border(_:width:edges:condition:)``
 [Border Style](https://tailwindcss.com/docs/border-style) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)

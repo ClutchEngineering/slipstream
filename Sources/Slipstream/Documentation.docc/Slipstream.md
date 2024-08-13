@@ -52,6 +52,7 @@ print(try renderHTML(HelloWorld()))
 
 ### Guides
 
+- <doc:QuickStart>
 - <doc:SlipstreamforSwiftUIDevelopers>
 - <doc:SlipstreamForTailwindCSSDevelopers>
 - <doc:SlipstreamForWebDevelopers>
