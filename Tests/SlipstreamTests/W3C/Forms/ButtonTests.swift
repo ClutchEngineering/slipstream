@@ -11,6 +11,10 @@ struct ButtonTests {
     try #expect(renderHTML(Button("Tap me")) == #"<button>Tap me</button>"#)
   }
 
+  @Test func withName() throws {
+    try #expect(renderHTML(Button("Tap me", name: "button")) == #"<button name="button">Tap me</button>"#)
+  }
+
   @Test func withType() throws {
     try #expect(renderHTML(Button("Tap me", type: .submit)) == #"<button type="submit">Tap me</button>"#)
     try #expect(renderHTML(Button("Tap me", type: .reset)) == #"<button type="reset">Tap me</button>"#)
