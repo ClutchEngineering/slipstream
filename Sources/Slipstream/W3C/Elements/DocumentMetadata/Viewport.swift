@@ -36,6 +36,18 @@ public struct Viewport: View {
     }
   }
 
+  /// A constant that controls how a document's viewport fills the screen.
+  public enum ViewportFit: String {
+    /// This value doesn’t affect the initial layout viewport, and the whole web page is viewable.
+    case auto
+
+    /// The viewport is scaled to fit the largest rectangle inscribed within the display.
+    case contain
+
+    /// The viewport is scaled to fill the device display.
+    case cover
+  }
+
   /// The standard viewport used for mobile-friendly websites.
   public static let mobileFriendly = Self.init(width: .deviceWidth, initialScale: 1)
 
@@ -52,13 +64,15 @@ public struct Viewport: View {
   ///   - maximumScale: The maximum scale allowed on the document. This affects the user's ability
   ///   to scale the web page and should rarely be used.
   ///   - userScalable: Whether or not the user is allowed to scale the document. Should rarely be used.
+  ///   - viewportFit: Controls how the document's viewport fills the screen.
   public init(
     width: Dimension? = nil,
     height: Dimension? = nil,
     initialScale: Double? = nil,
     minimumScale: Double? = nil,
     maximumScale: Double? = nil,
-    userScalable: Bool? = nil
+    userScalable: Bool? = nil,
+    viewportFit: ViewportFit? = nil
   ) {
     self.width = width
     self.height = height
@@ -66,6 +80,7 @@ public struct Viewport: View {
     self.minimumScale = minimumScale
     self.maximumScale = maximumScale
     self.userScalable = userScalable
+    self.viewportFit = viewportFit
   }
 
   @_documentation(visibility: private)
@@ -83,6 +98,7 @@ public struct Viewport: View {
       ("minimum-scale", minimumScale?.asString),
       ("maximum-scale", maximumScale?.asString),
       ("user-scalable", userScalable?.asString),
+      ("viewport-fit", viewportFit?.rawValue),
     ].compactMap { (item: (String, String?)) -> (String, String)? in
       guard let value = item.1 else {
         return nil
@@ -102,6 +118,7 @@ public struct Viewport: View {
   private let minimumScale: Double?
   private let maximumScale: Double?
   private let userScalable: Bool?
+  private let viewportFit: ViewportFit?
 }
 
 extension Double {

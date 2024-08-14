@@ -20,9 +20,10 @@ struct ViewportTests {
           initialScale: 2.0,
           minimumScale: 0.5,
           maximumScale: 5.0,
-          userScalable: false
+          userScalable: false,
+          viewportFit: .cover
         )
-      ) == #"<meta name="viewport" content="width=500, height=device-height, initial-scale=2, minimum-scale=0.5, maximum-scale=5, user-scalable=no" />"#
+      ) == #"<meta name="viewport" content="width=500, height=device-height, initial-scale=2, minimum-scale=0.5, maximum-scale=5, user-scalable=no, viewport-fit=cover" />"#
     )
   }
 }
