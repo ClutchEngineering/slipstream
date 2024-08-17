@@ -64,6 +64,7 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 
 - ``Table``
 - ``TableHeader``
+- ``TableHeaderCell``
 - ``TableBody``
 - ``TableRow``
 - ``TableCell``

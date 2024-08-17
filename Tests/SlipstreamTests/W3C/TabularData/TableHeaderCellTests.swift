@@ -2,16 +2,16 @@ import Testing
 
 import Slipstream
 
-struct TableCellTests {
+struct TableHeaderCellTests {
   @Test func emptyBlock() throws {
-    try #expect(renderHTML(TableCell {}) == "<td></td>")
+    try #expect(renderHTML(TableHeaderCell {}) == "<th></th>")
   }
 
   @Test func withText() throws {
-    try #expect(renderHTML(TableCell {
+    try #expect(renderHTML(TableHeaderCell {
       DOMString("Hello, world!")
     }) == """
-<td>Hello, world!</td>
+<th>Hello, world!</th>
 """)
   }
 }
