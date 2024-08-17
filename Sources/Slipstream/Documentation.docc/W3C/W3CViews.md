@@ -60,6 +60,14 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 - ``Image``
 - ``RawHTML``
 
+### Tabular data
+
+- ``Table``
+- ``TableHeader``
+- ``TableBody``
+- ``TableRow``
+- ``TableCell``
+
 ### Forms
 
 - ``Form``
