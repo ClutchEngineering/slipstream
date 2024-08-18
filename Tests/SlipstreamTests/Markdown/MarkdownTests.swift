@@ -66,9 +66,11 @@ This is some markdown content.
         Slipstream.Table {
           Slipstream.TableHeader {
             context.recurseDetached(into: table.head)
+              .environment(\.tableContext, .header)
           }
           Slipstream.TableBody {
             context.recurseDetached(into: table.body)
+              .environment(\.tableContext, .body)
           }
         }
       case is Markdown.Table.Row:
@@ -93,8 +95,8 @@ struct MarkdownTests {
 <p>This is some markdown content.</p>
 <table>
  <thead>
-  <td>Column 1</td>
-  <td>Column 2</td>
+  <th>Column 1</th>
+  <th>Column 2</th>
  </thead>
  <tbody>
   <tr>
