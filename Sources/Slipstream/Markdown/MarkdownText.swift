@@ -66,8 +66,15 @@ public struct MarkdownText: View {
     }
   }
 
+  /// Traverses the current node's children, requesting a view representation for each child in sequence.
   @ViewBuilder
   public func recurse() -> some View {
     MarkdownText(node, builder: builder)
+  }
+
+  /// Traverses the given node's children, requesting a view representation for each child in sequence.
+  @ViewBuilder
+  public func recurseDetached(into detachedNode: Markup) -> some View {
+    MarkdownText(detachedNode, builder: builder)
   }
 }
