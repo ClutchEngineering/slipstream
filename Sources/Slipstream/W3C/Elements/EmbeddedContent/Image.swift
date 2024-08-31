@@ -23,7 +23,7 @@ import SwiftSoup
 /// - ``View/accessibilityLabel(_:)``
 @available(iOS 17.0, macOS 14.0, *)
 public struct Image: View {
-  /// Creates a Stylesheet view.
+  /// Creates an Image view.
   ///
   /// - Parameters:
   ///   - url: The image will be loaded from this URL.

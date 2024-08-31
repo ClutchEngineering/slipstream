@@ -137,8 +137,8 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 
  W3C tag | Slipstream view
 :--------|:----------------
-[`<picture>`](https://html.spec.whatwg.org/multipage/sections.html#the-picture-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<source>`](https://html.spec.whatwg.org/multipage/sections.html#the-source-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<picture>`](https://html.spec.whatwg.org/multipage/sections.html#the-picture-element) | ``Picture``
+[`<source>`](https://html.spec.whatwg.org/multipage/sections.html#the-source-element) | ``Source``
 [`<img>`](https://html.spec.whatwg.org/multipage/sections.html#the-img-element) | ``Image``
 [`<iframe>`](https://html.spec.whatwg.org/multipage/sections.html#the-iframe-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<embed>`](https://html.spec.whatwg.org/multipage/sections.html#the-embed-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
