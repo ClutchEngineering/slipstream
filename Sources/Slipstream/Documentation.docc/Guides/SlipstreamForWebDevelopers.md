@@ -199,4 +199,4 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<noscript>`](https://html.spec.whatwg.org/multipage/sections.html#the-noscript-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<template>`](https://html.spec.whatwg.org/multipage/sections.html#the-template-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<slot>`](https://html.spec.whatwg.org/multipage/sections.html#the-slot-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<canvas>`](https://html.spec.whatwg.org/multipage/sections.html#the-canvas-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<canvas>`](https://html.spec.whatwg.org/multipage/sections.html#the-canvas-element) | ``Canvas``
