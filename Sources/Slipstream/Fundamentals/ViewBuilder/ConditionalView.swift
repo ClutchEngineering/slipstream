@@ -13,7 +13,7 @@ public struct ConditionalView<T: View, F: View>: View {
     self.condition = condition
   }
 
-  private var condition: Condition
+  private let condition: Condition
 
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     switch condition {

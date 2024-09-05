@@ -10,7 +10,7 @@ public struct TupleView<T>: View {
     self.value = value
   }
 
-  private var value: T
+  private let value: T
 
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     /// Our tuple may be composed of any number of View types, so we use Mirror to

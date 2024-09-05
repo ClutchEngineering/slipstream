@@ -10,7 +10,7 @@ public struct ArrayView: View {
     self.array = array
   }
 
-  private var array: [any View]
+  private let array: [any View]
 
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     for view in array {
