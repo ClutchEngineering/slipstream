@@ -140,7 +140,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<picture>`](https://html.spec.whatwg.org/multipage/sections.html#the-picture-element) | ``Picture``
 [`<source>`](https://html.spec.whatwg.org/multipage/sections.html#the-source-element) | ``Source``
 [`<img>`](https://html.spec.whatwg.org/multipage/sections.html#the-img-element) | ``Image``
-[`<iframe>`](https://html.spec.whatwg.org/multipage/sections.html#the-iframe-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<iframe>`](https://html.spec.whatwg.org/multipage/sections.html#the-iframe-element) | ``IFrame``
 [`<embed>`](https://html.spec.whatwg.org/multipage/sections.html#the-embed-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<object>`](https://html.spec.whatwg.org/multipage/sections.html#the-object-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<video>`](https://html.spec.whatwg.org/multipage/sections.html#the-video-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
