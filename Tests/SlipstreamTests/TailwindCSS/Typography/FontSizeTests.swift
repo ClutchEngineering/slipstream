@@ -41,7 +41,7 @@ struct FontSizeTests {
     try #expect(renderHTML(Div {}.fontSize(200)) == #"<div class="text-9xl"></div>"#)
   }
 
-  @Test func ExactFontSizes() throws {
+  @Test func exactFontSizes() throws {
     try #expect(renderHTML(Div {}.fontSize(px: 31)) == #"<div class="text-[31px]"></div>"#)
   }
 

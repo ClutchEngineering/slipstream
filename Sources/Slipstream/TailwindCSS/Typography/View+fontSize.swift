@@ -48,7 +48,7 @@ extension View {
     return fontSize(closestTailwindFontSize(ptSize: ptSize), condition: condition)
   }
 
-  /// Set the font size to the closest equivalent Tailwind CSS font size.
+  /// Set the font size to the exact CSS pixel value.
   ///
   /// - Parameters:
   ///   - pxSize: A font size in `px` units.  
