@@ -61,7 +61,7 @@ public struct Condition {
     return Condition(within: range)
   }
 
-  /// Combines to Conditions as a union of both conditions' possible states.
+  /// Combines two Conditions as a union of both conditions' possible states.
   public static func +(lhs: Self, rhs: Self) -> Self {
     var union = lhs
     if let lhsStarting = lhs.startingAtBreakpoint ?? rhs.startingAtBreakpoint,
