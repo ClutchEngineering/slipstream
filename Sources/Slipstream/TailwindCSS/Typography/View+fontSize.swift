@@ -48,6 +48,20 @@ extension View {
     return fontSize(closestTailwindFontSize(ptSize: ptSize), condition: condition)
   }
 
+  /// Set the font size to the exact CSS pixel value.
+  ///
+  /// - Parameters:
+  ///   - pxSize: A font size in `px` units.  
+  ///   - condition: An optional Tailwind condition defining when to apply this modifier.
+  ///
+  /// - SeeAlso: Tailwind CSS' [`font-size`](https://tailwindcss.com/docs/font-size#arbitrary-values) documentation.
+  @available(iOS 17.0, macOS 14.0, *)
+  public func fontSize(px pxSize: Int, condition: Condition? = nil) -> some View {
+    return modifier(
+      TailwindClassModifier(add: "text-[\(pxSize)px]", condition: condition)
+    )
+  }
+
   private func closestTailwindFontSize(ptSize: Int) -> FontSize {
     // Mapping of Tailwind CSS font size classes to their point sizes.
     let fontSizeMapping: [(fontSize: FontSize, ptSize: Int)] = [
