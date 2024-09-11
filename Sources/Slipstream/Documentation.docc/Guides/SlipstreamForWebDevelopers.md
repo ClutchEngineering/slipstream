@@ -168,14 +168,14 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 
  W3C tag | Slipstream view
 :--------|:----------------
-[`<form>`](https://html.spec.whatwg.org/multipage/sections.html#the-form-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<form>`](https://html.spec.whatwg.org/multipage/sections.html#the-form-element) | ``Form``
 [`<label>`](https://html.spec.whatwg.org/multipage/sections.html#the-label-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<input>`](https://html.spec.whatwg.org/multipage/sections.html#the-input-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<button>`](https://html.spec.whatwg.org/multipage/sections.html#the-button-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<select>`](https://html.spec.whatwg.org/multipage/sections.html#the-select-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<input>`](https://html.spec.whatwg.org/multipage/sections.html#the-input-element) | ``TextField``
+[`<button>`](https://html.spec.whatwg.org/multipage/sections.html#the-button-element) | ``Button``
+[`<select>`](https://html.spec.whatwg.org/multipage/sections.html#the-select-element) | ``Picker``
 [`<datalist>`](https://html.spec.whatwg.org/multipage/sections.html#the-datalist-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<optgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-optgroup-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<option>`](https://html.spec.whatwg.org/multipage/sections.html#the-option-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<option>`](https://html.spec.whatwg.org/multipage/sections.html#the-option-element) | ``Option``
 [`<textarea>`](https://html.spec.whatwg.org/multipage/sections.html#the-textarea-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<output>`](https://html.spec.whatwg.org/multipage/sections.html#the-output-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<progress>`](https://html.spec.whatwg.org/multipage/sections.html#the-progress-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
