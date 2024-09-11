@@ -77,6 +77,8 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 - ``Form``
 - ``TextField``
 - ``Button``
+- ``Picker``
+- ``Option``
 
 ### Scripting
 
