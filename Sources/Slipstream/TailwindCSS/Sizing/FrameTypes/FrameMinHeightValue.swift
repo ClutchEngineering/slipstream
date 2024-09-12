@@ -4,9 +4,9 @@
 public struct FrameMinHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
   public static let full = Self(.full)
   public static let screen = Self(.screen)
-  public static let svw = Self(.svw)
-  public static let lvw = Self(.lvw)
-  public static let dvw = Self(.dvw)
+  public static let svh = Self(.svh)
+  public static let lvh = Self(.lvh)
+  public static let dvh = Self(.dvh)
   public static let min = Self(.min)
   public static let max = Self(.max)
   public static let fit = Self(.fit)
@@ -27,9 +27,9 @@ public struct FrameMinHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFlo
     case rawValue(Double)
     case full
     case screen
-    case svw
-    case lvw
-    case dvw
+    case svh
+    case lvh
+    case dvh
     case min
     case max
     case fit
@@ -43,9 +43,9 @@ public struct FrameMinHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFlo
       return Self.pointToTailwindSizingClass(ptLength: ptLength)
     case .full: return "full"
     case .screen: return "screen"
-    case .svw: return "svw"
-    case .lvw: return "lvw"
-    case .dvw: return "dvw"
+    case .svh: return "svh"
+    case .lvh: return "lvh"
+    case .dvh: return "dvh"
     case .min: return "min"
     case .max: return "max"
     case .fit: return "fit"
