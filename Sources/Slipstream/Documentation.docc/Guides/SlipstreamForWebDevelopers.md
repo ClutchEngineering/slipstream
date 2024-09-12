@@ -46,7 +46,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<link rel="noreferrer">`](https://html.spec.whatwg.org/multipage/links.html#link-type-noreferrer) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<link rel="opener">`](https://html.spec.whatwg.org/multipage/links.html#link-type-opener) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<link rel="pingback">`](https://html.spec.whatwg.org/multipage/links.html#link-type-pingback) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)   
-[`<link rel="preconnect">`](https://html.spec.whatwg.org/multipage/links.html#link-type-preconnect) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<link rel="preconnect">`](https://html.spec.whatwg.org/multipage/links.html#link-type-preconnect) | ``Preconnect`` 
 [`<link rel="prefetch">`](https://html.spec.whatwg.org/multipage/links.html#link-type-prefetch) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<link rel="preload">`](https://html.spec.whatwg.org/multipage/links.html#link-type-preload) | ``Preload`` 
 [`<link rel="prev">`](https://html.spec.whatwg.org/multipage/links.html#link-type-prev) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
