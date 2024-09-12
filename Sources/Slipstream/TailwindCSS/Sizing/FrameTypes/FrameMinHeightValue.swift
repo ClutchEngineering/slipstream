@@ -4,6 +4,9 @@
 public struct FrameMinHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
   public static let full = Self(.full)
   public static let screen = Self(.screen)
+  public static let svw = Self(.svw)
+  public static let lvw = Self(.lvw)
+  public static let dvw = Self(.dvw)
   public static let min = Self(.min)
   public static let max = Self(.max)
   public static let fit = Self(.fit)
