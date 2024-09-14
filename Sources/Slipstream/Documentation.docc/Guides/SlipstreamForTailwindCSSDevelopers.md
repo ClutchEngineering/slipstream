@@ -211,7 +211,7 @@ Tailwind utility | Slipstream modifier
 
 Tailwind utility | Slipstream modifier
 :----------------|:-------------------
-[Transition Property](https://tailwindcss.com/docs/transition-property) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Transition Property](https://tailwindcss.com/docs/transition-property) | ``View/transition(_:condition:)``
 [Transition Duration](https://tailwindcss.com/docs/transition-duration) | ``View/animation(_:condition:)``, ``Animation``
 [Transition Timing Function](https://tailwindcss.com/docs/transition-timing-function) | ``View/animation(_:condition:)``, ``Animation``
 [Transition Delay](https://tailwindcss.com/docs/transition-delay) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
