@@ -49,6 +49,7 @@ targets: [
 And off you go:
 
 ```swift
+import Foundation
 import Slipstream
 
 struct HelloWorld: View {
@@ -67,6 +68,15 @@ and written to disk. To help get you started though you can use Slipstream's lig
 renderer to write a dictionary of Slipstream views to disk:
 
 ```swift
+import Foundation
+import Slipstream
+
+struct HelloWorld: View {
+  var body: some View {
+    Text("Hello, world!")
+  }
+}
+
 let sitemap: Sitemap = [
   "index.html": HelloWorld()
 ]
