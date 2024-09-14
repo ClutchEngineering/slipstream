@@ -45,6 +45,7 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 - ``Blockquote``
 - ``List``
 - ``ListItem``
+- ``DocumentMain``
 - ``Div``
 
 ### Text-level semantics
