@@ -185,7 +185,7 @@ Tailwind utility | Slipstream modifier
 [Drop Shadow](https://tailwindcss.com/docs/drop-shadow) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Grayscale](https://tailwindcss.com/docs/grayscale) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Hue Rotate](https://tailwindcss.com/docs/hue-rotate) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Invert](https://tailwindcss.com/docs/invert) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Invert](https://tailwindcss.com/docs/invert) | ``View/colorInvert(condition:)``
 [Saturate](https://tailwindcss.com/docs/saturate) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Sepia](https://tailwindcss.com/docs/sepia) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Backdrop Blur](https://tailwindcss.com/docs/backdrop-blur) | ``View/background(_:condition:)-89gyc``

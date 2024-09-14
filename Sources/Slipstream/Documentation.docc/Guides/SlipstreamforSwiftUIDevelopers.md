@@ -105,6 +105,19 @@ struct MyView: View {
 }
 ```
 
+## Filters
+
+SwiftUI and Slipstream both provide the ability to invert colors.
+
+### Offset
+
+```swift
+var body: some View {
+  Text("Inverted text")
+    .colorInvert()
+}
+```
+
 ## Layout
 
 SwiftUI and Slipstream both provide the ability to affect the layout of views.
