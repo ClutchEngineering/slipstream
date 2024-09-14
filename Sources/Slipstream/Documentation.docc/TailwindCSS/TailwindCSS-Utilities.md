@@ -60,6 +60,7 @@ Slipstream implementations of Tailwind CSS's utility classes.
 ### Filters
 
 - <doc:Filters-BackdropBlur>
+- ``View/colorInvert(condition:)``
 
 ### Transitions and animations
 
