@@ -36,7 +36,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<link rel="expect">`](https://html.spec.whatwg.org/multipage/links.html#link-type-expect) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<link rel="external">`](https://html.spec.whatwg.org/multipage/links.html#link-type-external) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<link rel="help">`](https://html.spec.whatwg.org/multipage/links.html#link-type-help) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)   
-[`<link rel="icon">`](https://html.spec.whatwg.org/multipage/links.html#rel-icon) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)   
+[`<link rel="icon">`](https://html.spec.whatwg.org/multipage/links.html#rel-icon) | ``Icon``   
 [`<link rel="manifest">`](https://html.spec.whatwg.org/multipage/links.html#link-type-manifest) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<link rel="modulepreload">`](https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<link rel="license">`](https://html.spec.whatwg.org/multipage/links.html#link-type-license) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
