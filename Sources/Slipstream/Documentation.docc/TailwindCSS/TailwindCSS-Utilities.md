@@ -56,6 +56,7 @@ Slipstream implementations of Tailwind CSS's utility classes.
 ### Effects
 
 - <doc:Effects-Shadow>
+- ``View/opacity(_:condition:)``
 
 ### Filters
 
