@@ -30,7 +30,12 @@ swift package init --type executable
 
 ### Add Slipstream to your package dependencies
 
+Slipstream requires macOS 14.
+
 ```swift
+platforms: [
+  .macOS("14"),
+],
 dependencies: [
   .package(url: "https://github.com/jverkoey/slipstream.git", branch: "main"),
 ],
