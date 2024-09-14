@@ -29,7 +29,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<base>`](https://html.spec.whatwg.org/multipage/semantics.html#the-base-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<link rel="alternate">`](https://html.spec.whatwg.org/multipage/links.html#rel-alternate) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<link rel="alternate">`](https://html.spec.whatwg.org/multipage/links.html#rel-alternate) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="canonical">`](https://html.spec.whatwg.org/multipage/links.html#link-type-canonical) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<link rel="canonical">`](https://html.spec.whatwg.org/multipage/links.html#link-type-canonical) | ``Canonical`` 
 [`<link rel="author">`](https://html.spec.whatwg.org/multipage/links.html#link-type-author) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<link rel="bookmark">`](https://html.spec.whatwg.org/multipage/links.html#link-type-bookmark) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<link rel="dns-prefetch">`](https://html.spec.whatwg.org/multipage/links.html#link-type-dns-prefetch) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 

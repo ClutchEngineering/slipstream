@@ -14,6 +14,7 @@ The complete W3C HTML elements standard can be found [here](https://html.spec.wh
 
 - ``Head``
 - ``Title``
+- ``Canonical``
 - ``Icon``
 - ``Preload``
 - ``Preconnect``
