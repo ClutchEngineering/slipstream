@@ -20,14 +20,22 @@
 [Clone the Slipstream Site Template](https://github.com/jverkoey/slipstream-site-template/) for a
 quick-start to deploying a Slipstream site to GitHub Pages.
 
-Add Slipstream to your package dependencies:
+### Create an executable Swift package
+
+```bash
+mkdir mysite
+cd mysite
+swift package init --type executable
+```
+
+### Add Slipstream to your package dependencies
 
 ```swift
 dependencies: [
   .package(url: "https://github.com/jverkoey/slipstream.git", branch: "main"),
 ],
 targets: [
-  .executableTarget(name: "MySite", dependencies: [
+  .executableTarget(name: "mysite", dependencies: [
     .product(name: "Slipstream", package: "slipstream"),
   ]
 ],
