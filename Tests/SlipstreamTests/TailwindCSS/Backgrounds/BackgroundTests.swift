@@ -24,6 +24,10 @@ struct BackgroundImageTests {
     try #expect(renderHTML(Div {}.background(.init(.cyan, darkness: 500).opacity(20))) == #"<div class="bg-cyan-500"></div>"#)
   }
 
+  @Test func customColor() throws {
+    try #expect(renderHTML(Div {}.background("my-dark")) == #"<div class="bg-my-dark"></div>"#)
+  }
+
   // MARK: - Image backgrounds
 
   @Test func justURL() throws {

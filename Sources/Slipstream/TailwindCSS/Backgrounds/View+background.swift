@@ -92,6 +92,27 @@ extension View {
     modifier(TailwindClassModifier(add: "bg-\(color.toTailwindColorClass())", condition: condition))
   }
 
+  /// Sets the background color to a specific name.
+  ///
+  /// To use custom colors, add them to your tailwind.config.js `theme.extend.colors` property:
+  ///
+  /// ```js
+  /// theme: {
+  ///   extend: {
+  ///     colors: {
+  ///       'sidecar-gray': '#262625',
+  ///     },
+  ///   }
+  /// }
+  /// ```
+  ///
+  /// - SeeAlso: Tailwind CSS' [background color](https://tailwindcss.com/docs/background-color) documentation.
+  /// - SeeAlso: Tailwind CSS' [customizing colors](https://tailwindcss.com/docs/customizing-colors) documentation.
+  @available(iOS 17.0, macOS 14.0, *)
+  public func background(_ color: String, condition: Condition? = nil) -> some View {
+    modifier(TailwindClassModifier(add: "bg-" + color, condition: condition))
+  }
+
   /// Sets the background material of the view.
   ///
   /// - SeeAlso: Tailwind CSS' [backdrop blur](https://tailwindcss.com/docs/backdrop-blur) documentation.
