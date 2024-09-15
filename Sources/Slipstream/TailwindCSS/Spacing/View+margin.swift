@@ -23,6 +23,15 @@ public struct MarginValue {
   }
   fileprivate let storage: Storage
 
+  var isNegative: Bool {
+    switch storage {
+    case .rawValue(let value):
+      return value < 0
+    case .auto:
+      return false
+    }
+  }
+
   /// Returns the margin value as the closest Tailwind CSS spacing class.
   ///
   /// - Returns: The Tailwind CSS spacing class string.
@@ -74,6 +83,9 @@ extension View {
           classes.append("mb-" + spacingClass)
         }
       }
+    }
+    if length.isNegative {
+      classes = classes.map { "-" + $0 }
     }
     return modifier(TailwindClassModifier(add: classes.joined(separator: " "), condition: condition))
   }

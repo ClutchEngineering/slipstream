@@ -74,6 +74,8 @@ public enum Edge: Int8, CaseIterable {
   /// - Parameter size: The size in points to be mapped.
   /// - Returns: The Tailwind CSS spacing class.
   static func pointToTailwindSpacingClass(ptLength: Double) -> String {
+    let ptLength = abs(ptLength)
+
     // Tailwind spacing classes and their corresponding sizes in points.
     let mapping: [(name: String, ptLength: Double)] = [
       ("0", 0),    // 0pt
