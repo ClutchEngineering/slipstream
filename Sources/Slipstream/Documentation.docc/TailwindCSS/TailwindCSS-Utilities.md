@@ -9,6 +9,7 @@ Slipstream implementations of Tailwind CSS's utility classes.
 - ``Container``
 - <doc:Layout-Display>
 - <doc:Layout-Float>
+- <doc:Layout-Overflow>
 - <doc:Layout-Position>
 - <doc:Layout-Placement>
 
