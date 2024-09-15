@@ -46,7 +46,7 @@ Tailwind utility | Slipstream modifier
 [Grid Template Columns](https://tailwindcss.com/docs/grid-template-columns) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Grid Column Start / End](https://tailwindcss.com/docs/grid-column) | ``View/gridCellColumns(_:condition:)``, ``View/gridCellColumns(_:condition:)-2tedw``
 [Grid Template Rows](https://tailwindcss.com/docs/grid-template-rows) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Grid Row Start / End](https://tailwindcss.com/docs/grid-row) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Grid Row Start / End](https://tailwindcss.com/docs/grid-row) | ``View/gridCellRows(_:condition:)``, ``View/gridCellRows(_:condition:)-75orh``
 [Grid Auto Flow](https://tailwindcss.com/docs/grid-auto-flow) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Grid Auto Columns](https://tailwindcss.com/docs/grid-auto-columns) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Grid Auto Rows](https://tailwindcss.com/docs/grid-auto-rows) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
