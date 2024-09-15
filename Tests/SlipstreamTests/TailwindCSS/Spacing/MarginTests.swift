@@ -52,6 +52,19 @@ struct MarginTests {
     try #expect(renderHTML(Div {}.margin(.top, 0).margin(.top, 4)) == #"<div class="mt-0 mt-1"></div>"#)
   }
 
+  @Test func negativeMargins() throws {
+    try #expect(renderHTML(Div {}.margin(-8)) == #"<div class="-m-2"></div>"#)
+    try #expect(renderHTML(Div {}.margin(.all, -16)) == #"<div class="-m-4"></div>"#)
+    try #expect(renderHTML(Div {}.margin(.horizontal, -8)) == #"<div class="-mx-2"></div>"#)
+    try #expect(renderHTML(Div {}.margin(.vertical, -12)) == #"<div class="-my-3"></div>"#)
+    try #expect(renderHTML(Div {}.margin([.top, .left], -24)) == #"<div class="-ml-6 -mt-6"></div>"#)
+
+    try #expect(renderHTML(Div {}.margin(.top, -0)) == #"<div class="mt-0"></div>"#)
+    try #expect(renderHTML(Div {}.margin(.left, -4)) == #"<div class="-ml-1"></div>"#)
+    try #expect(renderHTML(Div {}.margin(.bottom, -32)) == #"<div class="-mb-8"></div>"#)
+    try #expect(renderHTML(Div {}.margin(.right, -64)) == #"<div class="-mr-16"></div>"#)
+  }
+
   @Test func condition() throws {
     try #expect(renderHTML(Div {}.margin(8, condition: .init(startingAt: .large))) == #"<div class="lg:m-2"></div>"#)
     try #expect(renderHTML(Div {}.margin(8, condition: .within(Breakpoint.small..<Breakpoint.large))) == #"<div class="max-lg:m-2"></div>"#)
