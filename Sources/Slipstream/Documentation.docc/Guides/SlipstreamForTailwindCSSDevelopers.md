@@ -25,7 +25,7 @@ Tailwind utility | Slipstream modifier
 [Isolation](https://tailwindcss.com/docs/isolation) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Object Fit](https://tailwindcss.com/docs/object-fit) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Object Position](https://tailwindcss.com/docs/object-position) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Overflow](https://tailwindcss.com/docs/overflow) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Overflow](https://tailwindcss.com/docs/overflow) | ``View/overflow(_:condition:)``, ``View/overflow(_:axis:condition:)``
 [Overscroll Behavior](https://tailwindcss.com/docs/overscroll-behavior) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Position](https://tailwindcss.com/docs/position) | ``View/position(_:condition:)``
 [Top / Right / Bottom / Left](https://tailwindcss.com/docs/top-right-bottom-left) | ``View/placement(inset:condition:)``, ``View/placement(x:y:condition:)``, ``View/placement(left:right:top:bottom:condition:)``
