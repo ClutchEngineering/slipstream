@@ -21,4 +21,8 @@ struct ShadowTests {
     try #expect(renderHTML(Div {}.shadow(radius: 10)) == #"<div class="shadow-md"></div>"#)
     try #expect(renderHTML(Div {}.shadow(radius: 100)) == #"<div class="shadow-2xl"></div>"#)
   }
+
+  @Test func customName() throws {
+    try #expect(renderHTML(Div {}.shadow("puck")) == #"<div class="shadow-puck"></div>"#)
+  }
 }
