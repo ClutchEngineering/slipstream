@@ -44,7 +44,7 @@ Tailwind utility | Slipstream modifier
 [Flex Shrink](https://tailwindcss.com/docs/flex-shrink) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Order](https://tailwindcss.com/docs/order) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Grid Template Columns](https://tailwindcss.com/docs/grid-template-columns) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Grid Column Start / End](https://tailwindcss.com/docs/grid-column) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Grid Column Start / End](https://tailwindcss.com/docs/grid-column) | ``View/gridCellColumns(_:condition:)``, ``View/gridCellColumns(_:condition:)-2tedw``
 [Grid Template Rows](https://tailwindcss.com/docs/grid-template-rows) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Grid Row Start / End](https://tailwindcss.com/docs/grid-row) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Grid Auto Flow](https://tailwindcss.com/docs/grid-auto-flow) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
