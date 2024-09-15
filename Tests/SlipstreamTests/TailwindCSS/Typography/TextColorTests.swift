@@ -18,6 +18,10 @@ struct TextColorTests {
     try #expect(renderHTML(Div {}.textColor(.red, darkness: 1000)) == #"<div class="text-black"></div>"#)
   }
 
+  @Test func customColors() throws {
+    try #expect(renderHTML(Div {}.textColor("my-color")) == #"<div class="text-my-color"></div>"#)
+  }
+
   @Test func condition() throws {
     try #expect(
       renderHTML(
@@ -30,4 +34,3 @@ struct TextColorTests {
     )
   }
 }
-
