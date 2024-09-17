@@ -55,7 +55,8 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<link rel="stylesheet">`](https://html.spec.whatwg.org/multipage/links.html#link-type-stylesheet) | ``Stylesheet`` 
 [`<link rel="tag">`](https://html.spec.whatwg.org/multipage/links.html#link-type-tag) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<link rel="terms-of-service">`](https://html.spec.whatwg.org/multipage/links.html#link-type-terms-of-service) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<meta>`](https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element) | ``Meta`` 
+[`<meta>`](https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element) | ``Meta``
+[`<meta http-equiv="refresh">`](https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-http-equiv-refresh) | ``Redirect``
 [`<meta charset="">`](https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-charset) | ``Charset`` 
 [`<style="">`](https://html.spec.whatwg.org/multipage/semantics.html#the-style-element) | ``Stylesheet`` 
 
