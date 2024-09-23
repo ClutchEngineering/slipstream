@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Tailwind CSS" src="https://raw.githubusercontent.com/jverkoey/slipstream/HEAD/.github/logo.svg" width="350" height="70" style="max-width: 100%;">
+  <img alt="Tailwind CSS" src="https://raw.githubusercontent.com/ClutchEngineering/slipstream/HEAD/.github/logo.svg" width="350" height="70" style="max-width: 100%;">
 </p>
 
 <p align="center">
@@ -7,8 +7,8 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/jverkoey/slipstream/actions"><img src="https://img.shields.io/github/actions/workflow/status/jverkoey/slipstream/package-test.yml?branch=main" alt="Build Status"></a>
-    <a href="https://github.com/jverkoey/slipstream/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jverkoey/slipstream.svg" alt="License"></a>
+    <a href="https://github.com/ClutchEngineering/slipstream/actions"><img src="https://img.shields.io/github/actions/workflow/status/ClutchEngineering/slipstream/package-test.yml?branch=main" alt="Build Status"></a>
+    <a href="https://github.com/ClutchEngineering/slipstream/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ClutchEngineering/slipstream.svg" alt="License"></a>
 </p>
 
 ---
@@ -96,7 +96,7 @@ try renderSitemap(sitemap, to: outputURL)
 
 ## Documentation
 
-View Slipstream's [complete documentation](https://jverkoey.github.io/slipstream/documentation/slipstream/).
+View Slipstream's [complete documentation](https://slipstream.clutch.engineering/documentation/slipstream/).
 
 ## Community
 
