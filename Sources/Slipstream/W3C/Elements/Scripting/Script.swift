@@ -69,7 +69,7 @@ public struct Script: View {
     case .inline(let string):
       let element = try container.appendElement("script")
       // DataNode is required to avoid escaping the script source.
-      try element.appendChild(DataNode(string, container.getBaseUri()))
+      try element.appendChild(DataNode(string.utf8Array, container.getBaseUri().utf8Array))
     }
   }
 
