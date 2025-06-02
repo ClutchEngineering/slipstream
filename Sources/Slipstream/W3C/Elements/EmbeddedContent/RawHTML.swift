@@ -15,7 +15,7 @@ public struct RawHTML: View {
   @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     // DataNode is required to avoid escaping the source.
-    try container.appendChild(DataNode(source, container.getBaseUri()))
+    try container.appendChild(DataNode(source.utf8Array, container.getBaseUri().utf8Array))
   }
 
   private let source: String

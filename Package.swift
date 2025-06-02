@@ -14,7 +14,7 @@ let package = Package(
   ],
   dependencies: [
     .package(url: "https://github.com/apple/swift-markdown.git", branch: "main"),
-    .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.7.3"),
+    .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.8.7"),
     .package(url: "https://github.com/swiftlang/swift-docc-plugin", from: "1.1.0"),
   ],
   targets: [
