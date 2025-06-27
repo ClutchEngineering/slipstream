@@ -1,7 +1,7 @@
 /// A struct representing a frame maximum height value for sizing purposes, with support
 /// for both numerical values and Tailwind CSS semantic values.
 @available(iOS 17.0, macOS 14.0, *)
-public struct FrameMaxHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
+public struct FrameMaxHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral, Sendable {
   public static let none = Self(.none)
   public static let full = Self(.full)
   public static let screen = Self(.screen)
@@ -24,7 +24,7 @@ public struct FrameMaxHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFlo
     self.storage = value
   }
 
-  fileprivate enum Storage {
+  fileprivate enum Storage: Sendable {
     case rawValue(Double)
     case none
     case full

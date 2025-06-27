@@ -52,7 +52,7 @@ public struct ClassModifier<T: View>: ViewModifier {
 }
 
 private struct ClassModifierView<Content: View>: View {
-  init(classNames: Set<String>, @ViewBuilder content: @escaping () -> Content) {
+  init(classNames: Set<String>, @ViewBuilder content: @escaping @Sendable () -> Content) {
     self.classNames = classNames
     self.content = content
   }
@@ -71,6 +71,6 @@ private struct ClassModifierView<Content: View>: View {
   }
 
   private let classNames: Set<String>
-  private let content: () -> Content
+  private let content: @Sendable () -> Content
 }
 

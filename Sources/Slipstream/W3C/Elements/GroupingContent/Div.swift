@@ -22,10 +22,10 @@ public struct Div<Content>: W3CElement where Content: View {
   public let tagName: String = "div"
 
   @_documentation(visibility: private)
-  @ViewBuilder public let content: () -> Content
+  @ViewBuilder public let content: @Sendable () -> Content
 
   /// Creates a Div view.
-  public init(@ViewBuilder content: @escaping () -> Content) {
+  public init(@ViewBuilder content: @escaping @Sendable () -> Content) {
     self.content = content
   }
 }

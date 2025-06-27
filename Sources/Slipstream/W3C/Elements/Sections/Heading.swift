@@ -34,14 +34,14 @@ public struct Heading<Content>: View where Content: View {
   public let level: Int
 
   @_documentation(visibility: private)
-  @ViewBuilder public let content: () -> Content
+  @ViewBuilder public let content: @Sendable () -> Content
 
   /// Creates a heading view.
   ///
   /// - Parameters:
   ///   - level: Must be a value between 1 and 6, inclusive.
   ///   - content: The content to render within this header.
-  public init(level: Int, @ViewBuilder content: @escaping () -> Content) {
+  public init(level: Int, @ViewBuilder content: @escaping @Sendable () -> Content) {
     self.level = level
     self.content = content
   }

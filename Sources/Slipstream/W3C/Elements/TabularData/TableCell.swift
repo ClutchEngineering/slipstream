@@ -6,7 +6,7 @@ import SwiftSoup
 @available(iOS 17.0, macOS 14.0, *)
 public struct TableCell<Content>: View where Content: View {
   /// Creates a table cell.
-  public init(rowSpan: Int? = nil, colSpan: Int? = nil, @ViewBuilder content: @escaping () -> Content) {
+  public init(rowSpan: Int? = nil, colSpan: Int? = nil, @ViewBuilder content: @escaping @Sendable () -> Content) {
     self.content = content
     self.rowSpan = rowSpan
     self.colSpan = colSpan
@@ -24,7 +24,7 @@ public struct TableCell<Content>: View where Content: View {
     try self.content().render(element, environment: environment)
   }
 
-  @ViewBuilder private let content: () -> Content
+  @ViewBuilder private let content: @Sendable () -> Content
   private let rowSpan: Int?
   private let colSpan: Int?
 }

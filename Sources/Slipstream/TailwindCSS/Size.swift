@@ -5,7 +5,7 @@ import Foundation
 ///
 /// You'll typically work with a set of edges using the ``Edge/Set`` type.
 @available(iOS 17.0, macOS 14.0, *)
-public struct Size {
+public struct Size: Sendable {
   /// Creates a size.
   /// 
   /// - Parameters:

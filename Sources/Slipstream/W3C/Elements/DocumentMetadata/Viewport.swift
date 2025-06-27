@@ -17,9 +17,9 @@ import SwiftSoup
 ///
 /// - SeeAlso: W3C public working draft for [`viewport`](https://drafts.csswg.org/css-viewport) specification.
 @available(iOS 17.0, macOS 14.0, *)
-public struct Viewport: View {
+public struct Viewport: View, Sendable {
   /// A value that can be used for a viewport dimension.
-  public enum Dimension {
+  public enum Dimension: Sendable {
     /// The viewport should be rendered using the device's width.
     case deviceWidth
     /// The viewport should be rendered using the device's height.
@@ -37,7 +37,7 @@ public struct Viewport: View {
   }
 
   /// A constant that controls how a document's viewport fills the screen.
-  public enum ViewportFit: String {
+  public enum ViewportFit: String, Sendable {
     /// This value doesn’t affect the initial layout viewport, and the whole web page is viewable.
     case auto
 

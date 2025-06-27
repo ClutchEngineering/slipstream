@@ -8,7 +8,7 @@
 /// - ``Script``
 /// - ``Stylesheet``
 @available(iOS 17.0, macOS 14.0, *)
-public enum CrossOrigin: String {
+public enum CrossOrigin: String, Sendable {
   /// Request uses CORS headers and credentials flag is set to 'same-origin'.
   ///
   /// There is no exchange of user credentials via cookies, client-side TLS

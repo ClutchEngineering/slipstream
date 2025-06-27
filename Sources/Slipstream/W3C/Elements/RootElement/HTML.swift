@@ -26,12 +26,12 @@ public struct HTML<Content>: W3CElement where Content: View {
   public let tagName: String = "html"
 
   @_documentation(visibility: private)
-  @ViewBuilder public let content: () -> Content
+  @ViewBuilder public let content: @Sendable () -> Content
 
   /// Creates an HTML view.
   ///
   /// - Parameter content: Should include a single ``Head`` view followed by a single ``Body`` view.
-  public init(@ViewBuilder content: @escaping () -> Content) {
+  public init(@ViewBuilder content: @escaping @Sendable () -> Content) {
     self.content = content
   }
 }

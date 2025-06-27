@@ -1,7 +1,7 @@
 /// A struct representing a margin value for layout purposes, with support
 /// for both numerical values and the "auto" value.
 @available(iOS 17.0, macOS 14.0, *)
-public struct MarginValue {
+public struct MarginValue: Sendable {
   /// A static instance representing the "auto" margin value.
   public static let auto = MarginValue(.auto)
 
@@ -17,7 +17,7 @@ public struct MarginValue {
     self.storage = value
   }
 
-  fileprivate enum Storage {
+  fileprivate enum Storage: Sendable {
     case rawValue(Double)
     case auto
   }

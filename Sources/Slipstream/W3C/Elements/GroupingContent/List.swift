@@ -31,12 +31,12 @@ public struct List<Content>: W3CElement where Content: View {
   public var tagName: String { ordered ? "ol" : "ul" }
 
   /// Creates a list.
-  public init(ordered: Bool = false, @ViewBuilder content: @escaping () -> Content) {
+  public init(ordered: Bool = false, @ViewBuilder content: @escaping @Sendable () -> Content) {
     self.ordered = ordered
     self.content = content
   }
 
   @_documentation(visibility: private)
-  @ViewBuilder public let content: () -> Content
+  @ViewBuilder public let content: @Sendable () -> Content
   private let ordered: Bool
 }

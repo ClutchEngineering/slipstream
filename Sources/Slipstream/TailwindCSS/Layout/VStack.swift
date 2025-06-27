@@ -52,7 +52,7 @@ public struct VStack<Content: View>: View {
     alignment: AlignItems = .start,
     spacing: Double? = nil,
     reversed: Bool = false,
-    @ViewBuilder content: @escaping () -> Content
+    @ViewBuilder content: @escaping @Sendable () -> Content
   ) {
     self.alignment = alignment
     self.spacing = spacing
@@ -72,7 +72,7 @@ public struct VStack<Content: View>: View {
     alignment: VStackAlignment,
     spacing: Double? = nil,
     reversed: Bool = false,
-    @ViewBuilder content: @escaping () -> Content
+    @ViewBuilder content: @escaping @Sendable () -> Content
   ) {
     self.init(
       alignment: alignment.alignItemsEquivalent,
@@ -99,5 +99,5 @@ public struct VStack<Content: View>: View {
   private let alignment: AlignItems
   private let spacing: Double?
   private let reversed: Bool
-  private let content: () -> Content
+  private let content: @Sendable () -> Content
 }

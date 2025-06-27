@@ -3,7 +3,7 @@
 ///
 /// You'll typically work with a set of edges using the ``Edge/Set`` type.
 @available(iOS 17.0, macOS 14.0, *)
-public enum Edge: Int8, CaseIterable {
+public enum Edge: Int8, CaseIterable, Sendable {
   /// The top edge of a rectangle.
   case top    = 0b0000_0001
 
@@ -24,7 +24,7 @@ public enum Edge: Int8, CaseIterable {
   /// let edges: Edge.Set = [.top, .left]
   /// ```
   @available(iOS 17.0, macOS 14.0, *)
-  public struct Set: OptionSet {
+  public struct Set: OptionSet, Sendable {
     /// The element type of the option set.
     ///
     /// To inherit all the default implementations from the `OptionSet` protocol,

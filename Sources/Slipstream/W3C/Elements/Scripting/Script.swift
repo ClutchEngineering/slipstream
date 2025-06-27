@@ -7,7 +7,7 @@ import SwiftSoup
 ///
 /// - SeeAlso: W3C [`body`](https://html.spec.whatwg.org/multipage/scripting.html#attr-script-defer) specification.
 @available(iOS 17.0, macOS 14.0, *)
-public enum ScriptExecutionMode: String {
+public enum ScriptExecutionMode: String, Sendable {
   /// The script will be fetched in parallel to document parsing and
   /// evaluated as soon as it is available (potentially before parsing
   /// completes).
@@ -73,7 +73,7 @@ public struct Script: View {
     }
   }
 
-  private enum Storage {
+  private enum Storage: Sendable {
     case url(URL?, crossOrigin: CrossOrigin?, executionMode: ScriptExecutionMode?)
     case inline(String)
   }

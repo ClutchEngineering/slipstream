@@ -4,7 +4,7 @@ import SwiftSoup
 ///
 /// - SeeAlso: W3C [button type](https://html.spec.whatwg.org/multipage/form-elements.html#attr-button-type) specification.
 @available(iOS 17.0, macOS 14.0, *)
-public enum ButtonType: String {
+public enum ButtonType: String, Sendable {
   case submit
   case reset
 }
@@ -13,10 +13,11 @@ public enum ButtonType: String {
 ///
 /// - SeeAlso: W3C [button](https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element) specification.
 @available(iOS 17.0, macOS 14.0, *)
-public struct Button<Label>: View where Label: View {
+public struct Button<Label>: View, Sendable
+where Label: View {
   /// Creates a button that displays a custom label and executes a custom action
   /// when clicked.
-  public init(action: String, type: ButtonType? = nil, name: String? = nil, @ViewBuilder label: @escaping () -> Label) {
+  public init(action: String, type: ButtonType? = nil, name: String? = nil, @ViewBuilder label: @escaping @Sendable () -> Label) {
     self.label = label
     self.action = action
     self.type = type
@@ -24,7 +25,7 @@ public struct Button<Label>: View where Label: View {
   }
 
   /// Creates a button that displays a custom label.
-  public init(type: ButtonType? = nil, name: String? = nil, @ViewBuilder label: @escaping () -> Label) {
+  public init(type: ButtonType? = nil, name: String? = nil, @ViewBuilder label: @escaping @Sendable () -> Label) {
     self.label = label
     self.action = nil
     self.type = type
@@ -46,7 +47,7 @@ public struct Button<Label>: View where Label: View {
     }
   }
 
-  @ViewBuilder private let label: () -> Label
+  @ViewBuilder private let label: @Sendable () -> Label
   private let action: String?
   private let type: ButtonType?
   private let name: String?

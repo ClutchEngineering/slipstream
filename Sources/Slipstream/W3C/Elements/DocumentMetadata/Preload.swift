@@ -6,7 +6,7 @@ import SwiftSoup
 ///
 /// - SeeAlso: W3C [request destination](https://fetch.spec.whatwg.org/#concept-request-destination) specification.
 @available(iOS 17.0, macOS 14.0, *)
-public enum RequestDestination: String {
+public enum RequestDestination: String, Sendable {
   case audio
   case audioWorklet = "audioworklet"
   case document

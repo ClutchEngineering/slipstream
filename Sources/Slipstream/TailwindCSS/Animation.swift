@@ -2,7 +2,7 @@ import Foundation
 
 /// A representation of an animation.
 @available(iOS 17.0, macOS 14.0, *)
-public struct Animation {
+public struct Animation: Sendable {
   public static let linear: Animation = .init(timingFunction: .linear)
   public static let easeIn: Animation = .init(timingFunction: .easeIn)
   public static let easeOut: Animation = .init(timingFunction: .easeOut)
@@ -34,7 +34,7 @@ public struct Animation {
 ///
 /// - SeeAlso: Tailwind CSS' [`transition timing function`](https://tailwindcss.com/docs/transition-timing-function) documentation.
 @available(iOS 17.0, macOS 14.0, *)
-public enum TimingFunction: String {
+public enum TimingFunction: String, Sendable {
   case linear
   case easeIn = "in"
   case easeOut = "out"

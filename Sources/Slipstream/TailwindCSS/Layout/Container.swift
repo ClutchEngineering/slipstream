@@ -17,9 +17,10 @@
 ///
 /// - SeeAlso: Tailwind CSS' [`container`](https://tailwindcss.com/docs/container) documentation.
 @available(iOS 17.0, macOS 14.0, *)
-public struct Container<Content: View>: View {
+public struct Container<Content: View>: View
+where Content: Sendable {
   /// Creates a Container view.
-  public init(@ViewBuilder content: @escaping () -> Content) {
+  public init(@ViewBuilder content: @escaping @Sendable () -> Content) {
     self.content = content
   }
 
@@ -31,5 +32,5 @@ public struct Container<Content: View>: View {
     .modifier(ClassModifier(add: "container"))
   }
 
-  private let content: () -> Content
+  private let content: @Sendable () -> Content
 }

@@ -7,7 +7,7 @@ import SwiftSoup
 /// escaped and represented as-is.
 @available(iOS 17.0, macOS 14.0, *)
 public struct DOMString: View {
-  private let content: any StringProtocol
+  private let content: any StringProtocol & Sendable
 
   /// Creates a text view that represents a string literal in an HTML document.
   ///
@@ -23,7 +23,7 @@ public struct DOMString: View {
   /// in order to render as-is in the browser.
   ///
   /// - Parameter content: The string value to display without localization.
-  public init<S>(_ content: S) where S: StringProtocol {
+  public init<S>(_ content: S) where S: StringProtocol, S: Sendable {
     self.content = content
   }
 

@@ -1,7 +1,7 @@
 /// A struct representing an offset value for layout purposes, with support
 /// for both numerical values and predefined values.
 @available(iOS 17.0, macOS 14.0, *)
-public struct OffsetValue: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
+public struct OffsetValue: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, Sendable {
   /// A static instance representing the "full" placement value.
   public static let full = OffsetValue(.full)
 
@@ -17,7 +17,7 @@ public struct OffsetValue: ExpressibleByFloatLiteral, ExpressibleByIntegerLitera
     self.storage = value
   }
 
-  fileprivate enum Storage {
+  fileprivate enum Storage: Sendable {
     case rawValue(Double)
     case full
   }

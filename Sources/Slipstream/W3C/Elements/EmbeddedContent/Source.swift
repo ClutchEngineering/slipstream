@@ -4,7 +4,7 @@ import SwiftSoup
 
 /// A media query representation of the user's selected color scheme.
 @available(iOS 17.0, macOS 14.0, *)
-public enum ColorScheme {
+public enum ColorScheme: Sendable {
   case light
   case dark
 }

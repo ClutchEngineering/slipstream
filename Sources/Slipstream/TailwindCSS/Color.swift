@@ -2,7 +2,7 @@
 ///
 /// - SeeAlso: Tailwind CSS' [`color palettes`](https://tailwindcss.com/docs/customizing-colors) documentation.
 @available(iOS 17.0, macOS 14.0, *)
-public struct Color {
+public struct Color: Sendable {
   public static let black = Color(.black)
   public static let white = Color(.white)
   public static let inherit = Color(.inherit)
@@ -31,7 +31,7 @@ public struct Color {
     self.opacity = 1
   }
 
-  enum Storage {
+  enum Storage: Sendable {
     case black
     case white
     case inherit

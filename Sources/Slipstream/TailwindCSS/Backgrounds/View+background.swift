@@ -17,7 +17,7 @@ public enum BackgroundRepeat: String {
 ///
 /// - SeeAlso: Tailwind CSS' [`background size`](https://tailwindcss.com/docs/background-size) documentation.
 @available(iOS 17.0, macOS 14.0, *)
-public struct BackgroundSize {
+public struct BackgroundSize: Sendable {
   /// Displays the background image at its default size.
   public static let auto: BackgroundSize = BackgroundSize(storage: .aspectRatio(.auto))
 
@@ -38,12 +38,12 @@ public struct BackgroundSize {
     self.storage = storage
   }
 
-  fileprivate enum AspectRatio: String {
+  fileprivate enum AspectRatio: String, Sendable {
     case auto
     case cover
     case contain
   }
-  fileprivate enum Storage {
+  fileprivate enum Storage: Sendable {
     case aspectRatio(AspectRatio)
     case size(Size)
   }

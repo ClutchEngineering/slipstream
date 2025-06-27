@@ -20,10 +20,10 @@ public struct Head<Content>: W3CElement where Content: View {
   public let tagName: String = "head"
 
   @_documentation(visibility: private)
-  @ViewBuilder public let content: () -> Content
+  @ViewBuilder public let content: @Sendable () -> Content
 
   /// Creates a Head view.
-  public init(@ViewBuilder content: @escaping () -> Content) {
+  public init(@ViewBuilder content: @escaping @Sendable () -> Content) {
     self.content = content
   }
 }

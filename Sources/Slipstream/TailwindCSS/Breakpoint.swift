@@ -2,7 +2,7 @@
 ///
 /// - SeeAlso: Tailwind CSS' [`responsive design`](https://tailwindcss.com/docs/responsive-design) documentation.
 @available(iOS 17.0, macOS 14.0, *)
-public enum Breakpoint: Int, Comparable {
+public enum Breakpoint: Int, Comparable, Sendable {
   case small
   case medium
   case large
