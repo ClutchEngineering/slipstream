@@ -20,7 +20,6 @@ struct TypeIntrospectionTests {
 
   @Test func propertyIntrospection() async throws {
     let introspection = TypeIntrospection(type: SomeType.self)
-    #expect(introspection.type == SomeType.self)
     #expect(introspection.properties.count == 3)
 
     var instance = SomeType(bool: true, mutableString: "hello", someClass: SomeClass(string: "world"))

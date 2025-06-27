@@ -1,7 +1,7 @@
 /// A struct representing a placement value for layout purposes, with support
 /// for both numerical values and predefined values.
 @available(iOS 17.0, macOS 14.0, *)
-public struct PlacementValue: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
+public struct PlacementValue: ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral, Sendable {
   /// A static instance representing the "auto" placement value.
   public static let auto = PlacementValue(.auto)
 

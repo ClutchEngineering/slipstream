@@ -2,7 +2,7 @@
 ///
 /// - SeeAlso: Tailwind CSS' [`color palettes`](https://tailwindcss.com/docs/customizing-colors) documentation.
 @available(iOS 17.0, macOS 14.0, *)
-public enum ColorPalette: String {
+public enum ColorPalette: String, Sendable {
 
   // MARK: - Grays
 

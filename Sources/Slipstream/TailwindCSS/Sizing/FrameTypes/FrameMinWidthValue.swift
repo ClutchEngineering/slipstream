@@ -1,7 +1,7 @@
 /// A struct representing a frame minimum height value for sizing purposes, with support
 /// for both numerical values and Tailwind CSS semantic values.
 @available(iOS 17.0, macOS 14.0, *)
-public struct FrameMinWidthValue: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
+public struct FrameMinWidthValue: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral, Sendable {
   public static let full = Self(.full)
   public static let min = Self(.min)
   public static let max = Self(.max)

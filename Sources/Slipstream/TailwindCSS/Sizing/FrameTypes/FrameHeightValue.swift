@@ -1,7 +1,7 @@
 /// A struct representing a frame height value for sizing purposes, with support
 /// for both numerical values and Tailwind CSS semantic values.
 @available(iOS 17.0, macOS 14.0, *)
-public struct FrameHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
+public struct FrameHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral, Sendable {
   /// A static instance representing the "auto" frame value.
   public static let auto = Self(.auto)
   public static let full = Self(.full)

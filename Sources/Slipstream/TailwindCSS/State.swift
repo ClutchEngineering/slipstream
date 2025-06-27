@@ -2,7 +2,7 @@
 ///
 /// - SeeAlso: Tailwind CSS' [`hover, focus, and other states`](https://tailwindcss.com/docs/hover-focus-and-other-states) documentation.
 @available(iOS 17.0, macOS 14.0, *)
-public enum State: Int32, CaseIterable {
+public enum State: Int32, CaseIterable, Sendable {
   case hover            = 0b0000_0000_0000_0000_0000_0000_0000_0001
   case focus            = 0b0000_0000_0000_0000_0000_0000_0000_0010
   case active           = 0b0000_0000_0000_0000_0000_0000_0000_0100
@@ -78,7 +78,7 @@ public enum State: Int32, CaseIterable {
   /// let states: State.Set = [.active, .focus]
   /// ```
   @available(iOS 17.0, macOS 14.0, *)
-  public struct Set: OptionSet {
+  public struct Set: OptionSet, Sendable {
     /// The element type of the option set.
     ///
     /// To inherit all the default implementations from the `OptionSet` protocol,

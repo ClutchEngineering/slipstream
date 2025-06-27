@@ -3,7 +3,7 @@
 /// - SeeAlso: Tailwind CSS' [`responsive design`](https://tailwindcss.com/docs/responsive-design) documentation.
 /// - SeeAlso: Tailwind CSS' [`hover, focus, and other states`](https://tailwindcss.com/docs/hover-focus-and-other-states) documentation.
 @available(iOS 17.0, macOS 14.0, *)
-public struct Condition {
+public struct Condition: Sendable {
   /// Creates a Condition with a set of states.
   public init(state: State.Set) {
     self.startingAtBreakpoint = nil
