@@ -19,7 +19,7 @@ import TypeIntrospection
 /// provided by Slipstream, like the ``Text`` instance in the example above, plus
 /// other custom views that you define, into a hierarchy of views.
 @available(iOS 17.0, macOS 14.0, *)
-public protocol View {
+public protocol View: Sendable {
   /// The type of view representing the content of this view.
   ///
   /// When you create a custom view, Swift infers this type from your

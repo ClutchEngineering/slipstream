@@ -6,7 +6,7 @@ import SwiftSoup
 ///
 /// - SeeAlso: W3C [form submission attributes](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#form-submission-attributes) specification.
 @available(iOS 17.0, macOS 14.0, *)
-public enum FormSubmitMethod: String {
+public enum FormSubmitMethod: String, Sendable {
   /// Indicates the form will use the HTTP GET method.
   case get
 
@@ -42,7 +42,7 @@ public enum FormSubmitMethod: String {
 @available(iOS 17.0, macOS 14.0, *)
 public struct Form<Content>: View where Content: View {
   /// Creates a form with content.
-  public init(method: FormSubmitMethod? = nil, url: URL? = nil, @ViewBuilder content: @escaping () -> Content) {
+  public init(method: FormSubmitMethod? = nil, url: URL? = nil, @ViewBuilder content: @escaping @Sendable () -> Content) {
     self.method = method
     self.url = url
     self.content = content
@@ -60,7 +60,7 @@ public struct Form<Content>: View where Content: View {
     try self.content().render(element, environment: environment)
   }
 
-  @ViewBuilder private let content: () -> Content
+  @ViewBuilder private let content: @Sendable () -> Content
   private let method: FormSubmitMethod?
   private let url: URL?
 }

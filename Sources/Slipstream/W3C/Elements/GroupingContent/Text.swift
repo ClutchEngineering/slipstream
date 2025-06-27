@@ -18,10 +18,10 @@
 public struct Text<Content>: View where Content: View {
 
   @_documentation(visibility: private)
-  @ViewBuilder public let content: () -> Content
+  @ViewBuilder public let content: @Sendable () -> Content
 
   /// Creates a text view.
-  public init(@ViewBuilder content: @escaping () -> Content) {
+  public init(@ViewBuilder content: @escaping @Sendable () -> Content) {
     self.content = content
   }
 

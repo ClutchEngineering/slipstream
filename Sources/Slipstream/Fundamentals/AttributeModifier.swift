@@ -86,11 +86,12 @@ public struct AttributeModifier<T: View>: ViewModifier {
   }
 }
 
-private struct AttributeModifierView<Content: View>: View {
+private struct AttributeModifierView<Content: View>: View
+where Content: Sendable {
   private let attributes: [String: String]
-  private let content: () -> Content
+  private let content: @Sendable () -> Content
 
-  init(_ attributes: [String: String], @ViewBuilder content: @escaping () -> Content) {
+  init(_ attributes: [String: String], @ViewBuilder content: @escaping @Sendable () -> Content) {
     self.attributes = attributes
     self.content = content
   }

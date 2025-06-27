@@ -20,7 +20,7 @@ public struct PlacementValue: ExpressibleByFloatLiteral, ExpressibleByIntegerLit
     self.storage = value
   }
 
-  fileprivate enum Storage {
+  fileprivate enum Storage: Sendable {
     case rawValue(Double)
     case auto
     case full

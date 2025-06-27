@@ -39,7 +39,7 @@ public struct FrameMaxWidthValue: ExpressibleByIntegerLiteral, ExpressibleByFloa
     self.storage = value
   }
 
-  fileprivate enum Storage {
+  fileprivate enum Storage: Sendable {
     case rawValue(Double)
     case none
     case extraSmall

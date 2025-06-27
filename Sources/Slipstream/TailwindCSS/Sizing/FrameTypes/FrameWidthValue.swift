@@ -25,7 +25,7 @@ public struct FrameWidthValue: ExpressibleByIntegerLiteral, ExpressibleByFloatLi
     self.storage = value
   }
 
-  fileprivate enum Storage {
+  fileprivate enum Storage: Sendable {
     case rawValue(Double)
     case auto
     case full

@@ -39,7 +39,7 @@ struct TailwindClassModifier<T: View>: ViewModifier {
 }
 
 private struct TailwindClassModifierView<Content: View>: View {
-  init(classNames: Set<String>, condition: Condition?, @ViewBuilder content: @escaping () -> Content) {
+  init(classNames: Set<String>, condition: Condition?, @ViewBuilder content: @escaping @Sendable () -> Content) {
     self.classNames = classNames
     self.condition = condition
     self.content = content
@@ -64,6 +64,6 @@ private struct TailwindClassModifierView<Content: View>: View {
 
   private let classNames: Set<String>
   private let condition: Condition?
-  private let content: () -> Content
+  private let content: @Sendable () -> Content
 }
 

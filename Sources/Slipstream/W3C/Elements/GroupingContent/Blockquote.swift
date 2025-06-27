@@ -19,10 +19,10 @@ public struct Blockquote<Content>: W3CElement where Content: View {
   public let tagName: String = "blockquote"
 
   @_documentation(visibility: private)
-  @ViewBuilder public let content: () -> Content
+  @ViewBuilder public let content: @Sendable () -> Content
 
   /// Creates a blockquote.
-  public init(@ViewBuilder content: @escaping () -> Content) {
+  public init(@ViewBuilder content: @escaping @Sendable () -> Content) {
     self.content = content
   }
 

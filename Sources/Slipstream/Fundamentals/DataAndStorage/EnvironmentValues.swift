@@ -30,7 +30,7 @@
 ///
 /// Learn how to create custom environment values in <doc:EnvironmentValuesSection>.
 @available(iOS 17.0, macOS 14.0, *)
-public struct EnvironmentValues {
+public struct EnvironmentValues: Sendable {
   /// Creates an environment values instance.
   ///
   /// You don't typically create an instance of ``EnvironmentValues``
@@ -44,10 +44,10 @@ public struct EnvironmentValues {
   }
 
   /// Accesses the environment value associated with a custom key.
-  public subscript<K>(key: K.Type) -> K.Value where K: EnvironmentKey {
+  public subscript<K>(key: K.Type) -> K.Value where K: EnvironmentKey, K.Value: Sendable {
     get { return storage[ObjectIdentifier(K.self)] as? K.Value ?? K.defaultValue }
     set { storage[ObjectIdentifier(K.self)] = newValue }
   }
 
-  private var storage: [ObjectIdentifier: Any] = [:]
+  private var storage: [ObjectIdentifier: Any & Sendable] = [:]
 }

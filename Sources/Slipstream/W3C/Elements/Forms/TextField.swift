@@ -4,7 +4,7 @@ import SwiftSoup
 ///
 /// - SeeAlso: W3C [input type](https://html.spec.whatwg.org/multipage/input.html#attr-input-type) specification.
 @available(iOS 17.0, macOS 14.0, *)
-public enum TextFieldInputType: String {
+public enum TextFieldInputType: String, Sendable {
   /// Represents a one line plain text edit control.
   ///
   /// This is the default input type if no type is provided.

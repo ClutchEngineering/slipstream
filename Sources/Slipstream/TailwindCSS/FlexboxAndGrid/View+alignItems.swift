@@ -2,7 +2,7 @@
 ///
 /// - SeeAlso: Tailwind CSS' [`align items`](https://tailwindcss.com/docs/align-items) documentation.
 @available(iOS 17.0, macOS 14.0, *)
-public enum AlignItems: String {
+public enum AlignItems: String, Sendable {
   /// Stretches views to fill the container’s cross axis.
   ///
   /// When along the x-axis:

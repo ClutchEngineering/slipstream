@@ -3,7 +3,8 @@ import SwiftSoup
 /// A View created from a swift tuple of View values.
 @_documentation(visibility: private)
 @available(iOS 17.0, macOS 14.0, *)
-public struct TupleView<T>: View {
+public struct TupleView<T>: View
+where T: Sendable {
   public typealias Content = Never
 
   init(value: T) {

@@ -20,16 +20,17 @@ extension View {
   ///
   /// - Returns: A view that has the given value set in its environment.
   public func environment<V>(
-    _ keyPath: WritableKeyPath<EnvironmentValues, V>,
+    _ keyPath: WritableKeyPath<EnvironmentValues, V> & Sendable,
     _ value: V
-  ) -> some View {
+  ) -> some View where V: Sendable {
     return self.modifier(EnvironmentModifier(keyPath: keyPath, value: value))
   }
 }
 
 /// A view modifier that will inject the given environment value assigned to the given keyPath when rendered.
-private struct EnvironmentModifier<T: View, Value>: ViewModifier {
-  let keyPath: WritableKeyPath<EnvironmentValues, Value>
+private struct EnvironmentModifier<T: View, Value>: ViewModifier
+where Value: Sendable {
+  let keyPath: WritableKeyPath<EnvironmentValues, Value> & Sendable
   let value: Value
 
   @ViewBuilder
@@ -41,12 +42,14 @@ private struct EnvironmentModifier<T: View, Value>: ViewModifier {
 }
 
 /// Injects an environment value into the environment when the view is rendered.
-private struct EnvironmentModifierView<Content: View, Value>: View {
+private struct EnvironmentModifierView<Content: View, Value>: View
+where Content: Sendable,
+      Value: Sendable {
   typealias Body = Never
 
-  let keyPath: WritableKeyPath<EnvironmentValues, Value>
+  let keyPath: WritableKeyPath<EnvironmentValues, Value> & Sendable
   let value: Value
-  let content: () -> Content
+  let content: @Sendable () -> Content
 
   func render(_ container: Element, environment: EnvironmentValues) throws {
     var environment = environment

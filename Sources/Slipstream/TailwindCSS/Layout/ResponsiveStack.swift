@@ -38,7 +38,7 @@ public struct ResponsiveStack<Content: View>: View {
     condition: Condition = .init(startingAt: .medium),
     spacing: Double? = nil,
     reversed: Bool = false,
-    @ViewBuilder content: @escaping () -> Content
+    @ViewBuilder content: @escaping @Sendable () -> Content
   ) {
     self.defaultAxis = defaultAxis
     self.condition = condition
@@ -73,5 +73,5 @@ public struct ResponsiveStack<Content: View>: View {
   private let condition: Condition
   private let spacing: Double?
   private let reversed: Bool
-  private let content: () -> Content
+  private let content: @Sendable () -> Content
 }

@@ -23,7 +23,7 @@ public struct Link<Content>: View where Content: View {
   ///   - destination: The URL to open when this link is activated.
   ///   - openInNewTab: If true, clicking the link will cause a new tab to be opened.
   ///   - content: The content to display within the link.
-  public init(_ destination: URL?, openInNewTab: Bool = false, @ViewBuilder content: @escaping () -> Content) {
+  public init(_ destination: URL?, openInNewTab: Bool = false, @ViewBuilder content: @escaping @Sendable () -> Content) {
     self.destination = destination
     self.openInNewTab = openInNewTab
     self.content = content
@@ -57,5 +57,5 @@ public struct Link<Content>: View where Content: View {
 
   private let destination: URL?
   private let openInNewTab: Bool
-  private let content: () -> Content
+  private let content: @Sendable () -> Content
 }

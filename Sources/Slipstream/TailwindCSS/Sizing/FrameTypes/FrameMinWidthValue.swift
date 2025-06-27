@@ -19,7 +19,7 @@ public struct FrameMinWidthValue: ExpressibleByIntegerLiteral, ExpressibleByFloa
     self.storage = value
   }
 
-  fileprivate enum Storage {
+  fileprivate enum Storage: Sendable {
     case rawValue(Double)
     case full
     case min

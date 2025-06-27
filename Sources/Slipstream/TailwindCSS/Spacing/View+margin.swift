@@ -17,7 +17,7 @@ public struct MarginValue: Sendable {
     self.storage = value
   }
 
-  fileprivate enum Storage {
+  fileprivate enum Storage: Sendable {
     case rawValue(Double)
     case auto
   }

@@ -1,4 +1,4 @@
-import Markdown
+@preconcurrency import Markdown
 import SwiftSoup
 
 /// A view that renders markdown as Slipstream views.
@@ -45,7 +45,7 @@ import SwiftSoup
 public struct MarkdownText: View {
   let node: Markup
 
-  public typealias BuilderBlock = (Markup, MarkdownText) -> any View
+  public typealias BuilderBlock = @Sendable (Markup, MarkdownText) -> any View
 
   @ViewBuilder let builder: BuilderBlock
 

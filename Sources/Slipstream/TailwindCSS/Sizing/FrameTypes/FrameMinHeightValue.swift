@@ -23,7 +23,7 @@ public struct FrameMinHeightValue: ExpressibleByIntegerLiteral, ExpressibleByFlo
     self.storage = value
   }
 
-  fileprivate enum Storage {
+  fileprivate enum Storage: Sendable {
     case rawValue(Double)
     case full
     case screen
