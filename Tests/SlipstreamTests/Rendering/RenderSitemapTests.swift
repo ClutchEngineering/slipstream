@@ -35,4 +35,24 @@ final class RenderSitemapTests {
 <p class="font-bold">About</p>
 """)
   }
+
+  @Test func parallelRendering() async throws {
+    var sitemap = Sitemap()
+    let rendered = try await renderSitemap([
+      "index.html": Text("Hello world"),
+      "home.html": Text("About").bold(),
+    ])
+
+    let index = try #require(rendered["index.html"])
+    #expect(index == """
+<!DOCTYPE html>
+<p>Hello world</p>
+""")
+
+    let about = try #require(rendered["about.html"])
+    #expect(about == """
+<!DOCTYPE html>
+<p class="font-bold">About</p>
+""")
+  }
 }
