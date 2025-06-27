@@ -23,6 +23,8 @@ jobs:
   test_latest:
     runs-on: macos-15
     steps:
+      - name: Select Xcode
+        run: sudo xcode-select -s "/Applications/Xcode_16.4.app"
       - name: Get swift version
         run: swift --version
       - uses: actions/checkout@v4
