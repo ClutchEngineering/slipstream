@@ -1,6 +1,6 @@
 import Testing
 
-import Markdown
+@preconcurrency import Markdown
 import Slipstream
 
 private enum TableContext {
@@ -22,7 +22,7 @@ extension EnvironmentValues {
 private struct ContextAwareTableCell<Content: View>: View {
   @Environment(\.tableContext) var tableContext
 
-  @ViewBuilder let content: () -> Content
+  @ViewBuilder let content: @Sendable () -> Content
 
   var body: some View {
     switch tableContext {

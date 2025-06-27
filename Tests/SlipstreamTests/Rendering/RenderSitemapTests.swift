@@ -37,10 +37,9 @@ final class RenderSitemapTests {
   }
 
   @Test func parallelRendering() async throws {
-    var sitemap = Sitemap()
     let rendered = try await renderSitemap([
       "index.html": Text("Hello world"),
-      "home.html": Text("About").bold(),
+      "about.html": Text("About").bold(),
     ])
 
     let index = try #require(rendered["index.html"])

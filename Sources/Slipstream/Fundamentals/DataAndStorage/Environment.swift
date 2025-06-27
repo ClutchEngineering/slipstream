@@ -14,7 +14,7 @@
 /// view modifier.
 @available(iOS 17.0, macOS 14.0, *)
 @propertyWrapper
-public struct Environment<Value> {
+public struct Environment<Value>: Sendable {
   /// Creates an environment property to read the specified key path.
   ///
   /// Don’t call this initializer directly. Instead, declare a property
@@ -34,7 +34,7 @@ public struct Environment<Value> {
   /// a value for a view hierarchy.
   ///
   /// - Parameter keyPath: A key path to a specific resulting value.
-  public init(_ keyPath: KeyPath<EnvironmentValues, Value>) {
+  public init(_ keyPath: KeyPath<EnvironmentValues, Value> & Sendable) {
     self.keyPath = keyPath
   }
 
@@ -54,5 +54,5 @@ public struct Environment<Value> {
   private var environmentValues: EnvironmentValues = EnvironmentValues()
 
   /// The key path to the property represented by this Environment wrapper.
-  private let keyPath: KeyPath<EnvironmentValues, Value>
+  private let keyPath: KeyPath<EnvironmentValues, Value> & Sendable
 }
