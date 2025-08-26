@@ -22,7 +22,7 @@ public struct Label<Content>: View, Sendable where Content: View {
   /// - Parameters:
   ///   - htmlFor: The id of the form control that this label is associated with.
   ///   - content: A view builder that creates the label's content.
-  public init(htmlFor: String? = nil, @ViewBuilder content: @escaping @Sendable () -> Content) {
+  public init(for htmlFor: String? = nil, @ViewBuilder content: @escaping @Sendable () -> Content) {
     self.content = content
     self.htmlFor = htmlFor
   }
@@ -32,8 +32,8 @@ public struct Label<Content>: View, Sendable where Content: View {
   /// - Parameters:
   ///   - text: The text content of the label.
   ///   - htmlFor: The id of the form control that this label is associated with.
-  public init(_ text: String, htmlFor: String? = nil) where Content == DOMString {
-    self.init(htmlFor: htmlFor) {
+  public init(_ text: String, for htmlFor: String? = nil) where Content == DOMString {
+    self.init(for: htmlFor) {
       DOMString(text)
     }
   }
@@ -43,7 +43,7 @@ public struct Label<Content>: View, Sendable where Content: View {
   /// - Parameter controlId: The id of the form control.
   /// - Returns: A new label with the specified form control association.
   public func htmlFor(_ controlId: String) -> Label<Content> {
-    Label(htmlFor: controlId, content: content)
+    Label(for: controlId, content: content)
   }
 
   @_documentation(visibility: private)

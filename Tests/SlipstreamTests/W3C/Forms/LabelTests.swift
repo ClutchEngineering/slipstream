@@ -14,11 +14,11 @@ struct LabelTests {
   }
 
   @Test func withHtmlFor() throws {
-    try #expect(renderHTML(Label("Menu", htmlFor: "menu-toggle")) == #"<label for="menu-toggle">Menu</label>"#)
+    try #expect(renderHTML(Label("Menu", for: "menu-toggle")) == #"<label for="menu-toggle">Menu</label>"#)
   }
 
   @Test func withContentAndHtmlFor() throws {
-    try #expect(renderHTML(Label(htmlFor: "terms") {
+    try #expect(renderHTML(Label(for: "terms") {
       DOMString("I agree to the terms")
     }) == #"<label for="terms">I agree to the terms</label>"#)
   }
@@ -29,11 +29,11 @@ struct LabelTests {
 
   @Test func mobileMenuToggleUseCase() throws {
     // Test the specific use case for mobile menu toggle
-    try #expect(renderHTML(Label("☰", htmlFor: "menu-toggle")) == #"<label for="menu-toggle">☰</label>"#)
+    try #expect(renderHTML(Label("☰", for: "menu-toggle")) == #"<label for="menu-toggle">☰</label>"#)
   }
 
   @Test func complexContent() throws {
-    try #expect(renderHTML(Label(htmlFor: "checkbox") {
+    try #expect(renderHTML(Label(for: "checkbox") {
       DOMString("Complex ")
       DOMString("label")
     }) == #"<label for="checkbox">Complex label</label>"#)
