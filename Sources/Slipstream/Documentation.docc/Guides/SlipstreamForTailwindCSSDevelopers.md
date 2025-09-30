@@ -233,7 +233,7 @@ Tailwind utility | Slipstream modifier
 :----------------|:-------------------
 [Accent Color](https://tailwindcss.com/docs/accent-color) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Appearance](https://tailwindcss.com/docs/appearance) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Cursor](https://tailwindcss.com/docs/cursor) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Cursor](https://tailwindcss.com/docs/cursor) | ``View/pointerStyle(_:condition:)``
 [Caret Color](https://tailwindcss.com/docs/caret-color) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Pointer Events](https://tailwindcss.com/docs/pointer-events) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Resize](https://tailwindcss.com/docs/resize) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
