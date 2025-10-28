@@ -31,7 +31,7 @@ public struct RadioButton: View {
   ///   - id: The unique identifier for the radio button, used for label association.
   ///   - checked: Whether the radio button should be checked by default.
   ///   - required: If true, indicates that the user must select one of the radio buttons
-  ///     in the group before the owning form can be submitted.
+  ///     in this group (sharing the same name) before the owning form can be submitted.
   ///   - autoFocus: If true, indicates that the radio button should be focused as soon as
   ///     the page is loaded, allowing the user to interact with it without having to
   ///     manually focus it first.
