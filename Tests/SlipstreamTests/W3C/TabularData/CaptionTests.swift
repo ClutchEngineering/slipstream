@@ -18,7 +18,11 @@ struct CaptionTests {
   }
 
   @Test func withStringLiteral() throws {
-    try #expect(renderHTML(Caption("Table Caption")) == "<caption>Table Caption</caption>")
+    try #expect(renderHTML(Caption("Table Caption")) == """
+<caption>
+ Table Caption
+</caption>
+""")
   }
 
   @Test func attribute() throws {
