@@ -179,7 +179,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<option>`](https://html.spec.whatwg.org/multipage/sections.html#the-option-element) | ``Option``
 [`<textarea>`](https://html.spec.whatwg.org/multipage/sections.html#the-textarea-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<output>`](https://html.spec.whatwg.org/multipage/sections.html#the-output-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<progress>`](https://html.spec.whatwg.org/multipage/sections.html#the-progress-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<progress>`](https://html.spec.whatwg.org/multipage/sections.html#the-progress-element) | ``ProgressView``
 [`<meter>`](https://html.spec.whatwg.org/multipage/sections.html#the-meter-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<fieldset>`](https://html.spec.whatwg.org/multipage/sections.html#the-fieldset-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<legend>`](https://html.spec.whatwg.org/multipage/sections.html#the-legend-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
