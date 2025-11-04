@@ -15,8 +15,8 @@ struct ProgressViewTests {
     try #expect(renderHTML(ProgressView(value: 70, max: 100)) == #"<progress value="70.0" max="100.0"></progress>"#)
   }
 
-  @Test func withId() throws {
-    try #expect(renderHTML(ProgressView(value: 0.75, id: "upload-progress")) == #"<progress value="0.75" id="upload-progress"></progress>"#)
+  @Test func withIdModifier() throws {
+    try #expect(renderHTML(ProgressView(value: 0.75).id("upload-progress")) == #"<progress value="0.75" id="upload-progress"></progress>"#)
   }
 
   @Test func zeroValue() throws {
@@ -30,9 +30,5 @@ struct ProgressViewTests {
   @Test func customMaxWithDefaultValue() throws {
     // When max is different from default 1.0, it should be included
     try #expect(renderHTML(ProgressView(max: 100)) == #"<progress max="100.0"></progress>"#)
-  }
-
-  @Test func allAttributes() throws {
-    try #expect(renderHTML(ProgressView(value: 42, max: 100, id: "download-progress")) == #"<progress value="42.0" max="100.0" id="download-progress"></progress>"#)
   }
 }
