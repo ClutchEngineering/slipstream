@@ -4,9 +4,7 @@
 /// struct ProductsTable: View {
 ///   var body: some View {
 ///     Table {
-///       Caption {
-///         DOMString("Products and Prices")
-///       }
+///       Caption("Products and Prices")
 ///       TableBody {
 ///         TableRow {
 ///           TableCell { DOMString("Widget") }
@@ -30,5 +28,12 @@ public struct Caption<Content>: W3CElement where Content: View {
   /// Creates a table caption.
   public init(@ViewBuilder content: @escaping @Sendable () -> Content) {
     self.content = content
+  }
+
+  /// Creates a table caption with some static text.
+  public init(_ text: String) where Content == DOMString {
+    self.content = {
+      DOMString(text)
+    }
   }
 }
