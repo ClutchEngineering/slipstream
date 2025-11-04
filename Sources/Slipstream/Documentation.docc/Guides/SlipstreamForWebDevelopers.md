@@ -110,10 +110,10 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<strong>`](https://html.spec.whatwg.org/multipage/sections.html#the-strong-element) | ``Strong`` 
 [`<small>`](https://html.spec.whatwg.org/multipage/sections.html#the-small-element) | ``Small`` 
 [`<s>`](https://html.spec.whatwg.org/multipage/sections.html#the-s-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<cite>`](https://html.spec.whatwg.org/multipage/sections.html#the-cite-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<cite>`](https://html.spec.whatwg.org/multipage/sections.html#the-cite-element) | ``Cite`` 
 [`<q>`](https://html.spec.whatwg.org/multipage/sections.html#the-q-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<dfn>`](https://html.spec.whatwg.org/multipage/sections.html#the-dfn-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<abbr>`](https://html.spec.whatwg.org/multipage/sections.html#the-abbr-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<abbr>`](https://html.spec.whatwg.org/multipage/sections.html#the-abbr-element) | ``Abbreviation`` 
 [`<ruby>`](https://html.spec.whatwg.org/multipage/sections.html#the-ruby-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<rt>`](https://html.spec.whatwg.org/multipage/sections.html#the-rt-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<rp>`](https://html.spec.whatwg.org/multipage/sections.html#the-rp-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
