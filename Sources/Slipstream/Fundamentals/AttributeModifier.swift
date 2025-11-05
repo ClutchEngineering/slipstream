@@ -107,3 +107,35 @@ where Content: Sendable {
     }
   }
 }
+
+/// A modifier that conditionally sets an HTML attribute on views based on a boolean condition.
+///
+/// This modifier is used for boolean HTML attributes like `disabled`, `checked`, `required`, etc.
+/// When the condition is true, the attribute is set with an empty value. When false, the attribute
+/// is not set at all.
+@available(iOS 17.0, macOS 14.0, *)
+public struct ConditionalAttributeModifier<T: View>: ViewModifier {
+  private let attribute: String
+  private let condition: Bool
+
+  /// Creates a conditional attribute modifier.
+  ///
+  /// - Parameters:
+  ///   - attribute: The HTML attribute name to conditionally set.
+  ///   - condition: Whether the attribute should be present.
+  public init(_ attribute: String, condition: Bool) {
+    self.attribute = attribute
+    self.condition = condition
+  }
+
+  @ViewBuilder
+  public func body(content: T) -> some View {
+    if condition {
+      AttributeModifierView([attribute: ""]) {
+        content
+      }
+    } else {
+      content
+    }
+  }
+}
