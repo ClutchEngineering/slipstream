@@ -17,3 +17,4 @@
 ### Attribute types
 
 - ``CrossOrigin``
+- ``MimeType``

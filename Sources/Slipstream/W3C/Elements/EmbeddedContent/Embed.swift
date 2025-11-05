@@ -12,22 +12,39 @@ import SwiftSoup
 /// struct MySiteContent: View {
 ///   var body: some View {
 ///     Body {
-///       Embed(URL(string: "/media/video.mp4"), type: "video/mp4")
+///       Embed(URL(string: "/media/video.mp4"), type: .videoMP4)
 ///     }
 ///   }
 /// }
 /// ```
 ///
 /// - SeeAlso: W3C [`embed`](https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-embed-element) specification.
+///
+/// ## See Also
+///
+/// - ``MimeType``
 @available(iOS 17.0, macOS 14.0, *)
 public struct Embed: View {
-  /// Creates an Embed view.
+  /// Creates an Embed view with a MIME type.
   ///
   /// - Parameters:
   ///   - url: The URL of the resource being embedded.
   ///   - type: The MIME type of the embedded content. This can help the browser
   ///     determine how to display the content.
-  public init(_ url: URL?, type: String? = nil) {
+  public init(_ url: URL?, type: MimeType? = nil) {
+    self.url = url
+    self.type = type?.rawValue
+  }
+
+  /// Creates an Embed view with a custom MIME type string.
+  ///
+  /// Use this initializer when you need to specify a MIME type that isn't
+  /// available in the ``MimeType`` enum.
+  ///
+  /// - Parameters:
+  ///   - url: The URL of the resource being embedded.
+  ///   - type: The MIME type string of the embedded content.
+  public init(_ url: URL?, type: String?) {
     self.url = url
     self.type = type
   }
