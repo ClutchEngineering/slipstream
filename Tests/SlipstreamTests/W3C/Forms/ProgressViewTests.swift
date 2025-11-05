@@ -4,11 +4,11 @@ import Slipstream
 
 struct ProgressViewTests {
   @Test func indeterminate() throws {
-    try #expect(renderHTML(ProgressView()) == #"<progress max="1.0"></progress>"#)
+    try #expect(renderHTML(ProgressView()) == #"<progress></progress>"#)
   }
 
   @Test func withValue() throws {
-    try #expect(renderHTML(ProgressView(value: 0.7)) == #"<progress value="0.7" max="1.0"></progress>"#)
+    try #expect(renderHTML(ProgressView(value: 0.7)) == #"<progress value="0.7"></progress>"#)
   }
 
   @Test func withCustomMax() throws {
@@ -29,9 +29,9 @@ struct ProgressViewTests {
 
   @Test func percentageUseCase() throws {
     // Using default max of 1.0 for percentage-style progress
-    try #expect(renderHTML(ProgressView(value: 0.0)) == #"<progress value="0.0" max="1.0"></progress>"#)
-    try #expect(renderHTML(ProgressView(value: 0.5)) == #"<progress value="0.5" max="1.0"></progress>"#)
-    try #expect(renderHTML(ProgressView(value: 1.0)) == #"<progress value="1.0" max="1.0"></progress>"#)
+    try #expect(renderHTML(ProgressView(value: 0.0)) == #"<progress value="0.0"></progress>"#)
+    try #expect(renderHTML(ProgressView(value: 0.5)) == #"<progress value="0.5"></progress>"#)
+    try #expect(renderHTML(ProgressView(value: 1.0)) == #"<progress value="1.0"></progress>"#)
   }
 
   @Test func numericUseCase() throws {

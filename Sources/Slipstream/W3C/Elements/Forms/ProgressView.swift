@@ -43,7 +43,9 @@ public struct ProgressView: View {
     if let value {
       try element.attr("value", String(value))
     }
-    try element.attr("max", String(max))
+    if max != 1.0 {
+      try element.attr("max", String(max))
+    }
   }
 
   private let value: Double?
