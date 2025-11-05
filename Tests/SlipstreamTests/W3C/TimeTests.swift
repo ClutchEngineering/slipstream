@@ -96,40 +96,58 @@ struct TimeTests {
 
     let date = Calendar.current.date(from: components)!
 
-    // Use a specific locale for predictable output
-    var calendar = Calendar.current
-    calendar.timeZone = TimeZone(identifier: "UTC")!
-
-    let format = Date.FormatStyle.dateTime
-      .year()
-      .month()
-      .day()
-      .hour()
-      .minute()
+    // Use a simple format to avoid locale-specific variations in "at" separator
+    let format = Date.FormatStyle()
+      .year(.defaultDigits)
+      .month(.abbreviated)
+      .day(.twoDigits)
       .locale(Locale(identifier: "en_US_POSIX"))
 
     let html = try renderHTML(Time(date, format: format))
 
     // Should produce exact ISO 8601 datetime and formatted display
-    #expect(html == #"<time datetime="2024-01-15T10:30:00Z">Jan 15, 2024 at 10:30 AM</time>"#)
+    #expect(html == #"<time datetime="2024-01-15T10:30:00Z">Jan 15, 2024</time>"#)
   }
 
-  @Test func withDateObjectRelativeFormat() throws {
-    // Create a date exactly 2 hours ago from a fixed reference point
+  @Test func withDateObjectTimeFormat() throws {
+    // Create a specific date
+    var components = DateComponents()
+    components.year = 2024
+    components.month = 1
+    components.day = 15
+    components.hour = 14
+    components.minute = 30
+    components.second = 0
+    components.timeZone = TimeZone(identifier: "UTC")
+
+    let date = Calendar.current.date(from: components)!
+
+    // Test time-only formatting
+    let format = Date.FormatStyle()
+      .hour(.defaultDigits(amPM: .abbreviated))
+      .minute(.twoDigits)
+      .locale(Locale(identifier: "en_US_POSIX"))
+
+    let html = try renderHTML(Time(date, format: format))
+
+    // Should produce exact ISO 8601 datetime with time display
+    #expect(html == #"<time datetime="2024-01-15T14:30:00Z">2:30 PM</time>"#)
+  }
+
+  @Test func withDateObjectAbbreviatedFormat() throws {
+    // Create a specific date
     var components = DateComponents()
     components.year = 2024
     components.month = 6
     components.day = 15
-    components.hour = 12
+    components.hour = 10
     components.minute = 0
     components.second = 0
     components.timeZone = TimeZone(identifier: "UTC")
 
-    let referenceDate = Calendar.current.date(from: components)!
-    let date = referenceDate.addingTimeInterval(-2 * 60 * 60) // 2 hours earlier
+    let date = Calendar.current.date(from: components)!
 
-    // For relative format, we'll just verify the structure since the exact output
-    // depends on the current time. Let's use a fixed date format instead.
+    // Test abbreviated month format
     let format = Date.FormatStyle()
       .year(.defaultDigits)
       .month(.abbreviated)
