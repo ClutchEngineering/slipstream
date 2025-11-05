@@ -19,10 +19,6 @@ extension View {
   /// - SeeAlso: W3C [`disabled`](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-disabled) specification.
   @available(iOS 17.0, macOS 14.0, *)
   public func disabled(_ condition: Bool = true) -> some View {
-    if condition {
-      return modifier(AttributeModifier("disabled", value: ""))
-    } else {
-      return self
-    }
+    return modifier(ConditionalAttributeModifier("disabled", condition: condition))
   }
 }
