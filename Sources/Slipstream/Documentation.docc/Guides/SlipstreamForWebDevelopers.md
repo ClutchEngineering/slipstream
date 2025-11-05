@@ -142,7 +142,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<source>`](https://html.spec.whatwg.org/multipage/sections.html#the-source-element) | ``Source``
 [`<img>`](https://html.spec.whatwg.org/multipage/sections.html#the-img-element) | ``Image``
 [`<iframe>`](https://html.spec.whatwg.org/multipage/sections.html#the-iframe-element) | ``IFrame``
-[`<embed>`](https://html.spec.whatwg.org/multipage/sections.html#the-embed-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<embed>`](https://html.spec.whatwg.org/multipage/sections.html#the-embed-element) | ``Embed``
 [`<object>`](https://html.spec.whatwg.org/multipage/sections.html#the-object-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<video>`](https://html.spec.whatwg.org/multipage/sections.html#the-video-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<audio>`](https://html.spec.whatwg.org/multipage/sections.html#the-audio-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
@@ -155,7 +155,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
  W3C tag | Slipstream view
 :--------|:----------------
 [`<table>`](https://html.spec.whatwg.org/multipage/sections.html#the-table-element) | ``Table``
-[`<caption>`](https://html.spec.whatwg.org/multipage/sections.html#the-caption-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<caption>`](https://html.spec.whatwg.org/multipage/sections.html#the-caption-element) | ``Caption``
 [`<colgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-colgroup-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<col>`](https://html.spec.whatwg.org/multipage/sections.html#the-col-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<tbody>`](https://html.spec.whatwg.org/multipage/sections.html#the-tbody-element) | ``TableBody``
