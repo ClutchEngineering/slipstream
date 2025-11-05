@@ -65,7 +65,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
  W3C tag | Slipstream view
 :--------|:----------------
 [`<body>`](https://html.spec.whatwg.org/multipage/sections.html#the-body-element) | ``Body``
-[`<article>`](https://html.spec.whatwg.org/multipage/sections.html#the-article-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<article>`](https://html.spec.whatwg.org/multipage/sections.html#the-article-element) | ``Article``
 [`<section>`](https://html.spec.whatwg.org/multipage/sections.html#the-section-element) | ``Section``
 [`<nav>`](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element) | ``Navigation``
 [`<aside>`](https://html.spec.whatwg.org/multipage/sections.html#the-aside-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
