@@ -54,8 +54,12 @@ struct MenuTests {
       }
     }) == """
 <menu>
- <div>File Operations</div>
- <div>Edit Operations</div>
+ <div>
+  File Operations
+ </div>
+ <div>
+  Edit Operations
+ </div>
 </menu>
 """)
   }
