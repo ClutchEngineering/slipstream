@@ -80,7 +80,7 @@ struct TimeTests {
 
     // The datetime attribute should be ISO 8601 formatted
     // The display format should be MM/dd/yyyy in en_US locale
-    try #expect(html == #"<time datetime="2024-12-25T19:00:00Z">12/25/2024</time>"#)
+    #expect(html == #"<time datetime="2024-12-25T19:00:00Z">12/25/2024</time>"#)
   }
 
   @Test func withDateObjectDefaultFormat() throws {
@@ -97,6 +97,9 @@ struct TimeTests {
     let date = Calendar.current.date(from: components)!
 
     // Use a specific locale for predictable output
+    var calendar = Calendar.current
+    calendar.timeZone = TimeZone(identifier: "UTC")!
+
     let format = Date.FormatStyle.dateTime
       .year()
       .month()
@@ -104,12 +107,11 @@ struct TimeTests {
       .hour()
       .minute()
       .locale(Locale(identifier: "en_US_POSIX"))
-      .timeZone(TimeZone(identifier: "UTC")!)
 
     let html = try renderHTML(Time(date, format: format))
 
     // Should produce exact ISO 8601 datetime and formatted display
-    try #expect(html == #"<time datetime="2024-01-15T10:30:00Z">Jan 15, 2024 at 10:30 AM</time>"#)
+    #expect(html == #"<time datetime="2024-01-15T10:30:00Z">Jan 15, 2024 at 10:30 AM</time>"#)
   }
 
   @Test func withDateObjectRelativeFormat() throws {
@@ -137,7 +139,7 @@ struct TimeTests {
     let html = try renderHTML(Time(date, format: format))
 
     // Exact output with ISO 8601 datetime
-    try #expect(html == #"<time datetime="2024-06-15T10:00:00Z">Jun 15, 2024</time>"#)
+    #expect(html == #"<time datetime="2024-06-15T10:00:00Z">Jun 15, 2024</time>"#)
   }
 
   @Test func withDateObjectAndGlobalAttribute() throws {
@@ -161,6 +163,6 @@ struct TimeTests {
     let html = try renderHTML(Time(date, format: format).language("en"))
 
     // Should have both datetime and lang attributes in exact format
-    try #expect(html == #"<time datetime="2024-06-01T14:30:00Z" lang="en">06/01/2024</time>"#)
+    #expect(html == #"<time datetime="2024-06-01T14:30:00Z" lang="en">06/01/2024</time>"#)
   }
 }
