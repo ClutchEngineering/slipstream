@@ -28,10 +28,10 @@ public struct ProgressView: View {
   ///     is indeterminate, indicating that an activity is ongoing with no
   ///     indication of how long it is expected to take. When specified, the value
   ///     must be between 0 and `max`.
-  ///   - max: The maximum value, representing task completion. Must be greater
-  ///     than 0. Defaults to 1.0, which allows you to specify values as percentages
-  ///     (e.g., 0.7 for 70%).
-  public init(value: Double? = nil, max: Double = 1.0) {
+  ///   - max: The maximum value, representing task completion. When `nil`, the
+  ///     W3C default of 1.0 is used, allowing you to specify values as percentages
+  ///     (e.g., 0.7 for 70%). When specified, must be greater than 0.
+  public init(value: Double? = nil, max: Double? = nil) {
     self.value = value
     self.max = max
   }
@@ -43,11 +43,11 @@ public struct ProgressView: View {
     if let value {
       try element.attr("value", String(value))
     }
-    if max != 1.0 {
+    if let max {
       try element.attr("max", String(max))
     }
   }
 
   private let value: Double?
-  private let max: Double
+  private let max: Double?
 }
