@@ -118,7 +118,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<rt>`](https://html.spec.whatwg.org/multipage/sections.html#the-rt-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<rp>`](https://html.spec.whatwg.org/multipage/sections.html#the-rp-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<data>`](https://html.spec.whatwg.org/multipage/sections.html#the-data-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<time>`](https://html.spec.whatwg.org/multipage/sections.html#the-time-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<time>`](https://html.spec.whatwg.org/multipage/sections.html#the-time-element) | ``Time`` 
 [`<code>`](https://html.spec.whatwg.org/multipage/sections.html#the-code-element) | ``Code`` 
 [`<var>`](https://html.spec.whatwg.org/multipage/sections.html#the-var-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<samp>`](https://html.spec.whatwg.org/multipage/sections.html#the-samp-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
