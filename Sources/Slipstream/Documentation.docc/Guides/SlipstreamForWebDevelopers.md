@@ -90,7 +90,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<blockquote>`](https://html.spec.whatwg.org/multipage/sections.html#the-blockquote-element) | ``Blockquote`` 
 [`<ol>`](https://html.spec.whatwg.org/multipage/sections.html#the-ol-element) | ``List`` 
 [`<ul>`](https://html.spec.whatwg.org/multipage/sections.html#the-ul-element) | ``List`` 
-[`<menu>`](https://html.spec.whatwg.org/multipage/sections.html#the-menu-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<menu>`](https://html.spec.whatwg.org/multipage/sections.html#the-menu-element) | ``Menu`` 
 [`<li>`](https://html.spec.whatwg.org/multipage/sections.html#the-li-element) | ``ListItem`` 
 [`<dl>`](https://html.spec.whatwg.org/multipage/sections.html#the-dl-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<dt>`](https://html.spec.whatwg.org/multipage/sections.html#the-dt-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
