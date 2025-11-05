@@ -2,16 +2,16 @@ import Testing
 
 import Slipstream
 
-struct SupTests {
+struct SubscriptTests {
   @Test func emptyBlock() throws {
-    try #expect(renderHTML(Sup {}) == "<sup></sup>")
+    try #expect(renderHTML(Subscript {}) == "<sub></sub>")
   }
 
   @Test func withText() throws {
-    try #expect(renderHTML(Sup {
+    try #expect(renderHTML(Subscript {
       DOMString("2")
     }) == """
-<sup>2</sup>
+<sub>2</sub>
 """)
   }
 }
