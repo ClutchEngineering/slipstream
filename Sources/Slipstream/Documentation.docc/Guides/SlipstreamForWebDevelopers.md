@@ -146,7 +146,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<object>`](https://html.spec.whatwg.org/multipage/sections.html#the-object-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<video>`](https://html.spec.whatwg.org/multipage/sections.html#the-video-element) | ``Video``
 [`<audio>`](https://html.spec.whatwg.org/multipage/sections.html#the-audio-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<track>`](https://html.spec.whatwg.org/multipage/sections.html#the-track-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<track>`](https://html.spec.whatwg.org/multipage/sections.html#the-track-element) | ``Track``
 [`<map>`](https://html.spec.whatwg.org/multipage/sections.html#the-map-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<area>`](https://html.spec.whatwg.org/multipage/sections.html#the-area-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 
