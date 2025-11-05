@@ -1,3 +1,4 @@
+import Foundation
 import Testing
 
 import Slipstream
@@ -30,14 +31,10 @@ struct MenuTests {
   @Test func withLinks() throws {
     try #expect(renderHTML(Menu {
       ListItem {
-        Link("/new") {
-          DOMString("New File")
-        }
+        Link("New File", destination: URL(string: "/new"))
       }
       ListItem {
-        Link("/open") {
-          DOMString("Open File")
-        }
+        Link("Open File", destination: URL(string: "/open"))
       }
     }) == """
 <menu>

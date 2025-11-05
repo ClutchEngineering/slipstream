@@ -8,19 +8,13 @@
 ///   var body: some View {
 ///     Menu {
 ///       ListItem {
-///         Link("New File") {
-///           Text("New")
-///         }
+///         Link("New", destination: URL(string: "/new"))
 ///       }
 ///       ListItem {
-///         Link("Open File") {
-///           Text("Open")
-///         }
+///         Link("Open", destination: URL(string: "/open"))
 ///       }
 ///       ListItem {
-///         Link("Save File") {
-///           Text("Save")
-///         }
+///         Link("Save", destination: URL(string: "/save"))
 ///       }
 ///     }
 ///   }
