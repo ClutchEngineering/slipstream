@@ -36,9 +36,9 @@ struct FieldsetTests {
   }
 
   @Test func disabled() throws {
-    try #expect(renderHTML(Fieldset(disabled: true) {
+    try #expect(renderHTML(Fieldset {
       Legend("Disabled Section")
-    }) == """
+    }.disabled()) == """
 <fieldset disabled>
  <legend>
   Disabled Section
@@ -60,9 +60,9 @@ struct FieldsetTests {
   }
 
   @Test func allAttributes() throws {
-    try #expect(renderHTML(Fieldset(disabled: true, name: "payment") {
+    try #expect(renderHTML(Fieldset(name: "payment") {
       Legend("Payment Method")
-    }) == """
+    }.disabled()) == """
 <fieldset disabled name="payment">
  <legend>
   Payment Method

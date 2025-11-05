@@ -22,15 +22,15 @@ import SwiftSoup
 /// }
 /// ```
 ///
-/// The `disabled` attribute, when specified, causes all form controls within
-/// the fieldset to be disabled:
+/// The `disabled` modifier can be used to disable all form controls within
+/// the fieldset:
 ///
 /// ```swift
-/// Fieldset(disabled: true) {
+/// Fieldset {
 ///   Legend("Disabled Section")
 ///   TextField("Name", type: .text)
 /// }
-/// ```
+/// .disabled()
 ///
 /// - SeeAlso: W3C [`fieldset`](https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element) specification.
 @available(iOS 17.0, macOS 14.0, *)
@@ -38,11 +38,9 @@ public struct Fieldset<Content>: View where Content: View {
   /// Creates a fieldset with content.
   ///
   /// - Parameters:
-  ///   - disabled: Whether all form controls in the fieldset should be disabled.
   ///   - name: The name of the fieldset for form submission purposes.
   ///   - content: A view builder that creates the fieldset's content.
-  public init(disabled: Bool = false, name: String? = nil, @ViewBuilder content: @escaping @Sendable () -> Content) {
-    self.disabled = disabled
+  public init(name: String? = nil, @ViewBuilder content: @escaping @Sendable () -> Content) {
     self.name = name
     self.content = content
   }
@@ -50,10 +48,6 @@ public struct Fieldset<Content>: View where Content: View {
   @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     let element = try container.appendElement("fieldset")
-
-    if disabled {
-      try element.attr("disabled", "")
-    }
 
     if let name {
       try element.attr("name", name)
@@ -63,6 +57,5 @@ public struct Fieldset<Content>: View where Content: View {
   }
 
   @ViewBuilder private let content: @Sendable () -> Content
-  private let disabled: Bool
   private let name: String?
 }
