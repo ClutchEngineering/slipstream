@@ -155,12 +155,12 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
  W3C tag | Slipstream view
 :--------|:----------------
 [`<table>`](https://html.spec.whatwg.org/multipage/sections.html#the-table-element) | ``Table``
-[`<caption>`](https://html.spec.whatwg.org/multipage/sections.html#the-caption-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<caption>`](https://html.spec.whatwg.org/multipage/sections.html#the-caption-element) | ``Caption``
 [`<colgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-colgroup-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<col>`](https://html.spec.whatwg.org/multipage/sections.html#the-col-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<tbody>`](https://html.spec.whatwg.org/multipage/sections.html#the-tbody-element) | ``TableBody``
 [`<thead>`](https://html.spec.whatwg.org/multipage/sections.html#the-thead-element) | ``TableHeader``
-[`<tfoot>`](https://html.spec.whatwg.org/multipage/sections.html#the-tfoot-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<tfoot>`](https://html.spec.whatwg.org/multipage/sections.html#the-tfoot-element) | ``TableFooter``
 [`<tr>`](https://html.spec.whatwg.org/multipage/sections.html#the-tr-element) | ``TableRow``
 [`<td>`](https://html.spec.whatwg.org/multipage/sections.html#the-td-element) | ``TableCell``
 [`<th>`](https://html.spec.whatwg.org/multipage/sections.html#the-th-element) | ``TableHeaderCell``
