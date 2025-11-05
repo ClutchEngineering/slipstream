@@ -20,12 +20,12 @@ struct SearchTests {
   @Test func withNestedContent() throws {
     try #expect(renderHTML(Search {
       Form {
-        TextField("query", placeholder: "Search...")
+        TextField("Search...", name: "query")
       }
     }) == """
 <search>
  <form>
-  <input name="query" placeholder="Search..." type="text" />
+  <input type="text" placeholder="Search..." name="query" />
  </form>
 </search>
 """)
