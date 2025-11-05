@@ -68,7 +68,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<article>`](https://html.spec.whatwg.org/multipage/sections.html#the-article-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<section>`](https://html.spec.whatwg.org/multipage/sections.html#the-section-element) | ``Section``
 [`<nav>`](https://html.spec.whatwg.org/multipage/sections.html#the-nav-element) | ``Navigation``
-[`<aside>`](https://html.spec.whatwg.org/multipage/sections.html#the-aside-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<aside>`](https://html.spec.whatwg.org/multipage/sections.html#the-aside-element) | ``Aside``
 [`<h1>`](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) | ``H1`` or ``Heading``
 [`<h2>`](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) | ``H2`` or ``Heading``
 [`<h3>`](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) | ``H3`` or ``Heading``
