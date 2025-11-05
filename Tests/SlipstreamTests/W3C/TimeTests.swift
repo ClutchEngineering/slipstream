@@ -38,17 +38,21 @@ struct TimeTests {
   @Test func withDatetimeViewBuilder() throws {
     try #expect(renderHTML(Time(datetime: "2024-12-25") {
       DOMString("Christmas Day")
-    }) == #"<time datetime="2024-12-25">
+    }) == """
+<time datetime="2024-12-25">
  Christmas Day
-</time>"#)
+</time>
+""")
   }
 
   @Test func withNestedContent() throws {
     try #expect(renderHTML(Time(datetime: "2024-12-25") {
       Strong("December 25, 2024")
-    }) == #"<time datetime="2024-12-25">
+    }) == """
+<time datetime="2024-12-25">
  <strong>December 25, 2024</strong>
-</time>"#)
+</time>
+""")
   }
 
   @Test func globalAttribute() throws {
