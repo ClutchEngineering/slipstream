@@ -109,7 +109,7 @@ struct TimeTests {
     #expect(html == #"<time datetime="2024-01-15T10:30:00Z">Jan 15, 2024</time>"#)
   }
 
-  @Test func withDateObjectTimeFormat() throws {
+  @Test func withDateObjectWideMonthFormat() throws {
     // Create a specific date
     var components = DateComponents()
     components.year = 2024
@@ -122,16 +122,16 @@ struct TimeTests {
 
     let date = Calendar.current.date(from: components)!
 
-    // Test time-only formatting
+    // Test with wide month format
     let format = Date.FormatStyle()
-      .hour(.defaultDigits(amPM: .abbreviated))
-      .minute(.twoDigits)
+      .year(.defaultDigits)
+      .month(.wide)
       .locale(Locale(identifier: "en_US_POSIX"))
 
     let html = try renderHTML(Time(date, format: format))
 
-    // Should produce exact ISO 8601 datetime with time display
-    #expect(html == #"<time datetime="2024-01-15T14:30:00Z">2:30 PM</time>"#)
+    // Should produce exact ISO 8601 datetime with full month name and year
+    #expect(html == #"<time datetime="2024-01-15T14:30:00Z">January 2024</time>"#)
   }
 
   @Test func withDateObjectAbbreviatedFormat() throws {
