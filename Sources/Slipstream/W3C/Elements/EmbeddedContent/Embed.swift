@@ -13,7 +13,6 @@ import SwiftSoup
 ///   var body: some View {
 ///     Body {
 ///       Embed(URL(string: "/media/video.mp4"), type: "video/mp4")
-///         .frame(width: 640, height: 480)
 ///     }
 ///   }
 /// }
@@ -42,12 +41,6 @@ public struct Embed: View {
     try element.attr("src", url.absoluteString)
     if let type {
       try element.attr("type", type)
-    }
-    if let width = environment._width {
-      try element.attr("width", String(width))
-    }
-    if let height = environment._height {
-      try element.attr("height", String(height))
     }
   }
 
