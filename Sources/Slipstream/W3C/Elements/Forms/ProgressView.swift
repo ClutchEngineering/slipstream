@@ -2,25 +2,25 @@ import SwiftSoup
 
 /// A view that displays an indicator showing the completion progress of a task.
 ///
-/// The `Progress` view represents an HTML `<progress>` element, which displays
+/// The `ProgressView` represents an HTML `<progress>` element, which displays
 /// progress towards completion of a task. It can be used to show determinate
 /// progress (with a specific value) or indeterminate progress (when the value
 /// is unknown).
 ///
 /// ```swift
 /// // Indeterminate progress (no value specified)
-/// Progress()
+/// ProgressView()
 ///
 /// // Determinate progress with default max (1.0)
-/// Progress(value: 0.7)
+/// ProgressView(value: 0.7)
 ///
 /// // Custom value and max
-/// Progress(value: 70, max: 100)
+/// ProgressView(value: 70, max: 100)
 /// ```
 ///
 /// - SeeAlso: W3C [progress](https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element) specification.
 @available(iOS 17.0, macOS 14.0, *)
-public struct Progress: View {
+public struct ProgressView: View {
   /// Creates a progress indicator.
   ///
   /// - Parameters:
