@@ -2,20 +2,18 @@
 ///
 /// The Address element provides contact information for its nearest article or body
 /// ancestor. It can include physical addresses, URLs, email addresses, phone numbers,
-/// social media handles, geographic coordinates, and similar contact information.
+/// social media handles, and similar contact information.
 ///
 /// **Important**: The address element should only be used for contact information
 /// related to the document or section's author/owner, not for arbitrary addresses.
 ///
 /// ```swift
-/// struct MySiteContent: View {
+/// struct MySiteFooter: View {
 ///   var body: some View {
-///     Body {
+///     Footer {
 ///       Address {
-///         Text("Written by ")
-///         Link("John Doe", destination: URL(string: "mailto:john@example.com"))
-///         Linebreak()
-///         Text("Visit us at: 123 Main Street, Springfield")
+///         Text("Contact us at ")
+///         Link("info@example.com", destination: URL(string: "mailto:info@example.com"))
 ///       }
 ///     }
 ///   }

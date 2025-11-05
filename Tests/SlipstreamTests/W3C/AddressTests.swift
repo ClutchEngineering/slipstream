@@ -10,11 +10,7 @@ struct AddressTests {
   @Test func withText() throws {
     try #expect(renderHTML(Address {
       DOMString("Contact us at: info@example.com")
-    }) == """
-<address>
- Contact us at: info@example.com
-</address>
-""")
+    }) == "<address>Contact us at: info@example.com</address>")
   }
 
   @Test func withTextInitializer() throws {
