@@ -13,7 +13,7 @@ struct VideoTests {
   }
 
   @Test func controls() throws {
-    try #expect(renderHTML(Video(URL(string: "/video.mp4"), controls: true)) == #"<video src="/video.mp4" controls=""></video>"#)
+    try #expect(renderHTML(Video(URL(string: "/video.mp4"), controls: true)) == #"<video src="/video.mp4" controls></video>"#)
     try #expect(renderHTML(Video(URL(string: "/video.mp4"), controls: false)) == #"<video src="/video.mp4"></video>"#)
   }
 
@@ -23,7 +23,7 @@ struct VideoTests {
   }
 
   @Test func muted() throws {
-    try #expect(renderHTML(Video(URL(string: "/video.mp4"), muted: true)) == #"<video src="/video.mp4" muted=""></video>"#)
+    try #expect(renderHTML(Video(URL(string: "/video.mp4"), muted: true)) == #"<video src="/video.mp4" muted></video>"#)
     try #expect(renderHTML(Video(URL(string: "/video.mp4"), muted: false)) == #"<video src="/video.mp4"></video>"#)
   }
 
@@ -57,7 +57,7 @@ struct VideoTests {
           height: 480,
           poster: URL(string: "/poster.jpg")
         )
-      ) == #"<video src="/video.mp4" controls="" autoplay="" muted="" loop="" width="640" height="480" poster="/poster.jpg"></video>"#
+      ) == #"<video src="/video.mp4" controls autoplay="" muted loop="" width="640" height="480" poster="/poster.jpg"></video>"#
     )
   }
 
@@ -75,7 +75,7 @@ struct VideoTests {
     try #expect(renderHTML(Video(controls: true) {
       DOMString("Your browser does not support the video tag.")
     }) == """
-<video controls="">
+<video controls>
  Your browser does not support the video tag.
 </video>
 """)
