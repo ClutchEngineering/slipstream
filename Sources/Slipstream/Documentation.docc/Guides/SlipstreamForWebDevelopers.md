@@ -179,7 +179,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<option>`](https://html.spec.whatwg.org/multipage/sections.html#the-option-element) | ``Option``
 [`<textarea>`](https://html.spec.whatwg.org/multipage/sections.html#the-textarea-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<output>`](https://html.spec.whatwg.org/multipage/sections.html#the-output-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<progress>`](https://html.spec.whatwg.org/multipage/sections.html#the-progress-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<progress>`](https://html.spec.whatwg.org/multipage/sections.html#the-progress-element) | ``ProgressView``
 [`<meter>`](https://html.spec.whatwg.org/multipage/sections.html#the-meter-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<fieldset>`](https://html.spec.whatwg.org/multipage/sections.html#the-fieldset-element) | ``Fieldset``
 [`<legend>`](https://html.spec.whatwg.org/multipage/sections.html#the-legend-element) | ``Legend``
@@ -189,7 +189,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
  W3C tag | Slipstream view
 :--------|:----------------
 [`<details>`](https://html.spec.whatwg.org/multipage/sections.html#the-details-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<summary>`](https://html.spec.whatwg.org/multipage/sections.html#the-summary-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<summary>`](https://html.spec.whatwg.org/multipage/sections.html#the-summary-element) | ``Summary``
 [`<dialog>`](https://html.spec.whatwg.org/multipage/sections.html#the-dialog-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 
 ### Scripting
