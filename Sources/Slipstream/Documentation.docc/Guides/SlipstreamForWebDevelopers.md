@@ -155,7 +155,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
  W3C tag | Slipstream view
 :--------|:----------------
 [`<table>`](https://html.spec.whatwg.org/multipage/sections.html#the-table-element) | ``Table``
-[`<caption>`](https://html.spec.whatwg.org/multipage/sections.html#the-caption-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<caption>`](https://html.spec.whatwg.org/multipage/sections.html#the-caption-element) | ``Caption``
 [`<colgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-colgroup-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<col>`](https://html.spec.whatwg.org/multipage/sections.html#the-col-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<tbody>`](https://html.spec.whatwg.org/multipage/sections.html#the-tbody-element) | ``TableBody``
@@ -170,7 +170,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
  W3C tag | Slipstream view
 :--------|:----------------
 [`<form>`](https://html.spec.whatwg.org/multipage/sections.html#the-form-element) | ``Form``
-[`<label>`](https://html.spec.whatwg.org/multipage/sections.html#the-label-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<label>`](https://html.spec.whatwg.org/multipage/sections.html#the-label-element) | ``Label``
 [`<input>`](https://html.spec.whatwg.org/multipage/sections.html#the-input-element) | ``TextField``
 [`<button>`](https://html.spec.whatwg.org/multipage/sections.html#the-button-element) | ``Button``
 [`<select>`](https://html.spec.whatwg.org/multipage/sections.html#the-select-element) | ``Picker``
@@ -181,8 +181,8 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<output>`](https://html.spec.whatwg.org/multipage/sections.html#the-output-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<progress>`](https://html.spec.whatwg.org/multipage/sections.html#the-progress-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<meter>`](https://html.spec.whatwg.org/multipage/sections.html#the-meter-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<fieldset>`](https://html.spec.whatwg.org/multipage/sections.html#the-fieldset-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<legend>`](https://html.spec.whatwg.org/multipage/sections.html#the-legend-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<fieldset>`](https://html.spec.whatwg.org/multipage/sections.html#the-fieldset-element) | ``Fieldset``
+[`<legend>`](https://html.spec.whatwg.org/multipage/sections.html#the-legend-element) | ``Legend``
 
 ### Interactive elements
 
