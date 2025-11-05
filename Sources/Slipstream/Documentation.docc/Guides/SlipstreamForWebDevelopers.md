@@ -78,7 +78,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<hgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<header>`](https://html.spec.whatwg.org/multipage/sections.html#the-header-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<footer>`](https://html.spec.whatwg.org/multipage/sections.html#the-footer-element) | ``Footer``
-[`<address>`](https://html.spec.whatwg.org/multipage/sections.html#the-address-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<address>`](https://html.spec.whatwg.org/multipage/sections.html#the-address-element) | ``Address``
 
 ### Grouping content
 
