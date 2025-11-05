@@ -76,7 +76,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<h5>`](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) | ``H5`` or ``Heading``
 [`<h6>`](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) | ``H6`` or ``Heading``
 [`<hgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<header>`](https://html.spec.whatwg.org/multipage/sections.html#the-header-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<header>`](https://html.spec.whatwg.org/multipage/sections.html#the-header-element) | ``Header``
 [`<footer>`](https://html.spec.whatwg.org/multipage/sections.html#the-footer-element) | ``Footer``
 [`<address>`](https://html.spec.whatwg.org/multipage/sections.html#the-address-element) | ``Address``
 
@@ -98,7 +98,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<figure>`](https://html.spec.whatwg.org/multipage/sections.html#the-figure-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<figcaption>`](https://html.spec.whatwg.org/multipage/sections.html#the-figcaption-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<main>`](https://html.spec.whatwg.org/multipage/sections.html#the-main-element) | ``DocumentMain`` 
-[`<search>`](https://html.spec.whatwg.org/multipage/sections.html#the-search-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<search>`](https://html.spec.whatwg.org/multipage/sections.html#the-search-element) | ``Search`` 
 [`<div>`](https://html.spec.whatwg.org/multipage/sections.html#the-div-element) | ``Div`` 
 
 ### Text-level semantics
