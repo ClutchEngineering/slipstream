@@ -25,4 +25,15 @@ public struct DocumentMain<Content>: W3CElement where Content: View {
   public init(@ViewBuilder content: @escaping @Sendable () -> Content) {
     self.content = content
   }
+
+  /// Creates a DocumentMain view with static text.
+  public init(_ text: String) where Content == DOMString {
+    self.content = {
+      DOMString(text)
+    }
+  }
 }
+
+/// A more SwiftUI-idiomatic name for ``DocumentMain``.
+@available(iOS 17.0, macOS 14.0, *)
+public typealias Main = DocumentMain

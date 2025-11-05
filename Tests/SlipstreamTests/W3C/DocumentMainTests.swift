@@ -16,4 +16,30 @@ struct DocumentMainTests {
 </main>
 """)
   }
+
+  @Test func withStringInitializer() throws {
+    try #expect(renderHTML(DocumentMain("Hello, world!")) == """
+<main>
+ Hello, world!
+</main>
+""")
+  }
+
+  @Test func mainTypeAlias() throws {
+    try #expect(renderHTML(Main {
+      DOMString("Hello, world!")
+    }) == """
+<main>
+ Hello, world!
+</main>
+""")
+  }
+
+  @Test func mainTypeAliasWithStringInitializer() throws {
+    try #expect(renderHTML(Main("Hello, world!")) == """
+<main>
+ Hello, world!
+</main>
+""")
+  }
 }

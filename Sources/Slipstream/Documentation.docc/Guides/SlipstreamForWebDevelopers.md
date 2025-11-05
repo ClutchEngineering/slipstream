@@ -97,7 +97,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<dd>`](https://html.spec.whatwg.org/multipage/sections.html#the-dd-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<figure>`](https://html.spec.whatwg.org/multipage/sections.html#the-figure-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<figcaption>`](https://html.spec.whatwg.org/multipage/sections.html#the-figcaption-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<main>`](https://html.spec.whatwg.org/multipage/sections.html#the-main-element) | ``DocumentMain`` 
+[`<main>`](https://html.spec.whatwg.org/multipage/sections.html#the-main-element) | ``Main`` or ``DocumentMain`` 
 [`<search>`](https://html.spec.whatwg.org/multipage/sections.html#the-search-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<div>`](https://html.spec.whatwg.org/multipage/sections.html#the-div-element) | ``Div`` 
 
