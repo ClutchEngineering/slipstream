@@ -10,19 +10,11 @@ struct LegendTests {
   @Test func withText() throws {
     try #expect(renderHTML(Legend {
       DOMString("Personal Information")
-    }) == """
-<legend>
- Personal Information
-</legend>
-""")
+    }) == "<legend>Personal Information</legend>")
   }
 
   @Test func withStringLiteral() throws {
-    try #expect(renderHTML(Legend("Shipping Address")) == """
-<legend>
- Shipping Address
-</legend>
-""")
+    try #expect(renderHTML(Legend("Shipping Address")) == "<legend>Shipping Address</legend>")
   }
 
   @Test func attribute() throws {
