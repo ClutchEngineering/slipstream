@@ -10,7 +10,7 @@ struct DescriptionListTests {
   @Test func withTermsAndDetails() throws {
     try #expect(renderHTML(DescriptionList {
       DescriptionTerm("Swift")
-      DescriptionDetails {
+      DefinitionDescription {
         DOMString("A powerful programming language")
       }
     }) == """
@@ -28,11 +28,11 @@ struct DescriptionListTests {
   @Test func withMultipleTerms() throws {
     try #expect(renderHTML(DescriptionList {
       DescriptionTerm("HTML")
-      DescriptionDetails {
+      DefinitionDescription {
         DOMString("HyperText Markup Language")
       }
       DescriptionTerm("CSS")
-      DescriptionDetails {
+      DefinitionDescription {
         DOMString("Cascading Style Sheets")
       }
     }) == """

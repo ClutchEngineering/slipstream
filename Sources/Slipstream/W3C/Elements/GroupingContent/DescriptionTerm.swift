@@ -1,7 +1,7 @@
 /// A view that represents the term part of a term-description group in a description list.
 ///
 /// The `<dt>` element represents a term or name in a description list (`DescriptionList`).
-/// It is typically followed by one or more `DescriptionDetails` elements that provide
+/// It is typically followed by one or more `DefinitionDescription` elements that provide
 /// the description or definition of the term.
 ///
 /// ```swift
@@ -10,7 +10,7 @@
 ///     Body {
 ///       DescriptionList {
 ///         DescriptionTerm("HTML")
-///         DescriptionDetails {
+///         DefinitionDescription {
 ///           DOMString("HyperText Markup Language")
 ///         }
 ///       }

@@ -3,7 +3,7 @@
 /// The `<dl>` element represents an association list consisting of zero or more
 /// term-description groupings. Each grouping consists of one or more terms
 /// (represented by `DescriptionTerm` elements) and one or more descriptions
-/// (represented by `DescriptionDetails` elements).
+/// (represented by `DefinitionDescription` elements).
 ///
 /// ```swift
 /// struct MySiteContent: View {
@@ -11,11 +11,11 @@
 ///     Body {
 ///       DescriptionList {
 ///         DescriptionTerm("Swift")
-///         DescriptionDetails {
+///         DefinitionDescription {
 ///           DOMString("A powerful programming language by Apple")
 ///         }
 ///         DescriptionTerm("SwiftUI")
-///         DescriptionDetails {
+///         DefinitionDescription {
 ///           DOMString("A declarative UI framework")
 ///         }
 ///       }
