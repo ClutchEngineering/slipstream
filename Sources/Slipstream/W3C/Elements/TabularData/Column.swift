@@ -9,8 +9,8 @@ import SwiftSoup
 /// ```swift
 /// Table {
 ///   ColumnGroup {
+///     Column(span: 2)
 ///     Column()
-///       .span(2)
 ///   }
 /// }
 /// ```
