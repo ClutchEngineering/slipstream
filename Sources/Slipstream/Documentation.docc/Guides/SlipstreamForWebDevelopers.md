@@ -111,12 +111,12 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<small>`](https://html.spec.whatwg.org/multipage/sections.html#the-small-element) | ``Small`` 
 [`<s>`](https://html.spec.whatwg.org/multipage/sections.html#the-s-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<cite>`](https://html.spec.whatwg.org/multipage/sections.html#the-cite-element) | ``Cite`` 
-[`<q>`](https://html.spec.whatwg.org/multipage/sections.html#the-q-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<q>`](https://html.spec.whatwg.org/multipage/sections.html#the-q-element) | ``Quote`` 
 [`<dfn>`](https://html.spec.whatwg.org/multipage/sections.html#the-dfn-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<abbr>`](https://html.spec.whatwg.org/multipage/sections.html#the-abbr-element) | ``Abbreviation`` 
-[`<ruby>`](https://html.spec.whatwg.org/multipage/sections.html#the-ruby-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<rt>`](https://html.spec.whatwg.org/multipage/sections.html#the-rt-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<rp>`](https://html.spec.whatwg.org/multipage/sections.html#the-rp-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<ruby>`](https://html.spec.whatwg.org/multipage/sections.html#the-ruby-element) | ``Ruby`` 
+[`<rt>`](https://html.spec.whatwg.org/multipage/sections.html#the-rt-element) | ``RubyText`` 
+[`<rp>`](https://html.spec.whatwg.org/multipage/sections.html#the-rp-element) | ``RubyParenthesis`` 
 [`<data>`](https://html.spec.whatwg.org/multipage/sections.html#the-data-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<time>`](https://html.spec.whatwg.org/multipage/sections.html#the-time-element) | ``Time`` 
 [`<code>`](https://html.spec.whatwg.org/multipage/sections.html#the-code-element) | ``Code`` 
