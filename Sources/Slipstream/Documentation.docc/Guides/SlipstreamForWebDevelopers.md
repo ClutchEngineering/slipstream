@@ -117,7 +117,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<ruby>`](https://html.spec.whatwg.org/multipage/sections.html#the-ruby-element) | ``Ruby`` 
 [`<rt>`](https://html.spec.whatwg.org/multipage/sections.html#the-rt-element) | ``RubyText`` 
 [`<rp>`](https://html.spec.whatwg.org/multipage/sections.html#the-rp-element) | ``RubyParenthesis`` 
-[`<data>`](https://html.spec.whatwg.org/multipage/sections.html#the-data-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<data>`](https://html.spec.whatwg.org/multipage/sections.html#the-data-element) | ``Data`` 
 [`<time>`](https://html.spec.whatwg.org/multipage/sections.html#the-time-element) | ``Time`` 
 [`<code>`](https://html.spec.whatwg.org/multipage/sections.html#the-code-element) | ``Code`` 
 [`<var>`](https://html.spec.whatwg.org/multipage/sections.html#the-var-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
@@ -153,7 +153,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<embed>`](https://html.spec.whatwg.org/multipage/sections.html#the-embed-element) | ``Embed``
 [`<object>`](https://html.spec.whatwg.org/multipage/sections.html#the-object-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<video>`](https://html.spec.whatwg.org/multipage/sections.html#the-video-element) | ``Video``
-[`<audio>`](https://html.spec.whatwg.org/multipage/sections.html#the-audio-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<audio>`](https://html.spec.whatwg.org/multipage/sections.html#the-audio-element) | ``Audio``
 [`<track>`](https://html.spec.whatwg.org/multipage/sections.html#the-track-element) | ``Track``
 [`<map>`](https://html.spec.whatwg.org/multipage/sections.html#the-map-element) | ``Map``
 [`<area>`](https://html.spec.whatwg.org/multipage/sections.html#the-area-element) | ``Area``
@@ -182,7 +182,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<input>`](https://html.spec.whatwg.org/multipage/sections.html#the-input-element) | ``TextField``
 [`<button>`](https://html.spec.whatwg.org/multipage/sections.html#the-button-element) | ``Button``
 [`<select>`](https://html.spec.whatwg.org/multipage/sections.html#the-select-element) | ``Picker``
-[`<datalist>`](https://html.spec.whatwg.org/multipage/sections.html#the-datalist-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<datalist>`](https://html.spec.whatwg.org/multipage/sections.html#the-datalist-element) | ``DataList``
 [`<optgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-optgroup-element) | ``OptGroup``
 [`<option>`](https://html.spec.whatwg.org/multipage/sections.html#the-option-element) | ``Option``
 [`<textarea>`](https://html.spec.whatwg.org/multipage/sections.html#the-textarea-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
@@ -196,7 +196,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 
  W3C tag | Slipstream view
 :--------|:----------------
-[`<details>`](https://html.spec.whatwg.org/multipage/sections.html#the-details-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<details>`](https://html.spec.whatwg.org/multipage/sections.html#the-details-element) | ``Details``
 [`<summary>`](https://html.spec.whatwg.org/multipage/sections.html#the-summary-element) | ``Summary``
 [`<dialog>`](https://html.spec.whatwg.org/multipage/sections.html#the-dialog-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 
