@@ -151,7 +151,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<img>`](https://html.spec.whatwg.org/multipage/sections.html#the-img-element) | ``Image``
 [`<iframe>`](https://html.spec.whatwg.org/multipage/sections.html#the-iframe-element) | ``IFrame``
 [`<embed>`](https://html.spec.whatwg.org/multipage/sections.html#the-embed-element) | ``Embed``
-[`<object>`](https://html.spec.whatwg.org/multipage/sections.html#the-object-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<object>`](https://html.spec.whatwg.org/multipage/sections.html#the-object-element) | ``Object``
 [`<video>`](https://html.spec.whatwg.org/multipage/sections.html#the-video-element) | ``Video``
 [`<audio>`](https://html.spec.whatwg.org/multipage/sections.html#the-audio-element) | ``Audio``
 [`<track>`](https://html.spec.whatwg.org/multipage/sections.html#the-track-element) | ``Track``
@@ -186,9 +186,9 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<optgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-optgroup-element) | ``OptGroup``
 [`<option>`](https://html.spec.whatwg.org/multipage/sections.html#the-option-element) | ``Option``
 [`<textarea>`](https://html.spec.whatwg.org/multipage/sections.html#the-textarea-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<output>`](https://html.spec.whatwg.org/multipage/sections.html#the-output-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<output>`](https://html.spec.whatwg.org/multipage/sections.html#the-output-element) | ``Output``
 [`<progress>`](https://html.spec.whatwg.org/multipage/sections.html#the-progress-element) | ``ProgressView``
-[`<meter>`](https://html.spec.whatwg.org/multipage/sections.html#the-meter-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<meter>`](https://html.spec.whatwg.org/multipage/sections.html#the-meter-element) | ``Meter``
 [`<fieldset>`](https://html.spec.whatwg.org/multipage/sections.html#the-fieldset-element) | ``Fieldset``
 [`<legend>`](https://html.spec.whatwg.org/multipage/sections.html#the-legend-element) | ``Legend``
 
@@ -198,7 +198,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 :--------|:----------------
 [`<details>`](https://html.spec.whatwg.org/multipage/sections.html#the-details-element) | ``Details``
 [`<summary>`](https://html.spec.whatwg.org/multipage/sections.html#the-summary-element) | ``Summary``
-[`<dialog>`](https://html.spec.whatwg.org/multipage/sections.html#the-dialog-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<dialog>`](https://html.spec.whatwg.org/multipage/sections.html#the-dialog-element) | ``Dialog``
 
 ### Scripting
 
