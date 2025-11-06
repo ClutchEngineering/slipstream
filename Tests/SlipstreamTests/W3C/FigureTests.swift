@@ -12,7 +12,9 @@ struct FigureTests {
     try #expect(renderHTML(Figure {
       DOMString("Chart content")
     }) == """
-<figure>Chart content</figure>
+<figure>
+ Chart content
+</figure>
 """)
   }
 
@@ -20,8 +22,8 @@ struct FigureTests {
     try #expect(renderHTML(Figure {
       Image(URL(string: "/images/chart.png")!)
     }) == """
-<figure>\
-<img src="/images/chart.png">\
+<figure>
+ <img src="/images/chart.png" />
 </figure>
 """)
   }

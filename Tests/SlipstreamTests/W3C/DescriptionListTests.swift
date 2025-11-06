@@ -14,9 +14,13 @@ struct DescriptionListTests {
         DOMString("A powerful programming language")
       }
     }) == """
-<dl>\
-<dt>Swift</dt>\
-<dd>A powerful programming language</dd>\
+<dl>
+ <dt>
+  Swift
+ </dt>
+ <dd>
+  A powerful programming language
+ </dd>
 </dl>
 """)
   }
@@ -32,11 +36,19 @@ struct DescriptionListTests {
         DOMString("Cascading Style Sheets")
       }
     }) == """
-<dl>\
-<dt>HTML</dt>\
-<dd>HyperText Markup Language</dd>\
-<dt>CSS</dt>\
-<dd>Cascading Style Sheets</dd>\
+<dl>
+ <dt>
+  HTML
+ </dt>
+ <dd>
+  HyperText Markup Language
+ </dd>
+ <dt>
+  CSS
+ </dt>
+ <dd>
+  Cascading Style Sheets
+ </dd>
 </dl>
 """)
   }

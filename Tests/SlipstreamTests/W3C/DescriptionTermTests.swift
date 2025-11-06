@@ -8,14 +8,20 @@ struct DescriptionTermTests {
   }
 
   @Test func withText() throws {
-    try #expect(renderHTML(DescriptionTerm("HTML")) == "<dt>HTML</dt>")
+    try #expect(renderHTML(DescriptionTerm("HTML")) == """
+<dt>
+ HTML
+</dt>
+""")
   }
 
   @Test func withViewBuilderContent() throws {
     try #expect(renderHTML(DescriptionTerm {
       DOMString("Swift Programming")
     }) == """
-<dt>Swift Programming</dt>
+<dt>
+ Swift Programming
+</dt>
 """)
   }
 }
