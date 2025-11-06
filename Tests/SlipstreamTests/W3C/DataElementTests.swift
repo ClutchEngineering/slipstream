@@ -2,7 +2,7 @@ import Testing
 
 import Slipstream
 
-struct DataTests {
+struct DataElementTests {
   @Test func emptyBlock() throws {
     try #expect(renderHTML(Data {}) == "<data></data>")
   }
