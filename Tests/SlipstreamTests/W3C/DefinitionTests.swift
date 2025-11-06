@@ -8,20 +8,14 @@ struct DefinitionTests {
   }
 
   @Test func withText() throws {
-    try #expect(renderHTML(Definition("DOM")) == """
-<dfn>
- DOM
-</dfn>
-""")
+    try #expect(renderHTML(Definition("DOM")) == "<dfn>DOM</dfn>")
   }
 
   @Test func withViewBuilderContent() throws {
     try #expect(renderHTML(Definition {
       DOMString("Document Object Model")
     }) == """
-<dfn>
- Document Object Model
-</dfn>
+<dfn>Document Object Model</dfn>
 """)
   }
 
