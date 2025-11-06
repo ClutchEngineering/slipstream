@@ -125,7 +125,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<kbd>`](https://html.spec.whatwg.org/multipage/sections.html#the-kbd-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<sub>`](https://html.spec.whatwg.org/multipage/sections.html#the-sub-element) | ``Subscript``
 [`<sup>`](https://html.spec.whatwg.org/multipage/sections.html#the-sup-element) | ``Superscript``
-[`<i>`](https://html.spec.whatwg.org/multipage/sections.html#the-i-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<i>`](https://html.spec.whatwg.org/multipage/sections.html#the-i-element) | ``Italic`` 
 [`<b>`](https://html.spec.whatwg.org/multipage/sections.html#the-b-element) | ``Bold`` 
 [`<u>`](https://html.spec.whatwg.org/multipage/sections.html#the-u-element) | ``Underline`` 
 [`<mark>`](https://html.spec.whatwg.org/multipage/sections.html#the-mark-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
