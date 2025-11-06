@@ -29,7 +29,7 @@ struct BidirectionalOverrideTests {
   @Test func withModifiers() throws {
     try #expect(renderHTML(BidirectionalOverride("Text", direction: .leftToRight)
       .id("override-text")
-      .className("rtl-override")) == #"<bdo class="rtl-override" dir="ltr" id="override-text">Text</bdo>"#)
+      .className("rtl-override")) == #"<bdo dir="ltr" id="override-text" class="rtl-override">Text</bdo>"#)
   }
 
   @Test func withLanguage() throws {
