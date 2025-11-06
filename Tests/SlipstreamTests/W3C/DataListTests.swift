@@ -16,13 +16,7 @@ struct DataListTests {
       Option("Chrome")
       Option("Firefox")
       Option("Safari")
-    }) == """
-<datalist>
- <option>Chrome</option>
- <option>Firefox</option>
- <option>Safari</option>
-</datalist>
-""")
+    }) == "<datalist><option>Chrome</option><option>Firefox</option><option>Safari</option></datalist>")
   }
 
   @Test func withIdAndOptions() throws {
@@ -30,13 +24,7 @@ struct DataListTests {
       Option("Chrome")
       Option("Firefox")
       Option("Safari")
-    }.id("browsers")) == """
-<datalist id="browsers">
- <option>Chrome</option>
- <option>Firefox</option>
- <option>Safari</option>
-</datalist>
-""")
+    }.id("browsers")) == #"<datalist id="browsers"><option>Chrome</option><option>Firefox</option><option>Safari</option></datalist>"#)
   }
 
   @Test func globalAttribute() throws {
