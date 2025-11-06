@@ -26,7 +26,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 :--------|:----------------
 [`<head>`](https://html.spec.whatwg.org/multipage/semantics.html#the-head-element) | ``Head``
 [`<title>`](https://html.spec.whatwg.org/multipage/semantics.html#the-title-element) | ``Title``
-[`<base>`](https://html.spec.whatwg.org/multipage/semantics.html#the-base-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<base>`](https://html.spec.whatwg.org/multipage/semantics.html#the-base-element) | ``Base``
 [`<link rel="alternate">`](https://html.spec.whatwg.org/multipage/links.html#rel-alternate) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<link rel="alternate">`](https://html.spec.whatwg.org/multipage/links.html#rel-alternate) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<link rel="canonical">`](https://html.spec.whatwg.org/multipage/links.html#link-type-canonical) | ``Canonical`` 
@@ -129,8 +129,8 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<b>`](https://html.spec.whatwg.org/multipage/sections.html#the-b-element) | ``Bold`` 
 [`<u>`](https://html.spec.whatwg.org/multipage/sections.html#the-u-element) | ``Underline`` 
 [`<mark>`](https://html.spec.whatwg.org/multipage/sections.html#the-mark-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<bdi>`](https://html.spec.whatwg.org/multipage/sections.html#the-bdi-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<bdo>`](https://html.spec.whatwg.org/multipage/sections.html#the-bdo-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<bdi>`](https://html.spec.whatwg.org/multipage/sections.html#the-bdi-element) | ``BidirectionalIsolate`` 
+[`<bdo>`](https://html.spec.whatwg.org/multipage/sections.html#the-bdo-element) | ``BidirectionalOverride`` 
 [`<span>`](https://html.spec.whatwg.org/multipage/sections.html#the-span-element) | ``Span`` 
 [`<br>`](https://html.spec.whatwg.org/multipage/sections.html#the-br-element) | ``Linebreak`` 
 [`<wbr>`](https://html.spec.whatwg.org/multipage/sections.html#the-wbr-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
@@ -156,7 +156,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<audio>`](https://html.spec.whatwg.org/multipage/sections.html#the-audio-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<track>`](https://html.spec.whatwg.org/multipage/sections.html#the-track-element) | ``Track``
 [`<map>`](https://html.spec.whatwg.org/multipage/sections.html#the-map-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<area>`](https://html.spec.whatwg.org/multipage/sections.html#the-area-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<area>`](https://html.spec.whatwg.org/multipage/sections.html#the-area-element) | ``Area``
 
 ### Tabular data
 
