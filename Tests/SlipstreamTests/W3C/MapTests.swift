@@ -27,9 +27,9 @@ struct MapTests {
   @Test func withImageReference() throws {
     struct TestView: View {
       var body: some View {
-        Division {
+        Div {
           Image(URL(string: "/worldmap.png")!)
-            .attribute("usemap", "#worldmap")
+            .modifier(AttributeModifier("usemap", value: "#worldmap"))
           Map("worldmap") {
             Area(shape: .rectangle(x1: 0, y1: 0, x2: 100, y2: 100), destination: URL(string: "/europe")!)
               .accessibilityLabel("Europe")

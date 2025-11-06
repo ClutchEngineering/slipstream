@@ -13,7 +13,7 @@ import SwiftSoup
 ///   var body: some View {
 ///     Body {
 ///       Image(URL(string: "/worldmap.png")!)
-///         .attribute("usemap", "#worldmap")
+///         .modifier(AttributeModifier("usemap", value: "#worldmap"))
 ///       Map("worldmap") {
 ///         Area(
 ///           shape: .rectangle(x1: 0, y1: 0, x2: 100, y2: 100),
