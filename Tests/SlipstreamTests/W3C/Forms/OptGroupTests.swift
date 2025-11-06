@@ -12,10 +12,17 @@ struct OptGroupTests {
   }
 
   @Test func disabledOptGroup() throws {
-    try #expect(renderHTML(OptGroup("Group Label", disabled: true) {
+    try #expect(renderHTML(OptGroup("Group Label") {
       Option("Option 1", value: "1")
       Option("Option 2", value: "2")
-    }) == #"<optgroup label="Group Label" disabled><option value="1">Option 1</option><option value="2">Option 2</option></optgroup>"#)
+    }.disabled()) == #"<optgroup label="Group Label" disabled><option value="1">Option 1</option><option value="2">Option 2</option></optgroup>"#)
+  }
+
+  @Test func notDisabledOptGroup() throws {
+    try #expect(renderHTML(OptGroup("Group Label") {
+      Option("Option 1", value: "1")
+      Option("Option 2", value: "2")
+    }.disabled(false)) == #"<optgroup label="Group Label"><option value="1">Option 1</option><option value="2">Option 2</option></optgroup>"#)
   }
 
   @Test func emptyOptGroup() throws {

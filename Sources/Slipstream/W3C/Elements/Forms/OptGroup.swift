@@ -21,6 +21,7 @@ import SwiftSoup
 ///           Option("Carrot", value: "carrot")
 ///           Option("Lettuce", value: "lettuce")
 ///         }
+///         .disabled()
 ///       }
 ///     }
 ///   }
@@ -34,11 +35,9 @@ public struct OptGroup<Content>: View where Content: View {
   ///
   /// - Parameters:
   ///   - label: The label for the option group.
-  ///   - disabled: Whether the option group should be disabled. Defaults to `false`.
   ///   - content: The options to include in the group.
-  public init(_ label: String, disabled: Bool = false, @ViewBuilder content: @escaping @Sendable () -> Content) {
+  public init(_ label: String, @ViewBuilder content: @escaping @Sendable () -> Content) {
     self.label = label
-    self.disabled = disabled
     self.content = content
   }
 
@@ -46,15 +45,9 @@ public struct OptGroup<Content>: View where Content: View {
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     let element = try container.appendElement("optgroup")
     try element.attr("label", label)
-
-    if disabled {
-      try element.attr("disabled", "")
-    }
-
     try self.content().render(element, environment: environment)
   }
 
   @ViewBuilder private let content: @Sendable () -> Content
   private let label: String
-  private let disabled: Bool
 }
