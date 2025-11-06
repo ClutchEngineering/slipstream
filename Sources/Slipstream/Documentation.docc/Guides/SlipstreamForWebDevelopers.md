@@ -75,7 +75,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<h4>`](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) | ``H4`` or ``Heading``
 [`<h5>`](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) | ``H5`` or ``Heading``
 [`<h6>`](https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements) | ``H6`` or ``Heading``
-[`<hgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<hgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element) | ``HGroup``
 [`<header>`](https://html.spec.whatwg.org/multipage/sections.html#the-header-element) | ``Header``
 [`<footer>`](https://html.spec.whatwg.org/multipage/sections.html#the-footer-element) | ``Footer``
 [`<address>`](https://html.spec.whatwg.org/multipage/sections.html#the-address-element) | ``Address``
@@ -92,10 +92,10 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<ul>`](https://html.spec.whatwg.org/multipage/sections.html#the-ul-element) | ``List`` 
 [`<menu>`](https://html.spec.whatwg.org/multipage/sections.html#the-menu-element) | ``Menu`` 
 [`<li>`](https://html.spec.whatwg.org/multipage/sections.html#the-li-element) | ``ListItem`` 
-[`<dl>`](https://html.spec.whatwg.org/multipage/sections.html#the-dl-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<dt>`](https://html.spec.whatwg.org/multipage/sections.html#the-dt-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<dd>`](https://html.spec.whatwg.org/multipage/sections.html#the-dd-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<figure>`](https://html.spec.whatwg.org/multipage/sections.html#the-figure-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<dl>`](https://html.spec.whatwg.org/multipage/sections.html#the-dl-element) | ``DescriptionList``
+[`<dt>`](https://html.spec.whatwg.org/multipage/sections.html#the-dt-element) | ``DescriptionTerm``
+[`<dd>`](https://html.spec.whatwg.org/multipage/sections.html#the-dd-element) | ``DescriptionDetails``
+[`<figure>`](https://html.spec.whatwg.org/multipage/sections.html#the-figure-element) | ``Figure``
 [`<figcaption>`](https://html.spec.whatwg.org/multipage/sections.html#the-figcaption-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<main>`](https://html.spec.whatwg.org/multipage/sections.html#the-main-element) | ``DocumentMain`` 
 [`<search>`](https://html.spec.whatwg.org/multipage/sections.html#the-search-element) | ``Search`` 
@@ -112,7 +112,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<s>`](https://html.spec.whatwg.org/multipage/sections.html#the-s-element) | ``Strikethrough`` 
 [`<cite>`](https://html.spec.whatwg.org/multipage/sections.html#the-cite-element) | ``Cite`` 
 [`<q>`](https://html.spec.whatwg.org/multipage/sections.html#the-q-element) | ``Quote`` 
-[`<dfn>`](https://html.spec.whatwg.org/multipage/sections.html#the-dfn-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<dfn>`](https://html.spec.whatwg.org/multipage/sections.html#the-dfn-element) | ``Definition`` 
 [`<abbr>`](https://html.spec.whatwg.org/multipage/sections.html#the-abbr-element) | ``Abbreviation`` 
 [`<ruby>`](https://html.spec.whatwg.org/multipage/sections.html#the-ruby-element) | ``Ruby`` 
 [`<rt>`](https://html.spec.whatwg.org/multipage/sections.html#the-rt-element) | ``RubyText`` 
