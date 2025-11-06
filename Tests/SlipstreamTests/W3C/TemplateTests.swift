@@ -45,12 +45,8 @@ struct TemplateTests {
     }) == """
 <template>
  <div>
-  <h2>
-   Title
-  </h2>
-  <p>
-   Description
-  </p>
+  <h2>Title</h2>
+  <p>Description</p>
  </div>
 </template>
 """)
@@ -69,9 +65,7 @@ struct TemplateTests {
 <template>
  <div>
   <template>
-   <p>
-    Nested template
-   </p>
+   <p>Nested template</p>
   </template>
  </div>
 </template>
