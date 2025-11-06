@@ -14,11 +14,9 @@ import SwiftSoup
 ///       .attribute("usemap", "#sitemap")
 ///     // Typically used within a Map element:
 ///     // Map("sitemap") {
-///     //   Area(
-///     //     shape: .rectangle(x1: 0, y1: 0, x2: 100, y2: 100),
-///     //     destination: URL(string: "/section1"),
-///     //     alternativeText: "Section 1"
-///     //   )
+///     //   Area(shape: .rectangle(x1: 0, y1: 0, x2: 100, y2: 100),
+///     //        destination: URL(string: "/section1"))
+///     //     .accessibilityLabel("Section 1")
 ///     // }
 ///   }
 /// }
@@ -66,25 +64,20 @@ public struct Area: View {
   /// - Parameters:
   ///   - shape: The shape of the clickable area with its coordinates.
   ///   - destination: The URL to navigate to when the area is clicked.
-  ///   - alternativeText: Text alternative for the area (required for accessibility).
   ///   - target: Where to display the linked URL (e.g., "_blank", "_self").
   public init(
     shape: Shape = .default,
     destination: URL? = nil,
-    alternativeText: String,
     target: String? = nil
   ) {
     self.shape = shape
     self.destination = destination
-    self.alternativeText = alternativeText
     self.target = target
   }
 
   @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     let element = try container.appendElement("area")
-
-    try element.attr("alt", alternativeText)
 
     if let shapeName = shape.htmlShapeName {
       try element.attr("shape", shapeName)
@@ -105,6 +98,5 @@ public struct Area: View {
 
   private let shape: Shape
   private let destination: URL?
-  private let alternativeText: String
   private let target: String?
 }
