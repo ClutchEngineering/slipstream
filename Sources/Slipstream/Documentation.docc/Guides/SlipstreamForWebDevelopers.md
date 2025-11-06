@@ -106,7 +106,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
  W3C tag | Slipstream view
 :--------|:----------------
 [`<a>`](https://html.spec.whatwg.org/multipage/sections.html#the-a-element) | ``Link`` 
-[`<em>`](https://html.spec.whatwg.org/multipage/sections.html#the-em-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<em>`](https://html.spec.whatwg.org/multipage/sections.html#the-em-element) | ``Emphasis`` 
 [`<strong>`](https://html.spec.whatwg.org/multipage/sections.html#the-strong-element) | ``Strong`` 
 [`<small>`](https://html.spec.whatwg.org/multipage/sections.html#the-small-element) | ``Small`` 
 [`<s>`](https://html.spec.whatwg.org/multipage/sections.html#the-s-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
@@ -126,8 +126,8 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<sub>`](https://html.spec.whatwg.org/multipage/sections.html#the-sub-element) | ``Subscript``
 [`<sup>`](https://html.spec.whatwg.org/multipage/sections.html#the-sup-element) | ``Superscript``
 [`<i>`](https://html.spec.whatwg.org/multipage/sections.html#the-i-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<b>`](https://html.spec.whatwg.org/multipage/sections.html#the-b-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<u>`](https://html.spec.whatwg.org/multipage/sections.html#the-u-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<b>`](https://html.spec.whatwg.org/multipage/sections.html#the-b-element) | ``Bold`` 
+[`<u>`](https://html.spec.whatwg.org/multipage/sections.html#the-u-element) | ``Underline`` 
 [`<mark>`](https://html.spec.whatwg.org/multipage/sections.html#the-mark-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<bdi>`](https://html.spec.whatwg.org/multipage/sections.html#the-bdi-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<bdo>`](https://html.spec.whatwg.org/multipage/sections.html#the-bdo-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
