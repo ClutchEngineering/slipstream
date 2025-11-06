@@ -16,13 +16,23 @@ struct ColumnGroupTests {
     try #expect(renderHTML(ColumnGroup {
       Column()
       Column()
-    }) == "<colgroup><col><col></colgroup>")
+    }) == """
+<colgroup>
+ <col />
+ <col />
+</colgroup>
+""")
   }
 
   @Test func withColumnsAndSpan() throws {
     try #expect(renderHTML(ColumnGroup {
       Column(span: 2)
       Column()
-    }) == #"<colgroup><col span="2"><col></colgroup>"#)
+    }) == """
+<colgroup>
+ <col span="2" />
+ <col />
+</colgroup>
+""")
   }
 }
