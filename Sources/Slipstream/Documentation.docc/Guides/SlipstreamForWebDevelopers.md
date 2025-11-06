@@ -109,7 +109,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<em>`](https://html.spec.whatwg.org/multipage/sections.html#the-em-element) | ``Emphasis`` 
 [`<strong>`](https://html.spec.whatwg.org/multipage/sections.html#the-strong-element) | ``Strong`` 
 [`<small>`](https://html.spec.whatwg.org/multipage/sections.html#the-small-element) | ``Small`` 
-[`<s>`](https://html.spec.whatwg.org/multipage/sections.html#the-s-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<s>`](https://html.spec.whatwg.org/multipage/sections.html#the-s-element) | ``Strikethrough`` 
 [`<cite>`](https://html.spec.whatwg.org/multipage/sections.html#the-cite-element) | ``Cite`` 
 [`<q>`](https://html.spec.whatwg.org/multipage/sections.html#the-q-element) | ``Quote`` 
 [`<dfn>`](https://html.spec.whatwg.org/multipage/sections.html#the-dfn-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
@@ -121,7 +121,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<time>`](https://html.spec.whatwg.org/multipage/sections.html#the-time-element) | ``Time`` 
 [`<code>`](https://html.spec.whatwg.org/multipage/sections.html#the-code-element) | ``Code`` 
 [`<var>`](https://html.spec.whatwg.org/multipage/sections.html#the-var-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<samp>`](https://html.spec.whatwg.org/multipage/sections.html#the-samp-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<samp>`](https://html.spec.whatwg.org/multipage/sections.html#the-samp-element) | ``SampleOutput`` 
 [`<kbd>`](https://html.spec.whatwg.org/multipage/sections.html#the-kbd-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<sub>`](https://html.spec.whatwg.org/multipage/sections.html#the-sub-element) | ``Subscript``
 [`<sup>`](https://html.spec.whatwg.org/multipage/sections.html#the-sup-element) | ``Superscript``
@@ -133,7 +133,14 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<bdo>`](https://html.spec.whatwg.org/multipage/sections.html#the-bdo-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<span>`](https://html.spec.whatwg.org/multipage/sections.html#the-span-element) | ``Span`` 
 [`<br>`](https://html.spec.whatwg.org/multipage/sections.html#the-br-element) | ``Linebreak`` 
-[`<wbr>`](https://html.spec.whatwg.org/multipage/sections.html#the-wbr-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<wbr>`](https://html.spec.whatwg.org/multipage/sections.html#the-wbr-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+
+### Edits
+
+ W3C tag | Slipstream view
+:--------|:----------------
+[`<ins>`](https://html.spec.whatwg.org/multipage/edits.html#the-ins-element) | ``Ins``
+[`<del>`](https://html.spec.whatwg.org/multipage/edits.html#the-del-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 
 ### Embedded content
 
@@ -200,5 +207,5 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<script>`](https://html.spec.whatwg.org/multipage/sections.html#the-script-element) | ``Script``
 [`<noscript>`](https://html.spec.whatwg.org/multipage/sections.html#the-noscript-element) | ``Noscript``
 [`<template>`](https://html.spec.whatwg.org/multipage/sections.html#the-template-element) | ``Template``
-[`<slot>`](https://html.spec.whatwg.org/multipage/sections.html#the-slot-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<slot>`](https://html.spec.whatwg.org/multipage/sections.html#the-slot-element) | ``Slot``
 [`<canvas>`](https://html.spec.whatwg.org/multipage/sections.html#the-canvas-element) | ``Canvas``
