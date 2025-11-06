@@ -8,24 +8,14 @@ struct OptGroupTests {
     try #expect(renderHTML(OptGroup("Group Label") {
       Option("Option 1", value: "1")
       Option("Option 2", value: "2")
-    }) == """
-<optgroup label="Group Label">
- <option value="1">Option 1</option>
- <option value="2">Option 2</option>
-</optgroup>
-""")
+    }) == #"<optgroup label="Group Label"><option value="1">Option 1</option><option value="2">Option 2</option></optgroup>"#)
   }
 
   @Test func disabledOptGroup() throws {
     try #expect(renderHTML(OptGroup("Group Label", disabled: true) {
       Option("Option 1", value: "1")
       Option("Option 2", value: "2")
-    }) == """
-<optgroup label="Group Label" disabled>
- <option value="1">Option 1</option>
- <option value="2">Option 2</option>
-</optgroup>
-""")
+    }) == #"<optgroup label="Group Label" disabled><option value="1">Option 1</option><option value="2">Option 2</option></optgroup>"#)
   }
 
   @Test func emptyOptGroup() throws {
@@ -42,18 +32,7 @@ struct OptGroupTests {
         Option("Carrot", value: "carrot")
         Option("Lettuce", value: "lettuce")
       }
-    }) == """
-<select>
- <optgroup label="Fruits">
-  <option value="apple">Apple</option>
-  <option value="banana">Banana</option>
- </optgroup>
- <optgroup label="Vegetables">
-  <option value="carrot">Carrot</option>
-  <option value="lettuce">Lettuce</option>
- </optgroup>
-</select>
-""")
+    }) == #"<select><optgroup label="Fruits"><option value="apple">Apple</option><option value="banana">Banana</option></optgroup><optgroup label="Vegetables"><option value="carrot">Carrot</option><option value="lettuce">Lettuce</option></optgroup></select>"#)
   }
 
   @Test func mixedOptionsAndGroups() throws {
@@ -63,15 +42,7 @@ struct OptGroupTests {
         Option("Option 1", value: "1")
         Option("Option 2", value: "2")
       }
-    }) == """
-<select>
- <option value="all">All</option>
- <optgroup label="Specific">
-  <option value="1">Option 1</option>
-  <option value="2">Option 2</option>
- </optgroup>
-</select>
-""")
+    }) == #"<select><option value="all">All</option><optgroup label="Specific"><option value="1">Option 1</option><option value="2">Option 2</option></optgroup></select>"#)
   }
 
   @Test func attribute() throws {
