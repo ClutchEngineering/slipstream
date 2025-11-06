@@ -12,7 +12,9 @@ struct TemplateTests {
     try #expect(renderHTML(Template {
       DOMString("Template content")
     }) == """
-<template>Template content</template>
+<template>
+ Template content
+</template>
 """)
   }
 
@@ -23,7 +25,9 @@ struct TemplateTests {
       }
     }) == """
 <template>
- <div>Content inside div</div>
+ <div>
+  Content inside div
+ </div>
 </template>
 """)
   }
@@ -41,8 +45,12 @@ struct TemplateTests {
     }) == """
 <template>
  <div>
-  <h2>Title</h2>
-  <p>Description</p>
+  <h2>
+   Title
+  </h2>
+  <p>
+   Description
+  </p>
  </div>
 </template>
 """)
@@ -61,7 +69,9 @@ struct TemplateTests {
 <template>
  <div>
   <template>
-   <p>Nested template</p>
+   <p>
+    Nested template
+   </p>
   </template>
  </div>
 </template>
