@@ -29,7 +29,7 @@ import SwiftSoup
 @available(iOS 17.0, macOS 14.0, *)
 public struct Area: View {
   /// The shape of a clickable area.
-  public enum Shape: String {
+  public enum Shape: String, Sendable {
     /// A circular region.
     case circle
     /// The default area (entire image).

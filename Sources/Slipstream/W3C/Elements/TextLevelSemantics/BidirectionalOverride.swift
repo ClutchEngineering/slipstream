@@ -21,7 +21,7 @@ import SwiftSoup
 @available(iOS 17.0, macOS 14.0, *)
 public struct BidirectionalOverride<Content>: View where Content: View {
   /// The text directionality.
-  public enum Direction: String {
+  public enum Direction: String, Sendable {
     /// Left-to-right text direction.
     case leftToRight = "ltr"
     /// Right-to-left text direction.
