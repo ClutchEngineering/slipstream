@@ -11,7 +11,7 @@ import SwiftSoup
 /// struct MySiteContent: View {
 ///   var body: some View {
 ///     Image(URL(string: "/map.png"))
-///       .attribute("usemap", "#sitemap")
+///       .modifier(AttributeModifier("usemap", value: "#sitemap"))
 ///     // Typically used within a Map element:
 ///     // Map("sitemap") {
 ///     //   Area(shape: .rectangle(x1: 0, y1: 0, x2: 100, y2: 100),

@@ -96,7 +96,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<dt>`](https://html.spec.whatwg.org/multipage/sections.html#the-dt-element) | ``DescriptionTerm``
 [`<dd>`](https://html.spec.whatwg.org/multipage/sections.html#the-dd-element) | ``DefinitionDescription``
 [`<figure>`](https://html.spec.whatwg.org/multipage/sections.html#the-figure-element) | ``Figure``
-[`<figcaption>`](https://html.spec.whatwg.org/multipage/sections.html#the-figcaption-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<figcaption>`](https://html.spec.whatwg.org/multipage/sections.html#the-figcaption-element) | ``FigureCaption`` 
 [`<main>`](https://html.spec.whatwg.org/multipage/sections.html#the-main-element) | ``DocumentMain`` 
 [`<search>`](https://html.spec.whatwg.org/multipage/sections.html#the-search-element) | ``Search`` 
 [`<div>`](https://html.spec.whatwg.org/multipage/sections.html#the-div-element) | ``Div`` 
@@ -122,13 +122,13 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<code>`](https://html.spec.whatwg.org/multipage/sections.html#the-code-element) | ``Code`` 
 [`<var>`](https://html.spec.whatwg.org/multipage/sections.html#the-var-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<samp>`](https://html.spec.whatwg.org/multipage/sections.html#the-samp-element) | ``SampleOutput`` 
-[`<kbd>`](https://html.spec.whatwg.org/multipage/sections.html#the-kbd-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<kbd>`](https://html.spec.whatwg.org/multipage/sections.html#the-kbd-element) | ``Keyboard`` 
 [`<sub>`](https://html.spec.whatwg.org/multipage/sections.html#the-sub-element) | ``Subscript``
 [`<sup>`](https://html.spec.whatwg.org/multipage/sections.html#the-sup-element) | ``Superscript``
 [`<i>`](https://html.spec.whatwg.org/multipage/sections.html#the-i-element) | ``Italic`` 
 [`<b>`](https://html.spec.whatwg.org/multipage/sections.html#the-b-element) | ``Bold`` 
 [`<u>`](https://html.spec.whatwg.org/multipage/sections.html#the-u-element) | ``Underline`` 
-[`<mark>`](https://html.spec.whatwg.org/multipage/sections.html#the-mark-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<mark>`](https://html.spec.whatwg.org/multipage/sections.html#the-mark-element) | ``Mark`` 
 [`<bdi>`](https://html.spec.whatwg.org/multipage/sections.html#the-bdi-element) | ``BidirectionalIsolate`` 
 [`<bdo>`](https://html.spec.whatwg.org/multipage/sections.html#the-bdo-element) | ``BidirectionalOverride`` 
 [`<span>`](https://html.spec.whatwg.org/multipage/sections.html#the-span-element) | ``Span`` 
@@ -155,7 +155,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<video>`](https://html.spec.whatwg.org/multipage/sections.html#the-video-element) | ``Video``
 [`<audio>`](https://html.spec.whatwg.org/multipage/sections.html#the-audio-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<track>`](https://html.spec.whatwg.org/multipage/sections.html#the-track-element) | ``Track``
-[`<map>`](https://html.spec.whatwg.org/multipage/sections.html#the-map-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<map>`](https://html.spec.whatwg.org/multipage/sections.html#the-map-element) | ``Map``
 [`<area>`](https://html.spec.whatwg.org/multipage/sections.html#the-area-element) | ``Area``
 
 ### Tabular data
