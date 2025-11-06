@@ -1,7 +1,3 @@
-import Foundation
-
-import SwiftSoup
-
 /// A view that provides a list of predefined options for form controls.
 ///
 /// The DataList element contains a set of Option elements that represent
@@ -15,12 +11,13 @@ import SwiftSoup
 ///       Form {
 ///         TextField(type: .text, name: "browser")
 ///           .attribute("list", "browsers")
-///         DataList(id: "browsers") {
+///         DataList {
 ///           Option("Chrome")
 ///           Option("Firefox")
 ///           Option("Safari")
 ///           Option("Edge")
 ///         }
+///         .id("browsers")
 ///       }
 ///     }
 ///   }
@@ -29,28 +26,17 @@ import SwiftSoup
 ///
 /// - SeeAlso: W3C [`datalist`](https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element) specification.
 @available(iOS 17.0, macOS 14.0, *)
-public struct DataList<Content>: View where Content: View {
-  /// Creates a DataList view with an optional ID.
-  ///
-  /// - Parameters:
-  ///   - id: An optional identifier that can be referenced by form controls.
-  ///   - content: A ViewBuilder that creates the list of options.
-  public init(id: String? = nil, @ViewBuilder content: @escaping @Sendable () -> Content) {
-    self.id = id
-    self.content = content
-  }
+public struct DataList<Content>: W3CElement where Content: View {
+  @_documentation(visibility: private)
+  public let tagName: String = "datalist"
 
   @_documentation(visibility: private)
-  public func render(_ container: Element, environment: EnvironmentValues) throws {
-    let element = try container.appendElement("datalist")
+  @ViewBuilder public let content: @Sendable () -> Content
 
-    if let id {
-      try element.attr("id", id)
-    }
-
-    try self.content().render(element, environment: environment)
+  /// Creates a DataList view.
+  ///
+  /// - Parameter content: A ViewBuilder that creates the list of options.
+  public init(@ViewBuilder content: @escaping @Sendable () -> Content) {
+    self.content = content
   }
-
-  @ViewBuilder private let content: @Sendable () -> Content
-  private let id: String?
 }

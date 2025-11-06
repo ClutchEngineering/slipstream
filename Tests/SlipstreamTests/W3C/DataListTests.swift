@@ -8,7 +8,7 @@ struct DataListTests {
   }
 
   @Test func withId() throws {
-    try #expect(renderHTML(DataList(id: "browsers") {}) == #"<datalist id="browsers"></datalist>"#)
+    try #expect(renderHTML(DataList {}.id("browsers")) == #"<datalist id="browsers"></datalist>"#)
   }
 
   @Test func withOptions() throws {
@@ -26,11 +26,11 @@ struct DataListTests {
   }
 
   @Test func withIdAndOptions() throws {
-    try #expect(renderHTML(DataList(id: "browsers") {
+    try #expect(renderHTML(DataList {
       Option("Chrome")
       Option("Firefox")
       Option("Safari")
-    }) == """
+    }.id("browsers")) == """
 <datalist id="browsers">
  <option>Chrome</option>
  <option>Firefox</option>
@@ -43,10 +43,11 @@ struct DataListTests {
     try #expect(renderHTML(Form {
       TextField(type: .text, name: "browser")
         .attribute("list", "browsers")
-      DataList(id: "browsers") {
+      DataList {
         Option("Chrome")
         Option("Firefox")
       }
+      .id("browsers")
     }) == """
 <form>
  <input type="text" name="browser" list="browsers" />
@@ -59,6 +60,6 @@ struct DataListTests {
   }
 
   @Test func globalAttribute() throws {
-    try #expect(renderHTML(DataList(id: "test") {}.language("en")) == #"<datalist id="test" lang="en"></datalist>"#)
+    try #expect(renderHTML(DataList {}.id("test").language("en")) == #"<datalist id="test" lang="en"></datalist>"#)
   }
 }
