@@ -9,9 +9,9 @@
 ///   var body: some View {
 ///     Body {
 ///       Paragraph {
-///         "This word is "
+///         DOMString("This word is ")
 ///         Underline("misspelled")
-///         "."
+///         DOMString(".")
 ///       }
 ///     }
 ///   }

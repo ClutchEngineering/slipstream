@@ -9,7 +9,10 @@
 /// struct MySiteContent: View {
 ///   var body: some View {
 ///     Body {
-///       Bold("Attention:") + " Please read the instructions carefully."
+///       Paragraph {
+///         Bold("Attention:")
+///         DOMString(" Please read the instructions carefully.")
+///       }
 ///     }
 ///   }
 /// }

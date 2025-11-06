@@ -8,9 +8,9 @@
 ///   var body: some View {
 ///     Body {
 ///       Paragraph {
-///         "I "
+///         DOMString("I ")
 ///         Emphasis("really")
-///         " want to go to the concert."
+///         DOMString(" want to go to the concert.")
 ///       }
 ///     }
 ///   }
