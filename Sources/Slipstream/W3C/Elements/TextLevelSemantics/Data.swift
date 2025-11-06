@@ -1,5 +1,3 @@
-import Foundation
-
 import SwiftSoup
 
 /// A view that links content with a machine-readable translation.
