@@ -123,7 +123,8 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<var>`](https://html.spec.whatwg.org/multipage/sections.html#the-var-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<samp>`](https://html.spec.whatwg.org/multipage/sections.html#the-samp-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<kbd>`](https://html.spec.whatwg.org/multipage/sections.html#the-kbd-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<sub>`](https://html.spec.whatwg.org/multipage/sections.html#the-sub-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<sub>`](https://html.spec.whatwg.org/multipage/sections.html#the-sub-element) | ``Subscript``
+[`<sup>`](https://html.spec.whatwg.org/multipage/sections.html#the-sup-element) | ``Superscript``
 [`<i>`](https://html.spec.whatwg.org/multipage/sections.html#the-i-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<b>`](https://html.spec.whatwg.org/multipage/sections.html#the-b-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<u>`](https://html.spec.whatwg.org/multipage/sections.html#the-u-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
