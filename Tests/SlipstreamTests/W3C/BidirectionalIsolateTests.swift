@@ -21,7 +21,7 @@ struct BidirectionalIsolateTests {
   @Test func withModifiers() throws {
     try #expect(renderHTML(BidirectionalIsolate("User123")
       .id("username")
-      .className("user-display")) == #"<bdi class="user-display" id="username">User123</bdi>"#)
+      .className("user-display")) == #"<bdi id="username" class="user-display">User123</bdi>"#)
   }
 
   @Test func withLanguage() throws {
