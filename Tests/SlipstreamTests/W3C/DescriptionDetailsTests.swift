@@ -11,7 +11,9 @@ struct DescriptionDetailsTests {
     try #expect(renderHTML(DescriptionDetails {
       DOMString("HyperText Markup Language")
     }) == """
-<dd>HyperText Markup Language</dd>
+<dd>
+ HyperText Markup Language
+</dd>
 """)
   }
 
@@ -21,7 +23,9 @@ struct DescriptionDetailsTests {
       Strong("powerful")
       DOMString(" programming language")
     }) == """
-<dd>A <strong>powerful</strong> programming language</dd>
+<dd>
+ A <strong>powerful</strong> programming language
+</dd>
 """)
   }
 }

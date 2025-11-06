@@ -12,9 +12,9 @@ struct HGroupTests {
       H1("Main Title")
       H2("Subtitle")
     }) == """
-<hgroup>\
-<h1>Main Title</h1>\
-<h2>Subtitle</h2>\
+<hgroup>
+ <h1>Main Title</h1>
+ <h2>Subtitle</h2>
 </hgroup>
 """)
   }
@@ -26,9 +26,9 @@ struct HGroupTests {
         DOMString("Our cosmic neighborhood")
       }
     }) == """
-<hgroup>\
-<h1>The Solar System</h1>\
-<p>Our cosmic neighborhood</p>\
+<hgroup>
+ <h1>The Solar System</h1>
+ <p>Our cosmic neighborhood</p>
 </hgroup>
 """)
   }
