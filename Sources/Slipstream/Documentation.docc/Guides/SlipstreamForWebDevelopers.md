@@ -94,7 +94,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<li>`](https://html.spec.whatwg.org/multipage/sections.html#the-li-element) | ``ListItem`` 
 [`<dl>`](https://html.spec.whatwg.org/multipage/sections.html#the-dl-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<dt>`](https://html.spec.whatwg.org/multipage/sections.html#the-dt-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<dd>`](https://html.spec.whatwg.org/multipage/sections.html#the-dd-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<dd>`](https://html.spec.whatwg.org/multipage/sections.html#the-dd-element) | ``DefinitionDescription`` 
 [`<figure>`](https://html.spec.whatwg.org/multipage/sections.html#the-figure-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<figcaption>`](https://html.spec.whatwg.org/multipage/sections.html#the-figcaption-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
 [`<main>`](https://html.spec.whatwg.org/multipage/sections.html#the-main-element) | ``DocumentMain`` 
@@ -140,7 +140,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
  W3C tag | Slipstream view
 :--------|:----------------
 [`<ins>`](https://html.spec.whatwg.org/multipage/edits.html#the-ins-element) | ``Ins``
-[`<del>`](https://html.spec.whatwg.org/multipage/edits.html#the-del-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<del>`](https://html.spec.whatwg.org/multipage/edits.html#the-del-element) | ``Del``
 
 ### Embedded content
 
@@ -164,8 +164,8 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 :--------|:----------------
 [`<table>`](https://html.spec.whatwg.org/multipage/sections.html#the-table-element) | ``Table``
 [`<caption>`](https://html.spec.whatwg.org/multipage/sections.html#the-caption-element) | ``Caption``
-[`<colgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-colgroup-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<col>`](https://html.spec.whatwg.org/multipage/sections.html#the-col-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<colgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-colgroup-element) | ``ColumnGroup``
+[`<col>`](https://html.spec.whatwg.org/multipage/sections.html#the-col-element) | ``Column``
 [`<tbody>`](https://html.spec.whatwg.org/multipage/sections.html#the-tbody-element) | ``TableBody``
 [`<thead>`](https://html.spec.whatwg.org/multipage/sections.html#the-thead-element) | ``TableHeader``
 [`<tfoot>`](https://html.spec.whatwg.org/multipage/sections.html#the-tfoot-element) | ``TableFooter``
