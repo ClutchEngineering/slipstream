@@ -1,4 +1,5 @@
 import Foundation
+import SwiftSoup
 
 /// Represents an addition to the document.
 ///

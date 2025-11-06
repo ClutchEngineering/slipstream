@@ -1,4 +1,5 @@
 import Foundation
+import SwiftSoup
 
 /// Represents a placeholder inside a web component that you can fill with your own markup.
 ///
