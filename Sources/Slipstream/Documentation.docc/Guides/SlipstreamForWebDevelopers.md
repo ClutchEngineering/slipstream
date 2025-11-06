@@ -176,7 +176,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<button>`](https://html.spec.whatwg.org/multipage/sections.html#the-button-element) | ``Button``
 [`<select>`](https://html.spec.whatwg.org/multipage/sections.html#the-select-element) | ``Picker``
 [`<datalist>`](https://html.spec.whatwg.org/multipage/sections.html#the-datalist-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<optgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-optgroup-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<optgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-optgroup-element) | ``OptGroup``
 [`<option>`](https://html.spec.whatwg.org/multipage/sections.html#the-option-element) | ``Option``
 [`<textarea>`](https://html.spec.whatwg.org/multipage/sections.html#the-textarea-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
 [`<output>`](https://html.spec.whatwg.org/multipage/sections.html#the-output-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
