@@ -2,23 +2,20 @@
 ///
 /// The DataList element contains a set of Option elements that represent
 /// predefined options for other form controls. This is typically used with
-/// TextField (input) elements to provide autocomplete suggestions.
+/// input elements to provide autocomplete suggestions by referencing the
+/// datalist's id via the input's list attribute.
 ///
 /// ```swift
 /// struct MySiteContent: View {
 ///   var body: some View {
 ///     Body {
-///       Form {
-///         TextField(type: .text, name: "browser")
-///           .attribute("list", "browsers")
-///         DataList {
-///           Option("Chrome")
-///           Option("Firefox")
-///           Option("Safari")
-///           Option("Edge")
-///         }
-///         .id("browsers")
+///       DataList {
+///         Option("Chrome")
+///         Option("Firefox")
+///         Option("Safari")
+///         Option("Edge")
 ///       }
+///       .id("browsers")
 ///     }
 ///   }
 /// }

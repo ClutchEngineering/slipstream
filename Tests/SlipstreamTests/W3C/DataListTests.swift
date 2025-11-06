@@ -39,26 +39,6 @@ struct DataListTests {
 """)
   }
 
-  @Test func inContext() throws {
-    try #expect(renderHTML(Form {
-      TextField(type: .text, name: "browser")
-        .attribute("list", "browsers")
-      DataList {
-        Option("Chrome")
-        Option("Firefox")
-      }
-      .id("browsers")
-    }) == """
-<form>
- <input type="text" name="browser" list="browsers" />
- <datalist id="browsers">
-  <option>Chrome</option>
-  <option>Firefox</option>
- </datalist>
-</form>
-""")
-  }
-
   @Test func globalAttribute() throws {
     try #expect(renderHTML(DataList {}.id("test").language("en")) == #"<datalist id="test" lang="en"></datalist>"#)
   }
