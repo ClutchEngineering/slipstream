@@ -14,4 +14,14 @@ struct ParagraphTests {
 <p>Hello, world!</p>
 """)
   }
+
+  @Test func withStringLiterals() throws {
+    try #expect(renderHTML(Paragraph {
+      "I "
+      Emphasis("really")
+      " want to go to the concert."
+    }) == """
+<p>I <em>really</em> want to go to the concert.</p>
+""")
+  }
 }

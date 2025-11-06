@@ -43,6 +43,19 @@ private struct ArrayBlockView: View {
   }
 }
 
+private struct StringLiteralView: View {
+  var body: some View {
+    "Hello, world!"
+  }
+}
+
+private struct MixedStringLiteralView: View {
+  var body: some View {
+    "Hello, "
+    DOMString("world!")
+  }
+}
+
 struct ViewBuilderTests {
   @Test func singleBlock() throws {
     try #expect(renderHTML(SingleBlockView()) == "Hello, world!")
@@ -64,5 +77,13 @@ struct ViewBuilderTests {
 
   @Test func arrayBlock() throws {
     try #expect(renderHTML(ArrayBlockView()) == "123")
+  }
+
+  @Test func stringLiteral() throws {
+    try #expect(renderHTML(StringLiteralView()) == "Hello, world!")
+  }
+
+  @Test func mixedStringLiteral() throws {
+    try #expect(renderHTML(MixedStringLiteralView()) == "Hello, world!")
   }
 }

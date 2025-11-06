@@ -14,4 +14,12 @@ struct EmphasisTests {
 <em>Hello, world!</em>
 """)
   }
+
+  @Test func withStringLiteral() throws {
+    try #expect(renderHTML(Emphasis {
+      "Hello, world!"
+    }) == """
+<em>Hello, world!</em>
+""")
+  }
 }

@@ -32,3 +32,24 @@ public struct DOMString: View {
     try container.appendText(String(content))
   }
 }
+
+@available(iOS 17.0, macOS 14.0, *)
+extension DOMString: ExpressibleByStringLiteral {
+  /// Creates a text view from a string literal.
+  ///
+  /// This conformance enables you to use string literals directly in view builders
+  /// without explicitly wrapping them in `DOMString`:
+  ///
+  /// ```swift
+  /// Paragraph {
+  ///   "I "
+  ///   Emphasis("really")
+  ///   " want to go to the concert."
+  /// }
+  /// ```
+  ///
+  /// - Parameter value: The string literal value.
+  public init(stringLiteral value: String) {
+    self.content = value
+  }
+}

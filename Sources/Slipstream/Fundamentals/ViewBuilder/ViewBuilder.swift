@@ -105,4 +105,23 @@ public struct ViewBuilder {
   where Content: View {
     ArrayView(array: components)
   }
+
+  /// Converts a string literal into a DOMString view.
+  ///
+  /// This method enables you to use string literals directly in view builders
+  /// without explicitly wrapping them in `DOMString`:
+  ///
+  /// ```swift
+  /// Paragraph {
+  ///   "I "
+  ///   Emphasis("really")
+  ///   " want to go to the concert."
+  /// }
+  /// ```
+  ///
+  /// - Parameter string: The string literal to convert.
+  /// - Returns: A DOMString view containing the string.
+  public static func buildExpression(_ string: String) -> DOMString {
+    return DOMString(string)
+  }
 }
