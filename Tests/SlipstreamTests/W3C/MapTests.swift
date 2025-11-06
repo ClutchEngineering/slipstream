@@ -37,6 +37,6 @@ struct MapTests {
         }
       }
     }
-    try #expect(renderHTML(TestView()) == #"<div><img src="/worldmap.png" usemap="#worldmap" /><map name="worldmap"><area shape="rect" coords="0,0,100,100" href="/europe" alt="Europe" /></map></div>"#)
+    try #expect(renderHTML(TestView()) == ##"<div><img src="/worldmap.png" usemap="#worldmap" /><map name="worldmap"><area shape="rect" coords="0,0,100,100" href="/europe" alt="Europe" /></map></div>"##)
   }
 }
