@@ -15,8 +15,7 @@ import SwiftSoup
 ///     // Typically used within a Map element:
 ///     // Map("sitemap") {
 ///     //   Area(
-///     //     shape: .rectangle,
-///     //     coordinates: "0,0,100,100",
+///     //     shape: .rectangle(x1: 0, y1: 0, x2: 100, y2: 100),
 ///     //     destination: URL(string: "/section1"),
 ///     //     alternativeText: "Section 1"
 ///     //   )
@@ -28,38 +27,54 @@ import SwiftSoup
 /// - SeeAlso: W3C [`area`](https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element) specification.
 @available(iOS 17.0, macOS 14.0, *)
 public struct Area: View {
-  /// The shape of a clickable area.
-  public enum Shape: String, Sendable {
-    /// A circular region.
-    case circle
+  /// The shape of a clickable area with its associated coordinates.
+  public enum Shape: Sendable {
+    /// A circular region defined by center coordinates and radius.
+    case circle(x: Int, y: Int, radius: Int)
     /// The default area (entire image).
     case `default`
-    /// A polygonal region.
-    case polygon = "poly"
-    /// A rectangular region.
-    case rectangle = "rect"
+    /// A polygonal region defined by a series of coordinate pairs.
+    case polygon(coordinates: [(x: Int, y: Int)])
+    /// A rectangular region defined by top-left and bottom-right corners.
+    case rectangle(x1: Int, y1: Int, x2: Int, y2: Int)
+
+    fileprivate var htmlShapeName: String? {
+      switch self {
+      case .circle: return "circle"
+      case .default: return nil
+      case .polygon: return "poly"
+      case .rectangle: return "rect"
+      }
+    }
+
+    fileprivate var coordinatesString: String? {
+      switch self {
+      case .circle(let x, let y, let radius):
+        return "\(x),\(y),\(radius)"
+      case .default:
+        return nil
+      case .polygon(let coords):
+        return coords.map { "\($0.x),\($0.y)" }.joined(separator: ",")
+      case .rectangle(let x1, let y1, let x2, let y2):
+        return "\(x1),\(y1),\(x2),\(y2)"
+      }
+    }
   }
 
   /// Creates an Area view.
   ///
   /// - Parameters:
-  ///   - shape: The shape of the clickable area.
-  ///   - coordinates: The coordinates defining the shape. Format depends on the shape:
-  ///     - `.circle`: "x,y,radius"
-  ///     - `.rectangle`: "x1,y1,x2,y2"
-  ///     - `.polygon`: "x1,y1,x2,y2,...,xn,yn"
+  ///   - shape: The shape of the clickable area with its coordinates.
   ///   - destination: The URL to navigate to when the area is clicked.
   ///   - alternativeText: Text alternative for the area (required for accessibility).
   ///   - target: Where to display the linked URL (e.g., "_blank", "_self").
   public init(
     shape: Shape = .default,
-    coordinates: String? = nil,
     destination: URL? = nil,
     alternativeText: String,
     target: String? = nil
   ) {
     self.shape = shape
-    self.coordinates = coordinates
     self.destination = destination
     self.alternativeText = alternativeText
     self.target = target
@@ -71,11 +86,11 @@ public struct Area: View {
 
     try element.attr("alt", alternativeText)
 
-    if shape != .default {
-      try element.attr("shape", shape.rawValue)
+    if let shapeName = shape.htmlShapeName {
+      try element.attr("shape", shapeName)
     }
 
-    if let coordinates {
+    if let coordinates = shape.coordinatesString {
       try element.attr("coords", coordinates)
     }
 
@@ -89,7 +104,6 @@ public struct Area: View {
   }
 
   private let shape: Shape
-  private let coordinates: String?
   private let destination: URL?
   private let alternativeText: String
   private let target: String?
