@@ -1,3 +1,4 @@
+import Foundation
 import SwiftSoup
 
 /// A view that represents an external resource, which can be treated as an image, a nested browsing context, or a plugin.
