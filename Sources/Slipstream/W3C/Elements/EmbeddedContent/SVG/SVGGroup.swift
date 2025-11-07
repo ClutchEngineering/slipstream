@@ -42,11 +42,11 @@ public struct SVGGroup<Content>: View where Content: View {
 
   /// Applies a transform attribute to this SVG group.
   ///
-  /// - Parameter transform: SVG transform string (e.g., "translate(x,y)", "rotate(angle)", "scale(x,y)").
+  /// - Parameter transform: The transform to apply.
   /// - Returns: A new SVGGroup with the specified transform applied.
-  public func transform(_ transform: String) -> SVGGroup {
+  public func transform(_ transform: Transform) -> SVGGroup {
     var newGroup = self
-    newGroup.transformValue = transform
+    newGroup.transformValue = transform.stringValue
     return newGroup
   }
 

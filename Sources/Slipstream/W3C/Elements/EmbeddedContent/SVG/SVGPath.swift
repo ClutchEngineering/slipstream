@@ -39,11 +39,11 @@ public struct SVGPath: View {
 
   /// Applies a transform attribute to this SVG path.
   ///
-  /// - Parameter transform: SVG transform string (e.g., "translate(x,y)", "rotate(angle)", "scale(x,y)").
+  /// - Parameter transform: The transform to apply.
   /// - Returns: A new SVGPath with the specified transform applied.
-  public func transform(_ transform: String) -> SVGPath {
+  public func transform(_ transform: Transform) -> SVGPath {
     var newPath = self
-    newPath.transformValue = transform
+    newPath.transformValue = transform.stringValue
     return newPath
   }
 

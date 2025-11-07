@@ -1,3 +1,4 @@
+import Foundation
 import Testing
 
 import Slipstream
@@ -65,29 +66,30 @@ struct SVGTests {
 
   @Test func pathWithTransform() throws {
     let html = try renderHTML(SVGPath("M12 0L24 12L12 24L0 12Z")
-      .transform("translate(10,20) scale(1.5)"))
+      .transform(.translate(x: 10, y: 20)))
 
     #expect(html == """
-<path d="M12 0L24 12L12 24L0 12Z" transform="translate(10,20) scale(1.5)"></path>
+<path d="M12 0L24 12L12 24L0 12Z" transform="translate(10.0,20.0)"></path>
 """)
   }
 
   @Test func svgDefs() throws {
     let html = try renderHTML(SVG(viewBox: "0 0 100 100") {
       SVGDefs {
-        SVGLinearGradient(id: "grad1") {
-          SVGStop(offset: "0%", stopColor: "#ff0000")
-          SVGStop(offset: "100%", stopColor: "#0000ff")
+        SVGLinearGradient {
+          SVGStop(offset: 0, color: .red)
+          SVGStop(offset: 1, color: .blue)
         }
+        .id("grad1")
       }
     })
 
     #expect(html == """
 <svg viewBox="0 0 100 100">
  <defs>
-  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="objectBoundingBox">
-   <stop offset="0%" stop-color="#ff0000"></stop>
-   <stop offset="100%" stop-color="#0000ff"></stop>
+  <linearGradient x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="objectBoundingBox" id="grad1">
+   <stop offset="0" stop-color="#ff0000"></stop>
+   <stop offset="1" stop-color="#0000ff"></stop>
   </linearGradient>
  </defs>
 </svg>
@@ -95,43 +97,46 @@ struct SVGTests {
   }
 
   @Test func linearGradient() throws {
-    let html = try renderHTML(SVGLinearGradient(id: "grad1", x1: "0%", y1: "0%", x2: "0%", y2: "100%") {
-      SVGStop(offset: "0%", stopColor: "#ff0000", stopOpacity: "1")
-      SVGStop(offset: "100%", stopColor: "#0000ff")
-    })
+    let html = try renderHTML(SVGLinearGradient(start: Point(x: 0, y: 0), end: Point(x: 0, y: 1)) {
+      SVGStop(offset: 0, color: .red)
+      SVGStop(offset: 1, color: .blue)
+    }
+    .id("grad1"))
 
     #expect(html == """
-<linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="objectBoundingBox">
- <stop offset="0%" stop-color="#ff0000" stop-opacity="1"></stop>
- <stop offset="100%" stop-color="#0000ff"></stop>
+<linearGradient x1="0%" y1="0%" x2="0%" y2="100%" gradientUnits="objectBoundingBox" id="grad1">
+ <stop offset="0" stop-color="#ff0000"></stop>
+ <stop offset="1" stop-color="#0000ff"></stop>
 </linearGradient>
 """)
   }
 
   @Test func radialGradient() throws {
-    let html = try renderHTML(SVGRadialGradient(id: "radial1", cx: "50%", cy: "50%", r: "50%") {
-      SVGStop(offset: "0%", stopColor: "#ffffff")
-      SVGStop(offset: "100%", stopColor: "#000000")
-    })
+    let html = try renderHTML(SVGRadialGradient(center: Point(x: 0.5, y: 0.5), radius: 0.5) {
+      SVGStop(offset: 0, color: .white)
+      SVGStop(offset: 1, color: .black)
+    }
+    .id("radial1"))
 
     #expect(html == """
-<radialGradient id="radial1" cx="50%" cy="50%" r="50%" gradientUnits="objectBoundingBox">
- <stop offset="0%" stop-color="#ffffff"></stop>
- <stop offset="100%" stop-color="#000000"></stop>
+<radialGradient cx="50%" cy="50%" r="50%" gradientUnits="objectBoundingBox" id="radial1">
+ <stop offset="0" stop-color="#ffffff"></stop>
+ <stop offset="1" stop-color="#000000"></stop>
 </radialGradient>
 """)
   }
 
   @Test func radialGradientWithFocalPoint() throws {
-    let html = try renderHTML(SVGRadialGradient(id: "radial2", cx: "50%", cy: "50%", r: "50%", fx: "30%", fy: "30%") {
-      SVGStop(offset: "0%", stopColor: "#ffffff")
-      SVGStop(offset: "100%", stopColor: "#000000")
-    })
+    let html = try renderHTML(SVGRadialGradient(center: Point(x: 0.5, y: 0.5), radius: 0.5, focalPoint: Point(x: 0.3, y: 0.3)) {
+      SVGStop(offset: 0, color: .white)
+      SVGStop(offset: 1, color: .black)
+    }
+    .id("radial2"))
 
     #expect(html == """
-<radialGradient id="radial2" cx="50%" cy="50%" r="50%" fx="30%" fy="30%" gradientUnits="objectBoundingBox">
- <stop offset="0%" stop-color="#ffffff"></stop>
- <stop offset="100%" stop-color="#000000"></stop>
+<radialGradient cx="50%" cy="50%" r="50%" fx="30%" fy="30%" gradientUnits="objectBoundingBox" id="radial2">
+ <stop offset="0" stop-color="#ffffff"></stop>
+ <stop offset="1" stop-color="#000000"></stop>
 </radialGradient>
 """)
   }
@@ -155,10 +160,10 @@ struct SVGTests {
       SVGPath("M10,10 L50,50")
       SVGPath("M50,50 L90,10")
     }
-    .transform("translate(10,20) scale(1.5)"))
+    .transform(.rotate(angle: 45, centerX: 50, centerY: 50)))
 
     #expect(html == """
-<g transform="translate(10,20) scale(1.5)">
+<g transform="rotate(45.0,50.0,50.0)">
  <path d="M10,10 L50,50"></path>
  <path d="M50,50 L90,10"></path>
 </g>
@@ -168,10 +173,11 @@ struct SVGTests {
   @Test func complexSVGWithGradients() throws {
     let html = try renderHTML(SVG(viewBox: "0 0 100 100") {
       SVGDefs {
-        SVGLinearGradient(id: "gradient1") {
-          SVGStop(offset: "0%", stopColor: "#ff0000")
-          SVGStop(offset: "100%", stopColor: "#0000ff")
+        SVGLinearGradient {
+          SVGStop(offset: 0, color: .red)
+          SVGStop(offset: 1, color: .blue)
         }
+        .id("gradient1")
       }
       SVGPath("M10,90 Q90,90 90,45 Q90,10 50,10 Q10,10 10,45 Q10,90 10,90 Z")
     })
@@ -179,9 +185,9 @@ struct SVGTests {
     #expect(html == """
 <svg viewBox="0 0 100 100">
  <defs>
-  <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="objectBoundingBox">
-   <stop offset="0%" stop-color="#ff0000"></stop>
-   <stop offset="100%" stop-color="#0000ff"></stop>
+  <linearGradient x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="objectBoundingBox" id="gradient1">
+   <stop offset="0" stop-color="#ff0000"></stop>
+   <stop offset="1" stop-color="#0000ff"></stop>
   </linearGradient>
  </defs>
  <path d="M10,90 Q90,90 90,45 Q90,10 50,10 Q10,10 10,45 Q10,90 10,90 Z"></path>
@@ -250,7 +256,7 @@ struct SVGTests {
   }
 
   @Test func svgCircle() throws {
-    let html = try renderHTML(SVGCircle(cx: "50", cy: "50", r: "40"))
+    let html = try renderHTML(SVGCircle(origin: Point(x: 50, y: 50), radius: 40))
 
     #expect(html == """
 <circle cx="50" cy="50" r="40"></circle>
@@ -259,7 +265,7 @@ struct SVGTests {
 
   @Test func svgCircleInSVG() throws {
     let html = try renderHTML(SVG(viewBox: "0 0 100 100") {
-      SVGCircle(cx: "50", cy: "50", r: "40")
+      SVGCircle(origin: Point(x: 50, y: 50), radius: 40)
     })
 
     #expect(html == """
@@ -270,7 +276,7 @@ struct SVGTests {
   }
 
   @Test func svgRect() throws {
-    let html = try renderHTML(SVGRect(x: "10", y: "20", width: "80", height: "60"))
+    let html = try renderHTML(SVGRect(origin: Point(x: 10, y: 20), size: Size(width: 80, height: 60)))
 
     #expect(html == """
 <rect x="10" y="20" width="80" height="60"></rect>
@@ -278,7 +284,7 @@ struct SVGTests {
   }
 
   @Test func svgRectWithRoundedCorners() throws {
-    let html = try renderHTML(SVGRect(x: "10", y: "20", width: "80", height: "60", rx: "5", ry: "5"))
+    let html = try renderHTML(SVGRect(origin: Point(x: 10, y: 20), size: Size(width: 80, height: 60), radiusX: 5, radiusY: 5))
 
     #expect(html == """
 <rect x="10" y="20" width="80" height="60" rx="5" ry="5"></rect>
@@ -287,7 +293,7 @@ struct SVGTests {
 
   @Test func svgRectInSVG() throws {
     let html = try renderHTML(SVG(viewBox: "0 0 100 100") {
-      SVGRect(width: "50", height: "50")
+      SVGRect(size: Size(width: 50, height: 50))
     })
 
     #expect(html == """
@@ -298,7 +304,7 @@ struct SVGTests {
   }
 
   @Test func svgText() throws {
-    let html = try renderHTML(SVGText("Hello World", x: "50", y: "25"))
+    let html = try renderHTML(SVGText("Hello World", at: Point(x: 50, y: 25)))
 
     #expect(html == """
 <text x="50" y="25">
@@ -308,12 +314,12 @@ struct SVGTests {
   }
 
   @Test func svgTextWithStyling() throws {
-    let html = try renderHTML(SVGText("Styled Text", x: "50", y: "25")
+    let html = try renderHTML(SVGText("Styled Text", at: Point(x: 50, y: 25))
       .fontSize("16")
       .fontFamily("Arial")
       .fontWeight("bold")
       .textAnchor("middle")
-      .fill("#333"))
+      .fill(.hex("#333")))
 
     #expect(html == """
 <text x="50" y="25" font-size="16" font-family="Arial" font-weight="bold" text-anchor="middle" fill="#333">
@@ -323,10 +329,10 @@ struct SVGTests {
   }
 
   @Test func svgTextWithStroke() throws {
-    let html = try renderHTML(SVGText("Outlined", x: "50", y: "25")
-      .stroke("#000000")
+    let html = try renderHTML(SVGText("Outlined", at: Point(x: 50, y: 25))
+      .stroke(.black)
       .strokeWidth("2")
-      .fill("#ffffff"))
+      .fill(.white))
 
     #expect(html == """
 <text x="50" y="25" fill="#ffffff" stroke="#000000" stroke-width="2">
@@ -337,7 +343,7 @@ struct SVGTests {
 
   @Test func svgTextInSVG() throws {
     let html = try renderHTML(SVG(viewBox: "0 0 100 50") {
-      SVGText("Hello SVG", x: "50", y: "25")
+      SVGText("Hello SVG", at: Point(x: 50, y: 25))
         .fontSize("16")
         .textAnchor("middle")
     })
@@ -349,5 +355,110 @@ struct SVGTests {
  </text>
 </svg>
 """)
+  }
+
+  // MARK: - SVGColor Tests
+
+  @Test func svgColorHex() throws {
+    let html = try renderHTML(SVGStop(offset: 0, color: .hex("#ff6b6b")))
+    
+    #expect(html.contains("stop-color=\"#ff6b6b\""))
+  }
+
+  @Test func svgColorRGB() throws {
+    let html = try renderHTML(SVGStop(offset: 0, color: .rgb(255, 107, 107)))
+    
+    #expect(html.contains("stop-color=\"rgb(255,107,107)\""))
+  }
+
+  @Test func svgColorRGBA() throws {
+    let html = try renderHTML(SVGStop(offset: 0.5, color: .rgba(255, 0, 0, 0.5)))
+    
+    #expect(html.contains("stop-color=\"rgba(255,0,0,0.5)\""))
+    // Note: RGBA already contains alpha, so stop-opacity is not added unless explicitly set
+    #expect(!html.contains("stop-opacity"))
+  }
+
+  @Test func svgColorNamed() throws {
+    let html = try renderHTML(SVGStop(offset: 0, color: .named("coral")))
+    
+    #expect(html.contains("stop-color=\"coral\""))
+  }
+
+  @Test func svgColorStaticConveniences() throws {
+    let html = try renderHTML(SVGLinearGradient {
+      SVGStop(offset: 0, color: .black)
+      SVGStop(offset: 0.5, color: .transparent)
+      SVGStop(offset: 1, color: .currentColor)
+    }.id("test"))
+    
+    #expect(html.contains("stop-color=\"#000000\""))
+    #expect(html.contains("stop-color=\"transparent\""))
+    #expect(html.contains("stop-color=\"currentColor\""))
+  }
+
+  // MARK: - SVGStop Opacity Tests
+
+  @Test func svgStopWithOpacity() throws {
+    let html = try renderHTML(SVGStop(offset: 0.5, color: .red, opacity: 0.8))
+    
+    #expect(html.contains("offset=\"0.5\""))
+    #expect(html.contains("stop-color=\"#ff0000\""))
+    #expect(html.contains("stop-opacity=\"0.8\""))
+  }
+
+  @Test func svgStopFullOpacity() throws {
+    // Should NOT render stop-opacity when opacity = 1.0
+    let html = try renderHTML(SVGStop(offset: 0, color: .blue, opacity: 1.0))
+    
+    #expect(html.contains("stop-color=\"#0000ff\""))
+    #expect(!html.contains("stop-opacity"))
+  }
+
+  @Test func svgStopZeroOpacity() throws {
+    let html = try renderHTML(SVGStop(offset: 1, color: .green, opacity: 0.0))
+    
+    #expect(html.contains("stop-opacity=\"0\""))
+  }
+
+  // MARK: - Point.zero and Default Position Tests
+
+  @Test func svgTextWithDefaultPosition() throws {
+    let html = try renderHTML(SVGText("Default"))
+    
+    #expect(html == """
+<text x="0" y="0">
+ Default
+</text>
+""")
+  }
+
+  @Test func svgRectWithDefaultOrigin() throws {
+    let html = try renderHTML(SVGRect(size: Size(width: 50, height: 50)))
+    
+    #expect(html == """
+<rect x="0" y="0" width="50" height="50"></rect>
+""")
+  }
+
+  @Test func svgLinearGradientWithDefaultPoints() throws {
+    let html = try renderHTML(SVGLinearGradient {
+      SVGStop(offset: 0, color: .red)
+    }.id("grad"))
+    
+    #expect(html.contains("x1=\"0%\""))
+    #expect(html.contains("y1=\"0%\""))
+    #expect(html.contains("x2=\"100%\""))
+    #expect(html.contains("y2=\"0%\""))
+  }
+
+  @Test func svgRadialGradientWithDefaultCenter() throws {
+    let html = try renderHTML(SVGRadialGradient {
+      SVGStop(offset: 0, color: .white)
+    }.id("radial"))
+    
+    #expect(html.contains("cx=\"50%\""))
+    #expect(html.contains("cy=\"50%\""))
+    #expect(html.contains("r=\"50%\""))
   }
 }

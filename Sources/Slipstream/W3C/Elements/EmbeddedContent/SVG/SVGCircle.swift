@@ -2,14 +2,14 @@ import SwiftSoup
 
 /// A view that represents an SVG circle element.
 ///
-/// SVGCircle creates a circular shape within an SVG context.
+/// SVGCircle renders a circular shape.
 ///
 /// ```swift
 /// struct MySiteContent: View {
 ///   var body: some View {
 ///     Body {
 ///       SVG(viewBox: "0 0 100 100") {
-///         SVGCircle(cx: "50", cy: "50", r: "40")
+///         SVGCircle(origin: Point(x: 50, y: 50), radius: 40)
 ///           .fill("#ff0000")
 ///           .stroke("#000000")
 ///           .strokeWidth("2")
@@ -25,24 +25,21 @@ public struct SVGCircle: View {
   /// Creates an SVG circle element.
   ///
   /// - Parameters:
-  ///   - cx: X coordinate of the circle center.
-  ///   - cy: Y coordinate of the circle center.
-  ///   - r: Radius of the circle.
-  public init(cx: String, cy: String, r: String) {
-    self.cx = cx
-    self.cy = cy
-    self.r = r
+  ///   - origin: The center point of the circle.
+  ///   - radius: The radius of the circle.
+  public init(origin: Point, radius: Double) {
+    self.origin = origin
+    self.radius = radius
   }
 
   @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     let element = try container.appendElement("circle")
-    try element.attr("cx", cx)
-    try element.attr("cy", cy)
-    try element.attr("r", r)
+    try element.attr("cx", SVGFormatting.format(origin.x))
+    try element.attr("cy", SVGFormatting.format(origin.y))
+    try element.attr("r", SVGFormatting.format(radius))
   }
 
-  private let cx: String
-  private let cy: String
-  private let r: String
+  private let origin: Point
+  private let radius: Double
 }

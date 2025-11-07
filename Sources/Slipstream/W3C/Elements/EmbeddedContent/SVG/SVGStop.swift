@@ -1,3 +1,4 @@
+import Foundation
 import SwiftSoup
 
 /// A view that represents an SVG gradient stop.
@@ -10,11 +11,12 @@ import SwiftSoup
 ///     Body {
 ///       SVG(viewBox: "0 0 100 100") {
 ///         SVGDefs {
-///           SVGLinearGradient(id: "grad1") {
-///             SVGStop(offset: "0%", stopColor: "#ff0000")
-///             SVGStop(offset: "50%", stopColor: "#00ff00", stopOpacity: "0.8")
-///             SVGStop(offset: "100%", stopColor: "#0000ff")
+///           SVGLinearGradient {
+///             SVGStop(offset: 0, color: .red)
+///             SVGStop(offset: 0.5, color: .hex("#00ff00"), opacity: 0.8)
+///             SVGStop(offset: 1, color: .blue)
 ///           }
+///           .id("grad1")
 ///         }
 ///       }
 ///     }
@@ -28,26 +30,26 @@ public struct SVGStop: View {
   /// Creates an SVG stop element.
   ///
   /// - Parameters:
-  ///   - offset: Position of the stop along the gradient vector (e.g., "0%", "50%", "1.0").
-  ///   - stopColor: Color of the gradient at this stop.
-  ///   - stopOpacity: Opacity of the color at this stop (optional, default: "1").
-  public init(offset: String, stopColor: String, stopOpacity: String? = nil) {
+  ///   - offset: Position of the stop along the gradient vector (0.0 to 1.0).
+  ///   - color: Color of the gradient at this stop.
+  ///   - opacity: Opacity of the color at this stop (0.0 to 1.0, default: 1.0).
+  public init(offset: Double, color: SVGColor, opacity: Double = 1.0) {
     self.offset = offset
-    self.stopColor = stopColor
-    self.stopOpacity = stopOpacity
+    self.color = color
+    self.opacity = opacity
   }
 
   @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     let element = try container.appendElement("stop")
-    try element.attr("offset", offset)
-    try element.attr("stop-color", stopColor)
-    if let stopOpacity = stopOpacity {
-      try element.attr("stop-opacity", stopOpacity)
+    try element.attr("offset", SVGFormatting.format(offset))
+    try element.attr("stop-color", color.stringValue)
+    if opacity < 1.0 {
+      try element.attr("stop-opacity", SVGFormatting.format(opacity))
     }
   }
 
-  private let offset: String
-  private let stopColor: String
-  private let stopOpacity: String?
+  private let offset: Double
+  private let color: SVGColor
+  private let opacity: Double
 }

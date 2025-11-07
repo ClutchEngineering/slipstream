@@ -1,3 +1,4 @@
+import Foundation
 import SwiftSoup
 
 /// A view that represents an SVG radial gradient definition.
@@ -10,10 +11,11 @@ import SwiftSoup
 ///     Body {
 ///       SVG(viewBox: "0 0 100 100") {
 ///         SVGDefs {
-///           SVGRadialGradient(id: "radial1", cx: "50%", cy: "50%", r: "50%") {
-///             SVGStop(offset: "0%", stopColor: "#ff0000")
-///             SVGStop(offset: "100%", stopColor: "#0000ff")
+///           SVGRadialGradient(center: Point(x: 0.5, y: 0.5), radius: 0.5) {
+///             SVGStop(offset: 0, stopColor: "#ff0000")
+///             SVGStop(offset: 1, stopColor: "#0000ff")
 ///           }
+///           .id("radial1")
 ///         }
 ///         SVGPath("M10,10 L90,90")
 ///           .fill("url(#radial1)")
@@ -29,30 +31,21 @@ public struct SVGRadialGradient<Content>: View where Content: View {
   /// Creates an SVG radial gradient element.
   ///
   /// - Parameters:
-  ///   - id: Unique identifier for the gradient.
-  ///   - cx: X coordinate of the gradient center (default: "50%").
-  ///   - cy: Y coordinate of the gradient center (default: "50%").
-  ///   - r: Radius of the gradient (default: "50%").
-  ///   - fx: X coordinate of the focal point (optional).
-  ///   - fy: Y coordinate of the focal point (optional).
-  ///   - gradientUnits: Coordinate system for the gradient (default: "objectBoundingBox").
+  ///   - center: The center point of the gradient (default: Point(x: 0.5, y: 0.5)).
+  ///   - radius: Radius of the gradient (default: 0.5).
+  ///   - focalPoint: The focal point of the gradient (optional).
+  ///   - gradientUnits: Coordinate system for the gradient (default: .objectBoundingBox).
   ///   - content: The gradient stops that define the color transitions.
   public init(
-    id: String,
-    cx: String = "50%",
-    cy: String = "50%",
-    r: String = "50%",
-    fx: String? = nil,
-    fy: String? = nil,
-    gradientUnits: String = "objectBoundingBox",
+    center: Point = Point(x: 0.5, y: 0.5),
+    radius: Double = 0.5,
+    focalPoint: Point? = nil,
+    gradientUnits: GradientUnits = .objectBoundingBox,
     @ViewBuilder content: @escaping @Sendable () -> Content
   ) {
-    self.id = id
-    self.cx = cx
-    self.cy = cy
-    self.r = r
-    self.fx = fx
-    self.fy = fy
+    self.center = center
+    self.radius = radius
+    self.focalPoint = focalPoint
     self.gradientUnits = gradientUnits
     self.content = content
   }
@@ -60,26 +53,20 @@ public struct SVGRadialGradient<Content>: View where Content: View {
   @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     let element = try container.appendElement("radialGradient")
-    try element.attr("id", id)
-    try element.attr("cx", cx)
-    try element.attr("cy", cy)
-    try element.attr("r", r)
-    if let fx = fx {
-      try element.attr("fx", fx)
+    try element.attr("cx", gradientUnits.formatCoordinate(center.x))
+    try element.attr("cy", gradientUnits.formatCoordinate(center.y))
+    try element.attr("r", gradientUnits.formatCoordinate(radius))
+    if let focalPoint = focalPoint {
+      try element.attr("fx", gradientUnits.formatCoordinate(focalPoint.x))
+      try element.attr("fy", gradientUnits.formatCoordinate(focalPoint.y))
     }
-    if let fy = fy {
-      try element.attr("fy", fy)
-    }
-    try element.attr("gradientUnits", gradientUnits)
+    try element.attr("gradientUnits", gradientUnits.stringValue)
     try self.content().render(element, environment: environment)
   }
 
   @ViewBuilder private let content: @Sendable () -> Content
-  private let id: String
-  private let cx: String
-  private let cy: String
-  private let r: String
-  private let fx: String?
-  private let fy: String?
-  private let gradientUnits: String
+  private let center: Point
+  private let radius: Double
+  private let focalPoint: Point?
+  private let gradientUnits: GradientUnits
 }
