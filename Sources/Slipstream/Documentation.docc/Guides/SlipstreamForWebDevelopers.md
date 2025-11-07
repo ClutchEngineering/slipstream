@@ -292,8 +292,8 @@ W3C attribute | Slipstream modifier | Notes
 [`enterkeyhint`](https://html.spec.whatwg.org/multipage/interaction.html#attr-enterkeyhint) | ``submitLabel(_:)`` | Hints at the action label for the enter key on virtual keyboards
 [`hidden`](https://html.spec.whatwg.org/multipage/interaction.html#attr-hidden) | ``hidden(_:)`` | Indicates that the element is not yet, or is no longer, relevant
 `id` | ``id(_:)`` | Sets the element's unique identifier
-[`inert`](https://html.spec.whatwg.org/multipage/interaction.html#the-inert-attribute) | ``inert(_:)`` | Makes the element and its descendants non-interactive
-[`inputmode`](https://html.spec.whatwg.org/multipage/interaction.html#attr-inputmode) | ``inputMode(_:)`` | Hints at the type of data that might be entered
+[`inert`](https://html.spec.whatwg.org/multipage/interaction.html#the-inert-attribute) | ``allowsHitTesting(_:)`` | Controls whether the element can receive user interaction (inverted logic)
+[`inputmode`](https://html.spec.whatwg.org/multipage/interaction.html#attr-inputmode) | ``keyboardType(_:)`` | Sets the keyboard type for text input
 [`is`](https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is) | ``customElement(_:)`` | Specifies the name of a custom element
 [`itemid`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemid) | ``itemid(_:)`` | The globally unique identifier of a microdata item
 [`itemprop`](https://html.spec.whatwg.org/multipage/microdata.html#names:-the-itemprop-attribute) | ``itemprop(_:)`` | Used to add properties to a microdata item

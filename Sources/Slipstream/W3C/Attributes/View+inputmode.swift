@@ -1,7 +1,6 @@
-/// The inputmode attribute hints at the type of data that might be entered by the user
-/// while editing the element.
+/// The keyboard type to display for text input.
 @available(iOS 17.0, macOS 14.0, *)
-public enum InputMode: String {
+public enum KeyboardType: String {
   /// No virtual keyboard. For when the page implements its own keyboard input control.
   case none
   /// Standard input keyboard for the user's current locale.
@@ -23,21 +22,21 @@ public enum InputMode: String {
 }
 
 extension View {
-  /// Hints at the type of data that might be entered by the user while editing the element.
+  /// Sets the keyboard type for text input.
   ///
-  /// The inputmode attribute is particularly useful on mobile devices where the virtual
+  /// The keyboardType modifier is particularly useful on mobile devices where the virtual
   /// keyboard can be customized based on the expected input type.
   ///
   /// ```swift
   /// TextField("Amount", type: .text)
-  ///   .inputMode(.decimal)
+  ///   .keyboardType(.decimal)
   /// ```
   ///
-  /// - Parameter mode: The input mode hint for the element.
+  /// - Parameter type: The keyboard type to display.
   ///
   /// - SeeAlso: W3C [`inputmode`](https://html.spec.whatwg.org/multipage/interaction.html#attr-inputmode) specification.
   @available(iOS 17.0, macOS 14.0, *)
-  public func inputMode(_ mode: InputMode) -> some View {
-    return modifier(AttributeModifier(.inputmode, value: mode.rawValue))
+  public func keyboardType(_ type: KeyboardType) -> some View {
+    return modifier(AttributeModifier(.inputmode, value: type.rawValue))
   }
 }
