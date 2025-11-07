@@ -12,8 +12,8 @@ import SwiftSoup
 ///       SVG(viewBox: "0 0 100 100") {
 ///         SVGDefs {
 ///           SVGLinearGradient(start: Point(x: 0, y: 0), end: Point(x: 1, y: 0)) {
-///             SVGStop(offset: 0, stopColor: "#ff0000")
-///             SVGStop(offset: 1, stopColor: "#0000ff")
+///             SVGStop(offset: 0, color: .red)
+///             SVGStop(offset: 1, color: .blue)
 ///           }
 ///           .id("grad1")
 ///         }

@@ -10,7 +10,7 @@ import SwiftSoup
 /// ```swift
 /// SVG(viewBox: "0 0 100 100") {
 ///     SVGDesc("This graphic shows a red circle centered in a 100x100 viewport")
-///     SVGCircle(cx: "50", cy: "50", r: "40")
+///     SVGCircle(origin: Point(x: 50, y: 50), radius: 40)
 ///         .modifier(ClassModifier(add: "fill-red-500"))
 /// }
 /// ```

@@ -11,10 +11,11 @@ import SwiftSoup
 ///     Body {
 ///       SVG(viewBox: "0 0 24 24") {
 ///         SVGDefs {
-///           SVGLinearGradient(id: "myGradient") {
-///             SVGStop(offset: "0%", stopColor: "red")
-///             SVGStop(offset: "100%", stopColor: "blue")
+///           SVGLinearGradient {
+///             SVGStop(offset: 0, color: .red)
+///             SVGStop(offset: 1, color: .blue)
 ///           }
+///           .id("myGradient")
 ///         }
 ///         SVGPath("M12 0c-6.626 0-12 5.373-12 12...")
 ///           .fill("url(#myGradient)")
