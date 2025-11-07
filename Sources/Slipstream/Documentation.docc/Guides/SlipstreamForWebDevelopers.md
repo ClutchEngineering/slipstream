@@ -271,3 +271,42 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<mtable>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mtable) | ``MTable``
 [`<mtr>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mtr) | ``MTr``
 [`<mtd>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mtd) | ``MTd``
+
+## The global attributes of Slipstream
+
+Modeling after [the W3C specification](https://html.spec.whatwg.org/multipage/dom.html#global-attributes),
+provided below is an organized table of W3C global HTML attributes and their equivalent Slipstream view modifiers.
+
+### Global attributes
+
+W3C attribute | Slipstream modifier | Notes
+:-------------|:-------------------|:------
+[`accesskey`](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute) | ``accesskey(_:)`` | Specifies a keyboard shortcut to activate or focus the element
+[`autocapitalize`](https://html.spec.whatwg.org/multipage/interaction.html#attr-autocapitalize) | ``autocapitalize(_:)`` | Controls whether and how text input is automatically capitalized
+[`autofocus`](https://html.spec.whatwg.org/multipage/interaction.html#attr-fe-autofocus) | ``autofocus(_:)`` | Indicates that the element should be focused on page load
+`class` | ``className(_:)`` | Adds classes to the element. Use TailwindCSS modifiers for styling
+[`contenteditable`](https://html.spec.whatwg.org/multipage/interaction.html#attr-contenteditable) | ``contenteditable(_:)`` | Indicates whether the element's content is editable
+[`data-*`](https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes) | ``data(_:)`` | Sets custom data attributes on the view
+[`dir`](https://html.spec.whatwg.org/multipage/dom.html#attr-dir) | ``direction(_:)`` | Specifies the element's text directionality
+[`draggable`](https://html.spec.whatwg.org/multipage/dnd.html#attr-draggable) | ``draggable(_:)`` | Indicates whether the element can be dragged
+[`enterkeyhint`](https://html.spec.whatwg.org/multipage/interaction.html#attr-enterkeyhint) | ``enterKeyHint(_:)`` | Hints at the action label for the enter key on virtual keyboards
+[`hidden`](https://html.spec.whatwg.org/multipage/interaction.html#attr-hidden) | ``hidden(_:)`` | Indicates that the element is not yet, or is no longer, relevant
+`id` | ``id(_:)`` | Sets the element's unique identifier
+[`inert`](https://html.spec.whatwg.org/multipage/interaction.html#the-inert-attribute) | ``inert(_:)`` | Makes the element and its descendants non-interactive
+[`inputmode`](https://html.spec.whatwg.org/multipage/interaction.html#attr-inputmode) | ``inputMode(_:)`` | Hints at the type of data that might be entered
+[`is`](https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is) | ``customElement(_:)`` | Specifies the name of a custom element
+[`itemid`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemid) | ``itemid(_:)`` | The globally unique identifier of a microdata item
+[`itemprop`](https://html.spec.whatwg.org/multipage/microdata.html#names:-the-itemprop-attribute) | ``itemprop(_:)`` | Used to add properties to a microdata item
+[`itemref`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemref) | ``itemref(_:)`` | Associates non-descendant properties with a microdata item
+[`itemscope`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemscope) | ``itemscope(_:)`` | Creates a new microdata item
+[`itemtype`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemtype) | ``itemtype(_:)`` | Specifies the vocabulary URL for a microdata item
+[`lang`](https://html.spec.whatwg.org/multipage/dom.html#attr-lang) | ``language(_:)`` | Sets the primary language for the view's contents
+[`nonce`](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#attr-nonce) | ``nonce(_:)`` | A cryptographic nonce used by Content Security Policy
+[`popover`](https://html.spec.whatwg.org/multipage/popover.html#attr-popover) | ``popover(_:)`` | Indicates that the element is a popover element
+`slot` | ``slot(_:)`` | Assigns a slot in a shadow DOM shadow tree
+[`spellcheck`](https://html.spec.whatwg.org/multipage/interaction.html#attr-spellcheck) | ``spellcheck(_:)`` | Specifies whether the element may be checked for spelling errors
+[`style`](https://html.spec.whatwg.org/multipage/dom.html#attr-style) | ``inlineStyle(_:)`` | Contains CSS styling declarations. Prefer TailwindCSS modifiers when possible
+[`tabindex`](https://html.spec.whatwg.org/multipage/interaction.html#attr-tabindex) | ``tabIndex(_:)`` or ``focusable()`` | Controls focus and keyboard navigation
+[`title`](https://html.spec.whatwg.org/multipage/dom.html#attr-title) | ``tooltip(_:)`` | Advisory information, typically shown as a tooltip
+[`translate`](https://html.spec.whatwg.org/multipage/dom.html#attr-translate) | ``translatable(_:)`` | Specifies whether content should be translated
+[`writingsuggestions`](https://html.spec.whatwg.org/multipage/interaction.html#attr-writingsuggestions) | ``writingSuggestions(_:)`` | Controls whether browser-provided writing suggestions should be offered
