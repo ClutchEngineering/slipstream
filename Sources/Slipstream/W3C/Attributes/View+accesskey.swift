@@ -8,7 +8,7 @@ extension View {
   /// Button("Save") {
   ///   // Save action
   /// }
-  /// .accesskey("s")
+  /// .keyboardShortcut("s")
   /// ```
   ///
   /// - Parameter key: A single character that will be used as the keyboard shortcut.
@@ -17,7 +17,7 @@ extension View {
   ///
   /// - SeeAlso: W3C [`accesskey`](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute) specification.
   @available(iOS 17.0, macOS 14.0, *)
-  public func accesskey(_ key: String) -> some View {
+  public func keyboardShortcut(_ key: String) -> some View {
     return modifier(AttributeModifier(.accesskey, value: key))
   }
 }

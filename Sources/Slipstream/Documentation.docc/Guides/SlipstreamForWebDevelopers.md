@@ -281,7 +281,7 @@ provided below is an organized table of W3C global HTML attributes and their equ
 
 W3C attribute | Slipstream modifier | Notes
 :-------------|:-------------------|:------
-[`accesskey`](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute) | ``accesskey(_:)`` | Specifies a keyboard shortcut to activate or focus the element
+[`accesskey`](https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute) | ``keyboardShortcut(_:)`` | Specifies a keyboard shortcut to activate or focus the element
 [`autocapitalize`](https://html.spec.whatwg.org/multipage/interaction.html#attr-autocapitalize) | ``autocapitalize(_:)`` | Controls whether and how text input is automatically capitalized
 [`autofocus`](https://html.spec.whatwg.org/multipage/interaction.html#attr-fe-autofocus) | ``autofocus(_:)`` | Indicates that the element should be focused on page load
 `class` | ``className(_:)`` | Adds classes to the element. Use TailwindCSS modifiers for styling
