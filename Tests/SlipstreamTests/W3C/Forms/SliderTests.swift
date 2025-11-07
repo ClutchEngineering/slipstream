@@ -24,7 +24,7 @@ struct SliderTests {
   }
 
   @Test func withId() throws {
-    try #expect(renderHTML(Slider(id: "brightness")) == #"<input type="range" min="0.0" max="100.0" id="brightness" />"#)
+    try #expect(renderHTML(Slider().id("brightness")) == #"<input type="range" min="0.0" max="100.0" id="brightness" />"#)
   }
 
   @Test func autoFocus() throws {
@@ -32,7 +32,7 @@ struct SliderTests {
   }
 
   @Test func allAttributes() throws {
-    try #expect(renderHTML(Slider(name: "opacity", value: 75, min: 0, max: 100, step: 5, id: "opacity-slider", autoFocus: true)) == #"<input type="range" name="opacity" value="75.0" min="0.0" max="100.0" step="5.0" id="opacity-slider" autofocus />"#)
+    try #expect(renderHTML(Slider(name: "opacity", value: 75, min: 0, max: 100, step: 5, autoFocus: true).id("opacity-slider")) == #"<input type="range" name="opacity" value="75.0" min="0.0" max="100.0" step="5.0" autofocus id="opacity-slider" />"#)
   }
 
   @Test func volumeControlUseCase() throws {

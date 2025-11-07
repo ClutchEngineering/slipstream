@@ -24,7 +24,7 @@ struct FileInputTests {
   }
 
   @Test func withId() throws {
-    try #expect(renderHTML(FileInput(id: "document-upload")) == #"<input type="file" id="document-upload" />"#)
+    try #expect(renderHTML(FileInput().id("document-upload")) == #"<input type="file" id="document-upload" />"#)
   }
 
   @Test func required() throws {
@@ -36,11 +36,11 @@ struct FileInputTests {
   }
 
   @Test func allAttributes() throws {
-    try #expect(renderHTML(FileInput(name: "documents", accept: ".pdf,.doc", multiple: true, id: "doc-upload", required: true, autoFocus: true)) == #"<input type="file" name="documents" accept=".pdf,.doc" multiple id="doc-upload" required autofocus />"#)
+    try #expect(renderHTML(FileInput(name: "documents", accept: ".pdf,.doc", multiple: true, required: true, autoFocus: true).id("doc-upload")) == #"<input type="file" name="documents" accept=".pdf,.doc" multiple required autofocus id="doc-upload" />"#)
   }
 
   @Test func imageUploadUseCase() throws {
     // Test a common use case for image uploads
-    try #expect(renderHTML(FileInput(name: "profile-picture", accept: "image/*", id: "avatar-input")) == #"<input type="file" name="profile-picture" accept="image/*" id="avatar-input" />"#)
+    try #expect(renderHTML(FileInput(name: "profile-picture", accept: "image/*").id("avatar-input")) == #"<input type="file" name="profile-picture" accept="image/*" id="avatar-input" />"#)
   }
 }

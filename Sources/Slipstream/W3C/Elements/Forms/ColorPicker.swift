@@ -15,8 +15,9 @@ import SwiftSoup
 /// // Color picker with form association
 /// ColorPicker(name: "theme-color", value: "#3498db")
 ///
-/// // Color picker with accessibility features
-/// ColorPicker(name: "accent", id: "accent-color", autoFocus: true)
+/// // Color picker with ID and accessibility features
+/// ColorPicker(name: "accent", autoFocus: true)
+///   .id("accent-color")
 /// ```
 ///
 /// - SeeAlso: W3C [input type="color"](https://html.spec.whatwg.org/multipage/input.html#color-state-(type=color)) specification.
@@ -28,14 +29,12 @@ public struct ColorPicker: View {
   ///   - name: The name of the form control, as used in form submission.
   ///   - value: The default color value in hexadecimal format (e.g., "#ff0000").
   ///     If not specified, defaults to "#000000" (black) per HTML spec.
-  ///   - id: The unique identifier for the color picker, used for label association.
   ///   - autoFocus: If true, indicates that the color picker should be focused as soon as
   ///     the page is loaded, allowing the user to interact with it without having to
   ///     manually focus it first.
-  public init(name: String? = nil, value: String? = nil, id: String? = nil, autoFocus: Bool = false) {
+  public init(name: String? = nil, value: String? = nil, autoFocus: Bool = false) {
     self.name = name
     self.value = value
-    self.id = id
     self.autoFocus = autoFocus
   }
 
@@ -50,9 +49,6 @@ public struct ColorPicker: View {
     if let value {
       try element.attr("value", value)
     }
-    if let id {
-      try element.attr("id", id)
-    }
     if autoFocus {
       try element.attr("autofocus", "")
     }
@@ -60,6 +56,5 @@ public struct ColorPicker: View {
 
   private let name: String?
   private let value: String?
-  private let id: String?
   private let autoFocus: Bool
 }

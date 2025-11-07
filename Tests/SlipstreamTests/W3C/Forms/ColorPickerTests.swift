@@ -16,7 +16,7 @@ struct ColorPickerTests {
   }
 
   @Test func withId() throws {
-    try #expect(renderHTML(ColorPicker(id: "accent-picker")) == #"<input type="color" id="accent-picker" />"#)
+    try #expect(renderHTML(ColorPicker().id("accent-picker")) == #"<input type="color" id="accent-picker" />"#)
   }
 
   @Test func autoFocus() throws {
@@ -24,6 +24,6 @@ struct ColorPickerTests {
   }
 
   @Test func allAttributes() throws {
-    try #expect(renderHTML(ColorPicker(name: "accent", value: "#3498db", id: "accent-color", autoFocus: true)) == ##"<input type="color" name="accent" value="#3498db" id="accent-color" autofocus />"##)
+    try #expect(renderHTML(ColorPicker(name: "accent", value: "#3498db", autoFocus: true).id("accent-color")) == ##"<input type="color" name="accent" value="#3498db" autofocus id="accent-color" />"##)
   }
 }

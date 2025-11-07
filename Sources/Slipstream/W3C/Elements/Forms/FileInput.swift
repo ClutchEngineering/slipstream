@@ -15,8 +15,9 @@ import SwiftSoup
 /// // Multiple file selection
 /// FileInput(name: "documents", multiple: true)
 ///
-/// // File input with specific file types
-/// FileInput(name: "avatar", accept: ".jpg,.png,.gif", id: "avatar-upload")
+/// // File input with specific file types and ID
+/// FileInput(name: "avatar", accept: ".jpg,.png,.gif")
+///   .id("avatar-upload")
 /// ```
 ///
 /// - SeeAlso: W3C [input type="file"](https://html.spec.whatwg.org/multipage/input.html#file-upload-state-(type=file)) specification.
@@ -29,17 +30,15 @@ public struct FileInput: View {
   ///   - accept: A comma-separated list of file types the input should accept.
   ///     Can be file extensions (e.g., ".jpg,.png") or MIME types (e.g., "image/*").
   ///   - multiple: If true, allows the user to select multiple files.
-  ///   - id: The unique identifier for the file input, used for label association.
   ///   - required: If true, indicates that the user must select a file before
   ///     the owning form can be submitted.
   ///   - autoFocus: If true, indicates that the file input should be focused as soon as
   ///     the page is loaded, allowing the user to interact with it without having to
   ///     manually focus it first.
-  public init(name: String? = nil, accept: String? = nil, multiple: Bool = false, id: String? = nil, required: Bool = false, autoFocus: Bool = false) {
+  public init(name: String? = nil, accept: String? = nil, multiple: Bool = false, required: Bool = false, autoFocus: Bool = false) {
     self.name = name
     self.accept = accept
     self.multiple = multiple
-    self.id = id
     self.required = required
     self.autoFocus = autoFocus
   }
@@ -58,9 +57,6 @@ public struct FileInput: View {
     if multiple {
       try element.attr("multiple", "")
     }
-    if let id {
-      try element.attr("id", id)
-    }
     if required {
       try element.attr("required", "")
     }
@@ -72,7 +68,6 @@ public struct FileInput: View {
   private let name: String?
   private let accept: String?
   private let multiple: Bool
-  private let id: String?
   private let required: Bool
   private let autoFocus: Bool
 }

@@ -14,7 +14,8 @@ import SwiftSoup
 /// HiddenField(name: "csrf_token", value: "a1b2c3d4e5")
 ///
 /// // Hidden field with ID for JavaScript access
-/// HiddenField(name: "session", value: "xyz", id: "session-id")
+/// HiddenField(name: "session", value: "xyz")
+///   .id("session-id")
 /// ```
 ///
 /// - SeeAlso: W3C [input type="hidden"](https://html.spec.whatwg.org/multipage/input.html#hidden-state-(type=hidden)) specification.
@@ -25,11 +26,9 @@ public struct HiddenField: View {
   /// - Parameters:
   ///   - name: The name of the form control, as used in form submission.
   ///   - value: The value to be sent when the form is submitted.
-  ///   - id: The unique identifier for the hidden field, useful for JavaScript access.
-  public init(name: String, value: String, id: String? = nil) {
+  public init(name: String, value: String) {
     self.name = name
     self.value = value
-    self.id = id
   }
 
   @_documentation(visibility: private)
@@ -38,13 +37,8 @@ public struct HiddenField: View {
     try element.attr("type", "hidden")
     try element.attr("name", name)
     try element.attr("value", value)
-
-    if let id {
-      try element.attr("id", id)
-    }
   }
 
   private let name: String
   private let value: String
-  private let id: String?
 }

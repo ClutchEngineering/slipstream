@@ -8,7 +8,7 @@ struct HiddenFieldTests {
   }
 
   @Test func withId() throws {
-    try #expect(renderHTML(HiddenField(name: "session", value: "xyz", id: "session-id")) == #"<input type="hidden" name="session" value="xyz" id="session-id" />"#)
+    try #expect(renderHTML(HiddenField(name: "session", value: "xyz").id("session-id")) == #"<input type="hidden" name="session" value="xyz" id="session-id" />"#)
   }
 
   @Test func csrfTokenUseCase() throws {
