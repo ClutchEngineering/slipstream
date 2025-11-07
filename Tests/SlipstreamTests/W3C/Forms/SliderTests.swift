@@ -24,7 +24,7 @@ struct SliderTests {
   }
 
   @Test func withId() throws {
-    try #expect(renderHTML(Slider(id: "brightness")) == #"<input type="range" id="brightness" min="0.0" max="100.0" />"#)
+    try #expect(renderHTML(Slider(id: "brightness")) == #"<input type="range" min="0.0" max="100.0" id="brightness" />"#)
   }
 
   @Test func autoFocus() throws {
