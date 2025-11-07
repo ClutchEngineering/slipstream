@@ -16,8 +16,8 @@ public struct Size: Sendable {
     self.height = height
   }
 
-  let width: Double
-  let height: Double
+  public let width: Double
+  public let height: Double
 
   var asPixels: String? {
     let formatter = NumberFormatter()
