@@ -295,11 +295,11 @@ W3C attribute | Slipstream modifier | Notes
 [`inert`](https://html.spec.whatwg.org/multipage/interaction.html#the-inert-attribute) | ``allowsHitTesting(_:)`` | Controls whether the element can receive user interaction (inverted logic)
 [`inputmode`](https://html.spec.whatwg.org/multipage/interaction.html#attr-inputmode) | ``keyboardType(_:)`` | Sets the keyboard type for text input
 [`is`](https://html.spec.whatwg.org/multipage/custom-elements.html#attr-is) | ``customElement(_:)`` | Specifies the name of a custom element
-[`itemid`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemid) | ``itemid(_:)`` | The globally unique identifier of a microdata item
-[`itemprop`](https://html.spec.whatwg.org/multipage/microdata.html#names:-the-itemprop-attribute) | ``itemprop(_:)`` | Used to add properties to a microdata item
-[`itemref`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemref) | ``itemref(_:)`` | Associates non-descendant properties with a microdata item
-[`itemscope`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemscope) | ``itemscope(_:)`` | Creates a new microdata item
-[`itemtype`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemtype) | ``itemtype(_:)`` | Specifies the vocabulary URL for a microdata item
+[`itemid`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemid) | ``itemID(_:)`` | The globally unique identifier of a microdata item
+[`itemprop`](https://html.spec.whatwg.org/multipage/microdata.html#names:-the-itemprop-attribute) | ``itemProp(_:)`` | Used to add properties to a microdata item
+[`itemref`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemref) | ``itemRef(_:)`` | Associates non-descendant properties with a microdata item
+[`itemscope`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemscope) | ``itemScope(_:)`` | Creates a new microdata item
+[`itemtype`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemtype) | ``itemType(_:)`` | Specifies the vocabulary URL for a microdata item
 [`lang`](https://html.spec.whatwg.org/multipage/dom.html#attr-lang) | ``language(_:)`` | Sets the primary language for the view's contents
 [`nonce`](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#attr-nonce) | ``nonce(_:)`` | A cryptographic nonce used by Content Security Policy
 [`popover`](https://html.spec.whatwg.org/multipage/popover.html#attr-popover) | ``popover(_:)`` | Indicates that the element is a popover element

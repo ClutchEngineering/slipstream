@@ -7,10 +7,10 @@ extension View {
   /// ```swift
   /// Div {
   ///   Span("John Doe")
-  ///     .itemprop("name")
+  ///     .itemProp("name")
   /// }
-  /// .itemscope()
-  /// .itemtype("https://schema.org/Person")
+  /// .itemScope()
+  /// .itemType("https://schema.org/Person")
   /// ```
   ///
   /// - Parameter condition: A Boolean value that determines whether the element creates an item scope.
@@ -18,7 +18,7 @@ extension View {
   ///
   /// - SeeAlso: W3C [`itemscope`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemscope) specification.
   @available(iOS 17.0, macOS 14.0, *)
-  public func itemscope(_ condition: Bool = true) -> some View {
+  public func itemScope(_ condition: Bool = true) -> some View {
     return modifier(ConditionalAttributeModifier("itemscope", condition: condition))
   }
 
@@ -29,15 +29,15 @@ extension View {
   ///
   /// ```swift
   /// Div { }
-  ///   .itemscope()
-  ///   .itemtype("https://schema.org/Person")
+  ///   .itemScope()
+  ///   .itemType("https://schema.org/Person")
   /// ```
   ///
   /// - Parameter type: The URL of the vocabulary defining the item type.
   ///
   /// - SeeAlso: W3C [`itemtype`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemtype) specification.
   @available(iOS 17.0, macOS 14.0, *)
-  public func itemtype(_ type: String) -> some View {
+  public func itemType(_ type: String) -> some View {
     return modifier(AttributeModifier(.itemtype, value: type))
   }
 
@@ -48,16 +48,16 @@ extension View {
   ///
   /// ```swift
   /// Div { }
-  ///   .itemscope()
-  ///   .itemtype("https://schema.org/Book")
-  ///   .itemid("urn:isbn:978-0-596-52068-7")
+  ///   .itemScope()
+  ///   .itemType("https://schema.org/Book")
+  ///   .itemID("urn:isbn:978-0-596-52068-7")
   /// ```
   ///
   /// - Parameter id: The globally unique identifier for the item.
   ///
   /// - SeeAlso: W3C [`itemid`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemid) specification.
   @available(iOS 17.0, macOS 14.0, *)
-  public func itemid(_ id: String) -> some View {
+  public func itemID(_ id: String) -> some View {
     return modifier(AttributeModifier(.itemid, value: id))
   }
 
@@ -68,14 +68,14 @@ extension View {
   ///
   /// ```swift
   /// Span("John Doe")
-  ///   .itemprop("name")
+  ///   .itemProp("name")
   /// ```
   ///
   /// - Parameter property: The name of the property being added to the item.
   ///
   /// - SeeAlso: W3C [`itemprop`](https://html.spec.whatwg.org/multipage/microdata.html#names:-the-itemprop-attribute) specification.
   @available(iOS 17.0, macOS 14.0, *)
-  public func itemprop(_ property: String) -> some View {
+  public func itemProp(_ property: String) -> some View {
     return modifier(AttributeModifier(.itemprop, value: property))
   }
 
@@ -87,15 +87,15 @@ extension View {
   ///
   /// ```swift
   /// Div { }
-  ///   .itemscope()
-  ///   .itemref("prop1 prop2")
+  ///   .itemScope()
+  ///   .itemRef("prop1 prop2")
   /// ```
   ///
   /// - Parameter refs: A space-separated list of element IDs to reference.
   ///
   /// - SeeAlso: W3C [`itemref`](https://html.spec.whatwg.org/multipage/microdata.html#attr-itemref) specification.
   @available(iOS 17.0, macOS 14.0, *)
-  public func itemref(_ refs: String) -> some View {
+  public func itemRef(_ refs: String) -> some View {
     return modifier(AttributeModifier(.itemref, value: refs))
   }
 }
