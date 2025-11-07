@@ -1,16 +1,17 @@
-extension View {
-  /// The autocapitalize attribute controls whether and how text input is automatically capitalized.
-  public enum Autocapitalize: String {
-    /// No automatic capitalization.
-    case none
-    /// Capitalize the first letter of each sentence.
-    case sentences
-    /// Capitalize the first letter of each word.
-    case words
-    /// Capitalize all characters.
-    case characters
-  }
+/// The autocapitalize attribute controls whether and how text input is automatically capitalized.
+@available(iOS 17.0, macOS 14.0, *)
+public enum Autocapitalize: String {
+  /// No automatic capitalization.
+  case none
+  /// Capitalize the first letter of each sentence.
+  case sentences
+  /// Capitalize the first letter of each word.
+  case words
+  /// Capitalize all characters.
+  case characters
+}
 
+extension View {
   /// Controls whether and how text input is automatically capitalized.
   ///
   /// The autocapitalize attribute is particularly useful for mobile devices where the system

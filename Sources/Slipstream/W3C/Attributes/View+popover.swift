@@ -1,12 +1,13 @@
-extension View {
-  /// The popover attribute indicates that the element is a popover element.
-  public enum PopoverState: String {
-    /// The element is a manual popover that must be explicitly shown and hidden.
-    case manual
-    /// The element is an auto popover that can be "light dismissed" by user actions.
-    case auto
-  }
+/// The popover attribute indicates that the element is a popover element.
+@available(iOS 17.0, macOS 14.0, *)
+public enum PopoverState: String {
+  /// The element is a manual popover that must be explicitly shown and hidden.
+  case manual
+  /// The element is an auto popover that can be "light dismissed" by user actions.
+  case auto
+}
 
+extension View {
   /// Indicates that the element is a popover element.
   ///
   /// The popover attribute makes an element into a popover element, which can be shown

@@ -1,14 +1,15 @@
-extension View {
-  /// The dir attribute specifies the element's text directionality.
-  public enum TextDirection: String {
-    /// Left-to-right text direction.
-    case ltr
-    /// Right-to-left text direction.
-    case rtl
-    /// Automatic text direction based on content.
-    case auto
-  }
+/// The dir attribute specifies the element's text directionality.
+@available(iOS 17.0, macOS 14.0, *)
+public enum TextDirection: String {
+  /// Left-to-right text direction.
+  case ltr
+  /// Right-to-left text direction.
+  case rtl
+  /// Automatic text direction based on content.
+  case auto
+}
 
+extension View {
   /// Specifies the element's text directionality.
   ///
   /// The dir attribute controls the direction in which text is rendered. This is

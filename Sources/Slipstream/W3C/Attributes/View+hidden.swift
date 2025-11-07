@@ -1,12 +1,13 @@
-extension View {
-  /// The hidden attribute indicates that the element is not yet, or is no longer, relevant.
-  public enum HiddenState: String {
-    /// The element is hidden in all rendering modes.
-    case hidden = ""
-    /// The element is hidden but remains in the accessibility tree until it is found.
-    case untilFound = "until-found"
-  }
+/// The hidden attribute indicates that the element is not yet, or is no longer, relevant.
+@available(iOS 17.0, macOS 14.0, *)
+public enum HiddenState: String {
+  /// The element is hidden in all rendering modes.
+  case hidden = ""
+  /// The element is hidden but remains in the accessibility tree until it is found.
+  case untilFound = "until-found"
+}
 
+extension View {
   /// Indicates that the element is not yet, or is no longer, relevant.
   ///
   /// The hidden attribute is a boolean attribute that indicates that the element is

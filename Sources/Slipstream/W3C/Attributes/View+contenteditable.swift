@@ -1,14 +1,15 @@
-extension View {
-  /// The contenteditable attribute indicates whether the element's content is editable.
-  public enum Contenteditable: String {
-    /// The element is editable.
-    case `true`
-    /// The element is not editable.
-    case `false`
-    /// The element inherits the contenteditable state from its parent.
-    case inherit = "inherit"
-  }
+/// The contenteditable attribute indicates whether the element's content is editable.
+@available(iOS 17.0, macOS 14.0, *)
+public enum Contenteditable: String {
+  /// The element is editable.
+  case `true`
+  /// The element is not editable.
+  case `false`
+  /// The element inherits the contenteditable state from its parent.
+  case inherit = "inherit"
+}
 
+extension View {
   /// Indicates whether the element's content is editable.
   ///
   /// The contenteditable attribute makes an element's content editable by the user.
