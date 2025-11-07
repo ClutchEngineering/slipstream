@@ -23,27 +23,19 @@ import SwiftSoup
 ///
 /// - SeeAlso: W3C [mo](https://www.w3.org/TR/MathML3/chapter3.html#presm.mo) specification.
 @available(iOS 17.0, macOS 14.0, *)
-public struct MO<ChildContent: View>: W3CElement {
-  public let tagName = "mo"
+public struct MO: View {
+  private let text: String
 
-  @ViewBuilder public let content: @Sendable () -> ChildContent
-
-  /// Creates an MO element with view content.
-  ///
-  /// - Parameter content: The view content for the operator
-  public init(@ViewBuilder content: @escaping @Sendable () -> ChildContent) {
-    self.content = content
-  }
-}
-
-@available(iOS 17.0, macOS 14.0, *)
-extension MO where ChildContent == DOMString {
   /// Creates an MO element with text content.
   ///
   /// - Parameter text: The operator text content
   public init(_ text: String) {
-    self.content = {
-      DOMString(text)
-    }
+    self.text = text
+  }
+
+  @_documentation(visibility: private)
+  public func render(_ container: Element, environment: EnvironmentValues) throws {
+    let element = try container.appendElement("mo")
+    try element.text(text)
   }
 }
