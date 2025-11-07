@@ -120,7 +120,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<data>`](https://html.spec.whatwg.org/multipage/sections.html#the-data-element) | ``Data`` 
 [`<time>`](https://html.spec.whatwg.org/multipage/sections.html#the-time-element) | ``Time`` 
 [`<code>`](https://html.spec.whatwg.org/multipage/sections.html#the-code-element) | ``Code`` 
-[`<var>`](https://html.spec.whatwg.org/multipage/sections.html#the-var-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<var>`](https://html.spec.whatwg.org/multipage/sections.html#the-var-element) | ``Variable`` 
 [`<samp>`](https://html.spec.whatwg.org/multipage/sections.html#the-samp-element) | ``SampleOutput`` 
 [`<kbd>`](https://html.spec.whatwg.org/multipage/sections.html#the-kbd-element) | ``Keyboard`` 
 [`<sub>`](https://html.spec.whatwg.org/multipage/sections.html#the-sub-element) | ``Subscript``
@@ -133,7 +133,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<bdo>`](https://html.spec.whatwg.org/multipage/sections.html#the-bdo-element) | ``BidirectionalOverride`` 
 [`<span>`](https://html.spec.whatwg.org/multipage/sections.html#the-span-element) | ``Span`` 
 [`<br>`](https://html.spec.whatwg.org/multipage/sections.html#the-br-element) | ``Linebreak`` 
-[`<wbr>`](https://html.spec.whatwg.org/multipage/sections.html#the-wbr-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<wbr>`](https://html.spec.whatwg.org/multipage/sections.html#the-wbr-element) | ``WordBreakOpportunity``
 
 ### Edits
 
@@ -206,7 +206,7 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<datalist>`](https://html.spec.whatwg.org/multipage/sections.html#the-datalist-element) | ``DataList``
 [`<optgroup>`](https://html.spec.whatwg.org/multipage/sections.html#the-optgroup-element) | ``OptGroup``
 [`<option>`](https://html.spec.whatwg.org/multipage/sections.html#the-option-element) | ``Option``
-[`<textarea>`](https://html.spec.whatwg.org/multipage/sections.html#the-textarea-element) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
+[`<textarea>`](https://html.spec.whatwg.org/multipage/sections.html#the-textarea-element) | ``TextArea``
 [`<output>`](https://html.spec.whatwg.org/multipage/sections.html#the-output-element) | ``Output``
 [`<progress>`](https://html.spec.whatwg.org/multipage/sections.html#the-progress-element) | ``ProgressView``
 [`<meter>`](https://html.spec.whatwg.org/multipage/sections.html#the-meter-element) | ``Meter``
