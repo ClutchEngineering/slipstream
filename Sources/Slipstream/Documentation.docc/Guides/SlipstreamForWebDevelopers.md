@@ -197,6 +197,10 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<input type="range">`](https://html.spec.whatwg.org/multipage/input.html#range-state-(type=range)) | ``Slider``
 [`<input type="file">`](https://html.spec.whatwg.org/multipage/input.html#file-upload-state-(type=file)) | ``FileInput``
 [`<input type="hidden">`](https://html.spec.whatwg.org/multipage/input.html#hidden-state-(type=hidden)) | ``HiddenField``
+[`<input type="submit">`](https://html.spec.whatwg.org/multipage/input.html#submit-button-state-(type=submit)) | ``SubmitButton``
+[`<input type="image">`](https://html.spec.whatwg.org/multipage/input.html#image-button-state-(type=image)) | ``ImageButton``
+[`<input type="reset">`](https://html.spec.whatwg.org/multipage/input.html#reset-button-state-(type=reset)) | ``ResetButton``
+[`<input type="button">`](https://html.spec.whatwg.org/multipage/input.html#button-state-(type=button)) | ``InputButton``
 [`<button>`](https://html.spec.whatwg.org/multipage/sections.html#the-button-element) | ``Button``
 [`<select>`](https://html.spec.whatwg.org/multipage/sections.html#the-select-element) | ``Picker``
 [`<datalist>`](https://html.spec.whatwg.org/multipage/sections.html#the-datalist-element) | ``DataList``
