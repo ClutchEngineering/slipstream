@@ -12,6 +12,7 @@ Slipstream implementations of Tailwind CSS's utility classes.
 - <doc:Layout-Overflow>
 - <doc:Layout-Position>
 - <doc:Layout-Placement>
+- <doc:Layout-Visibility>
 
 ### Flexbox & Grid
 
