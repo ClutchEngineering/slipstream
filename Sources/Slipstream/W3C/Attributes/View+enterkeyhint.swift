@@ -27,19 +27,19 @@ public enum EnterKeyHint: String {
 extension View {
   /// Hints at the action label or icon to present for the enter key on virtual keyboards.
   ///
-  /// The enterkeyhint attribute is particularly useful on mobile devices where the virtual
+  /// The submitLabel modifier is particularly useful on mobile devices where the virtual
   /// keyboard can display different labels on the enter key based on the expected action.
   ///
   /// ```swift
   /// TextField("Search", type: .search)
-  ///   .enterKeyHint(.search)
+  ///   .submitLabel(.search)
   /// ```
   ///
-  /// - Parameter hint: The hint for the enter key presentation.
+  /// - Parameter label: The label for the enter key presentation.
   ///
   /// - SeeAlso: W3C [`enterkeyhint`](https://html.spec.whatwg.org/multipage/interaction.html#attr-enterkeyhint) specification.
   @available(iOS 17.0, macOS 14.0, *)
-  public func enterKeyHint(_ hint: EnterKeyHint) -> some View {
-    return modifier(AttributeModifier(.enterkeyhint, value: hint.rawValue))
+  public func submitLabel(_ label: EnterKeyHint) -> some View {
+    return modifier(AttributeModifier(.enterkeyhint, value: label.rawValue))
   }
 }

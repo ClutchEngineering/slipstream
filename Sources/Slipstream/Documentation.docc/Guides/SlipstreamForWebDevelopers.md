@@ -289,7 +289,7 @@ W3C attribute | Slipstream modifier | Notes
 [`data-*`](https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes) | ``data(_:)`` | Sets custom data attributes on the view
 [`dir`](https://html.spec.whatwg.org/multipage/dom.html#attr-dir) | ``direction(_:)`` | Specifies the element's text directionality
 [`draggable`](https://html.spec.whatwg.org/multipage/dnd.html#attr-draggable) | ``draggable(_:)`` | Indicates whether the element can be dragged
-[`enterkeyhint`](https://html.spec.whatwg.org/multipage/interaction.html#attr-enterkeyhint) | ``enterKeyHint(_:)`` | Hints at the action label for the enter key on virtual keyboards
+[`enterkeyhint`](https://html.spec.whatwg.org/multipage/interaction.html#attr-enterkeyhint) | ``submitLabel(_:)`` | Hints at the action label for the enter key on virtual keyboards
 [`hidden`](https://html.spec.whatwg.org/multipage/interaction.html#attr-hidden) | ``hidden(_:)`` | Indicates that the element is not yet, or is no longer, relevant
 `id` | ``id(_:)`` | Sets the element's unique identifier
 [`inert`](https://html.spec.whatwg.org/multipage/interaction.html#the-inert-attribute) | ``inert(_:)`` | Makes the element and its descendants non-interactive
