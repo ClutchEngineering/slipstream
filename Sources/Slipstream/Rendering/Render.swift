@@ -25,12 +25,25 @@ import SwiftSoup
 /// - Returns: The generated and formatted HTML string.
 public func renderHTML(_ view: any View) throws -> String {
   let document = Document("/")
-  // Configure MathML elements as inline to prevent extra newlines
-  document.outputSettings().addInlineTags(
-    "mi", "mo", "mn", "ms", "mtext"
-  )
   try view.render(document, environment: EnvironmentValues())
-  return try document.html()
+  var html = try document.html()
+
+  // Post-process to format MathML token elements inline
+  // SwiftSoup doesn't know MathML tags, so it formats them as block-level
+  // We need to collapse whitespace within these elements to render them inline
+  let mathmlTokenTags = ["mi", "mo", "mn", "ms", "mtext"]
+  for tag in mathmlTokenTags {
+    // Pattern matches: <tag>\n whitespace text whitespace\n</tag>
+    // Replaces with: <tag>text</tag>
+    let pattern = "<\(tag)>\\s*([^<]+?)\\s*</\(tag)>"
+    html = html.replacingOccurrences(
+      of: pattern,
+      with: "<\(tag)>$1</\(tag)>",
+      options: .regularExpression
+    )
+  }
+
+  return html
 }
 
 /// Renders the given view as an HTML document and returns the HTML.
@@ -45,13 +58,22 @@ public func renderHTML(_ view: any View) throws -> String {
 /// error will be returned as an HTML comment.
 public func inlineHTML<Content: View>(@ViewBuilder _ builder: () -> Content) -> String {
   let document = Document("/")
-  // Configure MathML elements as inline to prevent extra newlines
-  document.outputSettings().addInlineTags(
-    "mi", "mo", "mn", "ms", "mtext"
-  )
   do {
     try builder().render(document, environment: EnvironmentValues())
-    return try document.html()
+    var html = try document.html()
+
+    // Post-process to format MathML token elements inline
+    let mathmlTokenTags = ["mi", "mo", "mn", "ms", "mtext"]
+    for tag in mathmlTokenTags {
+      let pattern = "<\(tag)>\\s*([^<]+?)\\s*</\(tag)>"
+      html = html.replacingOccurrences(
+        of: pattern,
+        with: "<\(tag)>$1</\(tag)>",
+        options: .regularExpression
+      )
+    }
+
+    return html
   } catch let error {
     return "<!-- \(error) -->"
   }
