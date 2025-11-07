@@ -25,6 +25,10 @@ import SwiftSoup
 /// - Returns: The generated and formatted HTML string.
 public func renderHTML(_ view: any View) throws -> String {
   let document = Document("/")
+  // Configure MathML elements as inline to prevent extra newlines
+  document.outputSettings().addInlineTags(
+    "mi", "mo", "mn", "ms", "mtext"
+  )
   try view.render(document, environment: EnvironmentValues())
   return try document.html()
 }
@@ -41,6 +45,10 @@ public func renderHTML(_ view: any View) throws -> String {
 /// error will be returned as an HTML comment.
 public func inlineHTML<Content: View>(@ViewBuilder _ builder: () -> Content) -> String {
   let document = Document("/")
+  // Configure MathML elements as inline to prevent extra newlines
+  document.outputSettings().addInlineTags(
+    "mi", "mo", "mn", "ms", "mtext"
+  )
   do {
     try builder().render(document, environment: EnvironmentValues())
     return try document.html()
