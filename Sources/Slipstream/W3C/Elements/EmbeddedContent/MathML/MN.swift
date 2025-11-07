@@ -35,6 +35,6 @@ public struct MN: View {
   @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     let element = try container.appendElement("mn")
-    try element.text(text)
+    try element.appendText(text)
   }
 }
