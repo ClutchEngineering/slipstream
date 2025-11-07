@@ -41,11 +41,7 @@ struct ObjectTests {
   @Test func withContent() throws {
     try #expect(renderHTML(Object(data: URL(string: "/media/file.pdf")) {
       DOMString("Your browser doesn't support embedded PDFs.")
-    }) == """
-<object data="/media/file.pdf">
- Your browser doesn't support embedded PDFs.
-</object>
-""")
+    }) == #"<object data="/media/file.pdf">Your browser doesn't support embedded PDFs.</object>"#)
   }
 
   @Test func globalAttribute() throws {

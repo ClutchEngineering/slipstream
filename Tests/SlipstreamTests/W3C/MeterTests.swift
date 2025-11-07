@@ -42,11 +42,7 @@ struct MeterTests {
   @Test func withContent() throws {
     try #expect(renderHTML(Meter(value: 0.75) {
       DOMString("75%")
-    }) == """
-<meter value="0.75" min="0.0" max="1.0">
- 75%
-</meter>
-""")
+    }) == #"<meter value="0.75" min="0.0" max="1.0">75%</meter>"#)
   }
 
   @Test func globalAttribute() throws {
