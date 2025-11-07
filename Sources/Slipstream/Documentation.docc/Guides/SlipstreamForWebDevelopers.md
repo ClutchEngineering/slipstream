@@ -179,7 +179,24 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 :--------|:----------------
 [`<form>`](https://html.spec.whatwg.org/multipage/sections.html#the-form-element) | ``Form``
 [`<label>`](https://html.spec.whatwg.org/multipage/sections.html#the-label-element) | ``Label``
-[`<input>`](https://html.spec.whatwg.org/multipage/sections.html#the-input-element) | ``TextField``
+[`<input type="text">`](https://html.spec.whatwg.org/multipage/input.html#text-(type=text)-state-and-search-state-(type=search)) | ``TextField``
+[`<input type="search">`](https://html.spec.whatwg.org/multipage/input.html#text-(type=text)-state-and-search-state-(type=search)) | ``TextField``
+[`<input type="tel">`](https://html.spec.whatwg.org/multipage/input.html#telephone-state-(type=tel)) | ``TextField``
+[`<input type="url">`](https://html.spec.whatwg.org/multipage/input.html#url-state-(type=url)) | ``TextField``
+[`<input type="email">`](https://html.spec.whatwg.org/multipage/input.html#email-state-(type=email)) | ``TextField``
+[`<input type="password">`](https://html.spec.whatwg.org/multipage/input.html#password-state-(type=password)) | ``TextField``
+[`<input type="date">`](https://html.spec.whatwg.org/multipage/input.html#date-state-(type=date)) | ``TextField``
+[`<input type="month">`](https://html.spec.whatwg.org/multipage/input.html#month-state-(type=month)) | ``TextField``
+[`<input type="week">`](https://html.spec.whatwg.org/multipage/input.html#week-state-(type=week)) | ``TextField``
+[`<input type="time">`](https://html.spec.whatwg.org/multipage/input.html#time-state-(type=time)) | ``TextField``
+[`<input type="datetime-local">`](https://html.spec.whatwg.org/multipage/input.html#local-date-and-time-state-(type=datetime-local)) | ``TextField``
+[`<input type="number">`](https://html.spec.whatwg.org/multipage/input.html#number-state-(type=number)) | ``TextField``
+[`<input type="checkbox">`](https://html.spec.whatwg.org/multipage/input.html#checkbox-state-(type=checkbox)) | ``Checkbox``
+[`<input type="radio">`](https://html.spec.whatwg.org/multipage/input.html#radio-button-state-(type=radio)) | ``RadioButton``
+[`<input type="color">`](https://html.spec.whatwg.org/multipage/input.html#color-state-(type=color)) | ``ColorPicker``
+[`<input type="range">`](https://html.spec.whatwg.org/multipage/input.html#range-state-(type=range)) | ``Slider``
+[`<input type="file">`](https://html.spec.whatwg.org/multipage/input.html#file-upload-state-(type=file)) | ``FileInput``
+[`<input type="hidden">`](https://html.spec.whatwg.org/multipage/input.html#hidden-state-(type=hidden)) | ``HiddenField``
 [`<button>`](https://html.spec.whatwg.org/multipage/sections.html#the-button-element) | ``Button``
 [`<select>`](https://html.spec.whatwg.org/multipage/sections.html#the-select-element) | ``Picker``
 [`<datalist>`](https://html.spec.whatwg.org/multipage/sections.html#the-datalist-element) | ``DataList``
