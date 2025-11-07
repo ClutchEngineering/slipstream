@@ -104,7 +104,7 @@ struct MathMLTests {
 """)
   }
 
-  @Test func subscript() throws {
+  @Test func msubElement() throws {
     let html = try renderHTML(Math {
       MSub {
         MI("x")
