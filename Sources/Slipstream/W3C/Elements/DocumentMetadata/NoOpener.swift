@@ -4,14 +4,14 @@ import SwiftSoup
 
 /// Prevents a hyperlink from accessing the window.opener property.
 ///
-/// The `Noopener` view renders a `<link rel="noopener">` element in HTML,
+/// The `NoOpener` view renders a `<link rel="noopener">` element in HTML,
 /// which creates a browsing context without access to the opening window.
 ///
 /// ```swift
 /// struct MySiteHead: View {
 ///   var body: some View {
 ///     Head {
-///       Noopener(URL(string: "https://external-site.com"))
+///       NoOpener(URL(string: "https://external-site.com"))
 ///     }
 ///   }
 /// }
@@ -19,7 +19,7 @@ import SwiftSoup
 ///
 /// - SeeAlso: W3C Specification: [Link type "noopener"](https://html.spec.whatwg.org/multipage/links.html#link-type-noopener)
 @available(iOS 17.0, macOS 14.0, *)
-public struct Noopener: View {
+public struct NoOpener: View {
   /// Creates a noopener link annotation.
   ///
   /// - Parameters:

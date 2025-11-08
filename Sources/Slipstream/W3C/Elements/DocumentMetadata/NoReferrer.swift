@@ -4,14 +4,14 @@ import SwiftSoup
 
 /// Prevents the Referer header from being sent and implies noopener.
 ///
-/// The `Noreferrer` view renders a `<link rel="noreferrer">` element in HTML,
+/// The `NoReferrer` view renders a `<link rel="noreferrer">` element in HTML,
 /// which prevents the referrer information from being passed to the target.
 ///
 /// ```swift
 /// struct MySiteHead: View {
 ///   var body: some View {
 ///     Head {
-///       Noreferrer(URL(string: "https://external-site.com"))
+///       NoReferrer(URL(string: "https://external-site.com"))
 ///     }
 ///   }
 /// }
@@ -19,7 +19,7 @@ import SwiftSoup
 ///
 /// - SeeAlso: W3C Specification: [Link type "noreferrer"](https://html.spec.whatwg.org/multipage/links.html#link-type-noreferrer)
 @available(iOS 17.0, macOS 14.0, *)
-public struct Noreferrer: View {
+public struct NoReferrer: View {
   /// Creates a noreferrer link annotation.
   ///
   /// - Parameters:
