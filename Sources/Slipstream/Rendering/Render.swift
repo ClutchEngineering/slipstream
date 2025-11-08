@@ -53,11 +53,12 @@ public func renderHTML(_ view: any View) throws -> String {
       let content = nsString.substring(with: contentRange)
       let closingSpaces = nsString.substring(with: closingSpacesRange)
 
-      // The closing tag's indentation tells us how much to strip from content line
-      let indentCount = closingSpaces.count
-      // Combine leading spaces and content, then strip only the indentation
+      // The closing tag's indentation tells us the element's indent level
+      // Content is indented one level deeper, so we strip closingIndent + 1
+      let indentToStrip = closingSpaces.count + 1
+      // Combine leading spaces and content, then strip the indentation
       let fullContent = leadingSpaces + content
-      let trimmedContent = String(fullContent.dropFirst(min(indentCount, fullContent.count)))
+      let trimmedContent = String(fullContent.dropFirst(min(indentToStrip, fullContent.count)))
 
       let replacement = "<\(tag)>\(trimmedContent)</\(tag)>"
       html = nsString.replacingCharacters(in: fullRange, with: replacement) as String
@@ -103,9 +104,9 @@ public func inlineHTML<Content: View>(@ViewBuilder _ builder: () -> Content) -> 
         let content = nsString.substring(with: contentRange)
         let closingSpaces = nsString.substring(with: closingSpacesRange)
 
-        let indentCount = closingSpaces.count
+        let indentToStrip = closingSpaces.count + 1
         let fullContent = leadingSpaces + content
-        let trimmedContent = String(fullContent.dropFirst(min(indentCount, fullContent.count)))
+        let trimmedContent = String(fullContent.dropFirst(min(indentToStrip, fullContent.count)))
 
         let replacement = "<\(tag)>\(trimmedContent)</\(tag)>"
         html = nsString.replacingCharacters(in: fullRange, with: replacement) as String
