@@ -230,3 +230,44 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<template>`](https://html.spec.whatwg.org/multipage/sections.html#the-template-element) | ``Template``
 [`<slot>`](https://html.spec.whatwg.org/multipage/sections.html#the-slot-element) | ``Slot``
 [`<canvas>`](https://html.spec.whatwg.org/multipage/sections.html#the-canvas-element) | ``Canvas``
+
+### SVG (Scalable Vector Graphics)
+
+ W3C tag | Slipstream view
+:--------|:----------------
+[`<svg>`](https://svgwg.org/svg2-draft/struct.html#SVGElement) | ``SVG``
+[`<circle>`](https://svgwg.org/svg2-draft/shapes.html#CircleElement) | ``SVGCircle``
+[`<defs>`](https://svgwg.org/svg2-draft/struct.html#DefsElement) | ``SVGDefs``
+[`<desc>`](https://svgwg.org/svg2-draft/struct.html#DescElement) | ``SVGDesc``
+[`<g>`](https://svgwg.org/svg2-draft/struct.html#GElement) | ``SVGGroup``
+[`<linearGradient>`](https://svgwg.org/svg2-draft/pservers.html#LinearGradientElement) | ``SVGLinearGradient``
+[`<path>`](https://svgwg.org/svg2-draft/paths.html#PathElement) | ``SVGPath``
+[`<radialGradient>`](https://svgwg.org/svg2-draft/pservers.html#RadialGradientElement) | ``SVGRadialGradient``
+[`<rect>`](https://svgwg.org/svg2-draft/shapes.html#RectElement) | ``SVGRect``
+[`<stop>`](https://svgwg.org/svg2-draft/pservers.html#StopElement) | ``SVGStop``
+[`<text>`](https://svgwg.org/svg2-draft/text.html#TextElement) | ``SVGText``
+[`<title>`](https://svgwg.org/svg2-draft/struct.html#TitleElement) | ``SVGTitle``
+
+### MathML (Mathematical Markup Language)
+
+ W3C tag | Slipstream view
+:--------|:----------------
+[`<math>`](https://www.w3.org/TR/MathML3/chapter2.html#interf.toplevel) | ``Math``
+[`<mi>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mi) | ``MI``
+[`<mo>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mo) | ``MO``
+[`<mn>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mn) | ``MN``
+[`<mtext>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mtext) | ``MText``
+[`<ms>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.ms) | ``MS``
+[`<mrow>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mrow) | ``MRow``
+[`<mfrac>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mfrac) | ``MFrac``
+[`<msup>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.msup) | ``MSup``
+[`<msub>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.msub) | ``MSub``
+[`<msubsup>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.msubsup) | ``MSubSup``
+[`<msqrt>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.msqrt) | ``MSqrt``
+[`<mroot>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mroot) | ``MRoot``
+[`<munder>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.munder) | ``MUnder``
+[`<mover>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mover) | ``MOver``
+[`<munderover>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.munderover) | ``MUnderOver``
+[`<mtable>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mtable) | ``MTable``
+[`<mtr>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mtr) | ``MTr``
+[`<mtd>`](https://www.w3.org/TR/MathML3/chapter3.html#presm.mtd) | ``MTd``
