@@ -8,6 +8,6 @@ struct ExpectTests {
   }
 
   @Test func validHref() throws {
-    try #expect(renderHTML(Expect("#main-content")) == #"<link rel="expect" href="#main-content" />"#)
+    try #expect(renderHTML(Expect("#main-content")) == #"<link rel="expect" href="\#main-content" />"#)
   }
 }
