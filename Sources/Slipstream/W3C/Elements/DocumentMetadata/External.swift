@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// Indicates that the referenced document is not part of the same site.
 ///
 /// The `External` view renders a `<link rel="external">` element in HTML,
@@ -24,6 +28,7 @@ public struct External: View {
     self.url = url
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

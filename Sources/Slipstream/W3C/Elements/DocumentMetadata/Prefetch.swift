@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// Preemptively fetches and caches a resource for a followup navigation.
 ///
 /// The `Prefetch` view renders a `<link rel="prefetch">` element in HTML,
@@ -26,6 +30,7 @@ public struct Prefetch: View {
     self.crossOrigin = crossOrigin
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

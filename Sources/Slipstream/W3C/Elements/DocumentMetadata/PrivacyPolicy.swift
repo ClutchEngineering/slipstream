@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// A link to the privacy policy for the current document.
 ///
 /// The `PrivacyPolicy` view renders a `<link rel="privacy-policy">` element in HTML,
@@ -24,6 +28,7 @@ public struct PrivacyPolicy: View {
     self.url = url
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

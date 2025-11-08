@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// Preemptively fetches a module script and stores it in the document's module map.
 ///
 /// The `ModulePreload` view renders a `<link rel="modulepreload">` element in HTML,
@@ -26,6 +30,7 @@ public struct ModulePreload: View {
     self.crossOrigin = crossOrigin
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

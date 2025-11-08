@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// The address of the pingback server for the current document.
 ///
 /// The `Pingback` view renders a `<link rel="pingback">` element in HTML,
@@ -24,6 +28,7 @@ public struct Pingback: View {
     self.url = url
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

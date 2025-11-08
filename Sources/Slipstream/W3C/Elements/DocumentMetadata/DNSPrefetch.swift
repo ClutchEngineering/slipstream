@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// A hint to preemptively perform DNS resolution for a target resource's origin.
 ///
 /// The `DNSPrefetch` view renders a `<link rel="dns-prefetch">` element in HTML,
@@ -24,6 +28,7 @@ public struct DNSPrefetch: View {
     self.url = url
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

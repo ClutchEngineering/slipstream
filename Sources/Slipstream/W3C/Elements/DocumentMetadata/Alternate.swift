@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// A link to an alternate representation of the current document.
 ///
 /// The `Alternate` view renders a `<link rel="alternate">` element in HTML,
@@ -32,6 +36,7 @@ public struct Alternate: View {
     self.title = title
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

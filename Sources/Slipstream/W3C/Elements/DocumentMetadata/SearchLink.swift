@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// A link to a search resource for the current document and related pages.
 ///
 /// The `SearchLink` view renders a `<link rel="search">` element in HTML,
@@ -26,6 +30,7 @@ public struct SearchLink: View {
     self.type = type
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

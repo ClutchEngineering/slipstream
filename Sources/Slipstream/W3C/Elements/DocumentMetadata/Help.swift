@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// A link to context-sensitive help.
 ///
 /// The `Help` view renders a `<link rel="help">` element in HTML,
@@ -24,6 +28,7 @@ public struct Help: View {
     self.url = url
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

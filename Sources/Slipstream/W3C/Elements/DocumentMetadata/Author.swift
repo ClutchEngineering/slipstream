@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// A link to the author of the current document or article.
 ///
 /// The `Author` view renders a `<link rel="author">` element in HTML,
@@ -24,6 +28,7 @@ public struct Author: View {
     self.url = url
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

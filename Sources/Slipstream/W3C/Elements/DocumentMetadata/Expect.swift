@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// Expects an element with the target ID to appear in the current document.
 ///
 /// The `Expect` view renders a `<link rel="expect">` element in HTML,
@@ -24,6 +28,7 @@ public struct Expect: View {
     self.href = href
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let href else { return }
     let element = try container.appendElement("link")

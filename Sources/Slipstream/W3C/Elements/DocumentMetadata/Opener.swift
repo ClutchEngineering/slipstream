@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// Creates an auxiliary browsing context for "_blank" target links.
 ///
 /// The `Opener` view renders a `<link rel="opener">` element in HTML,
@@ -24,6 +28,7 @@ public struct Opener: View {
     self.url = url
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

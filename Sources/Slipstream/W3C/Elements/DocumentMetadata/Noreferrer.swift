@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// Prevents the Referer header from being sent and implies noopener.
 ///
 /// The `Noreferrer` view renders a `<link rel="noreferrer">` element in HTML,
@@ -24,6 +28,7 @@ public struct Noreferrer: View {
     self.url = url
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

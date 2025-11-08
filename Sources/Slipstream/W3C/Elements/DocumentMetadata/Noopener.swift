@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// Prevents a hyperlink from accessing the window.opener property.
 ///
 /// The `Noopener` view renders a `<link rel="noopener">` element in HTML,
@@ -24,6 +28,7 @@ public struct Noopener: View {
     self.url = url
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

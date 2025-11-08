@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// Imports or links to an application manifest.
 ///
 /// The `Manifest` view renders a `<link rel="manifest">` element in HTML,
@@ -26,6 +30,7 @@ public struct Manifest: View {
     self.crossOrigin = crossOrigin
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")

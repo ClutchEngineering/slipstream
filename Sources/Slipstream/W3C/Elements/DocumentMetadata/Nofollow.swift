@@ -1,3 +1,7 @@
+import Foundation
+
+import SwiftSoup
+
 /// Indicates that the document's author does not endorse the referenced document.
 ///
 /// The `Nofollow` view renders a `<link rel="nofollow">` element in HTML,
@@ -24,6 +28,7 @@ public struct Nofollow: View {
     self.url = url
   }
 
+  @_documentation(visibility: private)
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     guard let url else { return }
     let element = try container.appendElement("link")
