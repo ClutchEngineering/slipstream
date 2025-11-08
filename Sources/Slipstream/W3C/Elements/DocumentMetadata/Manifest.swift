@@ -5,7 +5,9 @@ import SwiftSoup
 /// Imports or links to an application manifest.
 ///
 /// The `Manifest` view renders a `<link rel="manifest">` element in HTML,
-/// which specifies a web application manifest file.
+/// which specifies a [web application manifest file](https://developer.mozilla.org/en-US/docs/Web/Manifest).
+/// A manifest is a JSON file that provides information about your web application, such as its name,
+/// icons, theme colors, and display mode, enabling it to be installed as a Progressive Web App (PWA).
 ///
 /// ```swift
 /// struct MySiteHead: View {
