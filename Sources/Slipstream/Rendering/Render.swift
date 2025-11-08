@@ -33,9 +33,9 @@ public func renderHTML(_ view: any View) throws -> String {
   // We need to collapse whitespace within these elements to render them inline
   let mathmlTokenTags = ["mi", "mo", "mn", "ms", "mtext"]
   for tag in mathmlTokenTags {
-    // Pattern matches: <tag>\n whitespace text whitespace\n</tag>
-    // Replaces with: <tag>text</tag>
-    let pattern = "<\(tag)>\\s*([^<]+?)\\s*</\(tag)>"
+    // Pattern matches: <tag>\n indentation content trailing-spaces\n indentation</tag>
+    // Only removes newlines and indentation, preserving spaces in the content
+    let pattern = "<\(tag)>\\r?\\n[ \\t]+(.*?)[ \\t]*\\r?\\n[ \\t]*</\(tag)>"
     html = html.replacingOccurrences(
       of: pattern,
       with: "<\(tag)>$1</\(tag)>",
@@ -65,7 +65,8 @@ public func inlineHTML<Content: View>(@ViewBuilder _ builder: () -> Content) -> 
     // Post-process to format MathML token elements inline
     let mathmlTokenTags = ["mi", "mo", "mn", "ms", "mtext"]
     for tag in mathmlTokenTags {
-      let pattern = "<\(tag)>\\s*([^<]+?)\\s*</\(tag)>"
+      // Only removes newlines and indentation, preserving spaces in the content
+      let pattern = "<\(tag)>\\r?\\n[ \\t]+(.*?)[ \\t]*\\r?\\n[ \\t]*</\(tag)>"
       html = html.replacingOccurrences(
         of: pattern,
         with: "<\(tag)>$1</\(tag)>",
