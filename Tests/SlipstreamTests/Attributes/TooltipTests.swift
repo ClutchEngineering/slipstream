@@ -10,10 +10,6 @@ struct TooltipTests {
   @Test func onButton() throws {
     try #expect(renderHTML(Button {
       DOMString("Submit")
-    }.tooltip("Submit the form")) == """
-<button title="Submit the form">
- Submit
-</button>
-""")
+    }.tooltip("Submit the form")) == #"<button title="Submit the form">Submit</button>"#)
   }
 }

@@ -10,10 +10,6 @@ struct KeyboardShortcutTests {
   @Test func onButton() throws {
     try #expect(renderHTML(Button {
       DOMString("Save")
-    }.keyboardShortcut("s")) == """
-<button accesskey="s">
- Save
-</button>
-""")
+    }.keyboardShortcut("s")) == #"<button accesskey="s">Save</button>"#)
   }
 }

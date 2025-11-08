@@ -10,10 +10,6 @@ struct SlotAttributeTests {
   @Test func withContent() throws {
     try #expect(renderHTML(Span {
       DOMString("Header content")
-    }.slot("header")) == """
-<span slot="header">
- Header content
-</span>
-""")
+    }.slot("header")) == #"<span slot="header">Header content</span>"#)
   }
 }
