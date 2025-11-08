@@ -4,11 +4,11 @@ import Slipstream
 
 struct MicrodataTests {
   @Test func itemScope() throws {
-    try #expect(renderHTML(Div {}.itemScope()) == #"<div itemscope=""></div>"#)
+    try #expect(renderHTML(Div {}.itemScope()) == #"<div itemscope></div>"#)
   }
 
   @Test func itemScopeExplicitTrue() throws {
-    try #expect(renderHTML(Div {}.itemScope(true)) == #"<div itemscope=""></div>"#)
+    try #expect(renderHTML(Div {}.itemScope(true)) == #"<div itemscope></div>"#)
   }
 
   @Test func itemScopeFalse() throws {
@@ -26,11 +26,7 @@ struct MicrodataTests {
   @Test func itemProp() throws {
     try #expect(renderHTML(Span {
       DOMString("John Doe")
-    }.itemProp("name")) == """
-<span itemprop="name">
- John Doe
-</span>
-""")
+    }.itemProp("name")) == #"<span itemprop="name">John Doe</span>"#)
   }
 
   @Test func itemRef() throws {
@@ -45,12 +41,6 @@ struct MicrodataTests {
       .itemProp("name")
     }
     .itemScope()
-    .itemType("https://schema.org/Person")) == """
-<div itemscope="" itemtype="https://schema.org/Person">
- <span itemprop="name">
-  John Doe
- </span>
-</div>
-""")
+    .itemType("https://schema.org/Person")) == #"<div itemscope itemtype="https://schema.org/Person"><span itemprop="name">John Doe</span></div>"#)
   }
 }

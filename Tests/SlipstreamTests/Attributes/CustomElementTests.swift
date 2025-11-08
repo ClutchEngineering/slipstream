@@ -10,10 +10,6 @@ struct CustomElementTests {
   @Test func withContent() throws {
     try #expect(renderHTML(Button {
       DOMString("Click me")
-    }.customElement("expanding-button")) == """
-<button is="expanding-button">
- Click me
-</button>
-""")
+    }.customElement("expanding-button")) == #"<button is="expanding-button">Click me</button>"#)
   }
 }
