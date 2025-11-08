@@ -41,6 +41,10 @@ struct MicrodataTests {
       .itemProp("name")
     }
     .itemScope()
-    .itemType("https://schema.org/Person")) == #"<div itemscope itemtype="https://schema.org/Person"><span itemprop="name">John Doe</span></div>"#)
+    .itemType("https://schema.org/Person")) == """
+<div itemscope itemtype="https://schema.org/Person">
+ <span itemprop="name">John Doe</span>
+</div>
+""")
   }
 }

@@ -4,7 +4,7 @@ import Slipstream
 
 struct HiddenTests {
   @Test func withHiddenState() throws {
-    try #expect(renderHTML(Div {}.hidden(.hidden)) == #"<div hidden=""></div>"#)
+    try #expect(renderHTML(Div {}.hidden(.hidden)) == #"<div hidden></div>"#)
   }
 
   @Test func withUntilFoundState() throws {

@@ -12,6 +12,6 @@ struct AllowsHitTestingTests {
   }
 
   @Test func withFalse() throws {
-    try #expect(renderHTML(Div {}.allowsHitTesting(false)) == #"<div inert=""></div>"#)
+    try #expect(renderHTML(Div {}.allowsHitTesting(false)) == #"<div inert></div>"#)
   }
 }
