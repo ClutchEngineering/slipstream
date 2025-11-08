@@ -13,7 +13,7 @@ import SwiftSoup
 ///   var body: some View {
 ///     Head {
 ///       Alternate(URL(string: "/feed.xml"), type: "application/rss+xml")
-///       Alternate(URL(string: "/es/"), hreflang: "es")
+///       Alternate(URL(string: "/es/"), language: "es")
 ///     }
 ///   }
 /// }
@@ -27,12 +27,12 @@ public struct Alternate: View {
   /// - Parameters:
   ///   - url: The URL of the alternate representation, or nil.
   ///   - type: The MIME type of the alternate representation.
-  ///   - hreflang: The language of the alternate representation.
+  ///   - language: The language of the alternate representation (e.g., "es", "fr", "en-US").
   ///   - title: The title of the alternate representation.
-  public init(_ url: URL?, type: String? = nil, hreflang: String? = nil, title: String? = nil) {
+  public init(_ url: URL?, type: String? = nil, language: String? = nil, title: String? = nil) {
     self.url = url
     self.type = type
-    self.hreflang = hreflang
+    self.language = language
     self.title = title
   }
 
@@ -45,8 +45,8 @@ public struct Alternate: View {
     if let type {
       try element.attr("type", type)
     }
-    if let hreflang {
-      try element.attr("hreflang", hreflang)
+    if let language {
+      try element.attr("hreflang", language)
     }
     if let title {
       try element.attr("title", title)
@@ -55,6 +55,6 @@ public struct Alternate: View {
 
   private let url: URL?
   private let type: String?
-  private let hreflang: String?
+  private let language: String?
   private let title: String?
 }
