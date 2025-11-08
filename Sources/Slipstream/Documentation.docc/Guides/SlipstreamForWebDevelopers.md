@@ -290,7 +290,7 @@ W3C attribute | Slipstream modifier | Notes
 [`dir`](https://html.spec.whatwg.org/multipage/dom.html#attr-dir) | ``direction(_:)`` | Specifies the element's text directionality
 [`draggable`](https://html.spec.whatwg.org/multipage/dnd.html#attr-draggable) | ``draggable(_:)`` | Indicates whether the element can be dragged
 [`enterkeyhint`](https://html.spec.whatwg.org/multipage/interaction.html#attr-enterkeyhint) | ``submitLabel(_:)`` | Hints at the action label for the enter key on virtual keyboards
-[`hidden`](https://html.spec.whatwg.org/multipage/interaction.html#attr-hidden) | ``hidden(_:)`` | Indicates that the element is not yet, or is no longer, relevant
+[`hidden`](https://html.spec.whatwg.org/multipage/interaction.html#attr-hidden) | ``hidden(_:)`` | Sets the HTML hidden attribute (different from TailwindCSS hidden())
 `id` | ``id(_:)`` | Sets the element's unique identifier
 [`inert`](https://html.spec.whatwg.org/multipage/interaction.html#the-inert-attribute) | ``allowsHitTesting(_:)`` | Controls whether the element can receive user interaction (inverted logic)
 [`inputmode`](https://html.spec.whatwg.org/multipage/interaction.html#attr-inputmode) | ``keyboardType(_:)`` | Sets the keyboard type for text input

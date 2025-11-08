@@ -10,31 +10,23 @@ public enum HiddenState: String {
 extension View {
   /// Indicates that the element is not yet, or is no longer, relevant.
   ///
-  /// The hidden attribute is a boolean attribute that indicates that the element is
-  /// not relevant to the current state of the page. Browsers typically do not render
-  /// hidden elements.
+  /// Sets the HTML `hidden` attribute to semantically mark content as not relevant.
+  /// This is different from the TailwindCSS `hidden()` modifier which uses CSS to
+  /// visually hide elements.
   ///
   /// ```swift
   /// Div {
   ///   Text("This content is hidden")
   /// }
-  /// .hidden()
+  /// .hidden(.hidden)
   /// ```
   ///
-  /// - Parameter condition: A Boolean value that determines whether the element is hidden.
-  ///   Defaults to true.
+  /// - Parameter state: The hidden state of the element.
   ///
   /// - SeeAlso: W3C [`hidden`](https://html.spec.whatwg.org/multipage/interaction.html#attr-hidden) specification.
-  @available(iOS 17.0, macOS 14.0, *)
-  public func hidden(_ condition: Bool = true) -> some View {
-    return modifier(ConditionalAttributeModifier("hidden", condition: condition))
-  }
-
-  /// Indicates that the element is not yet, or is no longer, relevant.
-  ///
-  /// - Parameter state: The hidden state of the element.
   @available(iOS 17.0, macOS 14.0, *)
   public func hidden(_ state: HiddenState) -> some View {
     return modifier(AttributeModifier(.hidden, value: state.rawValue))
   }
 }
+
