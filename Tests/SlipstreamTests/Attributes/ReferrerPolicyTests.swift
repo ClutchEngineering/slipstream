@@ -6,63 +6,63 @@ struct ReferrerPolicyTests {
   @Test func defaultPolicy() throws {
     try #expect(
       renderHTML(Link("Home", destination: URL(string: "/")!).referrerPolicy(.default)) ==
-      #"<a href="/" referrerpolicy=""></a>"#
+      #"<a href="/" referrerpolicy="">Home</a>"#
     )
   }
 
   @Test func noReferrer() throws {
     try #expect(
       renderHTML(Link("Home", destination: URL(string: "/")!).referrerPolicy(.noReferrer)) ==
-      #"<a href="/" referrerpolicy="no-referrer"></a>"#
+      #"<a href="/" referrerpolicy="no-referrer">Home</a>"#
     )
   }
 
   @Test func noReferrerWhenDowngrade() throws {
     try #expect(
       renderHTML(Link("Home", destination: URL(string: "/")!).referrerPolicy(.noReferrerWhenDowngrade)) ==
-      #"<a href="/" referrerpolicy="no-referrer-when-downgrade"></a>"#
+      #"<a href="/" referrerpolicy="no-referrer-when-downgrade">Home</a>"#
     )
   }
 
   @Test func origin() throws {
     try #expect(
       renderHTML(Link("Home", destination: URL(string: "/")!).referrerPolicy(.origin)) ==
-      #"<a href="/" referrerpolicy="origin"></a>"#
+      #"<a href="/" referrerpolicy="origin">Home</a>"#
     )
   }
 
   @Test func originWhenCrossOrigin() throws {
     try #expect(
       renderHTML(Link("Home", destination: URL(string: "/")!).referrerPolicy(.originWhenCrossOrigin)) ==
-      #"<a href="/" referrerpolicy="origin-when-cross-origin"></a>"#
+      #"<a href="/" referrerpolicy="origin-when-cross-origin">Home</a>"#
     )
   }
 
   @Test func sameOrigin() throws {
     try #expect(
       renderHTML(Link("Home", destination: URL(string: "/")!).referrerPolicy(.sameOrigin)) ==
-      #"<a href="/" referrerpolicy="same-origin"></a>"#
+      #"<a href="/" referrerpolicy="same-origin">Home</a>"#
     )
   }
 
   @Test func strictOrigin() throws {
     try #expect(
       renderHTML(Link("Home", destination: URL(string: "/")!).referrerPolicy(.strictOrigin)) ==
-      #"<a href="/" referrerpolicy="strict-origin"></a>"#
+      #"<a href="/" referrerpolicy="strict-origin">Home</a>"#
     )
   }
 
   @Test func strictOriginWhenCrossOrigin() throws {
     try #expect(
       renderHTML(Link("Home", destination: URL(string: "/")!).referrerPolicy(.strictOriginWhenCrossOrigin)) ==
-      #"<a href="/" referrerpolicy="strict-origin-when-cross-origin"></a>"#
+      #"<a href="/" referrerpolicy="strict-origin-when-cross-origin">Home</a>"#
     )
   }
 
   @Test func unsafeURL() throws {
     try #expect(
       renderHTML(Link("Home", destination: URL(string: "/")!).referrerPolicy(.unsafeURL)) ==
-      #"<a href="/" referrerpolicy="unsafe-url"></a>"#
+      #"<a href="/" referrerpolicy="unsafe-url">Home</a>"#
     )
   }
 
@@ -94,7 +94,7 @@ struct ReferrerPolicyTests {
           .referrerPolicy(.noReferrer)
           .id("home-link")
       ) ==
-      #"<a href="/" id="home-link" referrerpolicy="no-referrer"></a>"#
+      #"<a href="/" referrerpolicy="no-referrer" id="home-link">Home</a>"#
     )
   }
 }
