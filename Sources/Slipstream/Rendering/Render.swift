@@ -38,7 +38,7 @@ public func renderHTML(_ view: any View) throws -> String {
     // We'll strip the indentation (based on closing tag) while preserving content spaces
     let pattern = "<\(tag)>\\r?\\n([ \\t]*)(.*?)\\r?\\n([ \\t]*)</\(tag)>"
     let regex = try! NSRegularExpression(pattern: pattern, options: [])
-    let nsString = html as NSString
+    var nsString = html as NSString
     let matches = regex.matches(in: html, options: [], range: NSRange(location: 0, length: nsString.length))
 
     // Process matches in reverse to maintain string indices
@@ -89,7 +89,7 @@ public func inlineHTML<Content: View>(@ViewBuilder _ builder: () -> Content) -> 
     for tag in mathmlTokenTags {
       let pattern = "<\(tag)>\\r?\\n([ \\t]*)(.*?)\\r?\\n([ \\t]*)</\(tag)>"
       let regex = try! NSRegularExpression(pattern: pattern, options: [])
-      let nsString = html as NSString
+      var nsString = html as NSString
       let matches = regex.matches(in: html, options: [], range: NSRange(location: 0, length: nsString.length))
 
       for match in matches.reversed() {
