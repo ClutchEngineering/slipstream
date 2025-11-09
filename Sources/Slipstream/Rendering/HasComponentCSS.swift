@@ -1,4 +1,5 @@
 import Foundation
+import SwiftSoup
 
 /// A protocol for components that provide CSS styles.
 ///
@@ -40,5 +41,23 @@ public extension HasComponentCSS {
     /// a component name from the conforming type's name.
     var componentName: String {
         String(describing: type(of: self))
+    }
+}
+
+// MARK: - Automatic Registration
+
+@available(iOS 17.0, macOS 14.0, *)
+extension View where Self: HasComponentCSS {
+    /// Automatically registers this component's CSS when rendering.
+    ///
+    /// Views conforming to `HasComponentCSS` are automatically registered with
+    /// the component layer context during rendering, allowing CSS to be collected
+    /// without manual component list management.
+    public func render(_ container: Element, environment: EnvironmentValues) throws {
+        // Register this component's CSS with the collection context
+        environment.componentLayerContext?.add(self)
+        
+        // Continue normal rendering
+        try injectEnvironment(environment: environment).body.render(container, environment: environment)
     }
 }

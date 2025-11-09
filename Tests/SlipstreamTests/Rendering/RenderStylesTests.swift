@@ -1,7 +1,7 @@
 import Foundation
 import Testing
 
-import Slipstream
+@testable import Slipstream
 
 final class RenderStylesTests {
 

@@ -17,7 +17,7 @@ import Foundation
 ///   cascade ordering. Defaults to `true`. Set to `false` for Tailwind CSS v4's automatic ordering.
 /// - Throws: `CocoaError` if the base CSS file cannot be read, or if the output file or directory cannot be created or written.
 @available(iOS 17.0, macOS 14.0, *)
-public func renderStyles(
+internal func renderStyles(
     from components: [any HasComponentCSS],
     baseCSS: URL,
     to output: URL,

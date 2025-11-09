@@ -51,3 +51,20 @@ public struct EnvironmentValues: Sendable {
 
   private var storage: [ObjectIdentifier: Any & Sendable] = [:]
 }
+
+// MARK: - Component Layer Context
+
+private struct ComponentLayerContextKey: EnvironmentKey {
+    static let defaultValue: ComponentLayerContext? = nil
+}
+
+extension EnvironmentValues {
+    /// The context for collecting CSS components during rendering.
+    ///
+    /// This is used internally by the rendering system to automatically
+    /// collect components that conform to `HasComponentCSS`.
+    var componentLayerContext: ComponentLayerContext? {
+        get { self[ComponentLayerContextKey.self] }
+        set { self[ComponentLayerContextKey.self] = newValue }
+    }
+}
