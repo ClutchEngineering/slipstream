@@ -1,0 +1,83 @@
+import Foundation
+
+import Slipstream
+
+struct Contact: View {
+  var body: some View {
+    HTML {
+      Head {
+        Stylesheet(URL(string: "main.css"))
+      }
+      Body {
+        Container {
+          H1("Contact Coco")
+            .fontSize(.extraExtraExtraLarge)
+            .bold()
+            .margin(.bottom, 32)
+
+          Text("Want to say hello to Coco? Fill out the form below!")
+            .margin(.bottom, 24)
+
+          Form(method: .post, url: URL(string: "/submit")) {
+            VStack(alignment: .leading, spacing: 16) {
+              TextField("Your name", type: .text, name: "name")
+                .padding(12)
+                .border(.all, width: 1, color: .gray, darkness: 300)
+                .cornerRadius(.medium)
+                .border(.all, width: 2, color: .blue, darkness: 500, condition: .focus)
+                .frame(width: .full)
+
+              TextField("Your email", type: .email, name: "email")
+                .padding(12)
+                .border(.all, width: 1, color: .gray, darkness: 300)
+                .cornerRadius(.medium)
+                .border(.all, width: 2, color: .blue, darkness: 500, condition: .focus)
+                .frame(width: .full)
+
+              TextArea("Your message", name: "message", rows: 5)
+                .padding(12)
+                .border(.all, width: 1, color: .gray, darkness: 300)
+                .cornerRadius(.medium)
+                .border(.all, width: 2, color: .blue, darkness: 500, condition: .focus)
+                .frame(width: .full)
+
+              HStack(alignment: .center, spacing: 8) {
+                Checkbox(name: "newsletter")
+                Label {
+                  Text("Subscribe to Coco's newsletter")
+                }
+              }
+
+              Button(.submit) {
+                Text("Send Message")
+              }
+              .padding(.horizontal, 24)
+              .padding(.vertical, 12)
+              .background(.blue, darkness: 600)
+              .textColor(.white)
+              .cornerRadius(.medium)
+              .background(.blue, darkness: 700, condition: .hover)
+              .fontWeight(600)
+            }
+          }
+        }
+        .padding(.vertical, 48)
+      }
+    }
+  }
+}
+
+let sitemap: Sitemap = [
+  "contact.html": Contact()
+]
+
+guard let projectURL = URL(filePath: #filePath)?
+  .deletingLastPathComponent()
+  .deletingLastPathComponent() else {
+  print("Unable to create URL for \(#filePath)")
+  exit(1)
+}
+
+let outputURL = projectURL.appending(path: "site")
+
+try renderSitemap(sitemap, to: outputURL)

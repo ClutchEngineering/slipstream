@@ -1,0 +1,149 @@
+@Tutorial(time: 15) {
+  @XcodeRequirement(title: "Xcode 15 or later", destination: "https://itunes.apple.com/us/app/xcode/id497799835?mt=12")
+
+  @Intro(title: "Layouts and Responsive Design") {
+    Learn how to create flexible layouts that adapt to different screen sizes using HStack, VStack, and responsive design patterns.
+
+    This tutorial will teach you how to arrange content horizontally and vertically, create responsive layouts that change based on screen size, and use Tailwind's breakpoint system for mobile-first design.
+
+    @Image(source: "tutorial-banner", alt: "Coco the pig")
+  }
+
+  @Section(title: "Horizontal and vertical stacks") {
+    @ContentAndMedia {
+      Like SwiftUI, Slipstream provides ``HStack`` and ``VStack`` for arranging views horizontally and vertically.
+
+      These stacks use CSS flexbox under the hood, giving you powerful and familiar layout tools.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo")
+    }
+
+    @Steps {
+      @Step {
+        Let's start with a basic page structure. We'll build a simple card layout for Coco's profile.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-1-1.swift")
+      }
+
+      @Step {
+        Add a ``VStack`` to arrange our content vertically. VStack stacks views from top to bottom, just like in SwiftUI.
+
+        Notice we can specify spacing between items and alignment (leading, center, or trailing).
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-1-2.swift")
+      }
+
+      @Step {
+        Now let's add an ``HStack`` at the bottom to display some information side by side.
+
+        HStack arranges views horizontally and supports alignment options like top, center, bottom, and baseline.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-1-3.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-1-3-preview", alt: "A card layout with vertical and horizontal stacks")
+        }
+      }
+
+      @Step {
+        Let's add some styling to make our card look better. We'll add padding, background color, corner radius, and a shadow.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-1-4.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-1-4-preview", alt: "A styled card with shadow and rounded corners")
+        }
+      }
+    }
+  }
+
+  @Section(title: "Responsive design with breakpoints") {
+    @ContentAndMedia {
+      Tailwind CSS provides a mobile-first breakpoint system that makes it easy to create responsive designs.
+
+      Slipstream exposes these breakpoints through the `condition:` parameter on view modifiers.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo")
+    }
+
+    @Steps {
+      @Step {
+        Let's make our layout responsive. On small screens (mobile), we want our content to stack vertically. On larger screens (tablets and desktops), we want to display the image and content side by side.
+
+        We'll use ``ResponsiveStack`` which automatically switches between horizontal and vertical layouts based on screen size.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-2-1.swift", previousFile: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-1-4.swift")
+      }
+
+      @Step {
+        We can also use breakpoints with view modifiers. Let's make the text larger on desktop screens and adjust padding based on screen size.
+
+        The ``Breakpoint/medium`` breakpoint (768px) is commonly used to differentiate between mobile and tablet/desktop layouts.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-2-2.swift")
+      }
+
+      @Step {
+        Let's make the image responsive too. On mobile, it should take full width. On larger screens, it should have a fixed width.
+
+        Notice how we can chain conditions to create sophisticated responsive designs.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-2-3.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-2-3-preview", alt: "A responsive layout adapting to screen size")
+        }
+      }
+
+      @Step {
+        Try resizing your browser window to see the layout change! On mobile (< 768px), everything stacks vertically. On larger screens, the image and content appear side by side.
+
+        You can also test this by opening your browser's developer tools (Cmd+Option+I) and toggling device emulation.
+
+        @Image(source: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-2-4", alt: "Testing responsive design in browser")
+      }
+    }
+  }
+
+  @Section(title: "Building a responsive grid") {
+    @ContentAndMedia {
+      For more complex layouts, you can use CSS Grid through Slipstream's display and grid modifiers.
+
+      Let's create a photo gallery that shows different numbers of columns based on screen size.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo")
+    }
+
+    @Steps {
+      @Step {
+        Create a container with grid display. We'll start with a simple grid that shows 2 columns on mobile.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-3-1.swift", previousFile: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-2-3.swift")
+      }
+
+      @Step {
+        Add more columns for larger screens. On tablets (medium), we'll show 3 columns, and on desktops (large), we'll show 4 columns.
+
+        The `gridTemplateColumns(_:condition:)` modifier lets us define how many columns our grid should have.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-3-2.swift")
+      }
+
+      @Step {
+        Let's add some sample images to our gallery using ``ForEach``.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-3-3.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-3-3-preview", alt: "A responsive image gallery grid")
+        }
+      }
+
+      @Step {
+        Congratulations! You now know how to create flexible, responsive layouts with Slipstream.
+
+        You've learned:
+        - Using HStack and VStack for basic layouts
+        - Creating responsive designs with breakpoints
+        - Using ResponsiveStack for adaptive layouts
+        - Building responsive grids with CSS Grid
+
+        For more layout options, explore the ``View/display(_:condition:)`` modifier, flexbox utilities like ``View/justifyContent(_:condition:)`` and ``View/alignItems(_:condition:)``, and grid utilities like ``View/gridCellColumns(_:condition:)`` and ``View/gridCellRows(_:condition:)``.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive-3-3.swift")
+      }
+    }
+  }
+}
