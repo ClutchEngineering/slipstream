@@ -7,7 +7,7 @@
 
   @Chapter(name: "Your first site") {
     Learn the basics of making a static website with Slipstream.
-    
+
     And there's cute pigs too 🐷
 
     @Image(source: "IntroducingSlipstream-YourFirstSite", alt: "The Slipstream logo. The Swift bird logo is flying off the edge of the Tailwind CSS wind logo")
@@ -15,5 +15,8 @@
     @TutorialReference(tutorial: "doc:IntroducingSlipstream-YourFirstSite-Workspace")
     @TutorialReference(tutorial: "doc:IntroducingSlipstream-YourFirstSite-HelloWorld")
     @TutorialReference(tutorial: "doc:IntroducingSlipstream-YourFirstSite-TextImageLink")
+    @TutorialReference(tutorial: "doc:IntroducingSlipstream-YourFirstSite-LayoutsAndResponsive")
+    @TutorialReference(tutorial: "doc:IntroducingSlipstream-YourFirstSite-MultiPageSite")
+    @TutorialReference(tutorial: "doc:IntroducingSlipstream-YourFirstSite-FormsAndInput")
   }
 }

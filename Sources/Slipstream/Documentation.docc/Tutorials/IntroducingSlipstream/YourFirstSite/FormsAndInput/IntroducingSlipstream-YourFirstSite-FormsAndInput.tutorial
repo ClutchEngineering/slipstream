@@ -1,0 +1,191 @@
+@Tutorial(time: 20) {
+  @XcodeRequirement(title: "Xcode 15 or later", destination: "https://itunes.apple.com/us/app/xcode/id497799835?mt=12")
+
+  @Intro(title: "Forms and User Input") {
+    Learn how to build interactive forms with various input types, validation, and styling.
+
+    This tutorial will show you how to create a contact form with text inputs, email validation, checkboxes, and submit buttons.
+
+    @Image(source: "tutorial-banner", alt: "Coco the pig")
+  }
+
+  @Section(title: "Creating a basic form") {
+    @ContentAndMedia {
+      Forms are essential for collecting user input on websites. Slipstream provides comprehensive form support with all standard HTML input types.
+
+      Let's build a contact form for Coco's website.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo")
+    }
+
+    @Steps {
+      @Step {
+        Start with a basic page structure. We'll add a contact form to let visitors get in touch.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-1-1.swift")
+      }
+
+      @Step {
+        Create a ``Form`` with the POST method. Forms in Slipstream support GET, POST, and dialog methods.
+
+        The `url` parameter specifies where the form data should be sent when submitted.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-1-2.swift")
+      }
+
+      @Step {
+        Add ``TextField`` inputs for the user's name and email. Each input should have a descriptive placeholder and a unique `name` attribute.
+
+        The `type` parameter lets you specify different input types like `.text`, `.email`, `.password`, `.tel`, `.url`, and more.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-1-3.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-FormsAndInput-1-3-preview", alt: "Basic form with name and email fields")
+        }
+      }
+
+      @Step {
+        Add a ``TextArea`` for the message. TextArea is perfect for multi-line text input.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-1-4.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-FormsAndInput-1-4-preview", alt: "Form with textarea")
+        }
+      }
+
+      @Step {
+        Add a submit button using ``Button``. The button should be inside the form to submit it when clicked.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-1-5.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-FormsAndInput-1-5-preview", alt: "Complete basic form")
+        }
+      }
+    }
+  }
+
+  @Section(title: "Styling form elements") {
+    @ContentAndMedia {
+      Default form elements can look plain. Let's add Tailwind CSS styling to make our form more attractive and user-friendly.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo")
+    }
+
+    @Steps {
+      @Step {
+        Add styling to the text fields. We'll add padding, borders, rounded corners, and focus states.
+
+        The `condition: .focus` parameter applies styles when the input is focused.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-2-1.swift", previousFile: "IntroducingSlipstream-YourFirstSite-FormsAndInput-1-5.swift")
+      }
+
+      @Step {
+        Style the textarea with the same design system for consistency.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-2-2.swift")
+      }
+
+      @Step {
+        Style the submit button to make it stand out. We'll add a blue background, white text, hover effects, and a transition.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-2-3.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-FormsAndInput-2-3-preview", alt: "Beautifully styled form")
+        }
+      }
+
+      @Step {
+        Organize the form with proper spacing using a ``VStack``. This creates consistent vertical spacing between form elements.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-2-4.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-FormsAndInput-2-4-preview", alt: "Well-organized form with spacing")
+        }
+      }
+    }
+  }
+
+  @Section(title: "Adding more input types") {
+    @ContentAndMedia {
+      Slipstream supports many input types beyond basic text fields. Let's explore checkboxes, radio buttons, and select dropdowns.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo")
+    }
+
+    @Steps {
+      @Step {
+        Add a ``Checkbox`` to let users opt in to a newsletter. Checkboxes are great for yes/no options.
+
+        Use ``Label`` to associate descriptive text with form controls for better accessibility.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-3-1.swift", previousFile: "IntroducingSlipstream-YourFirstSite-FormsAndInput-2-4.swift")
+      }
+
+      @Step {
+        Add a ``Picker`` (select dropdown) to let users choose how they found Coco's website.
+
+        Use ``Option`` elements inside the Picker for each choice.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-3-2.swift")
+      }
+
+      @Step {
+        Add ``RadioButton`` elements to let users select their favorite Coco activity. Radio buttons are perfect for mutually exclusive choices.
+
+        All radio buttons in a group should share the same `name` attribute.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-3-3.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-FormsAndInput-3-3-preview", alt: "Form with various input types")
+        }
+      }
+    }
+  }
+
+  @Section(title: "Using Fieldset for organization") {
+    @ContentAndMedia {
+      For complex forms, ``Fieldset`` and ``Legend`` help organize related fields into logical groups.
+
+      This improves both the visual organization and accessibility of your forms.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo")
+    }
+
+    @Steps {
+      @Step {
+        Group the contact information fields into a ``Fieldset`` with a ``Legend``.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-4-1.swift", previousFile: "IntroducingSlipstream-YourFirstSite-FormsAndInput-3-3.swift")
+      }
+
+      @Step {
+        Create another fieldset for preferences. This makes the form easier to scan and understand.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-4-2.swift")
+      }
+
+      @Step {
+        Add styling to the fieldsets to visually separate the sections.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-4-3.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-FormsAndInput-4-3-preview", alt: "Organized form with fieldsets")
+        }
+      }
+
+      @Step {
+        Congratulations! You've built a comprehensive contact form with multiple input types and proper organization.
+
+        You've learned how to:
+        - Create forms with ``Form``, ``TextField``, and ``TextArea``
+        - Style form elements with Tailwind CSS modifiers
+        - Use different input types: ``Checkbox``, ``Picker``, and ``RadioButton``
+        - Organize forms with ``Fieldset`` and ``Legend``
+        - Apply focus states and transitions for better UX
+
+        Next steps to explore:
+        - Form validation with HTML5 attributes (required, pattern, min, max)
+        - Other input types like ``Slider``, ``ColorPicker``, and ``FileInput``
+        - Custom form components with ``Label`` and proper accessibility
+        - Client-side interactivity with ``Script`` for dynamic forms
+        - Server-side form handling with your backend of choice
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-FormsAndInput-4-3.swift")
+      }
+    }
+  }
+}

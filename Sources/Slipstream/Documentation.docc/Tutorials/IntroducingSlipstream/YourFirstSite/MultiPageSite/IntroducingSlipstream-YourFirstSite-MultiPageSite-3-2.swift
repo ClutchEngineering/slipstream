@@ -1,0 +1,103 @@
+import Foundation
+
+import Slipstream
+
+struct NavigationBar: View {
+  var body: some View {
+    Navigation {
+      Container {
+        HStack(alignment: .center, spacing: 24) {
+          Link("Home", destination: URL(string: "index.html"))
+          Link("About", destination: URL(string: "about.html"))
+          Link("Gallery", destination: URL(string: "gallery.html"))
+        }
+        .padding(.vertical, 16)
+      }
+    }
+    .background(.gray, darkness: 100)
+    .border(.bottom, width: 1, color: .gray, darkness: 200)
+  }
+}
+
+struct PageLayout<Content: View>: View {
+  @ViewBuilder let content: () -> Content
+
+  var body: some View {
+    HTML {
+      Head {
+        Stylesheet(URL(string: "main.css"))
+      }
+      Body {
+        NavigationBar()
+        Container {
+          content()
+        }
+        .padding(.vertical, 48)
+      }
+    }
+  }
+}
+
+struct Home: View {
+  var body: some View {
+    PageLayout {
+      H1("Welcome to Coco's Website")
+        .fontSize(.extraExtraExtraLarge)
+        .bold()
+      Text("Learn all about Coco the swimming pig!")
+    }
+  }
+}
+
+struct About: View {
+  var body: some View {
+    PageLayout {
+      H1("About Coco")
+        .fontSize(.extraExtraExtraLarge)
+        .bold()
+      Text("Coco is a swimming pig who lives in the beautiful Bahamas. She loves to swim in the crystal-clear waters and greet tourists who visit the beach.")
+      Text("Swimming pigs have become one of the most popular attractions in the Bahamas, and Coco is one of the friendliest!")
+    }
+  }
+}
+
+struct Gallery: View {
+  let photos = ["coco-swimming.jpg", "coco-beach.jpg", "coco-friends.jpg", "coco-sunset.jpg"]
+
+  var body: some View {
+    PageLayout {
+      H1("Photo Gallery")
+        .fontSize(.extraExtraExtraLarge)
+        .bold()
+        .margin(.bottom, 32)
+
+      Div {
+        ForEach(photos, id: \.self) { photo in
+          Image(URL(string: photo))
+            .cornerRadius(.large)
+        }
+      }
+      .display(.grid)
+      .gridTemplateColumns(2)
+      .gridTemplateColumns(3, condition: .startingAt(.medium))
+      .flexGap(16)
+    }
+  }
+}
+
+let sitemap: Sitemap = [
+  "index.html": Home(),
+  "about.html": About(),
+  "gallery.html": Gallery()
+]
+
+guard let projectURL = URL(filePath: #filePath)?
+  .deletingLastPathComponent()
+  .deletingLastPathComponent() else {
+  print("Unable to create URL for \(#filePath)")
+  exit(1)
+}
+
+let outputURL = projectURL.appending(path: "site")
+
+try renderSitemap(sitemap, to: outputURL)

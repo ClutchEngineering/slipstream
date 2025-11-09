@@ -1,0 +1,174 @@
+@Tutorial(time: 20) {
+  @XcodeRequirement(title: "Xcode 15 or later", destination: "https://itunes.apple.com/us/app/xcode/id497799835?mt=12")
+
+  @Intro(title: "Building a Multi-page Site") {
+    Learn how to create a website with multiple pages, shared layouts, and navigation menus.
+
+    This tutorial will show you how to build a complete website with a home page, about page, and gallery page, all connected through a navigation menu.
+
+    @Image(source: "tutorial-banner", alt: "Coco the pig")
+  }
+
+  @Section(title: "Creating multiple pages") {
+    @ContentAndMedia {
+      A website typically consists of multiple pages. In Slipstream, you define pages by adding them to your ``Sitemap``.
+
+      Let's create a simple website with three pages: Home, About, and Gallery.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo")
+    }
+
+    @Steps {
+      @Step {
+        Start with a basic home page. We'll expand on this as we go.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-1-1.swift")
+      }
+
+      @Step {
+        Create an About page view. This will be a separate page that tells visitors more about Coco.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-1-2.swift")
+      }
+
+      @Step {
+        Create a Gallery page that will display Coco's photos.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-1-3.swift")
+      }
+
+      @Step {
+        Now add all three pages to your sitemap. The sitemap is a dictionary that maps file paths to views.
+
+        Notice that we're creating `about.html` and `gallery.html` files in addition to `index.html`.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-1-4.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-MultiPageSite-1-4-preview", alt: "Multiple HTML files generated")
+        }
+      }
+
+      @Step {
+        Run your executable to generate all three pages. You should now have three HTML files in your `site/` directory.
+
+        You can test navigation by manually opening each file in your browser.
+
+        @Image(source: "IntroducingSlipstream-YourFirstSite-MultiPageSite-1-5", alt: "Three separate pages")
+      }
+    }
+  }
+
+  @Section(title: "Adding a navigation menu") {
+    @ContentAndMedia {
+      Now that we have multiple pages, we need a way to navigate between them. Let's create a navigation menu that appears on all pages.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo")
+    }
+
+    @Steps {
+      @Step {
+        Create a navigation component using the ``Navigation`` view. This creates a semantic `<nav>` element.
+
+        We'll use ``HStack`` to lay out our navigation links horizontally.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-2-1.swift", previousFile: "IntroducingSlipstream-YourFirstSite-MultiPageSite-1-4.swift")
+      }
+
+      @Step {
+        Add the NavigationBar to each of your pages. Notice the repeated code - we'll fix this in the next section!
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-2-2.swift")
+      }
+
+      @Step {
+        Run your executable and refresh your browser. You should now see a navigation bar at the top of each page, and you can click the links to navigate between pages!
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-2-2.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-MultiPageSite-2-3-preview", alt: "Navigation bar on all pages")
+        }
+      }
+    }
+  }
+
+  @Section(title: "Extracting shared layouts") {
+    @ContentAndMedia {
+      You probably noticed that each page has a lot of duplicate code - the HTML structure, navigation bar, and styling are repeated.
+
+      Let's extract this into a shared layout component to keep our code DRY (Don't Repeat Yourself).
+
+      @Image(source: "logo-square", alt: "The Slipstream logo")
+    }
+
+    @Steps {
+      @Step {
+        Create a `PageLayout` view that wraps the common structure. This view will accept the page content as a parameter using `@ViewBuilder`.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-3-1.swift", previousFile: "IntroducingSlipstream-YourFirstSite-MultiPageSite-2-2.swift")
+      }
+
+      @Step {
+        Now simplify your page views to use the shared layout. Notice how much cleaner the code is!
+
+        Each page now only needs to define its unique content.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-3-2.swift")
+      }
+
+      @Step {
+        We can make our layout even better by adding a footer and some additional styling.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-3-3.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-MultiPageSite-3-3-preview", alt: "Complete layout with header and footer")
+        }
+      }
+    }
+  }
+
+  @Section(title: "Highlighting the active page") {
+    @ContentAndMedia {
+      A good navigation menu shows which page you're currently on. Let's add visual feedback to indicate the active page.
+
+      @Image(source: "logo-square", alt: "The Slipstream logo")
+    }
+
+    @Steps {
+      @Step {
+        Modify `PageLayout` to accept an `activePage` parameter. This will let us know which page is currently being displayed.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-4-1.swift", previousFile: "IntroducingSlipstream-YourFirstSite-MultiPageSite-3-3.swift")
+      }
+
+      @Step {
+        Create a helper function to generate navigation links with conditional styling based on whether they're active.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-4-2.swift")
+      }
+
+      @Step {
+        Update your page views to pass the active page to the layout.
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-4-3.swift") {
+          @Image(source: "IntroducingSlipstream-YourFirstSite-MultiPageSite-4-3-preview", alt: "Active page highlighted in navigation")
+        }
+      }
+
+      @Step {
+        Congratulations! You've built a complete multi-page website with navigation and shared layouts.
+
+        You've learned how to:
+        - Create multiple pages using a sitemap
+        - Build a navigation menu with ``Navigation`` and ``Link``
+        - Extract shared layouts to reduce code duplication
+        - Use `@ViewBuilder` to create flexible components
+        - Add visual feedback for the active page
+
+        Next, you might want to explore:
+        - Adding a mobile-responsive hamburger menu using responsive design
+        - Creating breadcrumb navigation with ``Navigation``
+        - Using ``Header``, ``Footer``, and ``Article`` for better semantic HTML
+        - Adding SEO meta tags to each page with ``Title`` and meta tags
+
+        @Code(name: "main.swift", file: "IntroducingSlipstream-YourFirstSite-MultiPageSite-4-3.swift")
+      }
+    }
+  }
+}
