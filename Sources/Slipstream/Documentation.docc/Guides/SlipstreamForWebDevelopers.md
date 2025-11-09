@@ -27,37 +27,37 @@ provided below is an organized table of W3C HTML tags and their equivalent Slips
 [`<head>`](https://html.spec.whatwg.org/multipage/semantics.html#the-head-element) | ``Head``
 [`<title>`](https://html.spec.whatwg.org/multipage/semantics.html#the-title-element) | ``Title``
 [`<base>`](https://html.spec.whatwg.org/multipage/semantics.html#the-base-element) | ``Base``
-[`<link rel="alternate">`](https://html.spec.whatwg.org/multipage/links.html#rel-alternate) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)
-[`<link rel="alternate">`](https://html.spec.whatwg.org/multipage/links.html#rel-alternate) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="canonical">`](https://html.spec.whatwg.org/multipage/links.html#link-type-canonical) | ``Canonical`` 
-[`<link rel="author">`](https://html.spec.whatwg.org/multipage/links.html#link-type-author) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="bookmark">`](https://html.spec.whatwg.org/multipage/links.html#link-type-bookmark) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="dns-prefetch">`](https://html.spec.whatwg.org/multipage/links.html#link-type-dns-prefetch) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="expect">`](https://html.spec.whatwg.org/multipage/links.html#link-type-expect) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="external">`](https://html.spec.whatwg.org/multipage/links.html#link-type-external) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="help">`](https://html.spec.whatwg.org/multipage/links.html#link-type-help) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)   
-[`<link rel="icon">`](https://html.spec.whatwg.org/multipage/links.html#rel-icon) | ``Icon``   
-[`<link rel="manifest">`](https://html.spec.whatwg.org/multipage/links.html#link-type-manifest) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="modulepreload">`](https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="license">`](https://html.spec.whatwg.org/multipage/links.html#link-type-license) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="next">`](https://html.spec.whatwg.org/multipage/links.html#link-type-next) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="nofollow">`](https://html.spec.whatwg.org/multipage/links.html#link-type-nofollow) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="noopener">`](https://html.spec.whatwg.org/multipage/links.html#link-type-noopener) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="noreferrer">`](https://html.spec.whatwg.org/multipage/links.html#link-type-noreferrer) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="opener">`](https://html.spec.whatwg.org/multipage/links.html#link-type-opener) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="pingback">`](https://html.spec.whatwg.org/multipage/links.html#link-type-pingback) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25)   
-[`<link rel="preconnect">`](https://html.spec.whatwg.org/multipage/links.html#link-type-preconnect) | ``Preconnect`` 
-[`<link rel="prefetch">`](https://html.spec.whatwg.org/multipage/links.html#link-type-prefetch) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="preload">`](https://html.spec.whatwg.org/multipage/links.html#link-type-preload) | ``Preload`` 
-[`<link rel="prev">`](https://html.spec.whatwg.org/multipage/links.html#link-type-prev) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="privacy">`-policy](https://html.spec.whatwg.org/multipage/links.html#link-type-privacy-policy) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="search">`](https://html.spec.whatwg.org/multipage/links.html#link-type-search) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="stylesheet">`](https://html.spec.whatwg.org/multipage/links.html#link-type-stylesheet) | ``Stylesheet`` 
-[`<link rel="tag">`](https://html.spec.whatwg.org/multipage/links.html#link-type-tag) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
-[`<link rel="terms-of-service">`](https://html.spec.whatwg.org/multipage/links.html#link-type-terms-of-service) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/25) 
+[`<link rel="alternate">`](https://html.spec.whatwg.org/multipage/links.html#rel-alternate) | ``Alternate``
+[`<link rel="author">`](https://html.spec.whatwg.org/multipage/links.html#link-type-author) | ``Author``
+[`<link rel="bookmark">`](https://html.spec.whatwg.org/multipage/links.html#link-type-bookmark) | ``Bookmark``
+[`<link rel="canonical">`](https://html.spec.whatwg.org/multipage/links.html#link-type-canonical) | ``Canonical``
+[`<link rel="dns-prefetch">`](https://html.spec.whatwg.org/multipage/links.html#link-type-dns-prefetch) | ``DNSPrefetch``
+[`<link rel="expect">`](https://html.spec.whatwg.org/multipage/links.html#link-type-expect) | ``Expect``
+[`<link rel="external">`](https://html.spec.whatwg.org/multipage/links.html#link-type-external) | ``External``
+[`<link rel="help">`](https://html.spec.whatwg.org/multipage/links.html#link-type-help) | ``Help``
+[`<link rel="icon">`](https://html.spec.whatwg.org/multipage/links.html#rel-icon) | ``Icon``
+[`<link rel="license">`](https://html.spec.whatwg.org/multipage/links.html#link-type-license) | ``License``
+[`<link rel="manifest">`](https://html.spec.whatwg.org/multipage/links.html#link-type-manifest) | ``Manifest``
+[`<link rel="modulepreload">`](https://html.spec.whatwg.org/multipage/links.html#link-type-modulepreload) | ``ModulePreload``
+[`<link rel="next">`](https://html.spec.whatwg.org/multipage/links.html#link-type-next) | ``Next``
+[`<link rel="nofollow">`](https://html.spec.whatwg.org/multipage/links.html#link-type-nofollow) | ``Nofollow``
+[`<link rel="noopener">`](https://html.spec.whatwg.org/multipage/links.html#link-type-noopener) | ``NoOpener``
+[`<link rel="noreferrer">`](https://html.spec.whatwg.org/multipage/links.html#link-type-noreferrer) | ``NoReferrer``
+[`<link rel="opener">`](https://html.spec.whatwg.org/multipage/links.html#link-type-opener) | ``Opener``
+[`<link rel="pingback">`](https://html.spec.whatwg.org/multipage/links.html#link-type-pingback) | ``Pingback``
+[`<link rel="preconnect">`](https://html.spec.whatwg.org/multipage/links.html#link-type-preconnect) | ``Preconnect``
+[`<link rel="prefetch">`](https://html.spec.whatwg.org/multipage/links.html#link-type-prefetch) | ``Prefetch``
+[`<link rel="preload">`](https://html.spec.whatwg.org/multipage/links.html#link-type-preload) | ``Preload``
+[`<link rel="prev">`](https://html.spec.whatwg.org/multipage/links.html#link-type-prev) | ``Previous``
+[`<link rel="privacy-policy">`](https://html.spec.whatwg.org/multipage/links.html#link-type-privacy-policy) | ``PrivacyPolicy``
+[`<link rel="search">`](https://html.spec.whatwg.org/multipage/links.html#link-type-search) | ``SearchLink``
+[`<link rel="stylesheet">`](https://html.spec.whatwg.org/multipage/links.html#link-type-stylesheet) | ``Stylesheet``
+[`<link rel="tag">`](https://html.spec.whatwg.org/multipage/links.html#link-type-tag) | ``Tag``
+[`<link rel="terms-of-service">`](https://html.spec.whatwg.org/multipage/links.html#link-type-terms-of-service) | ``TermsOfService`` 
 [`<meta>`](https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element) | ``Meta``
 [`<meta http-equiv="refresh">`](https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-http-equiv-refresh) | ``Redirect``
-[`<meta charset="">`](https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-charset) | ``Charset`` 
+[`<meta charset="">`](https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-charset) | ``Charset``
+[`<meta name="viewport">`](https://drafts.csswg.org/css-viewport) | ``Viewport``
 [`<style="">`](https://html.spec.whatwg.org/multipage/semantics.html#the-style-element) | ``Stylesheet`` 
 
 ### Sections
@@ -303,6 +303,7 @@ W3C attribute | Slipstream modifier | Notes
 [`lang`](https://html.spec.whatwg.org/multipage/dom.html#attr-lang) | ``language(_:)`` | Sets the primary language for the view's contents
 [`nonce`](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#attr-nonce) | ``nonce(_:)`` | A cryptographic nonce used by Content Security Policy
 [`popover`](https://html.spec.whatwg.org/multipage/popover.html#attr-popover) | ``popover(_:)`` | Indicates that the element is a popover element
+[`referrerpolicy`](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#referrer-policy-attribute) | ``referrerPolicy(_:)`` | Controls how much referrer information should be included with requests
 `slot` | ``slot(_:)`` | Assigns a slot in a shadow DOM shadow tree
 [`spellcheck`](https://html.spec.whatwg.org/multipage/interaction.html#attr-spellcheck) | ``spellcheck(_:)`` | Specifies whether the element may be checked for spelling errors
 [`style`](https://html.spec.whatwg.org/multipage/dom.html#attr-style) | ``inlineStyle(_:)`` | Contains CSS styling declarations. Prefer TailwindCSS modifiers when possible
@@ -310,3 +311,15 @@ W3C attribute | Slipstream modifier | Notes
 [`title`](https://html.spec.whatwg.org/multipage/dom.html#attr-title) | ``tooltip(_:)`` | Advisory information, typically shown as a tooltip
 [`translate`](https://html.spec.whatwg.org/multipage/dom.html#attr-translate) | ``translatable(_:)`` | Specifies whether content should be translated
 [`writingsuggestions`](https://html.spec.whatwg.org/multipage/interaction.html#attr-writingsuggestions) | ``writingSuggestions(_:)`` | Controls whether browser-provided writing suggestions should be offered
+
+## Tailwind CSS modifiers
+
+Slipstream provides Swift-based Tailwind CSS modifiers for styling. Below is a reference of key
+CSS properties and their Slipstream equivalents.
+
+### Layout
+
+CSS property | Slipstream modifier | Notes
+:------------|:-------------------|:------
+[`visibility`](https://tailwindcss.com/docs/visibility) | ``visibility(_:)`` | Controls the visibility of an element (visible, invisible, collapse)
+[`z-index`](https://tailwindcss.com/docs/z-index) | ``zIndex(_:)`` | Controls the vertical stacking order of elements
