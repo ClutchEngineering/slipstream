@@ -29,8 +29,8 @@ Tailwind utility | Slipstream modifier
 [Overscroll Behavior](https://tailwindcss.com/docs/overscroll-behavior) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Position](https://tailwindcss.com/docs/position) | ``View/position(_:condition:)``
 [Top / Right / Bottom / Left](https://tailwindcss.com/docs/top-right-bottom-left) | ``View/placement(inset:condition:)``, ``View/placement(x:y:condition:)``, ``View/placement(left:right:top:bottom:condition:)``
-[Visibility](https://tailwindcss.com/docs/visibility) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Z-Index](https://tailwindcss.com/docs/z-index) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
+[Visibility](https://tailwindcss.com/docs/visibility) | ``View/visibility(_:condition:)``
+[Z-Index](https://tailwindcss.com/docs/z-index) | ``View/zIndex(_:condition:)-4woir``, ``View/zIndex(_:condition:)-5kk63``
 
 ## Flexbox & Grid
 
@@ -55,7 +55,7 @@ Tailwind utility | Slipstream modifier
 [Justify Items](https://tailwindcss.com/docs/justify-items) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Justify Self](https://tailwindcss.com/docs/justify-self) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Align Content](https://tailwindcss.com/docs/align-content) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
-[Align Items](https://tailwindcss.com/docs/align-items) | ``View/alignItems(_:condition:)
+[Align Items](https://tailwindcss.com/docs/align-items) | ``View/alignItems(_:condition:)``
 [Align Self](https://tailwindcss.com/docs/align-self) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Place Content](https://tailwindcss.com/docs/place-content) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Place Items](https://tailwindcss.com/docs/place-items) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
@@ -170,7 +170,7 @@ Tailwind utility | Slipstream modifier
 Tailwind utility | Slipstream modifier
 :----------------|:-------------------
 [Box Shadow](https://tailwindcss.com/docs/box-shadow) | ``View/shadow(color:radius:condition:)``
-[Box Shadow Color](https://tailwindcss.com/docs/box-shadow-color) | ``View/shadow(color:radius:condition:)
+[Box Shadow Color](https://tailwindcss.com/docs/box-shadow-color) | ``View/shadow(color:radius:condition:)``
 [Opacity](https://tailwindcss.com/docs/opacity) | ``View/opacity(_:condition:)``
 [Mix Blend Mode](https://tailwindcss.com/docs/mix-blend-mode) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
 [Background Blend Mode](https://tailwindcss.com/docs/background-blend-mode) | [Not implemented yet](https://github.com/jverkoey/slipstream/issues/51)
