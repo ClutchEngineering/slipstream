@@ -36,8 +36,8 @@ final class RenderStylesTests {
   }
 
   @Test func combinesBaseCSSWithSingleComponent() async throws {
-    struct TestComponent: HasComponentCSS {
-      var componentCSS: String {
+    struct TestComponent: StyleModifier {
+      var style: String {
 """
 .test-component {
   color: red;
@@ -60,8 +60,8 @@ final class RenderStylesTests {
   }
 
   @Test func combinesBaseCSSWithMultipleComponents() async throws {
-    struct ComponentA: HasComponentCSS {
-      var componentCSS: String {
+    struct ComponentA: StyleModifier {
+      var style: String {
 """
 .component-a {
   background: blue;
@@ -71,8 +71,8 @@ final class RenderStylesTests {
       var componentName: String { "ComponentA" }
     }
 
-    struct ComponentB: HasComponentCSS {
-      var componentCSS: String {
+    struct ComponentB: StyleModifier {
+      var style: String {
 """
 .component-b {
   font-size: 16px;
@@ -117,8 +117,8 @@ final class RenderStylesTests {
   }
 
   @Test func usesDefaultComponentName() async throws {
-    struct MyCustomComponent: HasComponentCSS {
-      var componentCSS: String {
+    struct MyCustomComponent: StyleModifier {
+      var style: String {
         ".custom { color: green; }"
       }
     }
@@ -135,8 +135,8 @@ final class RenderStylesTests {
   }
 
   @Test func handlesEmptyComponentCSS() async throws {
-    struct EmptyComponent: HasComponentCSS {
-      var componentCSS: String { "" }
+    struct EmptyComponent: StyleModifier {
+      var style: String { "" }
       var componentName: String { "EmptyComponent" }
     }
 
@@ -153,8 +153,8 @@ final class RenderStylesTests {
   }
 
   @Test func handlesEmptyBaseCSS() async throws {
-    struct TestComponent: HasComponentCSS {
-      var componentCSS: String { ".test { color: red; }" }
+    struct TestComponent: StyleModifier {
+      var style: String { ".test { color: red; }" }
       var componentName: String { "TestComponent" }
     }
 
@@ -171,8 +171,8 @@ final class RenderStylesTests {
   }
 
   @Test func withoutComponentLayerWrapsSingleComponent() async throws {
-    struct TestComponent: HasComponentCSS {
-      var componentCSS: String {
+    struct TestComponent: StyleModifier {
+      var style: String {
 """
 .test-component {
   color: blue;
@@ -195,8 +195,8 @@ final class RenderStylesTests {
   }
 
   @Test func withoutComponentLayerWrapsMultipleComponents() async throws {
-    struct ComponentA: HasComponentCSS {
-      var componentCSS: String {
+    struct ComponentA: StyleModifier {
+      var style: String {
 """
 .component-a {
   background: green;
@@ -206,8 +206,8 @@ final class RenderStylesTests {
       var componentName: String { "ComponentA" }
     }
 
-    struct ComponentB: HasComponentCSS {
-      var componentCSS: String {
+    struct ComponentB: StyleModifier {
+      var style: String {
 """
 .component-b {
   font-size: 18px;
@@ -243,8 +243,8 @@ final class RenderStylesTests {
   }
 
   @Test func deduplicatesComponentsWithIdenticalCSS() async throws {
-    struct Header: HasComponentCSS {
-      var componentCSS: String { ".header { background: blue; }" }
+    struct Header: StyleModifier {
+      var style: String { ".header { background: blue; }" }
       var componentName: String { "Header" }
     }
 
@@ -263,13 +263,13 @@ final class RenderStylesTests {
   }
 
   @Test func deduplicatesPreservesFirstOccurrence() async throws {
-    struct ComponentA: HasComponentCSS {
-      var componentCSS: String { ".shared { color: red; }" }
+    struct ComponentA: StyleModifier {
+      var style: String { ".shared { color: red; }" }
       var componentName: String { "ComponentA" }
     }
 
-    struct ComponentB: HasComponentCSS {
-      var componentCSS: String { ".shared { color: red; }" }  // Same CSS
+    struct ComponentB: StyleModifier {
+      var style: String { ".shared { color: red; }" }  // Same CSS
       var componentName: String { "ComponentB" }
     }
 
@@ -292,8 +292,8 @@ final class RenderStylesTests {
   }
 
   @Test func deduplicationWorksWithoutComponentLayer() async throws {
-    struct Header: HasComponentCSS {
-      var componentCSS: String { ".header { padding: 20px; }" }
+    struct Header: StyleModifier {
+      var style: String { ".header { padding: 20px; }" }
       var componentName: String { "Header" }
     }
 
@@ -311,13 +311,13 @@ final class RenderStylesTests {
   }
 
   @Test func deduplicationKeepsUniqueComponents() async throws {
-    struct Header: HasComponentCSS {
-      var componentCSS: String { ".header { color: blue; }" }
+    struct Header: StyleModifier {
+      var style: String { ".header { color: blue; }" }
       var componentName: String { "Header" }
     }
 
-    struct Footer: HasComponentCSS {
-      var componentCSS: String { ".footer { color: gray; }" }
+    struct Footer: StyleModifier {
+      var style: String { ".footer { color: gray; }" }
       var componentName: String { "Footer" }
     }
 

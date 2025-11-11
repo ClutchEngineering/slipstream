@@ -3,22 +3,22 @@ import Foundation
 /// Renders styles by combining base CSS with component-specific styles.
 ///
 /// This function reads a base CSS file and appends CSS from all component instances
-/// conforming to `HasComponentCSS`, then writes the combined result to an output file.
+/// conforming to `StyleModifier`, then writes the combined result to an output file.
 /// Component styles are automatically deduplicated by CSS content and wrapped in `@layer components`
 /// to ensure proper Tailwind CSS cascade order (base → components → utilities).
 ///
 /// Components with identical CSS content are automatically deduplicated (first occurrence wins).
 /// This is useful when the same component (e.g., a site header) is used across multiple pages.
 ///
-/// - Parameter components: Array of component instances that conform to `HasComponentCSS`.
+/// - Parameter components: Array of component instances that conform to `StyleModifier`.
 /// - Parameter baseCSS: URL to the base CSS file to read.
 /// - Parameter output: URL where the combined CSS should be written.
 /// - Parameter useComponentLayer: Whether to wrap component styles in `@layer components` for Tailwind CSS v3
 ///   cascade ordering. Defaults to `true`. Set to `false` for Tailwind CSS v4's automatic ordering.
 /// - Throws: `CocoaError` if the base CSS file cannot be read, or if the output file or directory cannot be created or written.
 @available(iOS 17.0, macOS 14.0, *)
-internal func renderStyles(
-    from components: [any HasComponentCSS],
+func renderStyles(
+    from components: [any StyleModifier],
     baseCSS: URL,
     to output: URL,
     useComponentLayer: Bool = true
@@ -33,7 +33,7 @@ internal func renderStyles(
     // Deduplicate components by CSS content (first occurrence wins)
     var seenCSS = Set<String>()
     let uniqueComponents = components.filter { component in
-        seenCSS.insert(component.componentCSS).inserted
+        seenCSS.insert(component.style).inserted
     }
     
     // Add component-specific styles
@@ -47,13 +47,13 @@ internal func renderStyles(
         
         // Conditionally indent each line of component CSS
         if useComponentLayer {
-            let indentedCSS = component.componentCSS
+            let indentedCSS = component.style
                 .split(separator: "\n", omittingEmptySubsequences: false)
                 .map { $0.isEmpty ? "" : "  \($0)" }
                 .joined(separator: "\n")
             cssContent += indentedCSS
         } else {
-            cssContent += component.componentCSS
+            cssContent += component.style
         }
         cssContent += "\n\n"
     }

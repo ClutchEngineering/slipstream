@@ -2,11 +2,11 @@ import Testing
 
 import Slipstream
 
-struct HasComponentCSSTests {
+struct StyleModifierTests {
 
   @Test func defaultComponentNameUsesTypeName() async throws {
-    struct MyTestComponent: HasComponentCSS {
-      var componentCSS: String { ".test { color: blue; }" }
+    struct MyTestComponent: StyleModifier {
+      var style: String { ".test { color: blue; }" }
     }
 
     let component = MyTestComponent()
@@ -14,8 +14,8 @@ struct HasComponentCSSTests {
   }
 
   @Test func defaultComponentNameWithGenericType() async throws {
-    struct GenericComponent<T>: HasComponentCSS {
-      var componentCSS: String { ".generic { display: block; }" }
+    struct GenericComponent<T: Sendable>: StyleModifier {
+      var style: String { ".generic { display: block; }" }
       let value: T
     }
 
@@ -24,8 +24,8 @@ struct HasComponentCSSTests {
   }
 
   @Test func customComponentNameOverridesDefault() async throws {
-    struct CustomNameComponent: HasComponentCSS {
-      var componentCSS: String { ".custom { margin: 0; }" }
+    struct CustomNameComponent: StyleModifier {
+      var style: String { ".custom { margin: 0; }" }
       var componentName: String { "MyCustomName" }
     }
 
@@ -33,9 +33,9 @@ struct HasComponentCSSTests {
     #expect(component.componentName == "MyCustomName")
   }
 
-  @Test func componentCSSPropertyIsRequired() async throws {
-    struct MinimalComponent: HasComponentCSS {
-      var componentCSS: String {
+  @Test func stylePropertyIsRequired() async throws {
+    struct MinimalComponent: StyleModifier {
+      var style: String {
         """
         .minimal {
           padding: 10px;
@@ -45,13 +45,13 @@ struct HasComponentCSSTests {
     }
 
     let component = MinimalComponent()
-    #expect(component.componentCSS.contains(".minimal"))
-    #expect(component.componentCSS.contains("padding: 10px"))
+    #expect(component.style.contains(".minimal"))
+    #expect(component.style.contains("padding: 10px"))
   }
 
   @Test func multipleInstancesHaveSameComponentName() async throws {
-    struct ReusableComponent: HasComponentCSS {
-      var componentCSS: String { ".reusable { width: 100%; }" }
+    struct ReusableComponent: StyleModifier {
+      var style: String { ".reusable { width: 100%; }" }
       let id: Int
     }
 
@@ -64,8 +64,8 @@ struct HasComponentCSSTests {
 
   @Test func nestedTypeComponentName() async throws {
     struct OuterComponent {
-      struct InnerComponent: HasComponentCSS {
-        var componentCSS: String { ".inner { color: red; }" }
+      struct InnerComponent: StyleModifier {
+        var style: String { ".inner { color: red; }" }
       }
     }
 

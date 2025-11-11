@@ -18,11 +18,11 @@ public func renderSitemap(
 ) throws {
     // Create CSS collection context if CSS generation requested
     var environment = EnvironmentValues()
-    let cssContext: ComponentLayerContext?
+    let cssContext: StyleContext?
     
     if cssConfiguration != nil {
-        let context = ComponentLayerContext()
-        environment.componentLayerContext = context
+        let context = StyleContext()
+        environment.styleContext = context
         cssContext = context
     } else {
         cssContext = nil

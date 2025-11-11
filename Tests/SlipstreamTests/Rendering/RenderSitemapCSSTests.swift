@@ -24,8 +24,8 @@ final class RenderSitemapCSSTests {
     }
     
     @Test func collectsAndGeneratesCSS() async throws {
-        struct TestComponent: View, HasComponentCSS {
-            var componentCSS: String { ".test { color: red; }" }
+        struct TestComponent: View, StyleModifier {
+            var style: String { ".test { color: red; }" }
             var body: some View { Text("Test") }
         }
         
@@ -48,8 +48,8 @@ final class RenderSitemapCSSTests {
     }
     
     @Test func deduplicatesSharedComponents() async throws {
-        struct Header: View, HasComponentCSS {
-            var componentCSS: String { ".header { padding: 10px; }" }
+        struct Header: View, StyleModifier {
+            var style: String { ".header { padding: 10px; }" }
             var body: some View { Text("Header") }
         }
         
@@ -75,13 +75,13 @@ final class RenderSitemapCSSTests {
     }
     
     @Test func collectsFromNestedComponents() async throws {
-        struct InnerComponent: View, HasComponentCSS {
-            var componentCSS: String { ".inner { margin: 5px; }" }
+        struct InnerComponent: View, StyleModifier {
+            var style: String { ".inner { margin: 5px; }" }
             var body: some View { Text("Inner") }
         }
         
-        struct OuterComponent: View, HasComponentCSS {
-            var componentCSS: String { ".outer { padding: 10px; }" }
+        struct OuterComponent: View, StyleModifier {
+            var style: String { ".outer { padding: 10px; }" }
             var body: some View { InnerComponent() }
         }
         
@@ -102,13 +102,13 @@ final class RenderSitemapCSSTests {
     }
     
     @Test func handlesMultiplePages() async throws {
-        struct PageA: View, HasComponentCSS {
-            var componentCSS: String { ".page-a { color: blue; }" }
+        struct PageA: View, StyleModifier {
+            var style: String { ".page-a { color: blue; }" }
             var body: some View { Text("Page A") }
         }
         
-        struct PageB: View, HasComponentCSS {
-            var componentCSS: String { ".page-b { color: green; }" }
+        struct PageB: View, StyleModifier {
+            var style: String { ".page-b { color: green; }" }
             var body: some View { Text("Page B") }
         }
         
@@ -133,8 +133,8 @@ final class RenderSitemapCSSTests {
     }
     
     @Test func doesNotCollectCSSWithoutConfiguration() async throws {
-        struct TestComponent: View, HasComponentCSS {
-            var componentCSS: String { ".test { color: red; }" }
+        struct TestComponent: View, StyleModifier {
+            var style: String { ".test { color: red; }" }
             var body: some View { Text("Test") }
         }
         

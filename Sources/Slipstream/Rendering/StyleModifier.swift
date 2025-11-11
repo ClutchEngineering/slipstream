@@ -8,8 +8,8 @@ import SwiftSoup
 ///
 /// Example:
 /// ```swift
-/// struct MyComponent: View, HasComponentCSS {
-///     var componentCSS: String {
+/// struct MyComponent: View, StyleModifier {
+///     var style: String {
 ///         """
 ///         .my-component {
 ///             background-color: red;
@@ -25,16 +25,16 @@ import SwiftSoup
 /// }
 /// ```
 @available(iOS 17.0, macOS 14.0, *)
-public protocol HasComponentCSS {
+public protocol StyleModifier: Sendable {
     /// The CSS styles for this component instance.
-    var componentCSS: String { get }
+    var style: String { get }
     
     /// A descriptive name for this component (used in CSS comments).
     var componentName: String { get }
 }
 
 @available(iOS 17.0, macOS 14.0, *)
-public extension HasComponentCSS {
+public extension StyleModifier {
     /// Default component name derived from the type name.
     ///
     /// This default implementation uses Swift's type reflection to generate
@@ -47,15 +47,15 @@ public extension HasComponentCSS {
 // MARK: - Automatic Registration
 
 @available(iOS 17.0, macOS 14.0, *)
-extension View where Self: HasComponentCSS {
+extension View where Self: StyleModifier {
     /// Automatically registers this component's CSS when rendering.
     ///
-    /// Views conforming to `HasComponentCSS` are automatically registered with
-    /// the component layer context during rendering, allowing CSS to be collected
+    /// Views conforming to `StyleModifier` are automatically registered with
+    /// the style context during rendering, allowing CSS to be collected
     /// without manual component list management.
     public func render(_ container: Element, environment: EnvironmentValues) throws {
         // Register this component's CSS with the collection context
-        environment.componentLayerContext?.add(self)
+        environment.styleContext?.add(self)
         
         // Continue normal rendering
         try injectEnvironment(environment: environment).body.render(container, environment: environment)
