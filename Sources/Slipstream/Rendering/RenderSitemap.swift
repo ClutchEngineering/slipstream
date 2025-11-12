@@ -5,30 +5,12 @@ import SwiftSoup
 ///
 /// - Parameter sitemap: A mapping of relative paths to Slipstream views.
 /// - Parameter folder: The root folder of the sitemap.
-/// - Parameter cssConfiguration: Optional tuple specifying base CSS file and output location for generated component CSS.
-///   When provided, components conforming to `HasComponentCSS` are automatically collected during rendering and their
-///   CSS is combined with the base CSS file. The result is written to the specified output location.
 /// - Parameter encoding: The encoding to use when saving files to disk.
 /// - Throws: A SwiftSoup `Exception.Error` may be thrown if a failure occurs while rendering the view.
-public func renderSitemap(
-    _ sitemap: Sitemap,
-    to folder: URL,
-    cssConfiguration: (baseCSS: URL, output: URL)? = nil,
-    encoding: String.Encoding = .utf8
-) throws {
-    // Create CSS collection context if CSS generation requested
-    var environment = EnvironmentValues()
-    let cssContext: StyleContext?
+public func renderSitemap(_ sitemap: Sitemap, to folder: URL, encoding: String.Encoding = .utf8) throws {
+    let environment = EnvironmentValues()
     
-    if cssConfiguration != nil {
-        let context = StyleContext()
-        environment.styleContext = context
-        cssContext = context
-    } else {
-        cssContext = nil
-    }
-    
-    // Render HTML pages (collecting CSS if context present)
+    // Render HTML pages
     for (path, view) in sitemap.sorted(by: { $0.key < $1.key }) {
         let document = Document("/")
         try view.render(document, environment: environment)
@@ -41,15 +23,59 @@ public func renderSitemap(
         }
         try output.write(to: fileURL, atomically: true, encoding: encoding)
     }
+}
+
+/// Renders the given sitemap to a folder with CSS component collection.
+///
+/// This async variant automatically collects CSS from components conforming to `StyleModifier`
+/// by traversing the view hierarchy. The collected CSS is combined with the base CSS file
+/// and written to the specified stylesheet location within the site folder.
+///
+/// - Parameter sitemap: A mapping of relative paths to Slipstream views.
+/// - Parameter folder: The root folder of the sitemap where HTML and CSS files are generated.
+/// - Parameter baseCSS: URL to the base CSS file that will be combined with component styles.
+/// - Parameter stylesheet: Path relative to `folder` where the generated CSS will be written. Defaults to "styles.css".
+/// - Parameter encoding: The encoding to use when saving files to disk.
+/// - Throws: A SwiftSoup `Exception.Error` may be thrown if a failure occurs while rendering the view.
+public func renderSitemap(
+    _ sitemap: Sitemap,
+    to folder: URL,
+    baseCSS: URL,
+    stylesheet: String = "styles.css",
+    encoding: String.Encoding = .utf8
+) async throws {
+    var environment = EnvironmentValues()
+    let styleContext = StyleContext()
+    environment.styleContext = styleContext
+
+    // Traverse all views to collect CSS components
+    // This must complete before CSS generation begins
+    for (_, view) in sitemap {
+        try await view.style(environment: environment)
+    }
     
-    // Generate CSS file if requested
-    if let cssConfiguration = cssConfiguration,
-       let cssContext = cssContext {
-        try renderStyles(
-            from: cssContext.allComponents,
-            baseCSS: cssConfiguration.baseCSS,
-            to: cssConfiguration.output
-        )
+    let allComponents = await styleContext.allComponents
+    
+    // Generate CSS file to folder + stylesheet path
+    let stylesheetURL = folder.appending(path: stylesheet)
+    try renderStyles(
+        from: allComponents,
+        baseCSS: baseCSS,
+        to: stylesheetURL
+    )
+    
+    // Render HTML pages
+    for (path, view) in sitemap.sorted(by: { $0.key < $1.key }) {
+        let document = Document("/")
+        try view.render(document, environment: environment)
+        let output = try "<!DOCTYPE html>\n" + document.html()
+        
+        let fileURL = folder.appending(path: path)
+        let folderURL = fileURL.deletingLastPathComponent()
+        if !FileManager.default.fileExists(atPath: folderURL.path(percentEncoded: false)) {
+            try FileManager.default.createDirectory(at: folderURL, withIntermediateDirectories: true)
+        }
+        try output.write(to: fileURL, atomically: true, encoding: encoding)
     }
 }
 

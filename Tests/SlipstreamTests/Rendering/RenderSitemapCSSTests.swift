@@ -30,18 +30,18 @@ final class RenderSitemapCSSTests {
         }
         
         let baseCSSURL = rootURL.appending(path: "base.css")
-        let cssOutputURL = rootURL.appending(path: "output.css")
         
         try "/* Base */".write(to: baseCSSURL, atomically: true, encoding: .utf8)
         
         let sitemap: Sitemap = ["index.html": TestComponent()]
-        try renderSitemap(
+        try await renderSitemap(
             sitemap,
             to: rootURL,
-            cssConfiguration: (baseCSS: baseCSSURL, output: cssOutputURL)
+            baseCSS: baseCSSURL,
+            stylesheet: "output.css"
         )
         
-        let css = try String(contentsOf: cssOutputURL, encoding: .utf8)
+        let css = try String(contentsOf: rootURL.appending(path: "output.css"), encoding: .utf8)
         #expect(css.contains("/* Base */"))
         #expect(css.contains(".test { color: red; }"))
         #expect(css.contains("@layer components"))
@@ -54,7 +54,6 @@ final class RenderSitemapCSSTests {
         }
         
         let baseCSSURL = rootURL.appending(path: "base.css")
-        let cssOutputURL = rootURL.appending(path: "output.css")
         try "".write(to: baseCSSURL, atomically: true, encoding: .utf8)
         
         let sitemap: Sitemap = [
@@ -63,13 +62,14 @@ final class RenderSitemapCSSTests {
             "page3.html": Header()
         ]
         
-        try renderSitemap(
+        try await renderSitemap(
             sitemap,
             to: rootURL,
-            cssConfiguration: (baseCSS: baseCSSURL, output: cssOutputURL)
+            baseCSS: baseCSSURL,
+            stylesheet: "output.css"
         )
         
-        let css = try String(contentsOf: cssOutputURL, encoding: .utf8)
+        let css = try String(contentsOf: rootURL.appending(path: "output.css"), encoding: .utf8)
         let occurrences = css.components(separatedBy: ".header { padding: 10px; }").count - 1
         #expect(occurrences == 1)  // Only appears once despite 3 pages
     }
@@ -86,17 +86,17 @@ final class RenderSitemapCSSTests {
         }
         
         let baseCSSURL = rootURL.appending(path: "base.css")
-        let cssOutputURL = rootURL.appending(path: "output.css")
         try "".write(to: baseCSSURL, atomically: true, encoding: .utf8)
         
         let sitemap: Sitemap = ["index.html": OuterComponent()]
-        try renderSitemap(
+        try await renderSitemap(
             sitemap,
             to: rootURL,
-            cssConfiguration: (baseCSS: baseCSSURL, output: cssOutputURL)
+            baseCSS: baseCSSURL,
+            stylesheet: "output.css"
         )
         
-        let css = try String(contentsOf: cssOutputURL, encoding: .utf8)
+        let css = try String(contentsOf: rootURL.appending(path: "output.css"), encoding: .utf8)
         #expect(css.contains(".outer { padding: 10px; }"))
         #expect(css.contains(".inner { margin: 5px; }"))
     }
@@ -113,7 +113,6 @@ final class RenderSitemapCSSTests {
         }
         
         let baseCSSURL = rootURL.appending(path: "base.css")
-        let cssOutputURL = rootURL.appending(path: "output.css")
         try "".write(to: baseCSSURL, atomically: true, encoding: .utf8)
         
         let sitemap: Sitemap = [
@@ -121,13 +120,14 @@ final class RenderSitemapCSSTests {
             "b.html": PageB()
         ]
         
-        try renderSitemap(
+        try await renderSitemap(
             sitemap,
             to: rootURL,
-            cssConfiguration: (baseCSS: baseCSSURL, output: cssOutputURL)
+            baseCSS: baseCSSURL,
+            stylesheet: "output.css"
         )
         
-        let css = try String(contentsOf: cssOutputURL, encoding: .utf8)
+        let css = try String(contentsOf: rootURL.appending(path: "output.css"), encoding: .utf8)
         #expect(css.contains(".page-a { color: blue; }"))
         #expect(css.contains(".page-b { color: green; }"))
     }

@@ -59,7 +59,7 @@ private struct StyleContextKey: EnvironmentKey {
 }
 
 extension EnvironmentValues {
-    /// The context for collecting CSS components during rendering.
+    /// The context for collecting CSS components during style traversal.
     ///
     /// This is used internally by the rendering system to automatically
     /// collect components that conform to `StyleModifier`.

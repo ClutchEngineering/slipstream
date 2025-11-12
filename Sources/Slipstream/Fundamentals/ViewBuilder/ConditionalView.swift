@@ -23,4 +23,13 @@ public struct ConditionalView<T: View, F: View>: View {
       try view.render(container, environment: environment)
     }
   }
+  
+  public func style(environment: EnvironmentValues) async throws {
+    switch condition {
+    case .isTrue(let view):
+      try await view.style(environment: environment)
+    case .isFalse(let view):
+      try await view.style(environment: environment)
+    }
+  }
 }

@@ -43,21 +43,3 @@ public extension StyleModifier {
         String(describing: type(of: self))
     }
 }
-
-// MARK: - Automatic Registration
-
-@available(iOS 17.0, macOS 14.0, *)
-extension View where Self: StyleModifier {
-    /// Automatically registers this component's CSS when rendering.
-    ///
-    /// Views conforming to `StyleModifier` are automatically registered with
-    /// the style context during rendering, allowing CSS to be collected
-    /// without manual component list management.
-    public func render(_ container: Element, environment: EnvironmentValues) throws {
-        // Register this component's CSS with the collection context
-        environment.styleContext?.add(self)
-        
-        // Continue normal rendering
-        try injectEnvironment(environment: environment).body.render(container, environment: environment)
-    }
-}

@@ -4,26 +4,26 @@ import SwiftSoup
 
 @testable import Slipstream
 
-/// Tests documenting the automatic CSS collection architecture and its limitations.
+/// Tests for the automatic CSS style collection system.
 ///
-/// These tests demonstrate:
-/// 1. Automatic registration works for views using `body`
-/// 2. Custom `render()` implementations override the protocol extension (architectural limitation)
-/// 3. Manual registration helper is available for the custom render() edge case
-final class AutomaticCSSRegistrationTests {
+/// These tests verify:
+/// 1. The `style()` method automatically collects CSS from views via `body` traversal
+/// 2. Style collection works independently of `render()` implementation
+/// 3. CSS collection handles nested components and runtime values correctly
+/// 4. Deduplication logic works as expected
+final class StyleCollectionTests {
     
     // MARK: - Test Helpers
     
-    /// Simulates rendering and collects CSS components
-    private func renderAndCollectCSS(view: any View) throws -> [any StyleModifier] {
-        let context = StyleContext()
+    /// Collects CSS components using the style() method
+    private func renderAndCollectCSS(view: any View) async throws -> [any StyleModifier] {
+        let styleContext = StyleContext()
         var environment = EnvironmentValues()
-        environment.styleContext = context
+        environment.styleContext = styleContext
         
-        let document = Document("/")
-        try view.render(document, environment: environment)
+        try await view.style(environment: environment)
         
-        return context.allComponents
+        return await styleContext.allComponents
     }
     
     // MARK: - Test Components
@@ -54,28 +54,29 @@ final class AutomaticCSSRegistrationTests {
         }
     }
     
-    /// Demonstrates the architectural limitation: custom render() overrides protocol extension
+    /// Demonstrates that style() method works even with custom render()
     struct ComponentWithCustomRender: View, StyleModifier {
+        typealias Content = Never
+        
         var style: String { ".custom { color: blue; }" }
         var componentName: String { "CustomRender" }
         
-        // ❌ This custom render() OVERRIDES the protocol extension's render()
-        // Result: Component is NOT automatically registered
+        // ✅ Custom render() doesn't affect style() - CSS is still collected!
         func render(_ container: Element, environment: EnvironmentValues) throws {
             let element = try container.appendElement("custom")
             try element.appendText("Custom rendered")
         }
     }
     
-    /// Shows the workaround: manual registration in custom render()
+    /// Shows that style() method collects CSS even with custom render()
     struct ComponentWithManualRegistration: View, StyleModifier {
+        typealias Content = Never
+        
         var style: String { ".manual { color: green; }" }
         var componentName: String { "ManualRegistration" }
         
+        // Custom render() doesn't affect style() collection
         func render(_ container: Element, environment: EnvironmentValues) throws {
-            // ✅ Manually register before custom render logic
-            environment.styleContext?.add(self)
-            
             let element = try container.appendElement("manual")
             try element.appendText("Manually registered")
         }
@@ -94,8 +95,8 @@ final class AutomaticCSSRegistrationTests {
     // MARK: - Tests: Automatic Registration (Works)
     
     @Test("Automatic registration works for simple component with body")
-    func automaticRegistrationForBodyComponent() throws {
-        let components = try renderAndCollectCSS(view: SimpleComponent())
+    func automaticRegistrationForBodyComponent() async throws {
+        let components = try await renderAndCollectCSS(view: SimpleComponent())
         
         #expect(components.count == 1)
         #expect(components[0].componentName == "SimpleComponent")
@@ -103,9 +104,9 @@ final class AutomaticCSSRegistrationTests {
     }
     
     @Test("Automatic registration captures runtime values")
-    func automaticRegistrationWithRuntimeValues() throws {
+    func automaticRegistrationWithRuntimeValues() async throws {
         let component = ComponentWithRuntimeValue(id: "test-tabs", count: 5)
-        let components = try renderAndCollectCSS(view: component)
+        let components = try await renderAndCollectCSS(view: component)
         
         #expect(components.count == 1)
         #expect(components[0].componentName == "Component[test-tabs]")
@@ -114,9 +115,9 @@ final class AutomaticCSSRegistrationTests {
     }
     
     @Test("Automatic registration works for nested components")
-    func automaticRegistrationForNestedComponents() throws {
+    func automaticRegistrationForNestedComponents() async throws {
         let page = PageWithNestedComponents()
-        let components = try renderAndCollectCSS(view: page)
+        let components = try await renderAndCollectCSS(view: page)
         
         // Should automatically find all 3 nested components
         #expect(components.count == 3)
@@ -134,24 +135,25 @@ final class AutomaticCSSRegistrationTests {
         #expect(footerComponent?.style.contains("with 2 items") == true)
     }
     
-    // MARK: - Tests: Custom Render Limitation
+    // MARK: - Tests: style() Works With Custom Render
     
-    @Test("Custom render() overrides protocol extension - component NOT registered")
-    func customRenderOverridesAutomaticRegistration() throws {
+    @Test("style() method collects CSS even with custom render()")
+    func styleMethodWorksWithCustomRender() async throws {
         let component = ComponentWithCustomRender()
-        let components = try renderAndCollectCSS(view: component)
+        let components = try await renderAndCollectCSS(view: component)
         
-        // ❌ ARCHITECTURAL LIMITATION: Custom render() overrides the protocol extension
-        // Result: Component is NOT automatically registered
-        #expect(components.isEmpty)
+        // ✅ style() method is independent of render()
+        // Result: Component IS collected even with custom render()
+        #expect(components.count == 1)
+        #expect(components[0].componentName == "CustomRender")
     }
     
-    @Test("Manual registration workaround for custom render()")
-    func manualRegistrationWorksForCustomRender() throws {
+    @Test("style() method works for all components with custom render()")
+    func styleMethodWorksForAllCustomRenderComponents() async throws {
         let component = ComponentWithManualRegistration()
-        let components = try renderAndCollectCSS(view: component)
+        let components = try await renderAndCollectCSS(view: component)
         
-        // ✅ Manual registration in custom render() works
+        // ✅ style() method collects CSS regardless of custom render()
         #expect(components.count == 1)
         #expect(components[0].componentName == "ManualRegistration")
     }
@@ -159,7 +161,7 @@ final class AutomaticCSSRegistrationTests {
     // MARK: - Tests: Deduplication
     
     @Test("CSS deduplication works (first occurrence wins)")
-    func cssDeduplication() throws {
+    func cssDeduplication() async throws {
         struct DupeA: View, StyleModifier {
             var style: String { ".dupe { margin: 10px; }" }
             var componentName: String { "DupeA" }
@@ -182,7 +184,7 @@ final class AutomaticCSSRegistrationTests {
         }
         
         let page = PageWithDupes()
-        let components = try renderAndCollectCSS(view: page)
+        let components = try await renderAndCollectCSS(view: page)
         
         // Both components collected
         #expect(components.count == 2)

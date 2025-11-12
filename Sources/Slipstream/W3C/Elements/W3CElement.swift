@@ -25,4 +25,11 @@ extension W3CElement {
     let element = try container.appendElement(tagName)
     try self.content().render(element, environment: environment)
   }
+  
+  /// A default implementation for W3C element views that collects CSS styles
+  /// by traversing the content closure.
+  @_documentation(visibility: private)
+  public func style(environment: EnvironmentValues) async throws {
+    try await self.content().style(environment: environment)
+  }
 }
