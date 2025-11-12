@@ -61,6 +61,10 @@ private struct TailwindClassModifierView<Content: View>: View {
       try container.appendChild(child)
     }
   }
+  
+  public func style(environment: EnvironmentValues) async throws {
+    try await self.content().style(environment: environment)
+  }
 
   private let classNames: Set<String>
   private let condition: Condition?

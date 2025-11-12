@@ -42,6 +42,10 @@ public struct ForEach<Data, ID, Content>: View where Data: RandomAccessCollectio
     public func render(_ container: Element, environment: EnvironmentValues) throws {
         try arrayView.render(container, environment: environment)
     }
+    
+    public func style(environment: EnvironmentValues) async throws {
+        try await arrayView.style(environment: environment)
+    }
 }
 
 /// Convenience initializer for collections where elements conform to `Identifiable`.

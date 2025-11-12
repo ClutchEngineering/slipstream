@@ -21,4 +21,14 @@ where T: Sendable {
       .compactMap { $0.value as? any View }
       .forEach { try $0.render(container, environment: environment) }
   }
+  
+  public func style(environment: EnvironmentValues) async throws {
+    /// Our tuple may be composed of any number of View types, so we use Mirror to
+    /// read the sub-types of the tuple and traverse each view's style() method.
+    for child in Mirror(reflecting: value).children {
+      if let view = child.value as? any View {
+        try await view.style(environment: environment)
+      }
+    }
+  }
 }
