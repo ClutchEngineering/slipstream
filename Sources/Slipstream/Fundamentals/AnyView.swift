@@ -14,6 +14,11 @@ public struct AnyView: View {
   public func render(_ container: Element, environment: EnvironmentValues) throws {
     try injectEnvironment(environment: environment).view.render(container, environment: environment)
   }
+  
+  @_documentation(visibility: private)
+  public func style(environment: EnvironmentValues) async throws {
+    try await injectEnvironment(environment: environment).view.style(environment: environment)
+  }
 
   private let view: any View
 }

@@ -17,4 +17,10 @@ public struct ArrayView: View {
       try view.render(container, environment: environment)
     }
   }
+  
+  public func style(environment: EnvironmentValues) async throws {
+    for view in array {
+      try await view.style(environment: environment)
+    }
+  }
 }

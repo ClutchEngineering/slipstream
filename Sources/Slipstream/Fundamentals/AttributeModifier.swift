@@ -181,6 +181,10 @@ where Content: Sendable {
       try container.appendChild(child)
     }
   }
+  
+  func style(environment: EnvironmentValues) async throws {
+    try await self.content().style(environment: environment)
+  }
 }
 
 /// A modifier that conditionally sets an HTML attribute on views based on a boolean condition.

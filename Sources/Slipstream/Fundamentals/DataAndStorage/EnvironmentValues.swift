@@ -51,3 +51,20 @@ public struct EnvironmentValues: Sendable {
 
   private var storage: [ObjectIdentifier: Any & Sendable] = [:]
 }
+
+// MARK: - Style Context
+
+private struct StyleContextKey: EnvironmentKey {
+    static let defaultValue: StyleContext? = nil
+}
+
+extension EnvironmentValues {
+    /// The context for collecting CSS components during style traversal.
+    ///
+    /// This is used internally by the rendering system to automatically
+    /// collect components that conform to `StyleModifier`.
+    var styleContext: StyleContext? {
+        get { self[StyleContextKey.self] }
+        set { self[StyleContextKey.self] = newValue }
+    }
+}

@@ -52,6 +52,16 @@ public protocol View: Sendable {
   /// If this method is not implemented, a default implementation will be
   /// provided that recurses the render calls on `body`.
   func render(_ container: Element, environment: EnvironmentValues) throws
+  
+  /// Traverses the view hierarchy to collect CSS styles from components.
+  ///
+  /// This method is used internally by the rendering system to automatically
+  /// collect CSS from views conforming to `StyleModifier`. You typically don't
+  /// need to implement this method directly.
+  ///
+  /// If this method is not implemented, a default implementation will be
+  /// provided that recurses the style calls on `body`.
+  func style(environment: EnvironmentValues) async throws
 }
 
 extension View {
